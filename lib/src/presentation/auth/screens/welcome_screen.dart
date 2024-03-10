@@ -64,7 +64,6 @@ class WelcomeScreen extends StatelessWidget {
                             onTap: () {},
                             title: 'Войти',
                             color: AppColors.white,
-                            foregroundColor: AppColors.black,
                           ),
                         ],
                       ),

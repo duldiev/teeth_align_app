@@ -35,7 +35,7 @@ class AppThemeData {
           selectionColor: AppColors.primary.withOpacity(0.4),
         ),
         dividerTheme: const DividerThemeData(
-          color: AppColors.primary,
+          color: AppColors.white,
           thickness: 0.4,
         ),
       );

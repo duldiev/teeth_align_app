@@ -46,10 +46,10 @@ class ColoredButton extends StatelessWidget {
             Text(
               title,
               style: titleStyle?.copyWith(
-                    color: foregroundColor ?? AppColors.white,
+                    color: foregroundColor ?? AppColors.black,
                   ) ??
                   context.textTheme.titleMedium?.copyWith(
-                    color: foregroundColor ?? AppColors.white,
+                    color: foregroundColor ?? AppColors.black,
                   ),
               textAlign: TextAlign.center,
             ),

@@ -26,7 +26,7 @@ dependencies:
   font_awesome_flutter: ^10.6.0
   freezed_annotation: ^2.4.1
   gap: ^3.0.1
-  get_it: ^7.6.4
+  get_it: ^7.6.7
   http: ^1.1.0
   image: ^4.1.7
   image_picker: ^1.0.7
@@ -47,7 +47,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.4.5
-  injectable_generator: ^2.4.1
+  injectable_generator: ^2.4.2
   lint: ^2.1.2
 
 flutter_gen:
@@ -62,3 +62,7 @@ flutter_gen:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/fonts/

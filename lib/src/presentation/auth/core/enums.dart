@@ -14,6 +14,7 @@ enum SignUpFieldsView {
   emailPassword, // First enter email, then code field appears ...
   code,
   barcode,
+  finish,
 }
 
 enum ThridPartyAuthType { signIn, signUp }

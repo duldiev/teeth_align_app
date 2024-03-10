@@ -16,23 +16,22 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SignUpEvent {
-  void Function(bool) get callback => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(void Function(bool) callback) nextField,
-    required TResult Function(void Function(bool) callback) prevField,
+    required TResult Function() nextField,
+    required TResult Function() prevField,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(void Function(bool) callback)? nextField,
-    TResult? Function(void Function(bool) callback)? prevField,
+    TResult? Function()? nextField,
+    TResult? Function()? prevField,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(void Function(bool) callback)? nextField,
-    TResult Function(void Function(bool) callback)? prevField,
+    TResult Function()? nextField,
+    TResult Function()? prevField,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,10 +54,6 @@ mixin _$SignUpEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $SignUpEventCopyWith<SignUpEvent> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -66,8 +61,6 @@ abstract class $SignUpEventCopyWith<$Res> {
   factory $SignUpEventCopyWith(
           SignUpEvent value, $Res Function(SignUpEvent) then) =
       _$SignUpEventCopyWithImpl<$Res, SignUpEvent>;
-  @useResult
-  $Res call({void Function(bool) callback});
 }
 
 /// @nodoc
@@ -79,30 +72,13 @@ class _$SignUpEventCopyWithImpl<$Res, $Val extends SignUpEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? callback = null,
-  }) {
-    return _then(_value.copyWith(
-      callback: null == callback
-          ? _value.callback
-          : callback // ignore: cast_nullable_to_non_nullable
-              as void Function(bool),
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$NextFieldImplCopyWith<$Res>
-    implements $SignUpEventCopyWith<$Res> {
+abstract class _$$NextFieldImplCopyWith<$Res> {
   factory _$$NextFieldImplCopyWith(
           _$NextFieldImpl value, $Res Function(_$NextFieldImpl) then) =
       __$$NextFieldImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({void Function(bool) callback});
 }
 
 /// @nodoc
@@ -112,79 +88,54 @@ class __$$NextFieldImplCopyWithImpl<$Res>
   __$$NextFieldImplCopyWithImpl(
       _$NextFieldImpl _value, $Res Function(_$NextFieldImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? callback = null,
-  }) {
-    return _then(_$NextFieldImpl(
-      null == callback
-          ? _value.callback
-          : callback // ignore: cast_nullable_to_non_nullable
-              as void Function(bool),
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$NextFieldImpl implements NextField {
-  const _$NextFieldImpl(this.callback);
-
-  @override
-  final void Function(bool) callback;
+  const _$NextFieldImpl();
 
   @override
   String toString() {
-    return 'SignUpEvent.nextField(callback: $callback)';
+    return 'SignUpEvent.nextField()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NextFieldImpl &&
-            (identical(other.callback, callback) ||
-                other.callback == callback));
+        (other.runtimeType == runtimeType && other is _$NextFieldImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, callback);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NextFieldImplCopyWith<_$NextFieldImpl> get copyWith =>
-      __$$NextFieldImplCopyWithImpl<_$NextFieldImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(void Function(bool) callback) nextField,
-    required TResult Function(void Function(bool) callback) prevField,
+    required TResult Function() nextField,
+    required TResult Function() prevField,
   }) {
-    return nextField(callback);
+    return nextField();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(void Function(bool) callback)? nextField,
-    TResult? Function(void Function(bool) callback)? prevField,
+    TResult? Function()? nextField,
+    TResult? Function()? prevField,
   }) {
-    return nextField?.call(callback);
+    return nextField?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(void Function(bool) callback)? nextField,
-    TResult Function(void Function(bool) callback)? prevField,
+    TResult Function()? nextField,
+    TResult Function()? prevField,
     required TResult orElse(),
   }) {
     if (nextField != null) {
-      return nextField(callback);
+      return nextField();
     }
     return orElse();
   }
@@ -222,25 +173,14 @@ class _$NextFieldImpl implements NextField {
 }
 
 abstract class NextField implements SignUpEvent {
-  const factory NextField(final void Function(bool) callback) = _$NextFieldImpl;
-
-  @override
-  void Function(bool) get callback;
-  @override
-  @JsonKey(ignore: true)
-  _$$NextFieldImplCopyWith<_$NextFieldImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory NextField() = _$NextFieldImpl;
 }
 
 /// @nodoc
-abstract class _$$PrevFieldImplCopyWith<$Res>
-    implements $SignUpEventCopyWith<$Res> {
+abstract class _$$PrevFieldImplCopyWith<$Res> {
   factory _$$PrevFieldImplCopyWith(
           _$PrevFieldImpl value, $Res Function(_$PrevFieldImpl) then) =
       __$$PrevFieldImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({void Function(bool) callback});
 }
 
 /// @nodoc
@@ -250,79 +190,54 @@ class __$$PrevFieldImplCopyWithImpl<$Res>
   __$$PrevFieldImplCopyWithImpl(
       _$PrevFieldImpl _value, $Res Function(_$PrevFieldImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? callback = null,
-  }) {
-    return _then(_$PrevFieldImpl(
-      null == callback
-          ? _value.callback
-          : callback // ignore: cast_nullable_to_non_nullable
-              as void Function(bool),
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$PrevFieldImpl implements PrevField {
-  const _$PrevFieldImpl(this.callback);
-
-  @override
-  final void Function(bool) callback;
+  const _$PrevFieldImpl();
 
   @override
   String toString() {
-    return 'SignUpEvent.prevField(callback: $callback)';
+    return 'SignUpEvent.prevField()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PrevFieldImpl &&
-            (identical(other.callback, callback) ||
-                other.callback == callback));
+        (other.runtimeType == runtimeType && other is _$PrevFieldImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, callback);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PrevFieldImplCopyWith<_$PrevFieldImpl> get copyWith =>
-      __$$PrevFieldImplCopyWithImpl<_$PrevFieldImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(void Function(bool) callback) nextField,
-    required TResult Function(void Function(bool) callback) prevField,
+    required TResult Function() nextField,
+    required TResult Function() prevField,
   }) {
-    return prevField(callback);
+    return prevField();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(void Function(bool) callback)? nextField,
-    TResult? Function(void Function(bool) callback)? prevField,
+    TResult? Function()? nextField,
+    TResult? Function()? prevField,
   }) {
-    return prevField?.call(callback);
+    return prevField?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(void Function(bool) callback)? nextField,
-    TResult Function(void Function(bool) callback)? prevField,
+    TResult Function()? nextField,
+    TResult Function()? prevField,
     required TResult orElse(),
   }) {
     if (prevField != null) {
-      return prevField(callback);
+      return prevField();
     }
     return orElse();
   }
@@ -360,14 +275,7 @@ class _$PrevFieldImpl implements PrevField {
 }
 
 abstract class PrevField implements SignUpEvent {
-  const factory PrevField(final void Function(bool) callback) = _$PrevFieldImpl;
-
-  @override
-  void Function(bool) get callback;
-  @override
-  @JsonKey(ignore: true)
-  _$$PrevFieldImplCopyWith<_$PrevFieldImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory PrevField() = _$PrevFieldImpl;
 }
 
 /// @nodoc

@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_up_bloc/sign_up_bloc.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
+import 'package:teeth_align_app/src/presentation/auth/views/barcode_field_view.dart';
+import 'package:teeth_align_app/src/presentation/auth/views/code_field_view.dart';
+import 'package:teeth_align_app/src/presentation/auth/views/email_password_field_view.dart';
+import 'package:teeth_align_app/src/presentation/auth/views/finish_view.dart';
 import 'package:teeth_align_app/src/presentation/auth/views/role_field_view.dart';
 import 'package:teeth_align_app/src/shared/buttons/colored_button.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
@@ -39,12 +44,14 @@ class SignUpScreen extends StatelessWidget {
             SUFV.emailPassword => 'Зарегистрироваться в системе',
             SUFV.code => 'Введите код валидаций',
             SUFV.barcode => 'Введите штрихкод с продукта',
+            SUFV.finish => '',
           };
           final stepView = switch (state.currentFieldsView) {
             SUFV.role => const RoleFieldView(),
-            SUFV.emailPassword => const SizedBox(),
-            SUFV.code => const SizedBox(),
-            SUFV.barcode => const SizedBox(),
+            SUFV.emailPassword => const EmailPasswordFieldView(),
+            SUFV.code => const CodeFieldView(),
+            SUFV.barcode => const BarcodeFieldView(),
+            SUFV.finish => const FinishView(),
           };
           return Scaffold(
             body: SafeArea(
@@ -59,47 +66,47 @@ class SignUpScreen extends StatelessWidget {
                       child: const LogoTitle(),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 1.h, bottom: 3.h),
+                      padding: EdgeInsets.only(top: 2.h, bottom: 4.h),
                       child: Row(
                         children: [
                           _StepCircle(
                             step: 1,
-                            isActive: state.currentStepNumber == 1,
+                            isActive: state.currentStepNumber >= 1,
                           ),
                           Expanded(
                             child: _StepLine(
-                              isActive: state.currentStepNumber == 2,
+                              isActive: state.currentStepNumber >= 2,
                             ),
                           ),
                           _StepCircle(
                             step: 2,
-                            isActive: state.currentStepNumber == 2,
+                            isActive: state.currentStepNumber >= 2,
                           ),
                           Expanded(
                             child: _StepLine(
-                              isActive: state.currentStepNumber == 3,
+                              isActive: state.currentStepNumber >= 3,
                             ),
                           ),
                           _StepCircle(
                             step: 3,
-                            isActive: state.currentStepNumber == 3,
+                            isActive: state.currentStepNumber >= 3,
                           ),
                           Expanded(
                             child: _StepLine(
-                              isActive: state.currentStepNumber == 4,
+                              isActive: state.currentStepNumber >= 4,
                             ),
                           ),
                           _StepCircle(
                             step: 4,
-                            isActive: state.currentStepNumber == 4,
+                            isActive: state.currentStepNumber >= 4,
                           ),
                         ],
                       ),
                     ),
                     Text(
                       stepText,
-                      style: context.textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.w600,
+                      style: context.textTheme.headlineSmall?.copyWith(
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
                     Expanded(
@@ -109,7 +116,11 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ),
                     ColoredButton(
-                      onTap: () {},
+                      onTap: state.status != LoadStatus.loading
+                          ? () => context.read<SignUpBloc>().add(
+                                const NextField(),
+                              )
+                          : null,
                       title: 'Зарегистрироваться',
                     ),
                   ],

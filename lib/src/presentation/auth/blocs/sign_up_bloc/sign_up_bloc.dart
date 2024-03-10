@@ -38,6 +38,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         {
           break;
         }
+      default:
+        break;
     }
 
     emit(state.copyWith(
@@ -45,36 +47,30 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         SUFV.role => SUFV.emailPassword,
         SUFV.emailPassword => SUFV.code,
         SUFV.code => SUFV.barcode,
-        SUFV.barcode => SUFV.barcode,
+        SUFV.barcode => SUFV.finish,
+        SUFV.finish => SUFV.finish,
       },
     ));
     emit(state.copyWith(
       currentStepNumber: SUFV.values.indexOf(state.currentFieldsView) + 1,
     ));
-    event.callback(
-      currentFieldsView == SUFV.barcode &&
-          state.currentFieldsView == SUFV.barcode,
-    );
   }
 
   void onPrevField(
     PrevField event,
     Emitter<SignUpState> emit,
   ) {
-    final currentFieldsView = state.currentFieldsView;
     emit(state.copyWith(
       currentFieldsView: switch (state.currentFieldsView) {
         SUFV.role => SUFV.role,
         SUFV.emailPassword => SUFV.role,
         SUFV.code => SUFV.emailPassword,
         SUFV.barcode => SUFV.code,
+        SUFV.finish => SUFV.barcode,
       },
     ));
     emit(state.copyWith(
       currentStepNumber: SUFV.values.indexOf(state.currentFieldsView) + 1,
     ));
-    event.callback(
-      currentFieldsView == SUFV.role && state.currentFieldsView == SUFV.role,
-    );
   }
 }

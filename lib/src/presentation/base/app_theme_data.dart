@@ -4,9 +4,9 @@ import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 
 class AppThemeData {
   static ThemeData get themeData => ThemeData(
-        brightness: Brightness.light,
+        brightness: Brightness.dark,
         primaryColor: AppColors.primary,
-        scaffoldBackgroundColor: AppColors.white,
+        scaffoldBackgroundColor: AppColors.background,
         splashColor: AppColors.transparent,
         focusColor: AppColors.transparent,
         appBarTheme: const AppBarTheme(

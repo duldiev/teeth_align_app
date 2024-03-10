@@ -10,12 +10,12 @@ class AppThemeData {
         splashColor: AppColors.transparent,
         focusColor: AppColors.transparent,
         appBarTheme: const AppBarTheme(
-          backgroundColor: AppColors.secondary,
-          foregroundColor: AppColors.primary,
+          backgroundColor: AppColors.background,
+          foregroundColor: AppColors.white,
           systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: AppColors.primary,
-            statusBarIconBrightness: Brightness.light,
-            statusBarBrightness: Brightness.light,
+            statusBarColor: AppColors.white,
+            statusBarIconBrightness: Brightness.dark,
+            statusBarBrightness: Brightness.dark,
           ),
         ),
         datePickerTheme: DatePickerThemeData(

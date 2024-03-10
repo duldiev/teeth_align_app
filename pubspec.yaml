@@ -11,6 +11,8 @@ dependencies:
   bloc: ^8.1.2
   carousel_slider: ^4.2.1
   chucker_flutter: ^1.6.1
+  circular_countdown_timer: ^0.2.3
+  circular_seek_bar: ^1.1.1
   connectivity_plus: ^5.0.1
   dartz: ^0.10.1
   dio: ^5.3.3

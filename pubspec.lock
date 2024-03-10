@@ -177,6 +177,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.6.3"
+  circular_countdown_timer:
+    dependency: "direct main"
+    description:
+      name: circular_countdown_timer
+      sha256: "9ba5fbc076cedbcbf6190ed86762e679f43d7c67cdd903ea34df059dabdc08d4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.3"
+  circular_seek_bar:
+    dependency: "direct main"
+    description:
+      name: circular_seek_bar
+      sha256: "567ef808513a398045cfb5b4767838270440ef4da07310ca75bf0c89ec678aba"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.1"
   clock:
     dependency: transitive
     description:

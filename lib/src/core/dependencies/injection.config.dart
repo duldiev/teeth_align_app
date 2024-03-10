@@ -17,8 +17,9 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'package:package_info_plus/package_info_plus.dart' as _i8;
 import 'package:shared_preferences/shared_preferences.dart' as _i9;
 
-import '../modules/modules.dart' as _i11;
-import '../services/api_client.dart' as _i10;
+import '../../presentation/auth/blocs/sign_up_bloc/sign_up_bloc.dart' as _i10;
+import '../modules/modules.dart' as _i12;
+import '../services/api_client.dart' as _i11;
 import '../services/network_info.dart' as _i6;
 
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -47,11 +48,12 @@ Future<_i1.GetIt> $initGetIt(
     () => modules.sharedPreferences,
     preResolve: true,
   );
-  gh.lazySingleton<_i10.ApiClient>(() => _i10.ApiClient(
+  gh.factory<_i10.SignUpBloc>(() => _i10.SignUpBloc());
+  gh.lazySingleton<_i11.ApiClient>(() => _i11.ApiClient(
         client: gh<_i4.Dio>(),
         storage: gh<_i5.FlutterSecureStorage>(),
       ));
   return getIt;
 }
 
-class _$Modules extends _i11.Modules {}
+class _$Modules extends _i12.Modules {}

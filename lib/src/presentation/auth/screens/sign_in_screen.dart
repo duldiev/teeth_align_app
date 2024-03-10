@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:gap/gap.dart';
@@ -58,83 +57,11 @@ class SignInScreen extends StatelessWidget {
                 ),
                 isKeyboardVisible
                     ? const SizedBox()
-                    : Expanded(
+                    : const Expanded(
                         flex: 3,
                         child: HideBehindKeyoard(
-                          slideOffset: const Offset(0, 3),
-                          child: Column(
-                            children: [
-                              ColoredButton(
-                                title: 'Войти',
-                                onTap: () {},
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(vertical: 3.h),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child:
-                                          Divider(thickness: 1, endIndent: 4.w),
-                                    ),
-                                    Text(
-                                      'ИЛИ',
-                                      style: context.textTheme.titleLarge
-                                          ?.copyWith(
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Divider(thickness: 1, indent: 4.w),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    decoration: const BoxDecoration(
-                                      color: AppColors.white,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Assets.icons.google.svg(),
-                                  ),
-                                  Gap(8.w),
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    decoration: const BoxDecoration(
-                                      color: AppColors.white,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Assets.icons.apple.svg(),
-                                  )
-                                ],
-                              ),
-                              Gap(4.h),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Не зарегистрированы в системе?',
-                                    style: context.textTheme.bodyMedium,
-                                  ),
-                                  Gap(1.h),
-                                  InkWell(
-                                    onTap: () {},
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Text(
-                                      'Создайте аккаунт',
-                                      style: context.textTheme.titleMedium
-                                          ?.copyWith(
-                                        color: AppColors.primary,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
+                          slideOffset: Offset(0, 3),
+                          child: _BottomView(),
                         ),
                       ),
               ],
@@ -142,6 +69,84 @@ class SignInScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _BottomView extends StatelessWidget {
+  const _BottomView();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ColoredButton(
+          title: 'Войти',
+          onTap: () {},
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 3.h),
+          child: Row(
+            children: [
+              Expanded(
+                child: Divider(thickness: 1, endIndent: 4.w),
+              ),
+              Text(
+                'ИЛИ',
+                style: context.textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Expanded(
+                child: Divider(thickness: 1, indent: 4.w),
+              ),
+            ],
+          ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
+                color: AppColors.white,
+                shape: BoxShape.circle,
+              ),
+              child: Assets.icons.google.svg(),
+            ),
+            Gap(8.w),
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
+                color: AppColors.white,
+                shape: BoxShape.circle,
+              ),
+              child: Assets.icons.apple.svg(),
+            )
+          ],
+        ),
+        Gap(4.h),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Не зарегистрированы в системе?',
+              style: context.textTheme.bodyMedium,
+            ),
+            Gap(1.h),
+            InkWell(
+              onTap: () {},
+              borderRadius: BorderRadius.circular(20),
+              child: Text(
+                'Создайте аккаунт',
+                style: context.textTheme.titleMedium?.copyWith(
+                  color: AppColors.primary,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

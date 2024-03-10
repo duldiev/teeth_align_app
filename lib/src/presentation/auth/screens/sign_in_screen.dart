@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/gen/assets.gen.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/buttons/colored_button.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 import 'package:teeth_align_app/src/shared/inputs/text_input.dart';
@@ -82,7 +83,7 @@ class _BottomView extends StatelessWidget {
       children: [
         ColoredButton(
           title: 'Войти',
-          onTap: () {},
+          onTap: () => context.router.replace(const NavRouter()),
         ),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 3.h),
@@ -135,7 +136,7 @@ class _BottomView extends StatelessWidget {
             ),
             Gap(1.h),
             InkWell(
-              onTap: () {},
+              onTap: () => context.router.replace(const WelcomeRoute()),
               borderRadius: BorderRadius.circular(20),
               child: Text(
                 'Создайте аккаунт',

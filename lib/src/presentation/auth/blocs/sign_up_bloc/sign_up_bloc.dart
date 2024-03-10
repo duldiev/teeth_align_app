@@ -3,6 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
+import 'package:teeth_align_app/src/presentation/base/app.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 
 part 'sign_up_event.dart';
 part 'sign_up_state.dart';
@@ -36,6 +38,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         }
       case SUFV.barcode:
         {
+          break;
+        }
+      case SUFV.finish:
+        {
+          router
+            ..popUntilRoot()
+            ..replace(const NavRouter());
           break;
         }
       default:

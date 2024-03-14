@@ -7,6 +7,7 @@ import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/data/body/sign_in_body.dart';
 import 'package:teeth_align_app/src/domain/repository/i_auth_repository.dart';
+import 'package:teeth_align_app/src/domain/repository/i_profile_repository.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
 
 part 'sign_in_event.dart';
@@ -18,9 +19,11 @@ typedef SIB = SignInBloc;
 @injectable
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final IAuthRepository authRepository;
+  final IProfileRepository profileRepository;
 
   SignInBloc({
     required this.authRepository,
+    required this.profileRepository,
   }) : super(SignInState(signInBody: SignInBody.empty())) {
     on<ChangeField>(onChangeField);
     on<SignIn>(onSignIn);
@@ -78,7 +81,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   ) async {
     emit(state.copyWith(status: LoadStatus.loading));
 
-    var result = await authRepository.getAccount();
+    var result = await profileRepository.getProfile();
 
     if (result.isLeft()) {
       await getIt<FlutterSecureStorage>().delete(key: StorageKeys.token);

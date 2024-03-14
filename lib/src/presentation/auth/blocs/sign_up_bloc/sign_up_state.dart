@@ -6,6 +6,9 @@ class SignUpState with _$SignUpState {
     @Default(LoadStatus.initial) LoadStatus status,
     @Default(SUFV.role) SUFV currentFieldsView,
     @Default(1) int currentStepNumber,
+    @Default(null) RegisterBody? registerBody,
+    @Default(null) ProfileEntity? profileBody,
+    @Default(null) XFile? pickedImage,
   }) = _SignUpState;
 
   const SignUpState._();

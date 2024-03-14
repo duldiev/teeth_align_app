@@ -18,3 +18,13 @@ enum SignUpFieldsView {
 }
 
 enum ThridPartyAuthType { signIn, signUp }
+
+enum ProfileField {
+  username,
+  firstName,
+  lastName,
+  gender,
+  height,
+  birthDate,
+  weight,
+}

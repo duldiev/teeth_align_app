@@ -6,7 +6,7 @@ import 'package:teeth_align_app/src/core/constants/urls.dart';
 import 'package:teeth_align_app/src/core/interceptors/message_interceptor.dart';
 import 'package:teeth_align_app/src/core/interceptors/token_interceptor.dart';
 
-@lazySingleton
+@singleton
 class ApiClient {
   final Dio client;
   final FlutterSecureStorage storage;

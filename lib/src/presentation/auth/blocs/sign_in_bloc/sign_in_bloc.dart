@@ -9,6 +9,8 @@ import 'package:teeth_align_app/src/data/body/sign_in_body.dart';
 import 'package:teeth_align_app/src/domain/repository/i_auth_repository.dart';
 import 'package:teeth_align_app/src/domain/repository/i_profile_repository.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
+import 'package:teeth_align_app/src/router/app_router.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 
 part 'sign_in_event.dart';
 part 'sign_in_state.dart';
@@ -20,10 +22,12 @@ typedef SIB = SignInBloc;
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final IAuthRepository authRepository;
   final IProfileRepository profileRepository;
+  final AppRouter router;
 
   SignInBloc({
     required this.authRepository,
     required this.profileRepository,
+    required this.router,
   }) : super(SignInState(signInBody: SignInBody.empty())) {
     on<ChangeField>(onChangeField);
     on<SignIn>(onSignIn);
@@ -60,7 +64,10 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
     result.fold(
       (l) => emit(state.copyWith(status: LoadStatus.failed)),
-      (r) => emit(state.copyWith(status: LoadStatus.success)),
+      (r) {
+        router.replace(const NavRouter());
+        emit(state.copyWith(status: LoadStatus.success));
+      },
     );
   }
 

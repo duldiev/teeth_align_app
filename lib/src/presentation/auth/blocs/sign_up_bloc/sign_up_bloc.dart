@@ -8,7 +8,7 @@ import 'package:teeth_align_app/src/domain/entity/profile_entity.dart';
 import 'package:teeth_align_app/src/domain/repository/i_auth_repository.dart';
 import 'package:teeth_align_app/src/domain/repository/i_profile_repository.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
-import 'package:teeth_align_app/src/presentation/base/app.dart';
+import 'package:teeth_align_app/src/router/app_router.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
 
 part 'sign_up_event.dart';
@@ -20,11 +20,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   final IAuthRepository authRepository;
   final IProfileRepository profileRepository;
   final ImagePicker imagePicker;
+  final AppRouter router;
 
   SignUpBloc({
     required this.authRepository,
     required this.profileRepository,
     required this.imagePicker,
+    required this.router,
   }) : super(SignUpState()) {
     on<NextField>(onNextField);
     on<PrevField>(onPrevField);

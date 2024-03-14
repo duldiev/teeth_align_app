@@ -37,68 +37,72 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _Provider(
-      child: KeyboardVisibilityBuilder(
-        builder: (p0, isKeyboardVisible) => Scaffold(
-          body: SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5.w),
-              child: Column(
-                children: [
-                  const Expanded(child: LogoTitle()),
-                  Expanded(
-                    flex: 4,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Войти в систему',
-                          style: context.textTheme.headlineSmall?.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        Gap(2.h),
-                        Column(
+      child: BlocBuilder<SignInBloc, SignInState>(
+        builder: (context, state) {
+          return KeyboardVisibilityBuilder(
+            builder: (p0, isKeyboardVisible) => Scaffold(
+              body: SafeArea(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5.w),
+                  child: Column(
+                    children: [
+                      const Expanded(child: LogoTitle()),
+                      Expanded(
+                        flex: 4,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            TextInput(
-                              label: 'E-mail',
-                              hintText: 'Enter',
-                              onChanged: (value) => context.read<SIB>().add(
-                                    ChangeField(
-                                      field: SignInField.email,
-                                      value: value,
-                                    ),
-                                  ),
+                            Text(
+                              'Войти в систему',
+                              style: context.textTheme.headlineSmall?.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                             Gap(2.h),
-                            TextInput(
-                              label: 'Password',
-                              hintText: 'Enter',
-                              onChanged: (value) => context.read<SIB>().add(
-                                    ChangeField(
-                                      field: SignInField.password,
-                                      value: value,
-                                    ),
-                                  ),
+                            Column(
+                              children: [
+                                TextInput(
+                                  label: 'E-mail',
+                                  hintText: 'Enter',
+                                  onChanged: (value) => context.read<SIB>().add(
+                                        ChangeField(
+                                          field: SignInField.email,
+                                          value: value,
+                                        ),
+                                      ),
+                                ),
+                                Gap(2.h),
+                                TextInput(
+                                  label: 'Password',
+                                  hintText: 'Enter',
+                                  onChanged: (value) => context.read<SIB>().add(
+                                        ChangeField(
+                                          field: SignInField.password,
+                                          value: value,
+                                        ),
+                                      ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                      ],
-                    ),
+                      ),
+                      isKeyboardVisible
+                          ? const SizedBox()
+                          : const Expanded(
+                              flex: 3,
+                              child: HideBehindKeyoard(
+                                slideOffset: Offset(0, 3),
+                                child: _BottomView(),
+                              ),
+                            ),
+                    ],
                   ),
-                  isKeyboardVisible
-                      ? const SizedBox()
-                      : const Expanded(
-                          flex: 3,
-                          child: HideBehindKeyoard(
-                            slideOffset: Offset(0, 3),
-                            child: _BottomView(),
-                          ),
-                        ),
-                ],
+                ),
               ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }
@@ -113,7 +117,7 @@ class _BottomView extends StatelessWidget {
       children: [
         ColoredButton(
           title: 'Войти',
-          onTap: () => context.router.replace(const NavRouter()),
+          onTap: () => context.read<SIB>().add(const SignIn()),
         ),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 3.h),

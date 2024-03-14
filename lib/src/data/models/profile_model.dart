@@ -1,3 +1,4 @@
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/enums/user.dart';
 import 'package:teeth_align_app/src/domain/entity/profile_entity.dart';
 
@@ -12,6 +13,7 @@ class ProfileModel extends ProfileEntity {
     required super.birthDate,
     required super.weight,
     super.imageUrl,
+    required super.role,
   });
 
   factory ProfileModel.fromMap(Map<String, dynamic> map) => ProfileModel(
@@ -28,5 +30,6 @@ class ProfileModel extends ProfileEntity {
             ? DateTime.parse(map['birthDate'] as String)
             : null,
         imageUrl: map['imageUrl'] as String?,
+        role: map['role'] != null ? Role.fromString(map['role']) : Role.patient,
       );
 }

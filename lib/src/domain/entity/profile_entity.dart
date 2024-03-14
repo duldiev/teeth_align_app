@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/enums/user.dart';
 
 class ProfileEntity extends Equatable {
@@ -11,6 +12,7 @@ class ProfileEntity extends Equatable {
   final double height;
   final String? bio;
   final String? imageUrl;
+  final Role? role;
 
   const ProfileEntity({
     required this.username,
@@ -22,6 +24,7 @@ class ProfileEntity extends Equatable {
     required this.height,
     required this.weight,
     this.imageUrl,
+    required this.role,
   });
 
   factory ProfileEntity.empty() => const ProfileEntity(
@@ -34,6 +37,7 @@ class ProfileEntity extends Equatable {
         height: 0.0,
         weight: 0.0,
         imageUrl: null,
+        role: null,
       );
 
   Map<String, dynamic> toMap() => {
@@ -45,6 +49,7 @@ class ProfileEntity extends Equatable {
         'gender': gender?.name.toUpperCase(),
         'height': height.toInt(),
         'weight': weight.toInt(),
+        'role': role?.name.toUpperCase(),
       };
 
   ProfileEntity copyWith({
@@ -56,6 +61,7 @@ class ProfileEntity extends Equatable {
     double? weight,
     double? height,
     String? bio,
+    Role? role,
   }) {
     return ProfileEntity(
       username: username ?? this.username,
@@ -66,6 +72,7 @@ class ProfileEntity extends Equatable {
       weight: weight ?? this.weight,
       height: height ?? this.height,
       bio: bio ?? this.bio,
+      role: role ?? this.role,
     );
   }
 
@@ -80,5 +87,6 @@ class ProfileEntity extends Equatable {
         height,
         weight,
         imageUrl,
+        role,
       ];
 }

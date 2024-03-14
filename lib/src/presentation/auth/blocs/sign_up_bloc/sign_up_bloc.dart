@@ -81,6 +81,9 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           ProfileField.weight => state.profileBody?.copyWith(
               weight: event.value,
             ),
+          ProfileField.role => state.profileBody?.copyWith(
+              role: event.value,
+            ),
         },
       ));
 

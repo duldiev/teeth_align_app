@@ -27,4 +27,5 @@ enum ProfileField {
   height,
   birthDate,
   weight,
+  role,
 }

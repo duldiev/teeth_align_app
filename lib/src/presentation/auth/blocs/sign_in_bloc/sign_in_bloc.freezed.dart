@@ -18,33 +18,57 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SignInEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(SignInField field, String value) changeField,
+    required TResult Function() signIn,
+    required TResult Function() signOut,
+    required TResult Function() checkAuthorized,
+    required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function(SignInField field, String value)? changeField,
+    TResult? Function()? signIn,
+    TResult? Function()? signOut,
+    TResult? Function()? checkAuthorized,
+    TResult? Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(SignInField field, String value)? changeField,
+    TResult Function()? signIn,
+    TResult Function()? signOut,
+    TResult Function()? checkAuthorized,
+    TResult Function()? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SignIn value) signIn,
+    required TResult Function(SignOut value) signOut,
+    required TResult Function(CheckAuthorized value) checkAuthorized,
+    required TResult Function(Reset value) reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(CheckAuthorized value)? checkAuthorized,
+    TResult? Function(Reset value)? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SignIn value)? signIn,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(CheckAuthorized value)? checkAuthorized,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,35 +93,197 @@ class _$SignInEventCopyWithImpl<$Res, $Val extends SignInEvent>
 }
 
 /// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
+abstract class _$$ChangeFieldImplCopyWith<$Res> {
+  factory _$$ChangeFieldImplCopyWith(
+          _$ChangeFieldImpl value, $Res Function(_$ChangeFieldImpl) then) =
+      __$$ChangeFieldImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({SignInField field, String value});
 }
 
 /// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$SignInEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+class __$$ChangeFieldImplCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$ChangeFieldImpl>
+    implements _$$ChangeFieldImplCopyWith<$Res> {
+  __$$ChangeFieldImplCopyWithImpl(
+      _$ChangeFieldImpl _value, $Res Function(_$ChangeFieldImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? value = null,
+  }) {
+    return _then(_$ChangeFieldImpl(
+      field: null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as SignInField,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
-  const _$StartedImpl();
+class _$ChangeFieldImpl implements ChangeField {
+  const _$ChangeFieldImpl({required this.field, required this.value});
+
+  @override
+  final SignInField field;
+  @override
+  final String value;
 
   @override
   String toString() {
-    return 'SignInEvent.started()';
+    return 'SignInEvent.changeField(field: $field, value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeFieldImpl &&
+            (identical(other.field, field) || other.field == field) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, field, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeFieldImplCopyWith<_$ChangeFieldImpl> get copyWith =>
+      __$$ChangeFieldImplCopyWithImpl<_$ChangeFieldImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(SignInField field, String value) changeField,
+    required TResult Function() signIn,
+    required TResult Function() signOut,
+    required TResult Function() checkAuthorized,
+    required TResult Function() reset,
+  }) {
+    return changeField(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(SignInField field, String value)? changeField,
+    TResult? Function()? signIn,
+    TResult? Function()? signOut,
+    TResult? Function()? checkAuthorized,
+    TResult? Function()? reset,
+  }) {
+    return changeField?.call(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SignInField field, String value)? changeField,
+    TResult Function()? signIn,
+    TResult Function()? signOut,
+    TResult Function()? checkAuthorized,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (changeField != null) {
+      return changeField(field, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SignIn value) signIn,
+    required TResult Function(SignOut value) signOut,
+    required TResult Function(CheckAuthorized value) checkAuthorized,
+    required TResult Function(Reset value) reset,
+  }) {
+    return changeField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(CheckAuthorized value)? checkAuthorized,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return changeField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SignIn value)? signIn,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(CheckAuthorized value)? checkAuthorized,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (changeField != null) {
+      return changeField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeField implements SignInEvent {
+  const factory ChangeField(
+      {required final SignInField field,
+      required final String value}) = _$ChangeFieldImpl;
+
+  SignInField get field;
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ChangeFieldImplCopyWith<_$ChangeFieldImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SignInImplCopyWith<$Res> {
+  factory _$$SignInImplCopyWith(
+          _$SignInImpl value, $Res Function(_$SignInImpl) then) =
+      __$$SignInImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SignInImplCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$SignInImpl>
+    implements _$$SignInImplCopyWith<$Res> {
+  __$$SignInImplCopyWithImpl(
+      _$SignInImpl _value, $Res Function(_$SignInImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SignInImpl implements SignIn {
+  const _$SignInImpl();
+
+  @override
+  String toString() {
+    return 'SignInEvent.signIn()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SignInImpl);
   }
 
   @override
@@ -106,27 +292,39 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(SignInField field, String value) changeField,
+    required TResult Function() signIn,
+    required TResult Function() signOut,
+    required TResult Function() checkAuthorized,
+    required TResult Function() reset,
   }) {
-    return started();
+    return signIn();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function(SignInField field, String value)? changeField,
+    TResult? Function()? signIn,
+    TResult? Function()? signOut,
+    TResult? Function()? checkAuthorized,
+    TResult? Function()? reset,
   }) {
-    return started?.call();
+    return signIn?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(SignInField field, String value)? changeField,
+    TResult Function()? signIn,
+    TResult Function()? signOut,
+    TResult Function()? checkAuthorized,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (signIn != null) {
+      return signIn();
     }
     return orElse();
   }
@@ -134,69 +332,415 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SignIn value) signIn,
+    required TResult Function(SignOut value) signOut,
+    required TResult Function(CheckAuthorized value) checkAuthorized,
+    required TResult Function(Reset value) reset,
   }) {
-    return started(this);
+    return signIn(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(CheckAuthorized value)? checkAuthorized,
+    TResult? Function(Reset value)? reset,
   }) {
-    return started?.call(this);
+    return signIn?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SignIn value)? signIn,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(CheckAuthorized value)? checkAuthorized,
+    TResult Function(Reset value)? reset,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (signIn != null) {
+      return signIn(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements SignInEvent {
-  const factory _Started() = _$StartedImpl;
+abstract class SignIn implements SignInEvent {
+  const factory SignIn() = _$SignInImpl;
+}
+
+/// @nodoc
+abstract class _$$SignOutImplCopyWith<$Res> {
+  factory _$$SignOutImplCopyWith(
+          _$SignOutImpl value, $Res Function(_$SignOutImpl) then) =
+      __$$SignOutImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SignOutImplCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$SignOutImpl>
+    implements _$$SignOutImplCopyWith<$Res> {
+  __$$SignOutImplCopyWithImpl(
+      _$SignOutImpl _value, $Res Function(_$SignOutImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SignOutImpl implements SignOut {
+  const _$SignOutImpl();
+
+  @override
+  String toString() {
+    return 'SignInEvent.signOut()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SignOutImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(SignInField field, String value) changeField,
+    required TResult Function() signIn,
+    required TResult Function() signOut,
+    required TResult Function() checkAuthorized,
+    required TResult Function() reset,
+  }) {
+    return signOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(SignInField field, String value)? changeField,
+    TResult? Function()? signIn,
+    TResult? Function()? signOut,
+    TResult? Function()? checkAuthorized,
+    TResult? Function()? reset,
+  }) {
+    return signOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SignInField field, String value)? changeField,
+    TResult Function()? signIn,
+    TResult Function()? signOut,
+    TResult Function()? checkAuthorized,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (signOut != null) {
+      return signOut();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SignIn value) signIn,
+    required TResult Function(SignOut value) signOut,
+    required TResult Function(CheckAuthorized value) checkAuthorized,
+    required TResult Function(Reset value) reset,
+  }) {
+    return signOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(CheckAuthorized value)? checkAuthorized,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return signOut?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SignIn value)? signIn,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(CheckAuthorized value)? checkAuthorized,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (signOut != null) {
+      return signOut(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignOut implements SignInEvent {
+  const factory SignOut() = _$SignOutImpl;
+}
+
+/// @nodoc
+abstract class _$$CheckAuthorizedImplCopyWith<$Res> {
+  factory _$$CheckAuthorizedImplCopyWith(_$CheckAuthorizedImpl value,
+          $Res Function(_$CheckAuthorizedImpl) then) =
+      __$$CheckAuthorizedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckAuthorizedImplCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$CheckAuthorizedImpl>
+    implements _$$CheckAuthorizedImplCopyWith<$Res> {
+  __$$CheckAuthorizedImplCopyWithImpl(
+      _$CheckAuthorizedImpl _value, $Res Function(_$CheckAuthorizedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CheckAuthorizedImpl implements CheckAuthorized {
+  const _$CheckAuthorizedImpl();
+
+  @override
+  String toString() {
+    return 'SignInEvent.checkAuthorized()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CheckAuthorizedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(SignInField field, String value) changeField,
+    required TResult Function() signIn,
+    required TResult Function() signOut,
+    required TResult Function() checkAuthorized,
+    required TResult Function() reset,
+  }) {
+    return checkAuthorized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(SignInField field, String value)? changeField,
+    TResult? Function()? signIn,
+    TResult? Function()? signOut,
+    TResult? Function()? checkAuthorized,
+    TResult? Function()? reset,
+  }) {
+    return checkAuthorized?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SignInField field, String value)? changeField,
+    TResult Function()? signIn,
+    TResult Function()? signOut,
+    TResult Function()? checkAuthorized,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (checkAuthorized != null) {
+      return checkAuthorized();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SignIn value) signIn,
+    required TResult Function(SignOut value) signOut,
+    required TResult Function(CheckAuthorized value) checkAuthorized,
+    required TResult Function(Reset value) reset,
+  }) {
+    return checkAuthorized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(CheckAuthorized value)? checkAuthorized,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return checkAuthorized?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SignIn value)? signIn,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(CheckAuthorized value)? checkAuthorized,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (checkAuthorized != null) {
+      return checkAuthorized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckAuthorized implements SignInEvent {
+  const factory CheckAuthorized() = _$CheckAuthorizedImpl;
+}
+
+/// @nodoc
+abstract class _$$ResetImplCopyWith<$Res> {
+  factory _$$ResetImplCopyWith(
+          _$ResetImpl value, $Res Function(_$ResetImpl) then) =
+      __$$ResetImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResetImplCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$ResetImpl>
+    implements _$$ResetImplCopyWith<$Res> {
+  __$$ResetImplCopyWithImpl(
+      _$ResetImpl _value, $Res Function(_$ResetImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ResetImpl implements Reset {
+  const _$ResetImpl();
+
+  @override
+  String toString() {
+    return 'SignInEvent.reset()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResetImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(SignInField field, String value) changeField,
+    required TResult Function() signIn,
+    required TResult Function() signOut,
+    required TResult Function() checkAuthorized,
+    required TResult Function() reset,
+  }) {
+    return reset();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(SignInField field, String value)? changeField,
+    TResult? Function()? signIn,
+    TResult? Function()? signOut,
+    TResult? Function()? checkAuthorized,
+    TResult? Function()? reset,
+  }) {
+    return reset?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SignInField field, String value)? changeField,
+    TResult Function()? signIn,
+    TResult Function()? signOut,
+    TResult Function()? checkAuthorized,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SignIn value) signIn,
+    required TResult Function(SignOut value) signOut,
+    required TResult Function(CheckAuthorized value) checkAuthorized,
+    required TResult Function(Reset value) reset,
+  }) {
+    return reset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(CheckAuthorized value)? checkAuthorized,
+    TResult? Function(Reset value)? reset,
+  }) {
+    return reset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SignIn value)? signIn,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(CheckAuthorized value)? checkAuthorized,
+    TResult Function(Reset value)? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Reset implements SignInEvent {
+  const factory Reset() = _$ResetImpl;
 }
 
 /// @nodoc
 mixin _$SignInState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
+  SignInBody? get signInBody => throw _privateConstructorUsedError;
+  LoadStatus get status => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SignInStateCopyWith<SignInState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -205,6 +749,8 @@ abstract class $SignInStateCopyWith<$Res> {
   factory $SignInStateCopyWith(
           SignInState value, $Res Function(SignInState) then) =
       _$SignInStateCopyWithImpl<$Res, SignInState>;
+  @useResult
+  $Res call({SignInBody? signInBody, LoadStatus status});
 }
 
 /// @nodoc
@@ -216,100 +762,114 @@ class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? signInBody = freezed,
+    Object? status = null,
+  }) {
+    return _then(_value.copyWith(
+      signInBody: freezed == signInBody
+          ? _value.signInBody
+          : signInBody // ignore: cast_nullable_to_non_nullable
+              as SignInBody?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as LoadStatus,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+abstract class _$$SignInStateImplCopyWith<$Res>
+    implements $SignInStateCopyWith<$Res> {
+  factory _$$SignInStateImplCopyWith(
+          _$SignInStateImpl value, $Res Function(_$SignInStateImpl) then) =
+      __$$SignInStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({SignInBody? signInBody, LoadStatus status});
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+class __$$SignInStateImplCopyWithImpl<$Res>
+    extends _$SignInStateCopyWithImpl<$Res, _$SignInStateImpl>
+    implements _$$SignInStateImplCopyWith<$Res> {
+  __$$SignInStateImplCopyWithImpl(
+      _$SignInStateImpl _value, $Res Function(_$SignInStateImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? signInBody = freezed,
+    Object? status = null,
+  }) {
+    return _then(_$SignInStateImpl(
+      signInBody: freezed == signInBody
+          ? _value.signInBody
+          : signInBody // ignore: cast_nullable_to_non_nullable
+              as SignInBody?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as LoadStatus,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+class _$SignInStateImpl extends _SignInState {
+  _$SignInStateImpl({this.signInBody = null, this.status = LoadStatus.initial})
+      : super._();
+
+  @override
+  @JsonKey()
+  final SignInBody? signInBody;
+  @override
+  @JsonKey()
+  final LoadStatus status;
 
   @override
   String toString() {
-    return 'SignInState.initial()';
+    return 'SignInState(signInBody: $signInBody, status: $status)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$SignInStateImpl &&
+            (identical(other.signInBody, signInBody) ||
+                other.signInBody == signInBody) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, signInBody, status);
 
+  @JsonKey(ignore: true)
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  @pragma('vm:prefer-inline')
+  _$$SignInStateImplCopyWith<_$SignInStateImpl> get copyWith =>
+      __$$SignInStateImplCopyWithImpl<_$SignInStateImpl>(this, _$identity);
 }
 
-abstract class _Initial implements SignInState {
-  const factory _Initial() = _$InitialImpl;
+abstract class _SignInState extends SignInState {
+  factory _SignInState(
+      {final SignInBody? signInBody,
+      final LoadStatus status}) = _$SignInStateImpl;
+  _SignInState._() : super._();
+
+  @override
+  SignInBody? get signInBody;
+  @override
+  LoadStatus get status;
+  @override
+  @JsonKey(ignore: true)
+  _$$SignInStateImplCopyWith<_$SignInStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

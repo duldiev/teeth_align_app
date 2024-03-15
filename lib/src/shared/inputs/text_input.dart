@@ -187,7 +187,7 @@ class _TextInputState extends State<TextInput> {
       filled: true,
       hintText: widget.hintText,
       hintStyle: context.textTheme.bodyLarge?.copyWith(
-        color: AppColors.dark,
+        color: AppColors.dark.withOpacity(0.6),
       ),
       prefixIcon: widget.prefixIcon,
       contentPadding: const EdgeInsets.symmetric(

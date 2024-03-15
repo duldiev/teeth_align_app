@@ -61,6 +61,13 @@ class Validators {
     return null;
   }
 
+  static String? patientId(String? value) {
+    if (value?.isEmpty == true) {
+      return '$_emptyText patient id';
+    }
+    return null;
+  }
+
   static String? email(String? value) {
     if (value?.isEmpty == true) {
       return '$_emptyText email';

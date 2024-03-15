@@ -61,6 +61,9 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           SignUpField.role => state.registerBody?.copyWith(
               role: event.value,
             ),
+          SignUpField.patientId => state.registerBody?.copyWith(
+              patientId: event.value,
+            ),
         },
       ));
 
@@ -148,6 +151,11 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         {
           break;
         }
+      case SUFV.patientId:
+        {
+          if (!patientFormKey.currentState!.validate()) return;
+          break;
+        }
       case SUFV.emailPassword:
         {
           if (emailPasswordFormKey.currentState!.validate()) {
@@ -166,10 +174,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           }
           break;
         }
-      case SUFV.patientId:
-        {
-          break;
-        }
+
       case SUFV.finish:
         {
           router
@@ -183,10 +188,10 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
     emit(state.copyWith(
       currentFieldsView: switch (state.currentFieldsView) {
-        SUFV.role => SUFV.emailPassword,
+        SUFV.role => SUFV.patientId,
+        SUFV.patientId => SUFV.emailPassword,
         SUFV.emailPassword => SUFV.code,
-        SUFV.code => SUFV.patientId,
-        SUFV.patientId => SUFV.finish,
+        SUFV.code => SUFV.finish,
         SUFV.finish => SUFV.finish,
       },
     ));
@@ -202,10 +207,10 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     emit(state.copyWith(
       currentFieldsView: switch (state.currentFieldsView) {
         SUFV.role => SUFV.role,
-        SUFV.emailPassword => SUFV.role,
+        SUFV.patientId => SUFV.role,
+        SUFV.emailPassword => SUFV.patientId,
         SUFV.code => SUFV.emailPassword,
-        SUFV.patientId => SUFV.code,
-        SUFV.finish => SUFV.patientId,
+        SUFV.finish => SUFV.code,
       },
     ));
     emit(state.copyWith(

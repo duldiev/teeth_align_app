@@ -7,7 +7,7 @@ import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_up_bloc/sign_up_bloc.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
-import 'package:teeth_align_app/src/presentation/auth/views/barcode_field_view.dart';
+import 'package:teeth_align_app/src/presentation/auth/views/patient_id_field_view.dart';
 import 'package:teeth_align_app/src/presentation/auth/views/code_field_view.dart';
 import 'package:teeth_align_app/src/presentation/auth/views/email_password_field_view.dart';
 import 'package:teeth_align_app/src/presentation/auth/views/finish_view.dart';
@@ -41,16 +41,16 @@ class SignUpScreen extends StatelessWidget {
         builder: (context, state) {
           final stepText = switch (state.currentFieldsView) {
             SUFV.role => 'Выберите роль',
+            SUFV.patientId => 'Введите штрихкод с продукта',
             SUFV.emailPassword => 'Зарегистрироваться в системе',
             SUFV.code => 'Введите код валидаций',
-            SUFV.patientId => 'Введите штрихкод с продукта',
             SUFV.finish => '',
           };
           final stepView = switch (state.currentFieldsView) {
             SUFV.role => RoleFieldView(state: state),
+            SUFV.patientId => const PatientIdFieldView(),
             SUFV.emailPassword => const EmailPasswordFieldView(),
             SUFV.code => const CodeFieldView(),
-            SUFV.patientId => const BarcodeFieldView(),
             SUFV.finish => const FinishView(),
           };
           return Scaffold(

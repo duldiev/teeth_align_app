@@ -30,4 +30,13 @@ class Masks {
     filter: {"#": RegExp(r'[0-9]')},
     type: MaskAutoCompletionType.lazy,
   );
+
+  static MaskTextInputFormatter patientId = MaskTextInputFormatter(
+    mask: '####-&&',
+    filter: {
+      "#": RegExp(r'^[a-zA-Z]+$'),
+      "&": RegExp(r'(\d+)'),
+    },
+    type: MaskAutoCompletionType.lazy,
+  );
 }

@@ -59,7 +59,6 @@ Future<_i1.GetIt> $initGetIt(
   );
   gh.factory<_i15.SignInBloc>(() => _i15.SignInBloc(
         authRepository: gh<_i7.IAuthRepository>(),
-        profileRepository: gh<_i10.IProfileRepository>(),
         router: gh<_i3.AppRouter>(),
       ));
   gh.factory<_i16.SignUpBloc>(() => _i16.SignUpBloc(

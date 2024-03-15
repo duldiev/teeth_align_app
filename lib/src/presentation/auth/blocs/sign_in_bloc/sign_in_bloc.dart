@@ -7,7 +7,6 @@ import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/data/body/sign_in_body.dart';
 import 'package:teeth_align_app/src/domain/repository/i_auth_repository.dart';
-import 'package:teeth_align_app/src/domain/repository/i_profile_repository.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
 import 'package:teeth_align_app/src/router/app_router.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
@@ -21,12 +20,10 @@ typedef SIB = SignInBloc;
 @injectable
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final IAuthRepository authRepository;
-  final IProfileRepository profileRepository;
   final AppRouter router;
 
   SignInBloc({
     required this.authRepository,
-    required this.profileRepository,
     required this.router,
   }) : super(SignInState(signInBody: SignInBody.empty())) {
     on<ChangeField>(onChangeField);
@@ -88,7 +85,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   ) async {
     emit(state.copyWith(status: LoadStatus.loading));
 
-    var result = await profileRepository.getProfile();
+    var result = await authRepository.getAccount();
 
     if (result.isLeft()) {
       await getIt<FlutterSecureStorage>().delete(key: StorageKeys.token);

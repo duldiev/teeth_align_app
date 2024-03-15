@@ -6,15 +6,16 @@ enum SignUpField {
   password,
   passwordConfirm,
   role,
+  patientId,
 }
 
 typedef SUFV = SignUpFieldsView;
 
 enum SignUpFieldsView {
   role,
+  patientId,
   emailPassword, // First enter email, then code field appears ...
   code,
-  patientId,
   finish,
 }
 

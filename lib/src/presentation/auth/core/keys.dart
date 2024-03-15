@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // FORM KEYS
 final emailPasswordFormKey = GlobalKey<FormState>();
-final personalDataFormKey = GlobalKey<FormState>();
+final patientFormKey = GlobalKey<FormState>();
 
 // CROPPER
 final imageCropper = GlobalKey();

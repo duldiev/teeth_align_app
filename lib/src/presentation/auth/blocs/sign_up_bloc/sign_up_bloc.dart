@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
@@ -8,12 +10,15 @@ import 'package:teeth_align_app/src/domain/entity/profile_entity.dart';
 import 'package:teeth_align_app/src/domain/repository/i_auth_repository.dart';
 import 'package:teeth_align_app/src/domain/repository/i_profile_repository.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
+import 'package:teeth_align_app/src/presentation/auth/core/keys.dart';
 import 'package:teeth_align_app/src/router/app_router.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
 
 part 'sign_up_event.dart';
 part 'sign_up_state.dart';
 part 'sign_up_bloc.freezed.dart';
+
+typedef SUB = SignUpBloc;
 
 @injectable
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
@@ -27,7 +32,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     required this.profileRepository,
     required this.imagePicker,
     required this.router,
-  }) : super(SignUpState()) {
+  }) : super(SignUpState(registerBody: RegisterBody.empty())) {
     on<NextField>(onNextField);
     on<PrevField>(onPrevField);
     on<ChangeRegisterField>(onChangeRegisterField);
@@ -52,6 +57,9 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
             ),
           SignUpField.passwordConfirm => state.registerBody?.copyWith(
               passwordConfirm: event.value,
+            ),
+          SignUpField.role => state.registerBody?.copyWith(
+              role: event.value,
             ),
         },
       ));
@@ -89,6 +97,46 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         },
       ));
 
+  Future<bool> onRegister(
+    Emitter<SignUpState> emit,
+  ) async {
+    emit(state.copyWith(status: LoadStatus.loading));
+
+    final result = await authRepository.register(
+      body: state.registerBody!.copyWith(langKey: Platform.localeName),
+    );
+
+    return result.fold(
+      (l) {
+        emit(state.copyWith(status: LoadStatus.failed));
+        return false;
+      },
+      (r) {
+        emit(state.copyWith(status: LoadStatus.success));
+        return true;
+      },
+    );
+  }
+
+  Future<bool> onActivate(
+    Emitter<SignUpState> emit,
+  ) async {
+    emit(state.copyWith(status: LoadStatus.loading));
+
+    final result = await authRepository.activate(body: state.registerBody!);
+
+    return result.fold(
+      (l) {
+        emit(state.copyWith(status: LoadStatus.failed));
+        return false;
+      },
+      (r) {
+        emit(state.copyWith(status: LoadStatus.success));
+        return true;
+      },
+    );
+  }
+
   void onNextField(
     NextField event,
     Emitter<SignUpState> emit,
@@ -102,13 +150,23 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         }
       case SUFV.emailPassword:
         {
+          if (emailPasswordFormKey.currentState!.validate()) {
+            if (!(await onRegister(emit))) return;
+          } else {
+            return;
+          }
           break;
         }
       case SUFV.code:
         {
+          if (state.registerBody!.code.length == 6) {
+            if (!(await onActivate(emit))) return;
+          } else {
+            return;
+          }
           break;
         }
-      case SUFV.barcode:
+      case SUFV.patientId:
         {
           break;
         }
@@ -127,8 +185,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       currentFieldsView: switch (state.currentFieldsView) {
         SUFV.role => SUFV.emailPassword,
         SUFV.emailPassword => SUFV.code,
-        SUFV.code => SUFV.barcode,
-        SUFV.barcode => SUFV.finish,
+        SUFV.code => SUFV.patientId,
+        SUFV.patientId => SUFV.finish,
         SUFV.finish => SUFV.finish,
       },
     ));
@@ -146,8 +204,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         SUFV.role => SUFV.role,
         SUFV.emailPassword => SUFV.role,
         SUFV.code => SUFV.emailPassword,
-        SUFV.barcode => SUFV.code,
-        SUFV.finish => SUFV.barcode,
+        SUFV.patientId => SUFV.code,
+        SUFV.finish => SUFV.patientId,
       },
     ));
     emit(state.copyWith(

@@ -43,14 +43,14 @@ class SignUpScreen extends StatelessWidget {
             SUFV.role => 'Выберите роль',
             SUFV.emailPassword => 'Зарегистрироваться в системе',
             SUFV.code => 'Введите код валидаций',
-            SUFV.barcode => 'Введите штрихкод с продукта',
+            SUFV.patientId => 'Введите штрихкод с продукта',
             SUFV.finish => '',
           };
           final stepView = switch (state.currentFieldsView) {
-            SUFV.role => const RoleFieldView(),
+            SUFV.role => RoleFieldView(state: state),
             SUFV.emailPassword => const EmailPasswordFieldView(),
             SUFV.code => const CodeFieldView(),
-            SUFV.barcode => const BarcodeFieldView(),
+            SUFV.patientId => const BarcodeFieldView(),
             SUFV.finish => const FinishView(),
           };
           return Scaffold(

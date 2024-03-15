@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:equatable/equatable.dart';
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 
 class RegisterBody extends Equatable {
   final String username;
@@ -9,6 +10,7 @@ class RegisterBody extends Equatable {
   final String langKey;
   final String password;
   final String passwordConfirm;
+  final Role role;
 
   const RegisterBody({
     required this.username,
@@ -18,6 +20,7 @@ class RegisterBody extends Equatable {
     required this.password,
     required this.passwordConfirm,
     required this.code,
+    required this.role,
   });
 
   static RegisterBody empty() => RegisterBody(
@@ -28,6 +31,7 @@ class RegisterBody extends Equatable {
         password: '',
         passwordConfirm: '',
         code: '',
+        role: Role.patient,
       );
 
   Map<String, dynamic> toRegisterMap() => {
@@ -49,6 +53,7 @@ class RegisterBody extends Equatable {
     String? password,
     String? passwordConfirm,
     String? code,
+    Role? role,
   }) {
     return RegisterBody(
       username: username ?? this.username,
@@ -58,6 +63,7 @@ class RegisterBody extends Equatable {
       password: password ?? this.password,
       passwordConfirm: passwordConfirm ?? this.passwordConfirm,
       code: code ?? this.code,
+      role: role ?? this.role,
     );
   }
 
@@ -70,5 +76,6 @@ class RegisterBody extends Equatable {
         langKey,
         password,
         passwordConfirm,
+        role,
       ];
 }

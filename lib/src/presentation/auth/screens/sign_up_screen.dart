@@ -14,6 +14,7 @@ import 'package:teeth_align_app/src/presentation/auth/views/finish_view.dart';
 import 'package:teeth_align_app/src/presentation/auth/views/role_field_view.dart';
 import 'package:teeth_align_app/src/shared/buttons/colored_button.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
+import 'package:teeth_align_app/src/shared/tools/hide_behind_keyboard.dart';
 import 'package:teeth_align_app/src/shared/widgets/logo_title.dart';
 
 class _Provider extends StatelessWidget {
@@ -115,13 +116,16 @@ class SignUpScreen extends StatelessWidget {
                         child: stepView,
                       ),
                     ),
-                    ColoredButton(
-                      onTap: state.status != LoadStatus.loading
-                          ? () => context.read<SignUpBloc>().add(
-                                const NextField(),
-                              )
-                          : null,
-                      title: 'Зарегистрироваться',
+                    HideBehindKeyoard(
+                      slideOffset: const Offset(0, 3),
+                      child: ColoredButton(
+                        onTap: state.status != LoadStatus.loading
+                            ? () => context.read<SignUpBloc>().add(
+                                  const NextField(),
+                                )
+                            : null,
+                        title: 'Зарегистрироваться',
+                      ),
                     ),
                   ],
                 ),

@@ -2,11 +2,11 @@ import 'package:equatable/equatable.dart';
 
 class AccountEntity extends Equatable {
   final int id;
-  final String username;
-  final String firstName;
-  final String lastName;
-  final String email;
-  final String langKey;
+  final String? username;
+  final String? firstName;
+  final String? lastName;
+  final String? email;
+  final String? langKey;
 
   const AccountEntity({
     required this.id,

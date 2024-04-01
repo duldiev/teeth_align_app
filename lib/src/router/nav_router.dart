@@ -21,6 +21,7 @@ class _NavRouterState extends State<NavRouter> {
         HomeRoute(),
         CalendarRoute(),
         NotificationRoute(),
+        NotificationRoute(),
       ],
       builder: (context, child) {
         final tabsRouter = AutoTabsRouter.of(context);
@@ -47,6 +48,10 @@ class _NavRouterState extends State<NavRouter> {
               BottomNavigationBarItem(
                 label: 'Notifications',
                 icon: Icon(Icons.notifications),
+              ),
+              BottomNavigationBarItem(
+                label: 'Social',
+                icon: Icon(Icons.supervised_user_circle),
               ),
             ],
           ),

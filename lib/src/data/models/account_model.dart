@@ -12,10 +12,10 @@ class AccountModel extends AccountEntity {
 
   factory AccountModel.fromMap(Map<String, dynamic> map) => AccountModel(
         id: map['id'] as int,
-        username: map['login'] as String,
-        firstName: map['firstName'] as String,
-        lastName: map['lastName'] as String,
-        email: map['email'] as String,
-        langKey: map['langKey'] as String,
+        username: map['login'] as String?,
+        firstName: map['firstName'] as String?,
+        lastName: map['lastName'] as String?,
+        email: map['email'] as String?,
+        langKey: map['langKey'] as String?,
       );
 }

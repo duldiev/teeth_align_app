@@ -7,6 +7,7 @@ class AccountEntity extends Equatable {
   final String? lastName;
   final String? email;
   final String? langKey;
+  final String? avatar;
 
   const AccountEntity({
     required this.id,
@@ -15,6 +16,7 @@ class AccountEntity extends Equatable {
     required this.lastName,
     required this.email,
     required this.langKey,
+    required this.avatar,
   });
 
   @override
@@ -25,5 +27,6 @@ class AccountEntity extends Equatable {
         lastName,
         email,
         langKey,
+        avatar,
       ];
 }

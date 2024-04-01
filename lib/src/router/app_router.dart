@@ -20,6 +20,7 @@ class AppRouter extends $AppRouter {
             AutoRoute(page: HomeRoute.page),
             AutoRoute(page: CalendarRoute.page),
             AutoRoute(page: NotificationRoute.page),
+            AutoRoute(page: SocialRoute.page),
           ],
         ),
       ];

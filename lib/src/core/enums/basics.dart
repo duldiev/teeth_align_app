@@ -10,3 +10,11 @@ enum Role {
 
   static Role fromString(String name) => values.byName(name.toLowerCase());
 }
+
+enum PostType {
+  post,
+  forum,
+  conference;
+
+  static PostType fromString(String name) => values.byName(name.toLowerCase());
+}

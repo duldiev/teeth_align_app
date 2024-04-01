@@ -21,7 +21,7 @@ class _NavRouterState extends State<NavRouter> {
         HomeRoute(),
         CalendarRoute(),
         NotificationRoute(),
-        NotificationRoute(),
+        SocialRoute(),
       ],
       builder: (context, child) {
         final tabsRouter = AutoTabsRouter.of(context);
@@ -36,6 +36,7 @@ class _NavRouterState extends State<NavRouter> {
             backgroundColor: AppColors.background,
             selectedItemColor: AppColors.primary,
             unselectedItemColor: AppColors.white,
+            type: BottomNavigationBarType.fixed,
             items: const [
               BottomNavigationBarItem(
                 label: 'Home',

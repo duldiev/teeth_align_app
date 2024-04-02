@@ -8,6 +8,7 @@ class SocialState with _$SocialState {
     @Default(LoadStatus.initial) LoadStatus createCommentStatus,
     @Default(LoadStatus.initial) LoadStatus createPostStatus,
     @Default(LoadStatus.initial) LoadStatus deleteStatus,
+    @Default(LoadStatus.initial) LoadStatus likeStatus,
     @Default([]) List<PostEntity> posts,
     @Default(null) PostEntity? post,
     @Default([]) List<CommentEntity> comments,

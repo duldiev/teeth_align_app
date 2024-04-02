@@ -68,6 +68,8 @@ class _RoleSelector extends StatelessWidget {
     final asset = switch (role) {
       Role.patient => Assets.images.patient,
       Role.doctor => Assets.images.doctor,
+      Role.mentor => throw UnimplementedError(),
+      Role.admin => throw UnimplementedError(),
     };
     return InkWell(
       onTap: onSelect,
@@ -87,6 +89,8 @@ class _RoleSelector extends StatelessWidget {
               switch (role) {
                 Role.patient => 'Я пациент купивший\nпродукцию teethalign',
                 Role.doctor => 'Я ортодонт\nобслуживающий элайнер',
+                Role.mentor => throw UnimplementedError(),
+                Role.admin => throw UnimplementedError(),
               },
               style: context.textTheme.titleLarge?.copyWith(
                 color: AppColors.black,

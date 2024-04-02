@@ -4,7 +4,8 @@ import 'package:teeth_align_app/src/core/exceptions/failure.dart';
 import 'package:teeth_align_app/src/core/services/base_client.dart';
 import 'package:teeth_align_app/src/data/body/create_post_body.dart';
 import 'package:teeth_align_app/src/data/models/comment_model.dart';
-import 'package:teeth_align_app/src/data/models/social_model.dart';
+import 'package:teeth_align_app/src/data/models/post_model.dart';
+import 'package:teeth_align_app/src/data/params/pagination_params.dart';
 import 'package:teeth_align_app/src/domain/entity/comment_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
 import 'package:teeth_align_app/src/domain/repository/i_social_repository.dart';
@@ -12,8 +13,15 @@ import 'package:teeth_align_app/src/domain/repository/i_social_repository.dart';
 @LazySingleton(as: ISocialRepository)
 class SocialRepository extends BaseClient implements ISocialRepository {
   @override
-  Future<Either<Failure, List<PostEntity>>> getPosts() async {
-    return (await call(RestMethod.get, '/api/v1/post')).fold(
+  Future<Either<Failure, List<PostEntity>>> getPosts([
+    PaginationParams? params,
+  ]) async {
+    return (await call(
+      RestMethod.get,
+      '/api/v1/post',
+      parametres: params?.toMap(),
+    ))
+        .fold(
       (l) => Left(l),
       (r) => Right(
         (r['items'] as List).map((e) => PostModel.fromMap(e)).toList(),
@@ -51,8 +59,16 @@ class SocialRepository extends BaseClient implements ISocialRepository {
   }
 
   @override
-  Future<Either<Failure, List<CommentEntity>>> getPostComments(int id) async {
-    return (await call(RestMethod.get, '/api/v1/post/$id/comment')).fold(
+  Future<Either<Failure, List<CommentEntity>>> getPostComments(
+    int id, [
+    PaginationParams? params,
+  ]) async {
+    return (await call(
+      RestMethod.get,
+      '/api/v1/post/$id/comment',
+      parametres: params?.toMap(),
+    ))
+        .fold(
       (l) => Left(l),
       (r) => Right(
         (r['items'] as List).map((e) => CommentModel.fromMap(e)).toList(),

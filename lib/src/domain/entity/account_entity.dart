@@ -19,6 +19,18 @@ class AccountEntity extends Equatable {
     required this.avatar,
   });
 
+  String get fullName => '$firstName $lastName';
+
+  factory AccountEntity.empty() => const AccountEntity(
+        id: 1,
+        username: 'username',
+        firstName: 'firstName',
+        lastName: 'lastName',
+        email: 'email',
+        langKey: 'langKey',
+        avatar: null,
+      );
+
   @override
   List<Object?> get props => [
         id,

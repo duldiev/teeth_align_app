@@ -26,6 +26,7 @@ mixin _$SocialEvent {
     required TResult Function(int id) deletePost,
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
+    required TResult Function(int id) likePost,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +39,7 @@ mixin _$SocialEvent {
     TResult? Function(int id)? deletePost,
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
+    TResult? Function(int id)? likePost,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +52,7 @@ mixin _$SocialEvent {
     TResult Function(int id)? deletePost,
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
+    TResult Function(int id)? likePost,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +65,7 @@ mixin _$SocialEvent {
     required TResult Function(DeletePost value) deletePost,
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
+    required TResult Function(LikePost value) likePost,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,6 +77,7 @@ mixin _$SocialEvent {
     TResult? Function(DeletePost value)? deletePost,
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
+    TResult? Function(LikePost value)? likePost,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -84,6 +89,7 @@ mixin _$SocialEvent {
     TResult Function(DeletePost value)? deletePost,
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
+    TResult Function(LikePost value)? likePost,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -153,6 +159,7 @@ class _$GetPostsImpl implements GetPosts {
     required TResult Function(int id) deletePost,
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
+    required TResult Function(int id) likePost,
   }) {
     return getPosts();
   }
@@ -168,6 +175,7 @@ class _$GetPostsImpl implements GetPosts {
     TResult? Function(int id)? deletePost,
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
+    TResult? Function(int id)? likePost,
   }) {
     return getPosts?.call();
   }
@@ -183,6 +191,7 @@ class _$GetPostsImpl implements GetPosts {
     TResult Function(int id)? deletePost,
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
+    TResult Function(int id)? likePost,
     required TResult orElse(),
   }) {
     if (getPosts != null) {
@@ -201,6 +210,7 @@ class _$GetPostsImpl implements GetPosts {
     required TResult Function(DeletePost value) deletePost,
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
+    required TResult Function(LikePost value) likePost,
   }) {
     return getPosts(this);
   }
@@ -215,6 +225,7 @@ class _$GetPostsImpl implements GetPosts {
     TResult? Function(DeletePost value)? deletePost,
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
+    TResult? Function(LikePost value)? likePost,
   }) {
     return getPosts?.call(this);
   }
@@ -229,6 +240,7 @@ class _$GetPostsImpl implements GetPosts {
     TResult Function(DeletePost value)? deletePost,
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
+    TResult Function(LikePost value)? likePost,
     required TResult orElse(),
   }) {
     if (getPosts != null) {
@@ -314,6 +326,7 @@ class _$GetPostImpl implements GetPost {
     required TResult Function(int id) deletePost,
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
+    required TResult Function(int id) likePost,
   }) {
     return getPost(id);
   }
@@ -329,6 +342,7 @@ class _$GetPostImpl implements GetPost {
     TResult? Function(int id)? deletePost,
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
+    TResult? Function(int id)? likePost,
   }) {
     return getPost?.call(id);
   }
@@ -344,6 +358,7 @@ class _$GetPostImpl implements GetPost {
     TResult Function(int id)? deletePost,
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
+    TResult Function(int id)? likePost,
     required TResult orElse(),
   }) {
     if (getPost != null) {
@@ -362,6 +377,7 @@ class _$GetPostImpl implements GetPost {
     required TResult Function(DeletePost value) deletePost,
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
+    required TResult Function(LikePost value) likePost,
   }) {
     return getPost(this);
   }
@@ -376,6 +392,7 @@ class _$GetPostImpl implements GetPost {
     TResult? Function(DeletePost value)? deletePost,
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
+    TResult? Function(LikePost value)? likePost,
   }) {
     return getPost?.call(this);
   }
@@ -390,6 +407,7 @@ class _$GetPostImpl implements GetPost {
     TResult Function(DeletePost value)? deletePost,
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
+    TResult Function(LikePost value)? likePost,
     required TResult orElse(),
   }) {
     if (getPost != null) {
@@ -454,6 +472,7 @@ class _$CreatePostImpl implements CreatePost {
     required TResult Function(int id) deletePost,
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
+    required TResult Function(int id) likePost,
   }) {
     return createPost();
   }
@@ -469,6 +488,7 @@ class _$CreatePostImpl implements CreatePost {
     TResult? Function(int id)? deletePost,
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
+    TResult? Function(int id)? likePost,
   }) {
     return createPost?.call();
   }
@@ -484,6 +504,7 @@ class _$CreatePostImpl implements CreatePost {
     TResult Function(int id)? deletePost,
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
+    TResult Function(int id)? likePost,
     required TResult orElse(),
   }) {
     if (createPost != null) {
@@ -502,6 +523,7 @@ class _$CreatePostImpl implements CreatePost {
     required TResult Function(DeletePost value) deletePost,
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
+    required TResult Function(LikePost value) likePost,
   }) {
     return createPost(this);
   }
@@ -516,6 +538,7 @@ class _$CreatePostImpl implements CreatePost {
     TResult? Function(DeletePost value)? deletePost,
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
+    TResult? Function(LikePost value)? likePost,
   }) {
     return createPost?.call(this);
   }
@@ -530,6 +553,7 @@ class _$CreatePostImpl implements CreatePost {
     TResult Function(DeletePost value)? deletePost,
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
+    TResult Function(LikePost value)? likePost,
     required TResult orElse(),
   }) {
     if (createPost != null) {
@@ -626,6 +650,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
     required TResult Function(int id) deletePost,
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
+    required TResult Function(int id) likePost,
   }) {
     return changeCreatePostbody(field, value);
   }
@@ -641,6 +666,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
     TResult? Function(int id)? deletePost,
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
+    TResult? Function(int id)? likePost,
   }) {
     return changeCreatePostbody?.call(field, value);
   }
@@ -656,6 +682,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
     TResult Function(int id)? deletePost,
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
+    TResult Function(int id)? likePost,
     required TResult orElse(),
   }) {
     if (changeCreatePostbody != null) {
@@ -674,6 +701,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
     required TResult Function(DeletePost value) deletePost,
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
+    required TResult Function(LikePost value) likePost,
   }) {
     return changeCreatePostbody(this);
   }
@@ -688,6 +716,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
     TResult? Function(DeletePost value)? deletePost,
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
+    TResult? Function(LikePost value)? likePost,
   }) {
     return changeCreatePostbody?.call(this);
   }
@@ -702,6 +731,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
     TResult Function(DeletePost value)? deletePost,
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
+    TResult Function(LikePost value)? likePost,
     required TResult orElse(),
   }) {
     if (changeCreatePostbody != null) {
@@ -795,6 +825,7 @@ class _$DeletePostImpl implements DeletePost {
     required TResult Function(int id) deletePost,
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
+    required TResult Function(int id) likePost,
   }) {
     return deletePost(id);
   }
@@ -810,6 +841,7 @@ class _$DeletePostImpl implements DeletePost {
     TResult? Function(int id)? deletePost,
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
+    TResult? Function(int id)? likePost,
   }) {
     return deletePost?.call(id);
   }
@@ -825,6 +857,7 @@ class _$DeletePostImpl implements DeletePost {
     TResult Function(int id)? deletePost,
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
+    TResult Function(int id)? likePost,
     required TResult orElse(),
   }) {
     if (deletePost != null) {
@@ -843,6 +876,7 @@ class _$DeletePostImpl implements DeletePost {
     required TResult Function(DeletePost value) deletePost,
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
+    required TResult Function(LikePost value) likePost,
   }) {
     return deletePost(this);
   }
@@ -857,6 +891,7 @@ class _$DeletePostImpl implements DeletePost {
     TResult? Function(DeletePost value)? deletePost,
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
+    TResult? Function(LikePost value)? likePost,
   }) {
     return deletePost?.call(this);
   }
@@ -871,6 +906,7 @@ class _$DeletePostImpl implements DeletePost {
     TResult Function(DeletePost value)? deletePost,
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
+    TResult Function(LikePost value)? likePost,
     required TResult orElse(),
   }) {
     if (deletePost != null) {
@@ -969,6 +1005,7 @@ class _$CreateCommentImpl implements CreateComment {
     required TResult Function(int id) deletePost,
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
+    required TResult Function(int id) likePost,
   }) {
     return createComment(postId, text);
   }
@@ -984,6 +1021,7 @@ class _$CreateCommentImpl implements CreateComment {
     TResult? Function(int id)? deletePost,
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
+    TResult? Function(int id)? likePost,
   }) {
     return createComment?.call(postId, text);
   }
@@ -999,6 +1037,7 @@ class _$CreateCommentImpl implements CreateComment {
     TResult Function(int id)? deletePost,
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
+    TResult Function(int id)? likePost,
     required TResult orElse(),
   }) {
     if (createComment != null) {
@@ -1017,6 +1056,7 @@ class _$CreateCommentImpl implements CreateComment {
     required TResult Function(DeletePost value) deletePost,
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
+    required TResult Function(LikePost value) likePost,
   }) {
     return createComment(this);
   }
@@ -1031,6 +1071,7 @@ class _$CreateCommentImpl implements CreateComment {
     TResult? Function(DeletePost value)? deletePost,
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
+    TResult? Function(LikePost value)? likePost,
   }) {
     return createComment?.call(this);
   }
@@ -1045,6 +1086,7 @@ class _$CreateCommentImpl implements CreateComment {
     TResult Function(DeletePost value)? deletePost,
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
+    TResult Function(LikePost value)? likePost,
     required TResult orElse(),
   }) {
     if (createComment != null) {
@@ -1138,6 +1180,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
     required TResult Function(int id) deletePost,
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
+    required TResult Function(int id) likePost,
   }) {
     return getPostComments(id);
   }
@@ -1153,6 +1196,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
     TResult? Function(int id)? deletePost,
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
+    TResult? Function(int id)? likePost,
   }) {
     return getPostComments?.call(id);
   }
@@ -1168,6 +1212,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
     TResult Function(int id)? deletePost,
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
+    TResult Function(int id)? likePost,
     required TResult orElse(),
   }) {
     if (getPostComments != null) {
@@ -1186,6 +1231,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
     required TResult Function(DeletePost value) deletePost,
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
+    required TResult Function(LikePost value) likePost,
   }) {
     return getPostComments(this);
   }
@@ -1200,6 +1246,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
     TResult? Function(DeletePost value)? deletePost,
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
+    TResult? Function(LikePost value)? likePost,
   }) {
     return getPostComments?.call(this);
   }
@@ -1214,6 +1261,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
     TResult Function(DeletePost value)? deletePost,
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
+    TResult Function(LikePost value)? likePost,
     required TResult orElse(),
   }) {
     if (getPostComments != null) {
@@ -1233,12 +1281,185 @@ abstract class GetPostComments implements SocialEvent {
 }
 
 /// @nodoc
+abstract class _$$LikePostImplCopyWith<$Res> {
+  factory _$$LikePostImplCopyWith(
+          _$LikePostImpl value, $Res Function(_$LikePostImpl) then) =
+      __$$LikePostImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$LikePostImplCopyWithImpl<$Res>
+    extends _$SocialEventCopyWithImpl<$Res, _$LikePostImpl>
+    implements _$$LikePostImplCopyWith<$Res> {
+  __$$LikePostImplCopyWithImpl(
+      _$LikePostImpl _value, $Res Function(_$LikePostImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$LikePostImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LikePostImpl implements LikePost {
+  const _$LikePostImpl(this.id);
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'SocialEvent.likePost(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LikePostImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LikePostImplCopyWith<_$LikePostImpl> get copyWith =>
+      __$$LikePostImplCopyWithImpl<_$LikePostImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getPosts,
+    required TResult Function(int id) getPost,
+    required TResult Function() createPost,
+    required TResult Function(CreatePostBodyField field, dynamic value)
+        changeCreatePostbody,
+    required TResult Function(int id) deletePost,
+    required TResult Function(int postId, String text) createComment,
+    required TResult Function(int id) getPostComments,
+    required TResult Function(int id) likePost,
+  }) {
+    return likePost(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getPosts,
+    TResult? Function(int id)? getPost,
+    TResult? Function()? createPost,
+    TResult? Function(CreatePostBodyField field, dynamic value)?
+        changeCreatePostbody,
+    TResult? Function(int id)? deletePost,
+    TResult? Function(int postId, String text)? createComment,
+    TResult? Function(int id)? getPostComments,
+    TResult? Function(int id)? likePost,
+  }) {
+    return likePost?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getPosts,
+    TResult Function(int id)? getPost,
+    TResult Function()? createPost,
+    TResult Function(CreatePostBodyField field, dynamic value)?
+        changeCreatePostbody,
+    TResult Function(int id)? deletePost,
+    TResult Function(int postId, String text)? createComment,
+    TResult Function(int id)? getPostComments,
+    TResult Function(int id)? likePost,
+    required TResult orElse(),
+  }) {
+    if (likePost != null) {
+      return likePost(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPosts value) getPosts,
+    required TResult Function(GetPost value) getPost,
+    required TResult Function(CreatePost value) createPost,
+    required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
+    required TResult Function(DeletePost value) deletePost,
+    required TResult Function(CreateComment value) createComment,
+    required TResult Function(GetPostComments value) getPostComments,
+    required TResult Function(LikePost value) likePost,
+  }) {
+    return likePost(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(GetPost value)? getPost,
+    TResult? Function(CreatePost value)? createPost,
+    TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
+    TResult? Function(DeletePost value)? deletePost,
+    TResult? Function(CreateComment value)? createComment,
+    TResult? Function(GetPostComments value)? getPostComments,
+    TResult? Function(LikePost value)? likePost,
+  }) {
+    return likePost?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPosts value)? getPosts,
+    TResult Function(GetPost value)? getPost,
+    TResult Function(CreatePost value)? createPost,
+    TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,
+    TResult Function(DeletePost value)? deletePost,
+    TResult Function(CreateComment value)? createComment,
+    TResult Function(GetPostComments value)? getPostComments,
+    TResult Function(LikePost value)? likePost,
+    required TResult orElse(),
+  }) {
+    if (likePost != null) {
+      return likePost(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LikePost implements SocialEvent {
+  const factory LikePost(final int id) = _$LikePostImpl;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$LikePostImplCopyWith<_$LikePostImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$SocialState {
   LoadStatus get status => throw _privateConstructorUsedError;
   LoadStatus get postCommentsStatus => throw _privateConstructorUsedError;
   LoadStatus get createCommentStatus => throw _privateConstructorUsedError;
   LoadStatus get createPostStatus => throw _privateConstructorUsedError;
   LoadStatus get deleteStatus => throw _privateConstructorUsedError;
+  LoadStatus get likeStatus => throw _privateConstructorUsedError;
   List<PostEntity> get posts => throw _privateConstructorUsedError;
   PostEntity? get post => throw _privateConstructorUsedError;
   List<CommentEntity> get comments => throw _privateConstructorUsedError;
@@ -1261,6 +1482,7 @@ abstract class $SocialStateCopyWith<$Res> {
       LoadStatus createCommentStatus,
       LoadStatus createPostStatus,
       LoadStatus deleteStatus,
+      LoadStatus likeStatus,
       List<PostEntity> posts,
       PostEntity? post,
       List<CommentEntity> comments,
@@ -1285,6 +1507,7 @@ class _$SocialStateCopyWithImpl<$Res, $Val extends SocialState>
     Object? createCommentStatus = null,
     Object? createPostStatus = null,
     Object? deleteStatus = null,
+    Object? likeStatus = null,
     Object? posts = null,
     Object? post = freezed,
     Object? comments = null,
@@ -1310,6 +1533,10 @@ class _$SocialStateCopyWithImpl<$Res, $Val extends SocialState>
       deleteStatus: null == deleteStatus
           ? _value.deleteStatus
           : deleteStatus // ignore: cast_nullable_to_non_nullable
+              as LoadStatus,
+      likeStatus: null == likeStatus
+          ? _value.likeStatus
+          : likeStatus // ignore: cast_nullable_to_non_nullable
               as LoadStatus,
       posts: null == posts
           ? _value.posts
@@ -1345,6 +1572,7 @@ abstract class _$$SocialStateImplCopyWith<$Res>
       LoadStatus createCommentStatus,
       LoadStatus createPostStatus,
       LoadStatus deleteStatus,
+      LoadStatus likeStatus,
       List<PostEntity> posts,
       PostEntity? post,
       List<CommentEntity> comments,
@@ -1367,6 +1595,7 @@ class __$$SocialStateImplCopyWithImpl<$Res>
     Object? createCommentStatus = null,
     Object? createPostStatus = null,
     Object? deleteStatus = null,
+    Object? likeStatus = null,
     Object? posts = null,
     Object? post = freezed,
     Object? comments = null,
@@ -1392,6 +1621,10 @@ class __$$SocialStateImplCopyWithImpl<$Res>
       deleteStatus: null == deleteStatus
           ? _value.deleteStatus
           : deleteStatus // ignore: cast_nullable_to_non_nullable
+              as LoadStatus,
+      likeStatus: null == likeStatus
+          ? _value.likeStatus
+          : likeStatus // ignore: cast_nullable_to_non_nullable
               as LoadStatus,
       posts: null == posts
           ? _value._posts
@@ -1422,6 +1655,7 @@ class _$SocialStateImpl extends _SocialState {
       this.createCommentStatus = LoadStatus.initial,
       this.createPostStatus = LoadStatus.initial,
       this.deleteStatus = LoadStatus.initial,
+      this.likeStatus = LoadStatus.initial,
       final List<PostEntity> posts = const [],
       this.post = null,
       final List<CommentEntity> comments = const [],
@@ -1445,6 +1679,9 @@ class _$SocialStateImpl extends _SocialState {
   @override
   @JsonKey()
   final LoadStatus deleteStatus;
+  @override
+  @JsonKey()
+  final LoadStatus likeStatus;
   final List<PostEntity> _posts;
   @override
   @JsonKey()
@@ -1472,7 +1709,7 @@ class _$SocialStateImpl extends _SocialState {
 
   @override
   String toString() {
-    return 'SocialState(status: $status, postCommentsStatus: $postCommentsStatus, createCommentStatus: $createCommentStatus, createPostStatus: $createPostStatus, deleteStatus: $deleteStatus, posts: $posts, post: $post, comments: $comments, createPostBody: $createPostBody)';
+    return 'SocialState(status: $status, postCommentsStatus: $postCommentsStatus, createCommentStatus: $createCommentStatus, createPostStatus: $createPostStatus, deleteStatus: $deleteStatus, likeStatus: $likeStatus, posts: $posts, post: $post, comments: $comments, createPostBody: $createPostBody)';
   }
 
   @override
@@ -1489,6 +1726,8 @@ class _$SocialStateImpl extends _SocialState {
                 other.createPostStatus == createPostStatus) &&
             (identical(other.deleteStatus, deleteStatus) ||
                 other.deleteStatus == deleteStatus) &&
+            (identical(other.likeStatus, likeStatus) ||
+                other.likeStatus == likeStatus) &&
             const DeepCollectionEquality().equals(other._posts, _posts) &&
             (identical(other.post, post) || other.post == post) &&
             const DeepCollectionEquality().equals(other._comments, _comments) &&
@@ -1504,6 +1743,7 @@ class _$SocialStateImpl extends _SocialState {
       createCommentStatus,
       createPostStatus,
       deleteStatus,
+      likeStatus,
       const DeepCollectionEquality().hash(_posts),
       post,
       const DeepCollectionEquality().hash(_comments),
@@ -1523,6 +1763,7 @@ abstract class _SocialState extends SocialState {
       final LoadStatus createCommentStatus,
       final LoadStatus createPostStatus,
       final LoadStatus deleteStatus,
+      final LoadStatus likeStatus,
       final List<PostEntity> posts,
       final PostEntity? post,
       final List<CommentEntity> comments,
@@ -1539,6 +1780,8 @@ abstract class _SocialState extends SocialState {
   LoadStatus get createPostStatus;
   @override
   LoadStatus get deleteStatus;
+  @override
+  LoadStatus get likeStatus;
   @override
   List<PostEntity> get posts;
   @override

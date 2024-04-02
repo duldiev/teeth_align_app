@@ -6,6 +6,8 @@ enum InputSuffixType { none, obsecure }
 
 enum Role {
   patient,
+  mentor,
+  admin,
   doctor;
 
   static Role fromString(String name) => values.byName(name.toLowerCase());

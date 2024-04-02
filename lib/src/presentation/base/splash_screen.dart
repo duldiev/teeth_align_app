@@ -28,16 +28,18 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _Provider(
-      child: BlocListener<SignInBloc, SignInState>(
-        listener: (context, state) {
-          if (state.status == LoadStatus.success) {
-            context.router.replace(const NavRouter());
-          } else {
-            context.router.replace(const WelcomeRoute());
-          }
-        },
-        listenWhen: (prev, curr) => prev.status == LoadStatus.loading,
-        child: const CircularLoader(),
+      child: Scaffold(
+        body: BlocListener<SignInBloc, SignInState>(
+          listener: (context, state) {
+            if (state.status == LoadStatus.success) {
+              context.router.replace(const NavRouter());
+            } else {
+              context.router.replace(const WelcomeRoute());
+            }
+          },
+          listenWhen: (prev, curr) => prev.status == LoadStatus.loading,
+          child: const CircularLoader(),
+        ),
       ),
     );
   }

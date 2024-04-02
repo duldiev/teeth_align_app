@@ -3,6 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/data/body/create_post_body.dart';
+import 'package:teeth_align_app/src/data/params/pagination_params.dart';
+import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/comment_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
 import 'package:teeth_align_app/src/domain/repository/i_social_repository.dart';
@@ -23,6 +25,7 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
     on<DeletePost>(onDeletePost);
     on<CreateComment>(onCreateComment);
     on<GetPostComments>(onGetPostComments);
+    on<LikePost>(onLikePost);
   }
 
   Future<void> onGetPosts(
@@ -31,9 +34,24 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
   ) async {
     emit(state.copyWith(status: LoadStatus.loading));
 
-    (await repository.getPosts()).fold(
-      (l) => emit(state.copyWith(status: LoadStatus.failed)),
-      (r) => emit(state.copyWith(status: LoadStatus.success, posts: r)),
+    final post = PostEntity(
+      id: 1,
+      author: AccountEntity.empty(),
+      text:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+      type: PostType.post,
+      likes: 100,
+      imageUrl:
+          'https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg',
+      isLiked: true,
+    );
+
+    (await repository.getPosts(const PaginationParams())).fold(
+      (l) => emit(state.copyWith(status: LoadStatus.failed, posts: [post])),
+      (r) => emit(state.copyWith(
+        status: LoadStatus.success,
+        posts: [...r, post],
+      )),
     );
   }
 
@@ -111,6 +129,18 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
         postCommentsStatus: LoadStatus.success,
         comments: r,
       )),
+    );
+  }
+
+  Future<void> onLikePost(
+    LikePost event,
+    Emitter<SocialState> emit,
+  ) async {
+    emit(state.copyWith(likeStatus: LoadStatus.loading));
+
+    (await repository.likePost(event.id)).fold(
+      (l) => emit(state.copyWith(likeStatus: LoadStatus.failed)),
+      (r) => emit(state.copyWith(likeStatus: LoadStatus.success)),
     );
   }
 }

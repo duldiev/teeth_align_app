@@ -23,5 +23,6 @@ class AppRouter extends $AppRouter {
             AutoRoute(page: SocialRoute.page),
           ],
         ),
+        AutoRoute(page: SinglePostRoute.page),
       ];
 }

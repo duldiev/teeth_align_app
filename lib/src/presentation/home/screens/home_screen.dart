@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/circular_bar.dart';
+import 'package:teeth_align_app/src/presentation/home/widgets/timer_circular_bar.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 import 'package:teeth_align_app/src/shared/widgets/logo_title.dart';
 
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(
             horizontal: 4.w,
             vertical: 2.h,
@@ -70,10 +71,7 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const CircularBar(
-                    current: 36,
-                    total: 60,
-                  ),
+                  const TimerCircularBar(),
                   Gap(6.w),
                   Text(
                     'Таймер\nвывода',

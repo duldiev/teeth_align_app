@@ -9,9 +9,9 @@ class SocialEvent with _$SocialEvent {
   const factory SocialEvent.createPost() = CreatePost;
 
   const factory SocialEvent.changeCreatePostbody(
-    CreatePostBodyField field,
+    CreatePostBodyField field, [
     dynamic value,
-  ) = ChangeCreatePostbody;
+  ]) = ChangeCreatePostbody;
 
   const factory SocialEvent.deletePost(int id) = DeletePost;
 

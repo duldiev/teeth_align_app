@@ -606,7 +606,7 @@ class __$$ChangeCreatePostbodyImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
-  const _$ChangeCreatePostbodyImpl(this.field, this.value);
+  const _$ChangeCreatePostbodyImpl(this.field, [this.value]);
 
   @override
   final CreatePostBodyField field;
@@ -742,9 +742,8 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
 }
 
 abstract class ChangeCreatePostbody implements SocialEvent {
-  const factory ChangeCreatePostbody(
-          final CreatePostBodyField field, final dynamic value) =
-      _$ChangeCreatePostbodyImpl;
+  const factory ChangeCreatePostbody(final CreatePostBodyField field,
+      [final dynamic value]) = _$ChangeCreatePostbodyImpl;
 
   CreatePostBodyField get field;
   dynamic get value;

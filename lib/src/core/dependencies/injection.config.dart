@@ -71,8 +71,10 @@ Future<_i1.GetIt> $initGetIt(
         imagePicker: gh<_i14.ImagePicker>(),
         router: gh<_i3.AppRouter>(),
       ));
-  gh.factory<_i19.SocialBloc>(
-      () => _i19.SocialBloc(repository: gh<_i12.ISocialRepository>()));
+  gh.factory<_i19.SocialBloc>(() => _i19.SocialBloc(
+        repository: gh<_i12.ISocialRepository>(),
+        imagePicker: gh<_i14.ImagePicker>(),
+      ));
   gh.singleton<_i20.ApiClient>(() => _i20.ApiClient(
         client: gh<_i5.Dio>(),
         storage: gh<_i6.FlutterSecureStorage>(),

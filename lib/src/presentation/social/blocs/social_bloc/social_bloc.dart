@@ -1,5 +1,8 @@
+import 'dart:typed_data';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/data/body/create_post_body.dart';
@@ -15,8 +18,12 @@ part 'social_bloc.freezed.dart';
 @injectable
 class SocialBloc extends Bloc<SocialEvent, SocialState> {
   final ISocialRepository repository;
+  final ImagePicker imagePicker;
 
-  SocialBloc({required this.repository}) : super(SocialState()) {
+  SocialBloc({
+    required this.repository,
+    required this.imagePicker,
+  }) : super(SocialState(createPostBody: CreatePostBody.empty())) {
     on<GetPosts>(onGetPosts);
     on<GetPost>(onGetPost);
     on<CreatePost>(onCreatePost);
@@ -74,10 +81,22 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
     ChangeCreatePostbody event,
     Emitter<SocialState> emit,
   ) async {
+    var value = event.value;
+
+    if (event.field == CPBF.images) {
+      List<XFile?> images = await imagePicker.pickMultiImage();
+      List<Uint8List?> imagesInBytes = [];
+      for (int i = 0; i < images.length; i++) {
+        final byte = await images[i]?.readAsBytes();
+        imagesInBytes.add(byte);
+      }
+      value = imagesInBytes;
+    }
+
     emit(state.copyWith(
       createPostBody: state.createPostBody?.changeField(
         event.field,
-        event.value,
+        value,
       ),
     ));
   }

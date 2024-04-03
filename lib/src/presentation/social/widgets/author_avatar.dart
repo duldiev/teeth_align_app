@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
@@ -17,7 +15,6 @@ class AuthorAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log(account.avatarUrl ?? 'NULL');
     return Container(
       height: dimensions,
       width: dimensions,

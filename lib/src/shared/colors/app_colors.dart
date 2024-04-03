@@ -16,4 +16,5 @@ class AppColors {
   static const Color blue = Colors.blue;
   static const Color red = Colors.red;
   static Color post = const Color.fromARGB(255, 12, 46, 41);
+  static Color upload = const Color.fromARGB(255, 242, 171, 66);
 }

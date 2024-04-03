@@ -5,9 +5,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
+import 'package:teeth_align_app/src/core/services/modal_bottom_sheet.dart';
 import 'package:teeth_align_app/src/presentation/social/blocs/social_bloc/social_bloc.dart';
+import 'package:teeth_align_app/src/presentation/social/views/new_post_view.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/post_tile.dart';
-import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 
 class _Provider extends StatelessWidget {
@@ -37,7 +38,11 @@ class SocialScreen extends StatelessWidget {
               title: const Text('Сообщество'),
               actions: [
                 InkWell(
-                  onTap: () => context.router.push(const NewPostRoute()),
+                  onTap: () => ModalBottomSheet.show(
+                    context,
+                    NewPostView(onCreatedCallback: () {}),
+                    0.9,
+                  ),
                   child: const Icon(
                     FontAwesomeIcons.notesMedical,
                     size: 26,

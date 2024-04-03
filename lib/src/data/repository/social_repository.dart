@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/exceptions/failure.dart';
 import 'package:teeth_align_app/src/core/services/base_client.dart';
@@ -42,7 +43,10 @@ class SocialRepository extends BaseClient implements ISocialRepository {
     return (await call(
       RestMethod.post,
       '/api/v1/post',
-      body: body.toMap(),
+      body: FormData.fromMap(body.toMap()),
+      options: Options(
+        headers: {'Content-Type': 'multipart/form-data'},
+      ),
     ))
         .fold(
       (l) => Left(l),

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
@@ -31,8 +32,18 @@ class SocialScreen extends StatelessWidget {
       child: BlocBuilder<SocialBloc, SocialState>(
         builder: (context, state) {
           return Scaffold(
-            appBar: const MyAppBar(
-              title: Text('Сообщество'),
+            appBar: MyAppBar(
+              title: const Text('Сообщество'),
+              actions: [
+                const InkWell(
+                  // onTap: () => ,
+                  child: Icon(
+                    FontAwesomeIcons.notesMedical,
+                    size: 26,
+                  ),
+                ),
+                Gap(4.w),
+              ],
             ),
             body: SafeArea(
               child: ListView.separated(

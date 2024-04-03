@@ -1,5 +1,4 @@
 import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as services;
@@ -81,6 +80,9 @@ class TextInput extends StatefulWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.suffixType = InputSuffixType.none,
+    this.fillColor,
+    this.hideBorder = false,
+    this.brightness = Brightness.dark,
   });
 
   final String? label;
@@ -157,6 +159,9 @@ class TextInput extends StatefulWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final InputSuffixType suffixType;
+  final Color? fillColor;
+  final bool hideBorder;
+  final Brightness brightness;
 
   @override
   State<TextInput> createState() => _TextInputState();
@@ -182,12 +187,15 @@ class _TextInputState extends State<TextInput> {
       borderRadius: BorderRadius.circular(10),
     );
 
-    final defaultDecoration = InputDecoration(
-      fillColor: AppColors.white,
+    var defaultDecoration = InputDecoration(
+      fillColor: widget.fillColor ?? AppColors.white,
       filled: true,
       hintText: widget.hintText,
       hintStyle: context.textTheme.bodyLarge?.copyWith(
-        color: AppColors.dark.withOpacity(0.6),
+        color: switch (widget.brightness) {
+          Brightness.dark => AppColors.dark.withOpacity(0.6),
+          Brightness.light => AppColors.white80op,
+        },
       ),
       prefixIcon: widget.prefixIcon,
       contentPadding: const EdgeInsets.symmetric(
@@ -198,14 +206,7 @@ class _TextInputState extends State<TextInput> {
         color: AppColors.danger,
         height: 1,
       ),
-      border: inputBorder,
-      focusedBorder: inputBorder,
-      errorBorder: inputBorder.copyWith(
-        borderSide: inputBorder.borderSide.copyWith(
-          color: AppColors.danger,
-        ),
-      ),
-      focusedErrorBorder: inputBorder,
+      border: InputBorder.none,
       suffixIcon: switch (widget.suffixType) {
         InputSuffixType.none => widget.suffixIcon,
         InputSuffixType.obsecure => InkWell(
@@ -218,6 +219,19 @@ class _TextInputState extends State<TextInput> {
           ),
       },
     );
+
+    if (!widget.hideBorder) {
+      defaultDecoration = defaultDecoration.copyWith(
+        border: inputBorder,
+        focusedBorder: inputBorder,
+        errorBorder: inputBorder.copyWith(
+          borderSide: inputBorder.borderSide.copyWith(
+            color: AppColors.danger,
+          ),
+        ),
+        focusedErrorBorder: inputBorder,
+      );
+    }
 
     final textInput = TextFormField(
       restorationId: widget.restorationId,

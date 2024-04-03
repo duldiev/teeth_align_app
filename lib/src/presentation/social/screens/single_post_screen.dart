@@ -1,11 +1,16 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
+import 'package:teeth_align_app/src/domain/entity/comment_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
 import 'package:teeth_align_app/src/presentation/social/blocs/social_bloc/social_bloc.dart';
+import 'package:teeth_align_app/src/presentation/social/views/post_images_url_view.dart';
+import 'package:teeth_align_app/src/presentation/social/widgets/comment_icon.dart';
+import 'package:teeth_align_app/src/presentation/social/widgets/comment_tile.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
@@ -13,16 +18,21 @@ import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/author_avatar.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/like_icon.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
+import 'package:teeth_align_app/src/shared/inputs/text_input.dart';
 
 class _Provider extends StatelessWidget {
-  const _Provider({required this.child});
+  const _Provider({
+    required this.postId,
+    required this.child,
+  });
 
+  final int postId;
   final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(providers: [
-      BlocProvider(create: (_) => getIt<SocialBloc>()..add(const GetPosts())),
+      BlocProvider(create: (_) => getIt<SocialBloc>()..add(GetPost(postId))),
     ], child: child);
   }
 }
@@ -39,6 +49,7 @@ class SinglePostScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _Provider(
+      postId: postId,
       child: BlocBuilder<SocialBloc, SocialState>(
         builder: (context, state) {
           return Scaffold(
@@ -48,9 +59,23 @@ class SinglePostScreen extends StatelessWidget {
             body: switch (state.status) {
               LoadStatus.initial => const SizedBox(),
               LoadStatus.loading => const SizedBox(),
-              LoadStatus.success => _Content(state.post!),
+              LoadStatus.success => _Content(state.post!, state.comments),
               LoadStatus.failed => const SizedBox(),
             },
+            bottomNavigationBar: SafeArea(
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  vertical: 4,
+                  horizontal: 4.w,
+                ),
+                decoration: BoxDecoration(
+                  border: Border(
+                    top: BorderSide(color: AppColors.grey, width: 0.3),
+                  ),
+                ),
+                child: _BottomCommentView(postId: postId),
+              ),
+            ),
           );
         },
       ),
@@ -58,10 +83,70 @@ class SinglePostScreen extends StatelessWidget {
   }
 }
 
+class _BottomCommentView extends StatefulWidget {
+  const _BottomCommentView({
+    required this.postId,
+  });
+
+  final int postId;
+
+  @override
+  State<_BottomCommentView> createState() => _BottomCommentViewState();
+}
+
+class _BottomCommentViewState extends State<_BottomCommentView> {
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    _controller = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const CommentIcon(),
+        Expanded(
+          child: TextInput(
+            controller: _controller,
+            hintText: 'Comment here',
+            fillColor: AppColors.transparent,
+            hideBorder: true,
+            style: context.textTheme.bodyLarge,
+            brightness: Brightness.light,
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            context.read<SocialBloc>().add(
+                  CreateComment(widget.postId, _controller.text),
+                );
+            _controller.clear();
+          },
+          child: const Icon(
+            Icons.arrow_upward_rounded,
+            size: 30,
+            color: AppColors.blue,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 class _Content extends StatelessWidget {
-  const _Content(this.post);
+  const _Content(this.post, this.comments);
 
   final PostEntity post;
+  final List<CommentEntity> comments;
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +156,7 @@ class _Content extends StatelessWidget {
         vertical: 2.h,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Row(
             children: [
@@ -97,32 +183,15 @@ class _Content extends StatelessWidget {
           Text(
             post.text,
             overflow: TextOverflow.ellipsis,
-            maxLines: 4,
+            maxLines: 200,
           ),
-          if (post.imageUrl != null && post.imageUrl!.isNotEmpty) ...[
-            Gap(2.h),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.network(
-                post.imageUrl!,
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ],
           Gap(2.h),
+          PostImagesUrlView(imageUrls: post.imageUrls),
           Row(
             children: [
               LikeIcon(post: post),
               Gap(5.w),
-              InkWell(
-                child: Icon(
-                  FontAwesomeIcons.comment,
-                  size: 28,
-                  color: AppColors.white80op,
-                ),
-              ),
+              const CommentIcon(),
               Gap(5.w),
               InkWell(
                 child: Icon(
@@ -135,6 +204,25 @@ class _Content extends StatelessWidget {
           ),
           Gap(1.h),
           Text('Нравится ${post.likes} людям'),
+          Gap(2.h),
+          Text(
+            'Comments',
+            style: context.textTheme.titleLarge,
+          ),
+          Gap(2.h),
+          ...List.generate(
+            comments.length,
+            (index) => Padding(
+              padding: EdgeInsets.only(bottom: 2.h),
+              child: CommentTile(
+                comment: CommentEntity(
+                  author: comments[index].author,
+                  text: comments[index].text,
+                  createdDate: comments[index].createdDate,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

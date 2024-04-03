@@ -93,10 +93,18 @@ class SocialRepository extends BaseClient implements ISocialRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> createComment(int postId, String text) async {
-    return (await call(RestMethod.post, '/api/v1/post/$postId/comment')).fold(
+  Future<Either<Failure, CommentEntity>> createComment(
+    int postId,
+    String text,
+  ) async {
+    return (await call(
+      RestMethod.post,
+      '/api/v1/post/$postId/comment',
+      body: {'text': text},
+    ))
+        .fold(
       (l) => Left(l),
-      (r) => const Right(unit),
+      (r) => Right(CommentModel.fromMap(r)),
     );
   }
 }

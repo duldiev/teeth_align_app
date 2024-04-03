@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
+import 'package:teeth_align_app/src/presentation/social/views/post_images_url_view.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/author_avatar.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/like_icon.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
@@ -22,6 +23,7 @@ class PostTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => context.router.push(SinglePostRoute(postId: post.id)),
+      borderRadius: BorderRadius.circular(12),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
         decoration: BoxDecoration(
@@ -56,21 +58,10 @@ class PostTile extends StatelessWidget {
             Text(
               post.text,
               overflow: TextOverflow.ellipsis,
-              maxLines: 4,
+              maxLines: post.imageUrls.isNotEmpty ? 6 : 10,
             ),
-            if (post.imageUrl != null && post.imageUrl!.isNotEmpty) ...[
-              Gap(2.h),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  post.imageUrl!,
-                  height: 200,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ],
             Gap(2.h),
+            PostImagesUrlView(imageUrls: post.imageUrls),
             Row(
               children: [
                 LikeIcon(post: post),

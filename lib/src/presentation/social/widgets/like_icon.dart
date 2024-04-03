@@ -18,7 +18,7 @@ class LikeIcon extends StatelessWidget {
     return InkWell(
       onTap: () => context.read<SocialBloc>().add(LikePost(post.id)),
       child: Icon(
-        post.isLiked ? FontAwesomeIcons.heart : FontAwesomeIcons.solidHeart,
+        post.isLiked ? FontAwesomeIcons.solidHeart : FontAwesomeIcons.heart,
         size: 28,
         color: post.isLiked ? AppColors.red : AppColors.white80op,
       ),

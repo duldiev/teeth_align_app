@@ -21,7 +21,7 @@ abstract class ISocialRepository {
     PaginationParams? params,
   ]);
 
-  Future<Either<Failure, Unit>> createComment(int postId, String text);
+  Future<Either<Failure, CommentEntity>> createComment(int postId, String text);
 
   Future<Either<Failure, Unit>> deleteComment(int id);
 

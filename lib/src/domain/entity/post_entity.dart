@@ -9,7 +9,7 @@ class PostEntity extends Equatable {
   final String text;
   final PostType type;
   final int likes;
-  final String? imageUrl;
+  final List<String> imageUrls;
   final bool isLiked;
 
   const PostEntity({
@@ -18,7 +18,7 @@ class PostEntity extends Equatable {
     required this.text,
     required this.type,
     required this.likes,
-    required this.imageUrl,
+    required this.imageUrls,
     required this.isLiked,
   });
 
@@ -29,7 +29,7 @@ class PostEntity extends Equatable {
         text,
         type,
         likes,
-        imageUrl,
+        imageUrls,
         isLiked,
       ];
 
@@ -39,7 +39,7 @@ class PostEntity extends Equatable {
     String? text,
     PostType? type,
     int? likes,
-    String? imageUrl,
+    List<String>? imageUrls,
     bool? isLiked,
   }) {
     return PostEntity(
@@ -48,7 +48,7 @@ class PostEntity extends Equatable {
       text: text ?? this.text,
       type: type ?? this.type,
       likes: likes ?? this.likes,
-      imageUrl: imageUrl ?? this.imageUrl,
+      imageUrls: imageUrls ?? this.imageUrls,
       isLiked: isLiked ?? this.isLiked,
     );
   }

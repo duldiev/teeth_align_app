@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
@@ -7,27 +9,31 @@ class AuthorAvatar extends StatelessWidget {
   const AuthorAvatar({
     super.key,
     required this.account,
+    this.dimensions = 40,
   });
 
   final AccountEntity account;
+  final double dimensions;
 
   @override
   Widget build(BuildContext context) {
+    log(account.avatarUrl ?? 'NULL');
     return Container(
-      height: 40,
-      width: 40,
+      height: dimensions,
+      width: dimensions,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(width: 1, color: AppColors.white),
       ),
       clipBehavior: Clip.hardEdge,
-      child: account.avatar == null || account.avatar?.isEmpty == true
-          ? const Icon(
+      child: account.avatarUrl == null || account.avatarUrl?.isEmpty == true
+          ? Icon(
               FontAwesomeIcons.user,
               color: AppColors.white,
+              size: dimensions / 2,
             )
           : Image.network(
-              account.avatar!,
+              account.avatarUrl!,
               fit: BoxFit.cover,
             ),
     );

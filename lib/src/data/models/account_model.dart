@@ -8,16 +8,16 @@ class AccountModel extends AccountEntity {
     required super.lastName,
     required super.email,
     required super.langKey,
-    required super.avatar,
+    required super.avatarUrl,
   });
 
   factory AccountModel.fromMap(Map<String, dynamic> map) => AccountModel(
         id: map['id'] as int,
         username: map['login'] as String?,
-        firstName: map['firstName'] as String?,
-        lastName: map['lastName'] as String?,
+        firstName: map['firstname'] as String?,
+        lastName: map['lastname'] as String?,
         email: map['email'] as String?,
         langKey: map['langKey'] as String?,
-        avatar: map['avatar'] as String?,
+        avatarUrl: map['avatarUrl'] as String?,
       );
 }

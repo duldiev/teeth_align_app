@@ -15,5 +15,5 @@ class AppColors {
   static const Color success = Colors.green;
   static const Color blue = Colors.blue;
   static const Color red = Colors.red;
-  static const Color post = Color.fromARGB(255, 15, 58, 51);
+  static Color post = const Color.fromARGB(255, 12, 46, 41);
 }

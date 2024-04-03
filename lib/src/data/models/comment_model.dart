@@ -5,10 +5,12 @@ class CommentModel extends CommentEntity {
   const CommentModel({
     required super.author,
     required super.text,
+    required super.createdDate,
   });
 
   factory CommentModel.fromMap(Map<String, dynamic> map) => CommentModel(
         author: AccountModel.fromMap(map['author']),
         text: map['text'] as String,
+        createdDate: DateTime.parse(map['createdDate']),
       );
 }

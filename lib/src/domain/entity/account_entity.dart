@@ -7,7 +7,7 @@ class AccountEntity extends Equatable {
   final String? lastName;
   final String? email;
   final String? langKey;
-  final String? avatar;
+  final String? avatarUrl;
 
   const AccountEntity({
     required this.id,
@@ -16,7 +16,7 @@ class AccountEntity extends Equatable {
     required this.lastName,
     required this.email,
     required this.langKey,
-    required this.avatar,
+    this.avatarUrl,
   });
 
   String get fullName => '$firstName $lastName';
@@ -28,7 +28,6 @@ class AccountEntity extends Equatable {
         lastName: 'lastName',
         email: 'email',
         langKey: 'langKey',
-        avatar: null,
       );
 
   @override
@@ -39,6 +38,6 @@ class AccountEntity extends Equatable {
         lastName,
         email,
         langKey,
-        avatar,
+        avatarUrl,
       ];
 }

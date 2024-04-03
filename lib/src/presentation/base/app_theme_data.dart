@@ -36,7 +36,7 @@ class AppThemeData {
         ),
         dividerTheme: const DividerThemeData(
           color: AppColors.white,
-          thickness: 0.4,
+          thickness: 0.2,
         ),
       );
 }

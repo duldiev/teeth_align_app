@@ -22,5 +22,5 @@ class SocialEvent with _$SocialEvent {
 
   const factory SocialEvent.getPostComments(int id) = GetPostComments;
 
-  const factory SocialEvent.likePost(int id) = LikePost;
+  const factory SocialEvent.likePost(int id, [bool? unlike]) = LikePost;
 }

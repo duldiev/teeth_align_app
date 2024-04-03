@@ -27,6 +27,7 @@ mixin _$SocialEvent {
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
     required TResult Function(int id, bool? unlike) likePost,
+    required TResult Function(XFile iamge) removeImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,6 +41,7 @@ mixin _$SocialEvent {
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
     TResult? Function(int id, bool? unlike)? likePost,
+    TResult? Function(XFile iamge)? removeImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +55,7 @@ mixin _$SocialEvent {
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
     TResult Function(int id, bool? unlike)? likePost,
+    TResult Function(XFile iamge)? removeImage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,6 +69,7 @@ mixin _$SocialEvent {
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
     required TResult Function(LikePost value) likePost,
+    required TResult Function(RemoveImage value) removeImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,6 +82,7 @@ mixin _$SocialEvent {
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
     TResult? Function(LikePost value)? likePost,
+    TResult? Function(RemoveImage value)? removeImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,6 +95,7 @@ mixin _$SocialEvent {
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
     TResult Function(LikePost value)? likePost,
+    TResult Function(RemoveImage value)? removeImage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -160,6 +166,7 @@ class _$GetPostsImpl implements GetPosts {
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
     required TResult Function(int id, bool? unlike) likePost,
+    required TResult Function(XFile iamge) removeImage,
   }) {
     return getPosts();
   }
@@ -176,6 +183,7 @@ class _$GetPostsImpl implements GetPosts {
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
     TResult? Function(int id, bool? unlike)? likePost,
+    TResult? Function(XFile iamge)? removeImage,
   }) {
     return getPosts?.call();
   }
@@ -192,6 +200,7 @@ class _$GetPostsImpl implements GetPosts {
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
     TResult Function(int id, bool? unlike)? likePost,
+    TResult Function(XFile iamge)? removeImage,
     required TResult orElse(),
   }) {
     if (getPosts != null) {
@@ -211,6 +220,7 @@ class _$GetPostsImpl implements GetPosts {
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
     required TResult Function(LikePost value) likePost,
+    required TResult Function(RemoveImage value) removeImage,
   }) {
     return getPosts(this);
   }
@@ -226,6 +236,7 @@ class _$GetPostsImpl implements GetPosts {
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
     TResult? Function(LikePost value)? likePost,
+    TResult? Function(RemoveImage value)? removeImage,
   }) {
     return getPosts?.call(this);
   }
@@ -241,6 +252,7 @@ class _$GetPostsImpl implements GetPosts {
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
     TResult Function(LikePost value)? likePost,
+    TResult Function(RemoveImage value)? removeImage,
     required TResult orElse(),
   }) {
     if (getPosts != null) {
@@ -327,6 +339,7 @@ class _$GetPostImpl implements GetPost {
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
     required TResult Function(int id, bool? unlike) likePost,
+    required TResult Function(XFile iamge) removeImage,
   }) {
     return getPost(id);
   }
@@ -343,6 +356,7 @@ class _$GetPostImpl implements GetPost {
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
     TResult? Function(int id, bool? unlike)? likePost,
+    TResult? Function(XFile iamge)? removeImage,
   }) {
     return getPost?.call(id);
   }
@@ -359,6 +373,7 @@ class _$GetPostImpl implements GetPost {
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
     TResult Function(int id, bool? unlike)? likePost,
+    TResult Function(XFile iamge)? removeImage,
     required TResult orElse(),
   }) {
     if (getPost != null) {
@@ -378,6 +393,7 @@ class _$GetPostImpl implements GetPost {
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
     required TResult Function(LikePost value) likePost,
+    required TResult Function(RemoveImage value) removeImage,
   }) {
     return getPost(this);
   }
@@ -393,6 +409,7 @@ class _$GetPostImpl implements GetPost {
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
     TResult? Function(LikePost value)? likePost,
+    TResult? Function(RemoveImage value)? removeImage,
   }) {
     return getPost?.call(this);
   }
@@ -408,6 +425,7 @@ class _$GetPostImpl implements GetPost {
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
     TResult Function(LikePost value)? likePost,
+    TResult Function(RemoveImage value)? removeImage,
     required TResult orElse(),
   }) {
     if (getPost != null) {
@@ -473,6 +491,7 @@ class _$CreatePostImpl implements CreatePost {
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
     required TResult Function(int id, bool? unlike) likePost,
+    required TResult Function(XFile iamge) removeImage,
   }) {
     return createPost();
   }
@@ -489,6 +508,7 @@ class _$CreatePostImpl implements CreatePost {
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
     TResult? Function(int id, bool? unlike)? likePost,
+    TResult? Function(XFile iamge)? removeImage,
   }) {
     return createPost?.call();
   }
@@ -505,6 +525,7 @@ class _$CreatePostImpl implements CreatePost {
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
     TResult Function(int id, bool? unlike)? likePost,
+    TResult Function(XFile iamge)? removeImage,
     required TResult orElse(),
   }) {
     if (createPost != null) {
@@ -524,6 +545,7 @@ class _$CreatePostImpl implements CreatePost {
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
     required TResult Function(LikePost value) likePost,
+    required TResult Function(RemoveImage value) removeImage,
   }) {
     return createPost(this);
   }
@@ -539,6 +561,7 @@ class _$CreatePostImpl implements CreatePost {
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
     TResult? Function(LikePost value)? likePost,
+    TResult? Function(RemoveImage value)? removeImage,
   }) {
     return createPost?.call(this);
   }
@@ -554,6 +577,7 @@ class _$CreatePostImpl implements CreatePost {
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
     TResult Function(LikePost value)? likePost,
+    TResult Function(RemoveImage value)? removeImage,
     required TResult orElse(),
   }) {
     if (createPost != null) {
@@ -651,6 +675,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
     required TResult Function(int id, bool? unlike) likePost,
+    required TResult Function(XFile iamge) removeImage,
   }) {
     return changeCreatePostbody(field, value);
   }
@@ -667,6 +692,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
     TResult? Function(int id, bool? unlike)? likePost,
+    TResult? Function(XFile iamge)? removeImage,
   }) {
     return changeCreatePostbody?.call(field, value);
   }
@@ -683,6 +709,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
     TResult Function(int id, bool? unlike)? likePost,
+    TResult Function(XFile iamge)? removeImage,
     required TResult orElse(),
   }) {
     if (changeCreatePostbody != null) {
@@ -702,6 +729,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
     required TResult Function(LikePost value) likePost,
+    required TResult Function(RemoveImage value) removeImage,
   }) {
     return changeCreatePostbody(this);
   }
@@ -717,6 +745,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
     TResult? Function(LikePost value)? likePost,
+    TResult? Function(RemoveImage value)? removeImage,
   }) {
     return changeCreatePostbody?.call(this);
   }
@@ -732,6 +761,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
     TResult Function(LikePost value)? likePost,
+    TResult Function(RemoveImage value)? removeImage,
     required TResult orElse(),
   }) {
     if (changeCreatePostbody != null) {
@@ -825,6 +855,7 @@ class _$DeletePostImpl implements DeletePost {
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
     required TResult Function(int id, bool? unlike) likePost,
+    required TResult Function(XFile iamge) removeImage,
   }) {
     return deletePost(id);
   }
@@ -841,6 +872,7 @@ class _$DeletePostImpl implements DeletePost {
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
     TResult? Function(int id, bool? unlike)? likePost,
+    TResult? Function(XFile iamge)? removeImage,
   }) {
     return deletePost?.call(id);
   }
@@ -857,6 +889,7 @@ class _$DeletePostImpl implements DeletePost {
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
     TResult Function(int id, bool? unlike)? likePost,
+    TResult Function(XFile iamge)? removeImage,
     required TResult orElse(),
   }) {
     if (deletePost != null) {
@@ -876,6 +909,7 @@ class _$DeletePostImpl implements DeletePost {
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
     required TResult Function(LikePost value) likePost,
+    required TResult Function(RemoveImage value) removeImage,
   }) {
     return deletePost(this);
   }
@@ -891,6 +925,7 @@ class _$DeletePostImpl implements DeletePost {
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
     TResult? Function(LikePost value)? likePost,
+    TResult? Function(RemoveImage value)? removeImage,
   }) {
     return deletePost?.call(this);
   }
@@ -906,6 +941,7 @@ class _$DeletePostImpl implements DeletePost {
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
     TResult Function(LikePost value)? likePost,
+    TResult Function(RemoveImage value)? removeImage,
     required TResult orElse(),
   }) {
     if (deletePost != null) {
@@ -1005,6 +1041,7 @@ class _$CreateCommentImpl implements CreateComment {
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
     required TResult Function(int id, bool? unlike) likePost,
+    required TResult Function(XFile iamge) removeImage,
   }) {
     return createComment(postId, text);
   }
@@ -1021,6 +1058,7 @@ class _$CreateCommentImpl implements CreateComment {
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
     TResult? Function(int id, bool? unlike)? likePost,
+    TResult? Function(XFile iamge)? removeImage,
   }) {
     return createComment?.call(postId, text);
   }
@@ -1037,6 +1075,7 @@ class _$CreateCommentImpl implements CreateComment {
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
     TResult Function(int id, bool? unlike)? likePost,
+    TResult Function(XFile iamge)? removeImage,
     required TResult orElse(),
   }) {
     if (createComment != null) {
@@ -1056,6 +1095,7 @@ class _$CreateCommentImpl implements CreateComment {
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
     required TResult Function(LikePost value) likePost,
+    required TResult Function(RemoveImage value) removeImage,
   }) {
     return createComment(this);
   }
@@ -1071,6 +1111,7 @@ class _$CreateCommentImpl implements CreateComment {
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
     TResult? Function(LikePost value)? likePost,
+    TResult? Function(RemoveImage value)? removeImage,
   }) {
     return createComment?.call(this);
   }
@@ -1086,6 +1127,7 @@ class _$CreateCommentImpl implements CreateComment {
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
     TResult Function(LikePost value)? likePost,
+    TResult Function(RemoveImage value)? removeImage,
     required TResult orElse(),
   }) {
     if (createComment != null) {
@@ -1180,6 +1222,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
     required TResult Function(int id, bool? unlike) likePost,
+    required TResult Function(XFile iamge) removeImage,
   }) {
     return getPostComments(id);
   }
@@ -1196,6 +1239,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
     TResult? Function(int id, bool? unlike)? likePost,
+    TResult? Function(XFile iamge)? removeImage,
   }) {
     return getPostComments?.call(id);
   }
@@ -1212,6 +1256,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
     TResult Function(int id, bool? unlike)? likePost,
+    TResult Function(XFile iamge)? removeImage,
     required TResult orElse(),
   }) {
     if (getPostComments != null) {
@@ -1231,6 +1276,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
     required TResult Function(LikePost value) likePost,
+    required TResult Function(RemoveImage value) removeImage,
   }) {
     return getPostComments(this);
   }
@@ -1246,6 +1292,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
     TResult? Function(LikePost value)? likePost,
+    TResult? Function(RemoveImage value)? removeImage,
   }) {
     return getPostComments?.call(this);
   }
@@ -1261,6 +1308,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
     TResult Function(LikePost value)? likePost,
+    TResult Function(RemoveImage value)? removeImage,
     required TResult orElse(),
   }) {
     if (getPostComments != null) {
@@ -1360,6 +1408,7 @@ class _$LikePostImpl implements LikePost {
     required TResult Function(int postId, String text) createComment,
     required TResult Function(int id) getPostComments,
     required TResult Function(int id, bool? unlike) likePost,
+    required TResult Function(XFile iamge) removeImage,
   }) {
     return likePost(id, unlike);
   }
@@ -1376,6 +1425,7 @@ class _$LikePostImpl implements LikePost {
     TResult? Function(int postId, String text)? createComment,
     TResult? Function(int id)? getPostComments,
     TResult? Function(int id, bool? unlike)? likePost,
+    TResult? Function(XFile iamge)? removeImage,
   }) {
     return likePost?.call(id, unlike);
   }
@@ -1392,6 +1442,7 @@ class _$LikePostImpl implements LikePost {
     TResult Function(int postId, String text)? createComment,
     TResult Function(int id)? getPostComments,
     TResult Function(int id, bool? unlike)? likePost,
+    TResult Function(XFile iamge)? removeImage,
     required TResult orElse(),
   }) {
     if (likePost != null) {
@@ -1411,6 +1462,7 @@ class _$LikePostImpl implements LikePost {
     required TResult Function(CreateComment value) createComment,
     required TResult Function(GetPostComments value) getPostComments,
     required TResult Function(LikePost value) likePost,
+    required TResult Function(RemoveImage value) removeImage,
   }) {
     return likePost(this);
   }
@@ -1426,6 +1478,7 @@ class _$LikePostImpl implements LikePost {
     TResult? Function(CreateComment value)? createComment,
     TResult? Function(GetPostComments value)? getPostComments,
     TResult? Function(LikePost value)? likePost,
+    TResult? Function(RemoveImage value)? removeImage,
   }) {
     return likePost?.call(this);
   }
@@ -1441,6 +1494,7 @@ class _$LikePostImpl implements LikePost {
     TResult Function(CreateComment value)? createComment,
     TResult Function(GetPostComments value)? getPostComments,
     TResult Function(LikePost value)? likePost,
+    TResult Function(RemoveImage value)? removeImage,
     required TResult orElse(),
   }) {
     if (likePost != null) {
@@ -1457,6 +1511,184 @@ abstract class LikePost implements SocialEvent {
   bool? get unlike;
   @JsonKey(ignore: true)
   _$$LikePostImplCopyWith<_$LikePostImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveImageImplCopyWith<$Res> {
+  factory _$$RemoveImageImplCopyWith(
+          _$RemoveImageImpl value, $Res Function(_$RemoveImageImpl) then) =
+      __$$RemoveImageImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({XFile iamge});
+}
+
+/// @nodoc
+class __$$RemoveImageImplCopyWithImpl<$Res>
+    extends _$SocialEventCopyWithImpl<$Res, _$RemoveImageImpl>
+    implements _$$RemoveImageImplCopyWith<$Res> {
+  __$$RemoveImageImplCopyWithImpl(
+      _$RemoveImageImpl _value, $Res Function(_$RemoveImageImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? iamge = null,
+  }) {
+    return _then(_$RemoveImageImpl(
+      null == iamge
+          ? _value.iamge
+          : iamge // ignore: cast_nullable_to_non_nullable
+              as XFile,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveImageImpl implements RemoveImage {
+  const _$RemoveImageImpl(this.iamge);
+
+  @override
+  final XFile iamge;
+
+  @override
+  String toString() {
+    return 'SocialEvent.removeImage(iamge: $iamge)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveImageImpl &&
+            (identical(other.iamge, iamge) || other.iamge == iamge));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, iamge);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveImageImplCopyWith<_$RemoveImageImpl> get copyWith =>
+      __$$RemoveImageImplCopyWithImpl<_$RemoveImageImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getPosts,
+    required TResult Function(int id) getPost,
+    required TResult Function() createPost,
+    required TResult Function(CreatePostBodyField field, dynamic value)
+        changeCreatePostbody,
+    required TResult Function(int id) deletePost,
+    required TResult Function(int postId, String text) createComment,
+    required TResult Function(int id) getPostComments,
+    required TResult Function(int id, bool? unlike) likePost,
+    required TResult Function(XFile iamge) removeImage,
+  }) {
+    return removeImage(iamge);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getPosts,
+    TResult? Function(int id)? getPost,
+    TResult? Function()? createPost,
+    TResult? Function(CreatePostBodyField field, dynamic value)?
+        changeCreatePostbody,
+    TResult? Function(int id)? deletePost,
+    TResult? Function(int postId, String text)? createComment,
+    TResult? Function(int id)? getPostComments,
+    TResult? Function(int id, bool? unlike)? likePost,
+    TResult? Function(XFile iamge)? removeImage,
+  }) {
+    return removeImage?.call(iamge);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getPosts,
+    TResult Function(int id)? getPost,
+    TResult Function()? createPost,
+    TResult Function(CreatePostBodyField field, dynamic value)?
+        changeCreatePostbody,
+    TResult Function(int id)? deletePost,
+    TResult Function(int postId, String text)? createComment,
+    TResult Function(int id)? getPostComments,
+    TResult Function(int id, bool? unlike)? likePost,
+    TResult Function(XFile iamge)? removeImage,
+    required TResult orElse(),
+  }) {
+    if (removeImage != null) {
+      return removeImage(iamge);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPosts value) getPosts,
+    required TResult Function(GetPost value) getPost,
+    required TResult Function(CreatePost value) createPost,
+    required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
+    required TResult Function(DeletePost value) deletePost,
+    required TResult Function(CreateComment value) createComment,
+    required TResult Function(GetPostComments value) getPostComments,
+    required TResult Function(LikePost value) likePost,
+    required TResult Function(RemoveImage value) removeImage,
+  }) {
+    return removeImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(GetPost value)? getPost,
+    TResult? Function(CreatePost value)? createPost,
+    TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
+    TResult? Function(DeletePost value)? deletePost,
+    TResult? Function(CreateComment value)? createComment,
+    TResult? Function(GetPostComments value)? getPostComments,
+    TResult? Function(LikePost value)? likePost,
+    TResult? Function(RemoveImage value)? removeImage,
+  }) {
+    return removeImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPosts value)? getPosts,
+    TResult Function(GetPost value)? getPost,
+    TResult Function(CreatePost value)? createPost,
+    TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,
+    TResult Function(DeletePost value)? deletePost,
+    TResult Function(CreateComment value)? createComment,
+    TResult Function(GetPostComments value)? getPostComments,
+    TResult Function(LikePost value)? likePost,
+    TResult Function(RemoveImage value)? removeImage,
+    required TResult orElse(),
+  }) {
+    if (removeImage != null) {
+      return removeImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveImage implements SocialEvent {
+  const factory RemoveImage(final XFile iamge) = _$RemoveImageImpl;
+
+  XFile get iamge;
+  @JsonKey(ignore: true)
+  _$$RemoveImageImplCopyWith<_$RemoveImageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
@@ -32,6 +30,7 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
     on<CreateComment>(onCreateComment);
     on<GetPostComments>(onGetPostComments);
     on<LikePost>(onLikePost);
+    on<RemoveImage>(onRemoveImage);
   }
 
   Future<void> onGetPosts(
@@ -84,13 +83,11 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
     var value = event.value;
 
     if (event.field == CPBF.images) {
-      List<XFile?> images = await imagePicker.pickMultiImage();
-      List<Uint8List?> imagesInBytes = [];
-      for (int i = 0; i < images.length; i++) {
-        final byte = await images[i]?.readAsBytes();
-        imagesInBytes.add(byte);
-      }
-      value = imagesInBytes;
+      List<XFile?> images = await imagePicker.pickMultiImage(
+        maxWidth: 1000,
+        maxHeight: 1000,
+      );
+      value = images;
     }
 
     emit(state.copyWith(
@@ -172,5 +169,16 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
         emit(state.copyWith(likeStatus: LoadStatus.success, posts: posts));
       },
     );
+  }
+
+  void onRemoveImage(
+    RemoveImage event,
+    Emitter<SocialState> emit,
+  ) async {
+    List<XFile?> newImagesList = [...(state.createPostBody?.images ?? [])];
+    newImagesList.remove(event.iamge);
+    emit(state.copyWith(
+      createPostBody: state.createPostBody?.copyWith(images: newImagesList),
+    ));
   }
 }

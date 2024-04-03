@@ -11,4 +11,8 @@ extension StringExtensions on String? {
     if (this == null) return false;
     return num.tryParse(this!.replaceAll(RegExp(r','), '.')) != null;
   }
+
+  String capitalize() => this == null
+      ? ''
+      : '${this![0].toUpperCase()}${this!.substring(1).toLowerCase()}';
 }

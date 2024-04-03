@@ -43,7 +43,7 @@ class SocialRepository extends BaseClient implements ISocialRepository {
     return (await call(
       RestMethod.post,
       '/api/v1/post',
-      body: FormData.fromMap(body.toMap()),
+      body: FormData.fromMap(await body.toMap()),
       options: Options(
         headers: {'Content-Type': 'multipart/form-data'},
       ),

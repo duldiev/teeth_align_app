@@ -1,8 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
+import 'package:image_picker/image_picker.dart';
 
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:uuid/uuid.dart';
@@ -16,7 +16,7 @@ enum CreatePostBodyField {
 }
 
 class CreatePostBody extends Equatable {
-  final List<Uint8List?>? images;
+  final List<XFile?>? images;
   final String? text;
   final PostType? type;
 
@@ -42,18 +42,24 @@ class CreatePostBody extends Equatable {
         CreatePostBodyField.type => copyWith(type: value),
       };
 
-  Map<String, dynamic> toMap() => {
-        'images': images
-            ?.map((image) => image != null
-                ? MultipartFile.fromBytes(
-                    image,
-                    filename: const Uuid().v1(),
-                  )
-                : null)
-            .toList(),
-        'text': text,
-        'type': type,
-      };
+  Future<Map<String, dynamic>> toMap() async {
+    List<Uint8List?> imagesInBytes = [];
+    for (int i = 0; i < (images?.length ?? 0); i++) {
+      final byte = await images![i]?.readAsBytes();
+      imagesInBytes.add(byte);
+    }
+    return {
+      'images': imagesInBytes.map((image) {
+        if (image == null) return null;
+        return MultipartFile.fromBytes(
+          image,
+          filename: const Uuid().v1(),
+        );
+      }).toList(),
+      'text': text,
+      'type': type?.name.toUpperCase(),
+    };
+  }
 
   @override
   List<Object?> get props => [
@@ -63,7 +69,7 @@ class CreatePostBody extends Equatable {
       ];
 
   CreatePostBody copyWith({
-    List<Uint8List>? images,
+    List<XFile?>? images,
     String? text,
     PostType? type,
   }) {

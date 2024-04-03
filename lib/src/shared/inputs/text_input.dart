@@ -242,7 +242,10 @@ class _TextInputState extends State<TextInput> {
       textInputAction: widget.textInputAction,
       style: widget.style ??
           context.textTheme.bodyLarge?.copyWith(
-            color: AppColors.black,
+            color: switch (widget.brightness) {
+              Brightness.dark => AppColors.black,
+              Brightness.light => AppColors.white80op,
+            },
             fontWeight: FontWeight.w600,
           ),
       strutStyle: widget.strutStyle,

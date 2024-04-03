@@ -24,8 +24,8 @@ class ApiClient {
       baseUrl: URLs.baseUrl,
       responseType: ResponseType.json,
       contentType: 'application/json',
-      connectTimeout: const Duration(seconds: 10),
-      receiveTimeout: const Duration(seconds: 10),
+      connectTimeout: const Duration(seconds: 20),
+      receiveTimeout: const Duration(seconds: 20),
     );
   }
 

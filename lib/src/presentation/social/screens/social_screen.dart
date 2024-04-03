@@ -7,6 +7,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/presentation/social/blocs/social_bloc/social_bloc.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/post_tile.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 
 class _Provider extends StatelessWidget {
@@ -35,9 +36,9 @@ class SocialScreen extends StatelessWidget {
             appBar: MyAppBar(
               title: const Text('Сообщество'),
               actions: [
-                const InkWell(
-                  // onTap: () => ,
-                  child: Icon(
+                InkWell(
+                  onTap: () => context.router.push(const NewPostRoute()),
+                  child: const Icon(
                     FontAwesomeIcons.notesMedical,
                     size: 26,
                   ),

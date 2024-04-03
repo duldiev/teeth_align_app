@@ -24,5 +24,9 @@ class AppRouter extends $AppRouter {
           ],
         ),
         AutoRoute(page: SinglePostRoute.page),
+        CustomRoute(
+          page: NewPostRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
       ];
 }

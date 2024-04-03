@@ -11,6 +11,7 @@ class PostModel extends PostEntity {
     required super.likes,
     required super.imageUrls,
     required super.isLiked,
+    required super.publishedDate,
   });
 
   factory PostModel.fromMap(Map<String, dynamic> map) => PostModel(
@@ -25,5 +26,6 @@ class PostModel extends PostEntity {
             ? (map['imagesUrls'] as List).map((e) => e as String).toList()
             : [],
         isLiked: map['isLiked'] as bool? ?? true,
+        publishedDate: DateTime.parse(map['publishedDate']),
       );
 }

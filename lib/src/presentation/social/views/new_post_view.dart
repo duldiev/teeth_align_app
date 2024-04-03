@@ -30,23 +30,12 @@ class _Provider extends StatelessWidget {
 }
 
 class NewPostView extends StatelessWidget {
-  const NewPostView({
-    super.key,
-    required this.onCreatedCallback,
-  });
-
-  final VoidCallback onCreatedCallback;
+  const NewPostView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return _Provider(
-      child: BlocConsumer<SocialBloc, SocialState>(
-        listener: (context, state) {
-          if (state.createPostStatus == LoadStatus.success) {
-            onCreatedCallback();
-            context.router.maybePop();
-          }
-        },
+      child: BlocBuilder<SocialBloc, SocialState>(
         builder: (context, state) {
           if (state.createPostStatus == LoadStatus.loading) {
             return const CircularLoader();
@@ -165,10 +154,6 @@ class NewPostView extends StatelessWidget {
       ),
     );
   }
-
-  void onCreate(BuildContext context) => context.read<SocialBloc>().add(
-        const CreatePost(),
-      );
 }
 
 class NewPostImageTile extends StatelessWidget {
@@ -274,7 +259,7 @@ class PostTypeSelectDialog extends StatelessWidget {
       backgroundColor: AppColors.transparent,
       child: Container(
         padding: EdgeInsets.symmetric(
-          vertical: 10,
+          vertical: 14,
           horizontal: 5.w,
         ),
         decoration: BoxDecoration(
@@ -289,11 +274,19 @@ class PostTypeSelectDialog extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
-          children: PostType.values
-              .map((e) => PostTypeSelectTile(
-                    type: e,
-                  ))
-              .toList(),
+          children: [
+            Text(
+              'Select type',
+              style: context.textTheme.headlineMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const Gap(10),
+            const Divider(),
+            ...PostType.values.map((e) => PostTypeSelectTile(
+                  type: e,
+                )),
+          ],
         ),
       ),
     );

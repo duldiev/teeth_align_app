@@ -11,6 +11,7 @@ class PostEntity extends Equatable {
   final int likes;
   final List<String> imageUrls;
   final bool isLiked;
+  final DateTime publishedDate;
 
   const PostEntity({
     required this.id,
@@ -20,6 +21,7 @@ class PostEntity extends Equatable {
     required this.likes,
     required this.imageUrls,
     required this.isLiked,
+    required this.publishedDate,
   });
 
   @override
@@ -31,6 +33,7 @@ class PostEntity extends Equatable {
         likes,
         imageUrls,
         isLiked,
+        publishedDate,
       ];
 
   PostEntity copyWith({
@@ -41,6 +44,7 @@ class PostEntity extends Equatable {
     int? likes,
     List<String>? imageUrls,
     bool? isLiked,
+    DateTime? publishedDate,
   }) {
     return PostEntity(
       id: id ?? this.id,
@@ -50,6 +54,7 @@ class PostEntity extends Equatable {
       likes: likes ?? this.likes,
       imageUrls: imageUrls ?? this.imageUrls,
       isLiked: isLiked ?? this.isLiked,
+      publishedDate: publishedDate ?? this.publishedDate,
     );
   }
 }

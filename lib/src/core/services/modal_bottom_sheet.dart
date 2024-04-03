@@ -3,13 +3,15 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 
+typedef MBS = ModalBottomSheet;
+
 class ModalBottomSheet {
-  static void show(
+  static Future<T?> show<T>(
     BuildContext context,
     Widget content, [
     double heightFactor = 0.8,
   ]) =>
-      showModalBottomSheet(
+      showModalBottomSheet<T>(
         context: context,
         isScrollControlled: true,
         isDismissible: true,

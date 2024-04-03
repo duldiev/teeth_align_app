@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
+import 'package:teeth_align_app/src/core/extensions/date_extension.dart';
 import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
 import 'package:teeth_align_app/src/presentation/social/views/post_images_url_view.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/author_avatar.dart';
@@ -44,11 +45,22 @@ class PostTile extends StatelessWidget {
                       post.author.fullName,
                       style: context.textTheme.titleMedium,
                     ),
-                    Text(
-                      post.type.name.toUpperCase(),
-                      style: context.textTheme.titleSmall?.copyWith(
-                        color: AppColors.blue,
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          post.type.name.toUpperCase(),
+                          style: context.textTheme.titleSmall?.copyWith(
+                            color: AppColors.blue,
+                          ),
+                        ),
+                        const Gap(5),
+                        Text(
+                          post.publishedDate.howLongAgo(),
+                          style: context.textTheme.titleSmall?.copyWith(
+                            color: AppColors.grey.withOpacity(0.6),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 )

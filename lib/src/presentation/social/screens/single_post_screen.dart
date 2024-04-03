@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
+import 'package:teeth_align_app/src/core/extensions/date_extension.dart';
 import 'package:teeth_align_app/src/domain/entity/comment_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
 import 'package:teeth_align_app/src/presentation/social/blocs/social_bloc/social_bloc.dart';
@@ -169,11 +170,22 @@ class _Content extends StatelessWidget {
                     post.author.fullName,
                     style: context.textTheme.titleMedium,
                   ),
-                  Text(
-                    post.type.name.toUpperCase(),
-                    style: context.textTheme.titleSmall?.copyWith(
-                      color: AppColors.blue,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        post.type.name.toUpperCase(),
+                        style: context.textTheme.titleSmall?.copyWith(
+                          color: AppColors.blue,
+                        ),
+                      ),
+                      const Gap(5),
+                      Text(
+                        post.publishedDate.howLongAgo(),
+                        style: context.textTheme.titleSmall?.copyWith(
+                          color: AppColors.grey.withOpacity(0.6),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               )

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 
 class PostImagesUrlView extends StatefulWidget {
@@ -47,23 +46,27 @@ class _PostImagesUrlViewState extends State<PostImagesUrlView> {
           ),
         ),
         const Gap(8),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(
-            widget.imageUrls.length,
-            (index) => Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2),
-              child: Icon(
-                FontAwesomeIcons.solidCircle,
-                size: 8,
-                color: currentPage == index
-                    ? AppColors.primary
-                    : AppColors.grey.withOpacity(0.2),
+        if (widget.imageUrls.length > 1) ...[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(
+              widget.imageUrls.length,
+              (index) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2),
+                child: Icon(
+                  FontAwesomeIcons.solidCircle,
+                  size: 8,
+                  color: currentPage == index
+                      ? AppColors.primary
+                      : AppColors.grey.withOpacity(0.2),
+                ),
               ),
             ),
           ),
-        ),
-        Gap(2.h - 8),
+          const Gap(10),
+        ] else ...[
+          const Gap(10),
+        ],
       ],
     );
   }

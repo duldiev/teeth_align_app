@@ -8,6 +8,7 @@ import 'package:teeth_align_app/src/data/params/pagination_params.dart';
 import 'package:teeth_align_app/src/domain/entity/comment_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
 import 'package:teeth_align_app/src/domain/repository/i_social_repository.dart';
+import 'package:teeth_align_app/src/router/app_router.dart';
 
 part 'social_event.dart';
 part 'social_state.dart';
@@ -17,12 +18,15 @@ part 'social_bloc.freezed.dart';
 class SocialBloc extends Bloc<SocialEvent, SocialState> {
   final ISocialRepository repository;
   final ImagePicker imagePicker;
+  final AppRouter router;
 
   SocialBloc({
     required this.repository,
     required this.imagePicker,
+    required this.router,
   }) : super(SocialState(createPostBody: CreatePostBody.empty())) {
     on<GetPosts>(onGetPosts);
+    on<UpdatePosts>(onUpdatePosts);
     on<GetPost>(onGetPost);
     on<CreatePost>(onCreatePost);
     on<ChangeCreatePostbody>(onChangeCreatePostbody);
@@ -48,6 +52,12 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
     );
   }
 
+  void onUpdatePosts(
+    UpdatePosts event,
+    Emitter<SocialState> emit,
+  ) =>
+      emit(state.copyWith(posts: [event.createdPost, ...state.posts]));
+
   Future<void> onGetPost(
     GetPost event,
     Emitter<SocialState> emit,
@@ -68,11 +78,14 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
   ) async {
     if (state.createPostBody == null) return;
 
-    emit(state.copyWith(status: LoadStatus.loading));
+    emit(state.copyWith(createPostStatus: LoadStatus.loading));
 
     (await repository.createPost(state.createPostBody!)).fold(
       (l) => emit(state.copyWith(createPostStatus: LoadStatus.failed)),
-      (r) => emit(state.copyWith(createPostStatus: LoadStatus.success)),
+      (r) {
+        router.maybePop(r);
+        emit(state.copyWith(createPostStatus: LoadStatus.success));
+      },
     );
   }
 
@@ -84,8 +97,9 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
 
     if (event.field == CPBF.images) {
       List<XFile?> images = await imagePicker.pickMultiImage(
-        maxWidth: 1000,
-        maxHeight: 1000,
+        maxWidth: 800,
+        maxHeight: 800,
+        imageQuality: 80,
       );
       value = images;
     }

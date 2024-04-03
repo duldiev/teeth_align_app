@@ -39,7 +39,7 @@ class SocialRepository extends BaseClient implements ISocialRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> createPost(CreatePostBody body) async {
+  Future<Either<Failure, PostEntity>> createPost(CreatePostBody body) async {
     return (await call(
       RestMethod.post,
       '/api/v1/post',
@@ -50,7 +50,7 @@ class SocialRepository extends BaseClient implements ISocialRepository {
     ))
         .fold(
       (l) => Left(l),
-      (r) => const Right(unit),
+      (r) => Right(PostModel.fromMap(r)),
     );
   }
 

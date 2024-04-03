@@ -12,7 +12,7 @@ abstract class ISocialRepository {
 
   Future<Either<Failure, PostEntity>> getPost(int id);
 
-  Future<Either<Failure, Unit>> createPost(CreatePostBody body);
+  Future<Either<Failure, PostEntity>> createPost(CreatePostBody body);
 
   Future<Either<Failure, Unit>> deletePost(int id);
 

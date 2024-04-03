@@ -6,6 +6,7 @@ import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/services/modal_bottom_sheet.dart';
+import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
 import 'package:teeth_align_app/src/presentation/social/blocs/social_bloc/social_bloc.dart';
 import 'package:teeth_align_app/src/presentation/social/views/new_post_view.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/post_tile.dart';
@@ -38,11 +39,17 @@ class SocialScreen extends StatelessWidget {
               title: const Text('Сообщество'),
               actions: [
                 InkWell(
-                  onTap: () => ModalBottomSheet.show(
-                    context,
-                    NewPostView(onCreatedCallback: () {}),
-                    0.9,
-                  ),
+                  onTap: () async {
+                    PostEntity? createdPost = await MBS.show<PostEntity>(
+                      context,
+                      const NewPostView(),
+                      0.9,
+                    );
+                    if (!context.mounted) return;
+                    if (createdPost != null) {
+                      context.read<SocialBloc>().add(UpdatePosts(createdPost));
+                    }
+                  },
                   child: const Icon(
                     FontAwesomeIcons.notesMedical,
                     size: 26,

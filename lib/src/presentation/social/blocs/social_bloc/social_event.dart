@@ -4,6 +4,8 @@ part of 'social_bloc.dart';
 class SocialEvent with _$SocialEvent {
   const factory SocialEvent.getPosts() = GetPosts;
 
+  const factory SocialEvent.updatePosts(PostEntity createdPost) = UpdatePosts;
+
   const factory SocialEvent.getPost(int id) = GetPost;
 
   const factory SocialEvent.createPost() = CreatePost;

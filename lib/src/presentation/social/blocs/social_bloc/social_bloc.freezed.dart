@@ -19,6 +19,7 @@ mixin _$SocialEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPosts,
+    required TResult Function(PostEntity createdPost) updatePosts,
     required TResult Function(int id) getPost,
     required TResult Function() createPost,
     required TResult Function(CreatePostBodyField field, dynamic value)
@@ -33,6 +34,7 @@ mixin _$SocialEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getPosts,
+    TResult? Function(PostEntity createdPost)? updatePosts,
     TResult? Function(int id)? getPost,
     TResult? Function()? createPost,
     TResult? Function(CreatePostBodyField field, dynamic value)?
@@ -47,6 +49,7 @@ mixin _$SocialEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPosts,
+    TResult Function(PostEntity createdPost)? updatePosts,
     TResult Function(int id)? getPost,
     TResult Function()? createPost,
     TResult Function(CreatePostBodyField field, dynamic value)?
@@ -62,6 +65,7 @@ mixin _$SocialEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetPosts value) getPosts,
+    required TResult Function(UpdatePosts value) updatePosts,
     required TResult Function(GetPost value) getPost,
     required TResult Function(CreatePost value) createPost,
     required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
@@ -75,6 +79,7 @@ mixin _$SocialEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(UpdatePosts value)? updatePosts,
     TResult? Function(GetPost value)? getPost,
     TResult? Function(CreatePost value)? createPost,
     TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -88,6 +93,7 @@ mixin _$SocialEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPosts value)? getPosts,
+    TResult Function(UpdatePosts value)? updatePosts,
     TResult Function(GetPost value)? getPost,
     TResult Function(CreatePost value)? createPost,
     TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -158,6 +164,7 @@ class _$GetPostsImpl implements GetPosts {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPosts,
+    required TResult Function(PostEntity createdPost) updatePosts,
     required TResult Function(int id) getPost,
     required TResult Function() createPost,
     required TResult Function(CreatePostBodyField field, dynamic value)
@@ -175,6 +182,7 @@ class _$GetPostsImpl implements GetPosts {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getPosts,
+    TResult? Function(PostEntity createdPost)? updatePosts,
     TResult? Function(int id)? getPost,
     TResult? Function()? createPost,
     TResult? Function(CreatePostBodyField field, dynamic value)?
@@ -192,6 +200,7 @@ class _$GetPostsImpl implements GetPosts {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPosts,
+    TResult Function(PostEntity createdPost)? updatePosts,
     TResult Function(int id)? getPost,
     TResult Function()? createPost,
     TResult Function(CreatePostBodyField field, dynamic value)?
@@ -213,6 +222,7 @@ class _$GetPostsImpl implements GetPosts {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetPosts value) getPosts,
+    required TResult Function(UpdatePosts value) updatePosts,
     required TResult Function(GetPost value) getPost,
     required TResult Function(CreatePost value) createPost,
     required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
@@ -229,6 +239,7 @@ class _$GetPostsImpl implements GetPosts {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(UpdatePosts value)? updatePosts,
     TResult? Function(GetPost value)? getPost,
     TResult? Function(CreatePost value)? createPost,
     TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -245,6 +256,7 @@ class _$GetPostsImpl implements GetPosts {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPosts value)? getPosts,
+    TResult Function(UpdatePosts value)? updatePosts,
     TResult Function(GetPost value)? getPost,
     TResult Function(CreatePost value)? createPost,
     TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -264,6 +276,191 @@ class _$GetPostsImpl implements GetPosts {
 
 abstract class GetPosts implements SocialEvent {
   const factory GetPosts() = _$GetPostsImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdatePostsImplCopyWith<$Res> {
+  factory _$$UpdatePostsImplCopyWith(
+          _$UpdatePostsImpl value, $Res Function(_$UpdatePostsImpl) then) =
+      __$$UpdatePostsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PostEntity createdPost});
+}
+
+/// @nodoc
+class __$$UpdatePostsImplCopyWithImpl<$Res>
+    extends _$SocialEventCopyWithImpl<$Res, _$UpdatePostsImpl>
+    implements _$$UpdatePostsImplCopyWith<$Res> {
+  __$$UpdatePostsImplCopyWithImpl(
+      _$UpdatePostsImpl _value, $Res Function(_$UpdatePostsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? createdPost = null,
+  }) {
+    return _then(_$UpdatePostsImpl(
+      null == createdPost
+          ? _value.createdPost
+          : createdPost // ignore: cast_nullable_to_non_nullable
+              as PostEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdatePostsImpl implements UpdatePosts {
+  const _$UpdatePostsImpl(this.createdPost);
+
+  @override
+  final PostEntity createdPost;
+
+  @override
+  String toString() {
+    return 'SocialEvent.updatePosts(createdPost: $createdPost)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdatePostsImpl &&
+            (identical(other.createdPost, createdPost) ||
+                other.createdPost == createdPost));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, createdPost);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdatePostsImplCopyWith<_$UpdatePostsImpl> get copyWith =>
+      __$$UpdatePostsImplCopyWithImpl<_$UpdatePostsImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getPosts,
+    required TResult Function(PostEntity createdPost) updatePosts,
+    required TResult Function(int id) getPost,
+    required TResult Function() createPost,
+    required TResult Function(CreatePostBodyField field, dynamic value)
+        changeCreatePostbody,
+    required TResult Function(int id) deletePost,
+    required TResult Function(int postId, String text) createComment,
+    required TResult Function(int id) getPostComments,
+    required TResult Function(int id, bool? unlike) likePost,
+    required TResult Function(XFile iamge) removeImage,
+  }) {
+    return updatePosts(createdPost);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getPosts,
+    TResult? Function(PostEntity createdPost)? updatePosts,
+    TResult? Function(int id)? getPost,
+    TResult? Function()? createPost,
+    TResult? Function(CreatePostBodyField field, dynamic value)?
+        changeCreatePostbody,
+    TResult? Function(int id)? deletePost,
+    TResult? Function(int postId, String text)? createComment,
+    TResult? Function(int id)? getPostComments,
+    TResult? Function(int id, bool? unlike)? likePost,
+    TResult? Function(XFile iamge)? removeImage,
+  }) {
+    return updatePosts?.call(createdPost);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getPosts,
+    TResult Function(PostEntity createdPost)? updatePosts,
+    TResult Function(int id)? getPost,
+    TResult Function()? createPost,
+    TResult Function(CreatePostBodyField field, dynamic value)?
+        changeCreatePostbody,
+    TResult Function(int id)? deletePost,
+    TResult Function(int postId, String text)? createComment,
+    TResult Function(int id)? getPostComments,
+    TResult Function(int id, bool? unlike)? likePost,
+    TResult Function(XFile iamge)? removeImage,
+    required TResult orElse(),
+  }) {
+    if (updatePosts != null) {
+      return updatePosts(createdPost);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPosts value) getPosts,
+    required TResult Function(UpdatePosts value) updatePosts,
+    required TResult Function(GetPost value) getPost,
+    required TResult Function(CreatePost value) createPost,
+    required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
+    required TResult Function(DeletePost value) deletePost,
+    required TResult Function(CreateComment value) createComment,
+    required TResult Function(GetPostComments value) getPostComments,
+    required TResult Function(LikePost value) likePost,
+    required TResult Function(RemoveImage value) removeImage,
+  }) {
+    return updatePosts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(UpdatePosts value)? updatePosts,
+    TResult? Function(GetPost value)? getPost,
+    TResult? Function(CreatePost value)? createPost,
+    TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
+    TResult? Function(DeletePost value)? deletePost,
+    TResult? Function(CreateComment value)? createComment,
+    TResult? Function(GetPostComments value)? getPostComments,
+    TResult? Function(LikePost value)? likePost,
+    TResult? Function(RemoveImage value)? removeImage,
+  }) {
+    return updatePosts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPosts value)? getPosts,
+    TResult Function(UpdatePosts value)? updatePosts,
+    TResult Function(GetPost value)? getPost,
+    TResult Function(CreatePost value)? createPost,
+    TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,
+    TResult Function(DeletePost value)? deletePost,
+    TResult Function(CreateComment value)? createComment,
+    TResult Function(GetPostComments value)? getPostComments,
+    TResult Function(LikePost value)? likePost,
+    TResult Function(RemoveImage value)? removeImage,
+    required TResult orElse(),
+  }) {
+    if (updatePosts != null) {
+      return updatePosts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdatePosts implements SocialEvent {
+  const factory UpdatePosts(final PostEntity createdPost) = _$UpdatePostsImpl;
+
+  PostEntity get createdPost;
+  @JsonKey(ignore: true)
+  _$$UpdatePostsImplCopyWith<_$UpdatePostsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -331,6 +528,7 @@ class _$GetPostImpl implements GetPost {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPosts,
+    required TResult Function(PostEntity createdPost) updatePosts,
     required TResult Function(int id) getPost,
     required TResult Function() createPost,
     required TResult Function(CreatePostBodyField field, dynamic value)
@@ -348,6 +546,7 @@ class _$GetPostImpl implements GetPost {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getPosts,
+    TResult? Function(PostEntity createdPost)? updatePosts,
     TResult? Function(int id)? getPost,
     TResult? Function()? createPost,
     TResult? Function(CreatePostBodyField field, dynamic value)?
@@ -365,6 +564,7 @@ class _$GetPostImpl implements GetPost {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPosts,
+    TResult Function(PostEntity createdPost)? updatePosts,
     TResult Function(int id)? getPost,
     TResult Function()? createPost,
     TResult Function(CreatePostBodyField field, dynamic value)?
@@ -386,6 +586,7 @@ class _$GetPostImpl implements GetPost {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetPosts value) getPosts,
+    required TResult Function(UpdatePosts value) updatePosts,
     required TResult Function(GetPost value) getPost,
     required TResult Function(CreatePost value) createPost,
     required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
@@ -402,6 +603,7 @@ class _$GetPostImpl implements GetPost {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(UpdatePosts value)? updatePosts,
     TResult? Function(GetPost value)? getPost,
     TResult? Function(CreatePost value)? createPost,
     TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -418,6 +620,7 @@ class _$GetPostImpl implements GetPost {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPosts value)? getPosts,
+    TResult Function(UpdatePosts value)? updatePosts,
     TResult Function(GetPost value)? getPost,
     TResult Function(CreatePost value)? createPost,
     TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -483,6 +686,7 @@ class _$CreatePostImpl implements CreatePost {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPosts,
+    required TResult Function(PostEntity createdPost) updatePosts,
     required TResult Function(int id) getPost,
     required TResult Function() createPost,
     required TResult Function(CreatePostBodyField field, dynamic value)
@@ -500,6 +704,7 @@ class _$CreatePostImpl implements CreatePost {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getPosts,
+    TResult? Function(PostEntity createdPost)? updatePosts,
     TResult? Function(int id)? getPost,
     TResult? Function()? createPost,
     TResult? Function(CreatePostBodyField field, dynamic value)?
@@ -517,6 +722,7 @@ class _$CreatePostImpl implements CreatePost {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPosts,
+    TResult Function(PostEntity createdPost)? updatePosts,
     TResult Function(int id)? getPost,
     TResult Function()? createPost,
     TResult Function(CreatePostBodyField field, dynamic value)?
@@ -538,6 +744,7 @@ class _$CreatePostImpl implements CreatePost {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetPosts value) getPosts,
+    required TResult Function(UpdatePosts value) updatePosts,
     required TResult Function(GetPost value) getPost,
     required TResult Function(CreatePost value) createPost,
     required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
@@ -554,6 +761,7 @@ class _$CreatePostImpl implements CreatePost {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(UpdatePosts value)? updatePosts,
     TResult? Function(GetPost value)? getPost,
     TResult? Function(CreatePost value)? createPost,
     TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -570,6 +778,7 @@ class _$CreatePostImpl implements CreatePost {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPosts value)? getPosts,
+    TResult Function(UpdatePosts value)? updatePosts,
     TResult Function(GetPost value)? getPost,
     TResult Function(CreatePost value)? createPost,
     TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -667,6 +876,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPosts,
+    required TResult Function(PostEntity createdPost) updatePosts,
     required TResult Function(int id) getPost,
     required TResult Function() createPost,
     required TResult Function(CreatePostBodyField field, dynamic value)
@@ -684,6 +894,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getPosts,
+    TResult? Function(PostEntity createdPost)? updatePosts,
     TResult? Function(int id)? getPost,
     TResult? Function()? createPost,
     TResult? Function(CreatePostBodyField field, dynamic value)?
@@ -701,6 +912,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPosts,
+    TResult Function(PostEntity createdPost)? updatePosts,
     TResult Function(int id)? getPost,
     TResult Function()? createPost,
     TResult Function(CreatePostBodyField field, dynamic value)?
@@ -722,6 +934,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetPosts value) getPosts,
+    required TResult Function(UpdatePosts value) updatePosts,
     required TResult Function(GetPost value) getPost,
     required TResult Function(CreatePost value) createPost,
     required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
@@ -738,6 +951,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(UpdatePosts value)? updatePosts,
     TResult? Function(GetPost value)? getPost,
     TResult? Function(CreatePost value)? createPost,
     TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -754,6 +968,7 @@ class _$ChangeCreatePostbodyImpl implements ChangeCreatePostbody {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPosts value)? getPosts,
+    TResult Function(UpdatePosts value)? updatePosts,
     TResult Function(GetPost value)? getPost,
     TResult Function(CreatePost value)? createPost,
     TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -847,6 +1062,7 @@ class _$DeletePostImpl implements DeletePost {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPosts,
+    required TResult Function(PostEntity createdPost) updatePosts,
     required TResult Function(int id) getPost,
     required TResult Function() createPost,
     required TResult Function(CreatePostBodyField field, dynamic value)
@@ -864,6 +1080,7 @@ class _$DeletePostImpl implements DeletePost {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getPosts,
+    TResult? Function(PostEntity createdPost)? updatePosts,
     TResult? Function(int id)? getPost,
     TResult? Function()? createPost,
     TResult? Function(CreatePostBodyField field, dynamic value)?
@@ -881,6 +1098,7 @@ class _$DeletePostImpl implements DeletePost {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPosts,
+    TResult Function(PostEntity createdPost)? updatePosts,
     TResult Function(int id)? getPost,
     TResult Function()? createPost,
     TResult Function(CreatePostBodyField field, dynamic value)?
@@ -902,6 +1120,7 @@ class _$DeletePostImpl implements DeletePost {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetPosts value) getPosts,
+    required TResult Function(UpdatePosts value) updatePosts,
     required TResult Function(GetPost value) getPost,
     required TResult Function(CreatePost value) createPost,
     required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
@@ -918,6 +1137,7 @@ class _$DeletePostImpl implements DeletePost {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(UpdatePosts value)? updatePosts,
     TResult? Function(GetPost value)? getPost,
     TResult? Function(CreatePost value)? createPost,
     TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -934,6 +1154,7 @@ class _$DeletePostImpl implements DeletePost {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPosts value)? getPosts,
+    TResult Function(UpdatePosts value)? updatePosts,
     TResult Function(GetPost value)? getPost,
     TResult Function(CreatePost value)? createPost,
     TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -1033,6 +1254,7 @@ class _$CreateCommentImpl implements CreateComment {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPosts,
+    required TResult Function(PostEntity createdPost) updatePosts,
     required TResult Function(int id) getPost,
     required TResult Function() createPost,
     required TResult Function(CreatePostBodyField field, dynamic value)
@@ -1050,6 +1272,7 @@ class _$CreateCommentImpl implements CreateComment {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getPosts,
+    TResult? Function(PostEntity createdPost)? updatePosts,
     TResult? Function(int id)? getPost,
     TResult? Function()? createPost,
     TResult? Function(CreatePostBodyField field, dynamic value)?
@@ -1067,6 +1290,7 @@ class _$CreateCommentImpl implements CreateComment {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPosts,
+    TResult Function(PostEntity createdPost)? updatePosts,
     TResult Function(int id)? getPost,
     TResult Function()? createPost,
     TResult Function(CreatePostBodyField field, dynamic value)?
@@ -1088,6 +1312,7 @@ class _$CreateCommentImpl implements CreateComment {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetPosts value) getPosts,
+    required TResult Function(UpdatePosts value) updatePosts,
     required TResult Function(GetPost value) getPost,
     required TResult Function(CreatePost value) createPost,
     required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
@@ -1104,6 +1329,7 @@ class _$CreateCommentImpl implements CreateComment {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(UpdatePosts value)? updatePosts,
     TResult? Function(GetPost value)? getPost,
     TResult? Function(CreatePost value)? createPost,
     TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -1120,6 +1346,7 @@ class _$CreateCommentImpl implements CreateComment {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPosts value)? getPosts,
+    TResult Function(UpdatePosts value)? updatePosts,
     TResult Function(GetPost value)? getPost,
     TResult Function(CreatePost value)? createPost,
     TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -1214,6 +1441,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPosts,
+    required TResult Function(PostEntity createdPost) updatePosts,
     required TResult Function(int id) getPost,
     required TResult Function() createPost,
     required TResult Function(CreatePostBodyField field, dynamic value)
@@ -1231,6 +1459,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getPosts,
+    TResult? Function(PostEntity createdPost)? updatePosts,
     TResult? Function(int id)? getPost,
     TResult? Function()? createPost,
     TResult? Function(CreatePostBodyField field, dynamic value)?
@@ -1248,6 +1477,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPosts,
+    TResult Function(PostEntity createdPost)? updatePosts,
     TResult Function(int id)? getPost,
     TResult Function()? createPost,
     TResult Function(CreatePostBodyField field, dynamic value)?
@@ -1269,6 +1499,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetPosts value) getPosts,
+    required TResult Function(UpdatePosts value) updatePosts,
     required TResult Function(GetPost value) getPost,
     required TResult Function(CreatePost value) createPost,
     required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
@@ -1285,6 +1516,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(UpdatePosts value)? updatePosts,
     TResult? Function(GetPost value)? getPost,
     TResult? Function(CreatePost value)? createPost,
     TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -1301,6 +1533,7 @@ class _$GetPostCommentsImpl implements GetPostComments {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPosts value)? getPosts,
+    TResult Function(UpdatePosts value)? updatePosts,
     TResult Function(GetPost value)? getPost,
     TResult Function(CreatePost value)? createPost,
     TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -1400,6 +1633,7 @@ class _$LikePostImpl implements LikePost {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPosts,
+    required TResult Function(PostEntity createdPost) updatePosts,
     required TResult Function(int id) getPost,
     required TResult Function() createPost,
     required TResult Function(CreatePostBodyField field, dynamic value)
@@ -1417,6 +1651,7 @@ class _$LikePostImpl implements LikePost {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getPosts,
+    TResult? Function(PostEntity createdPost)? updatePosts,
     TResult? Function(int id)? getPost,
     TResult? Function()? createPost,
     TResult? Function(CreatePostBodyField field, dynamic value)?
@@ -1434,6 +1669,7 @@ class _$LikePostImpl implements LikePost {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPosts,
+    TResult Function(PostEntity createdPost)? updatePosts,
     TResult Function(int id)? getPost,
     TResult Function()? createPost,
     TResult Function(CreatePostBodyField field, dynamic value)?
@@ -1455,6 +1691,7 @@ class _$LikePostImpl implements LikePost {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetPosts value) getPosts,
+    required TResult Function(UpdatePosts value) updatePosts,
     required TResult Function(GetPost value) getPost,
     required TResult Function(CreatePost value) createPost,
     required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
@@ -1471,6 +1708,7 @@ class _$LikePostImpl implements LikePost {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(UpdatePosts value)? updatePosts,
     TResult? Function(GetPost value)? getPost,
     TResult? Function(CreatePost value)? createPost,
     TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -1487,6 +1725,7 @@ class _$LikePostImpl implements LikePost {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPosts value)? getPosts,
+    TResult Function(UpdatePosts value)? updatePosts,
     TResult Function(GetPost value)? getPost,
     TResult Function(CreatePost value)? createPost,
     TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -1579,6 +1818,7 @@ class _$RemoveImageImpl implements RemoveImage {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getPosts,
+    required TResult Function(PostEntity createdPost) updatePosts,
     required TResult Function(int id) getPost,
     required TResult Function() createPost,
     required TResult Function(CreatePostBodyField field, dynamic value)
@@ -1596,6 +1836,7 @@ class _$RemoveImageImpl implements RemoveImage {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getPosts,
+    TResult? Function(PostEntity createdPost)? updatePosts,
     TResult? Function(int id)? getPost,
     TResult? Function()? createPost,
     TResult? Function(CreatePostBodyField field, dynamic value)?
@@ -1613,6 +1854,7 @@ class _$RemoveImageImpl implements RemoveImage {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getPosts,
+    TResult Function(PostEntity createdPost)? updatePosts,
     TResult Function(int id)? getPost,
     TResult Function()? createPost,
     TResult Function(CreatePostBodyField field, dynamic value)?
@@ -1634,6 +1876,7 @@ class _$RemoveImageImpl implements RemoveImage {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetPosts value) getPosts,
+    required TResult Function(UpdatePosts value) updatePosts,
     required TResult Function(GetPost value) getPost,
     required TResult Function(CreatePost value) createPost,
     required TResult Function(ChangeCreatePostbody value) changeCreatePostbody,
@@ -1650,6 +1893,7 @@ class _$RemoveImageImpl implements RemoveImage {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPosts value)? getPosts,
+    TResult? Function(UpdatePosts value)? updatePosts,
     TResult? Function(GetPost value)? getPost,
     TResult? Function(CreatePost value)? createPost,
     TResult? Function(ChangeCreatePostbody value)? changeCreatePostbody,
@@ -1666,6 +1910,7 @@ class _$RemoveImageImpl implements RemoveImage {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPosts value)? getPosts,
+    TResult Function(UpdatePosts value)? updatePosts,
     TResult Function(GetPost value)? getPost,
     TResult Function(CreatePost value)? createPost,
     TResult Function(ChangeCreatePostbody value)? changeCreatePostbody,

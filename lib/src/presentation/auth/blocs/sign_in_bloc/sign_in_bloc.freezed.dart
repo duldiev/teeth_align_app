@@ -738,6 +738,7 @@ abstract class Reset implements SignInEvent {
 mixin _$SignInState {
   SignInBody? get signInBody => throw _privateConstructorUsedError;
   LoadStatus get status => throw _privateConstructorUsedError;
+  AccountEntity? get account => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInStateCopyWith<SignInState> get copyWith =>
@@ -750,7 +751,8 @@ abstract class $SignInStateCopyWith<$Res> {
           SignInState value, $Res Function(SignInState) then) =
       _$SignInStateCopyWithImpl<$Res, SignInState>;
   @useResult
-  $Res call({SignInBody? signInBody, LoadStatus status});
+  $Res call(
+      {SignInBody? signInBody, LoadStatus status, AccountEntity? account});
 }
 
 /// @nodoc
@@ -768,6 +770,7 @@ class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
   $Res call({
     Object? signInBody = freezed,
     Object? status = null,
+    Object? account = freezed,
   }) {
     return _then(_value.copyWith(
       signInBody: freezed == signInBody
@@ -778,6 +781,10 @@ class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as LoadStatus,
+      account: freezed == account
+          ? _value.account
+          : account // ignore: cast_nullable_to_non_nullable
+              as AccountEntity?,
     ) as $Val);
   }
 }
@@ -790,7 +797,8 @@ abstract class _$$SignInStateImplCopyWith<$Res>
       __$$SignInStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({SignInBody? signInBody, LoadStatus status});
+  $Res call(
+      {SignInBody? signInBody, LoadStatus status, AccountEntity? account});
 }
 
 /// @nodoc
@@ -806,6 +814,7 @@ class __$$SignInStateImplCopyWithImpl<$Res>
   $Res call({
     Object? signInBody = freezed,
     Object? status = null,
+    Object? account = freezed,
   }) {
     return _then(_$SignInStateImpl(
       signInBody: freezed == signInBody
@@ -816,6 +825,10 @@ class __$$SignInStateImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as LoadStatus,
+      account: freezed == account
+          ? _value.account
+          : account // ignore: cast_nullable_to_non_nullable
+              as AccountEntity?,
     ));
   }
 }
@@ -823,7 +836,10 @@ class __$$SignInStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SignInStateImpl extends _SignInState {
-  _$SignInStateImpl({this.signInBody = null, this.status = LoadStatus.initial})
+  _$SignInStateImpl(
+      {this.signInBody = null,
+      this.status = LoadStatus.initial,
+      this.account = null})
       : super._();
 
   @override
@@ -832,10 +848,13 @@ class _$SignInStateImpl extends _SignInState {
   @override
   @JsonKey()
   final LoadStatus status;
+  @override
+  @JsonKey()
+  final AccountEntity? account;
 
   @override
   String toString() {
-    return 'SignInState(signInBody: $signInBody, status: $status)';
+    return 'SignInState(signInBody: $signInBody, status: $status, account: $account)';
   }
 
   @override
@@ -845,11 +864,12 @@ class _$SignInStateImpl extends _SignInState {
             other is _$SignInStateImpl &&
             (identical(other.signInBody, signInBody) ||
                 other.signInBody == signInBody) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.account, account) || other.account == account));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, signInBody, status);
+  int get hashCode => Object.hash(runtimeType, signInBody, status, account);
 
   @JsonKey(ignore: true)
   @override
@@ -861,13 +881,16 @@ class _$SignInStateImpl extends _SignInState {
 abstract class _SignInState extends SignInState {
   factory _SignInState(
       {final SignInBody? signInBody,
-      final LoadStatus status}) = _$SignInStateImpl;
+      final LoadStatus status,
+      final AccountEntity? account}) = _$SignInStateImpl;
   _SignInState._() : super._();
 
   @override
   SignInBody? get signInBody;
   @override
   LoadStatus get status;
+  @override
+  AccountEntity? get account;
   @override
   @JsonKey(ignore: true)
   _$$SignInStateImplCopyWith<_$SignInStateImpl> get copyWith =>

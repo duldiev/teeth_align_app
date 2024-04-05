@@ -15,11 +15,11 @@ class LogoTitle extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Assets.icons.logo.svg(),
+        Assets.icons.logo.svg(height: 30),
         Gap(2.w),
         Text(
           'teethalign',
-          style: context.textTheme.headlineMedium?.copyWith(
+          style: context.textTheme.headlineSmall?.copyWith(
             color: AppColors.primary,
           ),
         ),

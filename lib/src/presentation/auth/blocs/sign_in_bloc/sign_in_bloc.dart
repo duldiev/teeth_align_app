@@ -6,6 +6,7 @@ import 'package:teeth_align_app/src/core/constants/storage_keys.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/data/body/sign_in_body.dart';
+import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
 import 'package:teeth_align_app/src/domain/repository/i_auth_repository.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
 import 'package:teeth_align_app/src/router/app_router.dart';
@@ -93,7 +94,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
     result.fold(
       (_) => emit(state.copyWith(status: LoadStatus.failed)),
-      (_) => emit(state.copyWith(status: LoadStatus.success)),
+      (r) => emit(state.copyWith(status: LoadStatus.success, account: r)),
     );
   }
 

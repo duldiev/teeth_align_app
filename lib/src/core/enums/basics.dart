@@ -10,7 +10,9 @@ enum Role {
   admin,
   doctor;
 
-  static Role fromString(String name) => values.byName(name.toLowerCase());
+  static Role fromString(String? name) => values.byName(
+        name?.toLowerCase() ?? 'patient',
+      );
 }
 
 enum PostType {

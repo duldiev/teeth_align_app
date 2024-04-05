@@ -17,7 +17,10 @@ class AppRouter extends $AppRouter {
         AutoRoute(
           page: NavRouter.page,
           children: [
-            AutoRoute(page: HomeRoute.page),
+            AutoRoute(page: PatientHomeRoute.page),
+            AutoRoute(page: DoctorHomeRoute.page),
+            AutoRoute(page: MentorHomeRoute.page),
+            AutoRoute(page: AdminHomeRoute.page),
             AutoRoute(page: CalendarRoute.page),
             AutoRoute(page: NotificationRoute.page),
             AutoRoute(page: SocialRoute.page),

@@ -1,3 +1,4 @@
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
 
 class AccountModel extends AccountEntity {
@@ -9,6 +10,7 @@ class AccountModel extends AccountEntity {
     required super.email,
     required super.langKey,
     required super.avatarUrl,
+    required super.role,
   });
 
   factory AccountModel.fromMap(Map<String, dynamic> map) => AccountModel(
@@ -19,5 +21,6 @@ class AccountModel extends AccountEntity {
         email: map['email'] as String?,
         langKey: map['langKey'] as String?,
         avatarUrl: map['avatarUrl'] as String?,
+        role: Role.admin,
       );
 }

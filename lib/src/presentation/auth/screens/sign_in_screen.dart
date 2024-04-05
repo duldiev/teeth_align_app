@@ -5,7 +5,6 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/gen/assets.gen.dart';
-import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
@@ -16,94 +15,78 @@ import 'package:teeth_align_app/src/shared/inputs/text_input.dart';
 import 'package:teeth_align_app/src/shared/tools/hide_behind_keyboard.dart';
 import 'package:teeth_align_app/src/shared/widgets/logo_title.dart';
 
-class _Provider extends StatelessWidget {
-  const _Provider({required this.child});
-
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => getIt<SignInBloc>(),
-      child: child,
-    );
-  }
-}
-
 @RoutePage()
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return _Provider(
-      child: BlocBuilder<SignInBloc, SignInState>(
-        builder: (context, state) {
-          return KeyboardVisibilityBuilder(
-            builder: (p0, isKeyboardVisible) => Scaffold(
-              body: SafeArea(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5.w),
-                  child: Column(
-                    children: [
-                      const Expanded(child: LogoTitle()),
-                      Expanded(
-                        flex: 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Войти в систему',
-                              style: context.textTheme.headlineSmall?.copyWith(
-                                fontWeight: FontWeight.w600,
+    return BlocBuilder<SignInBloc, SignInState>(
+      builder: (context, state) {
+        return KeyboardVisibilityBuilder(
+          builder: (p0, isKeyboardVisible) => Scaffold(
+            body: SafeArea(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5.w),
+                child: Column(
+                  children: [
+                    const Expanded(child: LogoTitle()),
+                    Expanded(
+                      flex: 4,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Войти в систему',
+                            style: context.textTheme.headlineSmall?.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Gap(2.h),
+                          Column(
+                            children: [
+                              TextInput(
+                                label: 'E-mail',
+                                hintText: 'Enter',
+                                onChanged: (value) => context.read<SIB>().add(
+                                      ChangeField(
+                                        field: SignInField.email,
+                                        value: value,
+                                      ),
+                                    ),
                               ),
-                            ),
-                            Gap(2.h),
-                            Column(
-                              children: [
-                                TextInput(
-                                  label: 'E-mail',
-                                  hintText: 'Enter',
-                                  onChanged: (value) => context.read<SIB>().add(
-                                        ChangeField(
-                                          field: SignInField.email,
-                                          value: value,
-                                        ),
+                              Gap(2.h),
+                              TextInput(
+                                label: 'Password',
+                                hintText: 'Enter',
+                                onChanged: (value) => context.read<SIB>().add(
+                                      ChangeField(
+                                        field: SignInField.password,
+                                        value: value,
                                       ),
-                                ),
-                                Gap(2.h),
-                                TextInput(
-                                  label: 'Password',
-                                  hintText: 'Enter',
-                                  onChanged: (value) => context.read<SIB>().add(
-                                        ChangeField(
-                                          field: SignInField.password,
-                                          value: value,
-                                        ),
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                      isKeyboardVisible
-                          ? const SizedBox()
-                          : const Expanded(
-                              flex: 3,
-                              child: HideBehindKeyoard(
-                                slideOffset: Offset(0, 3),
-                                child: _BottomView(),
-                              ),
+                    ),
+                    isKeyboardVisible
+                        ? const SizedBox()
+                        : const Expanded(
+                            flex: 3,
+                            child: HideBehindKeyoard(
+                              slideOffset: Offset(0, 3),
+                              child: _BottomView(),
                             ),
-                    ],
-                  ),
+                          ),
+                  ],
                 ),
               ),
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

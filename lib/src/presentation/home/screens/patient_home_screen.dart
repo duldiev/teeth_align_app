@@ -9,8 +9,8 @@ import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 import 'package:teeth_align_app/src/shared/widgets/logo_title.dart';
 
 @RoutePage()
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class PatientHomeScreen extends StatelessWidget {
+  const PatientHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

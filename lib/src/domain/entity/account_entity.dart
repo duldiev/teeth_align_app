@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 
 class AccountEntity extends Equatable {
   final int id;
@@ -8,6 +9,7 @@ class AccountEntity extends Equatable {
   final String? email;
   final String? langKey;
   final String? avatarUrl;
+  final Role role;
 
   const AccountEntity({
     required this.id,
@@ -17,6 +19,7 @@ class AccountEntity extends Equatable {
     required this.email,
     required this.langKey,
     this.avatarUrl,
+    required this.role,
   });
 
   String get fullName => '$firstName $lastName';
@@ -28,6 +31,7 @@ class AccountEntity extends Equatable {
         lastName: 'lastName',
         email: 'email',
         langKey: 'langKey',
+        role: Role.patient,
       );
 
   @override
@@ -39,5 +43,6 @@ class AccountEntity extends Equatable {
         email,
         langKey,
         avatarUrl,
+        role,
       ];
 }

@@ -29,7 +29,7 @@ class DoctorListTile extends StatelessWidget {
           ),
         ),
         Text(
-          doctor.clinic,
+          doctor.clinicName,
           style: context.textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.w500,
             color: AppColors.grey,

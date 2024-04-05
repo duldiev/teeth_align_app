@@ -16,13 +16,13 @@ class PatientModel extends PatientEntity {
 
   factory PatientModel.fromMap(Map<String, dynamic> map) => PatientModel(
         id: map['id'] as int,
-        username: map['username'] as String,
-        firstName: map['firstName'] as String,
-        lastName: map['lastName'] as String,
-        email: map['email'] as String,
-        langKey: map['langKey'] as String,
+        username: map['username'] as String?,
+        firstName: map['firstName'] as String?,
+        lastName: map['lastName'] as String?,
+        email: map['email'] as String?,
+        langKey: map['langKey'] as String?,
         role: Role.patient,
-        avatarUrl: map['avatarUrl'] as String,
+        avatarUrl: map['avatarUrl'] as String?,
         birthDate: map['birthDate'] == null
             ? DateTime.now()
             : DateTime.parse(map['birthDate']),

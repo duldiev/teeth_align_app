@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -9,6 +9,7 @@ import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/patient_entity.dart';
+import 'package:teeth_align_app/src/presentation/home/blocs/doctor_bloc/doctor_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/doctor_list_tile.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/list_header.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/mentor_list_tile.dart';
@@ -21,76 +22,80 @@ class AdminHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: MyAppBar(
-        title: const Text('Welcome, Arman!'),
-        titleTextStyle: context.textTheme.headlineMedium?.copyWith(
-          fontWeight: FontWeight.bold,
-        ),
-        centerTitle: false,
-        automaticallyImplyLeading: false,
-        actions: [
-          InkWell(
-            onTap: () {},
-            child: const Icon(
-              FontAwesomeIcons.search,
-              size: 20,
+    return BlocBuilder<DoctorBloc, DoctorState>(
+      builder: (context, state) {
+        return Scaffold(
+          appBar: MyAppBar(
+            title: const Text('Welcome, Arman!'),
+            titleTextStyle: context.textTheme.headlineMedium?.copyWith(
+              fontWeight: FontWeight.bold,
             ),
-          ),
-          Gap(4.w),
-        ],
-      ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(
-            horizontal: 4.w,
-            vertical: 2.h,
-          ),
-          clipBehavior: Clip.none,
-          child: Column(
-            children: [
-              ListHeader(
-                title: 'My patients (Cases)',
-                onShowAll: () {},
-              ),
-              Gap(2.h),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: DoctorListTile(
-                      doctor: DoctorEntity.empty(),
-                    ),
-                  ),
-                  Gap(4.w),
-                  Expanded(
-                    child: PatientListTile(
-                      patient: PatientEntity.empty(),
-                    ),
-                  ),
-                ],
+            centerTitle: false,
+            automaticallyImplyLeading: false,
+            actions: [
+              InkWell(
+                onTap: () {},
+                child: const Icon(
+                  FontAwesomeIcons.search,
+                  size: 20,
+                ),
               ),
               Gap(4.w),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            ],
+          ),
+          body: SafeArea(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.symmetric(
+                horizontal: 4.w,
+                vertical: 2.h,
+              ),
+              clipBehavior: Clip.none,
+              child: Column(
                 children: [
-                  Expanded(
-                    child: MentorListTile(
-                      mentor: MentorEntity.empty(),
-                    ),
+                  ListHeader(
+                    title: 'My patients (Cases)',
+                    onShowAll: () {},
+                  ),
+                  Gap(2.h),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: DoctorListTile(
+                          doctor: DoctorEntity.empty(),
+                        ),
+                      ),
+                      Gap(4.w),
+                      Expanded(
+                        child: PatientListTile(
+                          patient: PatientEntity.empty(),
+                        ),
+                      ),
+                    ],
                   ),
                   Gap(4.w),
-                  Expanded(
-                    child: PatientListTile(
-                      patient: PatientEntity.empty(),
-                    ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: MentorListTile(
+                          mentor: MentorEntity.empty(),
+                        ),
+                      ),
+                      Gap(4.w),
+                      Expanded(
+                        child: PatientListTile(
+                          patient: PatientEntity.empty(),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

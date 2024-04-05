@@ -10,6 +10,7 @@ class AccountEntity extends Equatable {
   final String? langKey;
   final String? avatarUrl;
   final Role role;
+  final DateTime? birthDate;
 
   const AccountEntity({
     required this.id,
@@ -18,20 +19,23 @@ class AccountEntity extends Equatable {
     required this.lastName,
     required this.email,
     required this.langKey,
-    this.avatarUrl,
+    required this.avatarUrl,
     required this.role,
+    required this.birthDate,
   });
 
   String get fullName => '$firstName $lastName';
 
-  factory AccountEntity.empty() => const AccountEntity(
+  factory AccountEntity.empty() => AccountEntity(
         id: 1,
         username: 'username',
         firstName: 'firstName',
         lastName: 'lastName',
         email: 'email',
         langKey: 'langKey',
+        avatarUrl: null,
         role: Role.patient,
+        birthDate: DateTime.now(),
       );
 
   @override
@@ -44,5 +48,6 @@ class AccountEntity extends Equatable {
         langKey,
         avatarUrl,
         role,
+        birthDate,
       ];
 }

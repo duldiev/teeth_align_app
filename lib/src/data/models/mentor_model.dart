@@ -24,7 +24,9 @@ class MentorModel extends MentorEntity {
         langKey: map['langKey'] as String?,
         avatarUrl: map['avatarUrl'] as String?,
         role: Role.mentor,
-        birthDate: DateTime.parse(map['birthDate']),
         position: map['position'] as String,
+        birthDate: map['birthDate'] == null
+            ? DateTime.now()
+            : DateTime.parse(map['birthDate']),
       );
 }

@@ -22,7 +22,9 @@ class PatientModel extends PatientEntity {
         email: map['email'] as String,
         langKey: map['langKey'] as String,
         role: Role.patient,
-        birthDate: DateTime.parse(map['birthDate']),
         avatarUrl: map['avatarUrl'] as String,
+        birthDate: map['birthDate'] == null
+            ? DateTime.now()
+            : DateTime.parse(map['birthDate']),
       );
 }

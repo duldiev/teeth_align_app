@@ -23,6 +23,8 @@ class AccountModel extends AccountEntity {
         langKey: map['langKey'] as String?,
         avatarUrl: map['avatarUrl'] as String?,
         role: Role.admin,
-        birthDate: DateTime.parse(map['birthDate']),
+        birthDate: map['birthDate'] == null
+            ? DateTime.now()
+            : DateTime.parse(map['birthDate']),
       );
 }

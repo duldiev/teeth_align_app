@@ -10,6 +10,7 @@ import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
 import 'package:teeth_align_app/src/presentation/social/blocs/social_bloc/social_bloc.dart';
 import 'package:teeth_align_app/src/presentation/social/views/new_post_view.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/post_tile.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 
 class _Provider extends StatelessWidget {
@@ -53,6 +54,14 @@ class SocialScreen extends StatelessWidget {
                   child: const Icon(
                     FontAwesomeIcons.notesMedical,
                     size: 26,
+                  ),
+                ),
+                Gap(5.w),
+                InkWell(
+                  onTap: () => context.router.push(const ChatListRoute()),
+                  child: const Icon(
+                    FontAwesomeIcons.inbox,
+                    size: 24,
                   ),
                 ),
                 Gap(4.w),

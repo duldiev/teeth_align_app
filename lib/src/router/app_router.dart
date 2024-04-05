@@ -24,5 +24,7 @@ class AppRouter extends $AppRouter {
           ],
         ),
         AutoRoute(page: SinglePostRoute.page),
+        AutoRoute(page: ChatRoute.page),
+        AutoRoute(page: ChatListRoute.page),
       ];
 }

@@ -24,10 +24,13 @@ class AppRouter extends $AppRouter {
             AutoRoute(page: CalendarRoute.page),
             AutoRoute(page: NotificationRoute.page),
             AutoRoute(page: SocialRoute.page),
+            AutoRoute(page: ReportRoute.page),
+            AutoRoute(page: AccountRoute.page),
           ],
         ),
         AutoRoute(page: SinglePostRoute.page),
         AutoRoute(page: ChatRoute.page),
         AutoRoute(page: ChatListRoute.page),
+        AutoRoute(page: ProfileRoute.page),
       ];
 }

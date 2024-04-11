@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/constants/storage_keys.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
+import 'package:teeth_align_app/src/core/helpers/app_data.dart';
 import 'package:teeth_align_app/src/data/body/sign_in_body.dart';
 import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
 import 'package:teeth_align_app/src/domain/repository/i_auth_repository.dart';
@@ -77,6 +78,10 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
     await getIt<FlutterSecureStorage>().delete(key: StorageKeys.token);
 
+    router
+      ..popUntilRoot()
+      ..replace(const SplashRoute());
+
     emit(state.copyWith(status: LoadStatus.success));
   }
 
@@ -94,7 +99,11 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
     result.fold(
       (_) => emit(state.copyWith(status: LoadStatus.failed)),
-      (r) => emit(state.copyWith(status: LoadStatus.success, account: r)),
+      (r) {
+        appData.role = r.role;
+        appData.fullName = '${r.firstName}\n${r.lastName}';
+        emit(state.copyWith(status: LoadStatus.success, account: r));
+      },
     );
   }
 

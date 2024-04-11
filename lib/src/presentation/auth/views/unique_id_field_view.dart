@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as services;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/helpers/validators.dart';
 import 'package:teeth_align_app/src/core/utils/masks.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_up_bloc/sign_up_bloc.dart';
@@ -9,14 +10,19 @@ import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/keys.dart';
 import 'package:teeth_align_app/src/shared/inputs/text_input.dart';
 
-class PatientIdFieldView extends StatefulWidget {
-  const PatientIdFieldView({super.key});
+class UniqueIdFieldView extends StatefulWidget {
+  const UniqueIdFieldView({
+    super.key,
+    required this.state,
+  });
+
+  final SignUpState state;
 
   @override
-  State<PatientIdFieldView> createState() => _PatientIdFieldViewState();
+  State<UniqueIdFieldView> createState() => _UniqueIdFieldViewState();
 }
 
-class _PatientIdFieldViewState extends State<PatientIdFieldView> {
+class _UniqueIdFieldViewState extends State<UniqueIdFieldView> {
   late TextEditingController _controller;
 
   @override
@@ -42,7 +48,8 @@ class _PatientIdFieldViewState extends State<PatientIdFieldView> {
         padding: EdgeInsets.symmetric(vertical: 2.h),
         child: TextInput(
           controller: _controller,
-          label: 'Введите код пациента',
+          label:
+              'Введите код ${widget.state.registerBody?.role == Role.patient ? 'пациента' : 'доктора'}',
           hintText: 'PETA-45',
           inputFormatters: [
             Masks.patientId,
@@ -54,7 +61,7 @@ class _PatientIdFieldViewState extends State<PatientIdFieldView> {
           validator: Validators.patientId,
           onChanged: (value) => context.read<SUB>().add(
                 ChangeRegisterField(
-                  field: SignUpField.patientId,
+                  field: SignUpField.uniqueId,
                   value: value,
                 ),
               ),

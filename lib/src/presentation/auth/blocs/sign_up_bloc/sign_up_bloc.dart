@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
@@ -61,8 +59,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           SignUpField.role => state.registerBody?.copyWith(
               role: event.value,
             ),
-          SignUpField.patientId => state.registerBody?.copyWith(
-              patientId: event.value,
+          SignUpField.uniqueId => state.registerBody?.copyWith(
+              uniqueId: event.value,
             ),
         },
       ));
@@ -106,7 +104,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     emit(state.copyWith(status: LoadStatus.loading));
 
     final result = await authRepository.register(
-      body: state.registerBody!.copyWith(langKey: Platform.localeName),
+      body: state.registerBody!,
     );
 
     return result.fold(
@@ -151,7 +149,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         {
           break;
         }
-      case SUFV.patientId:
+      case SUFV.uniqueId:
         {
           if (!patientFormKey.currentState!.validate()) return;
           break;
@@ -188,8 +186,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
     emit(state.copyWith(
       currentFieldsView: switch (state.currentFieldsView) {
-        SUFV.role => SUFV.patientId,
-        SUFV.patientId => SUFV.emailPassword,
+        SUFV.role => SUFV.uniqueId,
+        SUFV.uniqueId => SUFV.emailPassword,
         SUFV.emailPassword => SUFV.code,
         SUFV.code => SUFV.finish,
         SUFV.finish => SUFV.finish,
@@ -207,8 +205,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     emit(state.copyWith(
       currentFieldsView: switch (state.currentFieldsView) {
         SUFV.role => SUFV.role,
-        SUFV.patientId => SUFV.role,
-        SUFV.emailPassword => SUFV.patientId,
+        SUFV.uniqueId => SUFV.role,
+        SUFV.emailPassword => SUFV.uniqueId,
         SUFV.code => SUFV.emailPassword,
         SUFV.finish => SUFV.code,
       },

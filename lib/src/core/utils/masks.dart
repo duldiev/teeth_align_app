@@ -39,4 +39,10 @@ class Masks {
     },
     type: MaskAutoCompletionType.lazy,
   );
+
+  static MaskTextInputFormatter doctorId = MaskTextInputFormatter(
+    mask: '######',
+    filter: {"#": RegExp(r'^[a-zA-Z0-9]+$')},
+    type: MaskAutoCompletionType.lazy,
+  );
 }

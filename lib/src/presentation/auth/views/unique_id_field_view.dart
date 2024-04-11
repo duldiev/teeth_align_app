@@ -42,20 +42,24 @@ class _UniqueIdFieldViewState extends State<UniqueIdFieldView> {
 
   @override
   Widget build(BuildContext context) {
+    final isPatient = widget.state.registerBody?.role == Role.patient;
+    final onlyUpperCase = services.TextInputFormatter.withFunction((
+      oldValue,
+      newValue,
+    ) {
+      return newValue.copyWith(text: newValue.text.toUpperCase());
+    });
     return Form(
       key: patientFormKey,
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 2.h),
         child: TextInput(
           controller: _controller,
-          label:
-              'Введите код ${widget.state.registerBody?.role == Role.patient ? 'пациента' : 'доктора'}',
-          hintText: 'PETA-45',
+          label: 'Введите код ${isPatient ? 'пациента' : 'доктора'}',
+          hintText: isPatient ? 'PETA-45' : 'Unique code',
           inputFormatters: [
-            Masks.patientId,
-            services.TextInputFormatter.withFunction((oldValue, newValue) {
-              return newValue.copyWith(text: newValue.text.toUpperCase());
-            })
+            isPatient ? Masks.patientId : Masks.doctorId,
+            onlyUpperCase,
           ],
           textCapitalization: TextCapitalization.characters,
           validator: Validators.patientId,

@@ -7,6 +7,30 @@ import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/utils/bloc_observer.dart';
 import 'package:teeth_align_app/src/presentation/base/app.dart';
 
+// TASKS
+// Note: design in figma
+// 1. Profiles: Doctor, Mentor, Client.
+//              contains chat token to connect.
+// 2. List of doctor, mentor, client.
+//    admin -> assign mentor to doctor. Drag and Drop.
+//             moderate patients added by doctors. (not a priority)
+//    doctor -> my mentors and patients.
+//    mentor -> my doctors.
+// 3. Creating a patient by doctor. After creating, doctor create case.
+//    Case: picture (multiple, separated inputs) and comment.
+// 4. Finish timer.
+// 6. Create a channel logic. Chats to listed people.
+// 7. Replace calendar by Konaev.
+// 5. Report. Taking pictures of right and left chicks, middle teeth.
+// 8. Report. Preview screen. List of cases.
+// 9. Aligner settings in Account.
+//       Inputs:
+//          total aligners sets (int),
+//          current aligner number (int),
+//          days of where,
+//          next change date.
+// 10. Client home screen: current aligner, next aligner (date), timer. (Profile api)
+
 final client = StreamChatClient(
   APIKeys.streamChatTest,
   logLevel: Level.INFO,

@@ -24,8 +24,8 @@ class AccountModel extends AccountEntity {
         email: map['email'] as String?,
         langKey: map['langKey'] as String?,
         avatarUrl: map['avatarUrl'] as String?,
-        // role: Role.patient,
-        role: Role.fromString(map['role']),
+        role: Role.patient,
+        // role: Role.fromString(map['role']),
         birthDate: map['birthDate'] != null
             ? DateTime.parse(
                 map['birthDate'],

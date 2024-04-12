@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
@@ -17,12 +18,10 @@ import 'package:teeth_align_app/src/shared/loader/circlular_loader.dart';
 class CameraScreen extends StatefulWidget {
   const CameraScreen({
     super.key,
-    required this.id,
     required this.callbackOnSend,
   });
 
-  final int id;
-  final void Function() callbackOnSend;
+  final VoidCallback callbackOnSend;
 
   @override
   State<CameraScreen> createState() => _CameraScreenState();
@@ -122,6 +121,7 @@ class _CameraScreenState extends State<CameraScreen>
                       child: _ButtonsView(
                         controller: controller,
                         state: state,
+                        callbackOnSend: widget.callbackOnSend,
                       ),
                     ),
                   ),
@@ -141,10 +141,12 @@ class _ButtonsView extends StatelessWidget {
   const _ButtonsView({
     required this.controller,
     required this.state,
+    required this.callbackOnSend,
   });
 
   final CameraController controller;
   final CameraState state;
+  final VoidCallback callbackOnSend;
 
   @override
   Widget build(BuildContext context) {
@@ -154,8 +156,8 @@ class _ButtonsView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Expanded(child: SizedBox()),
-          Expanded(
-            child: InkWell(
+          Flexible(
+            child: GestureDetector(
               onTap: () => context.read<CameraBloc>().add(
                     TakePicture(controller: controller),
                   ),
@@ -196,16 +198,23 @@ class _ButtonsView extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: InkWell(
-              onTap: () {},
-              child: const Icon(
-                Icons.arrow_circle_right_outlined,
-                color: AppColors.white,
-                size: 50,
+          if (state.status != LoadStatus.loading) ...[
+            Expanded(
+              child: InkWell(
+                onTap: () {
+                  callbackOnSend();
+                  context.router.maybePop();
+                },
+                child: const Icon(
+                  Icons.arrow_circle_right_outlined,
+                  color: AppColors.white,
+                  size: 50,
+                ),
               ),
             ),
-          ),
+          ] else ...[
+            const Expanded(child: SizedBox()),
+          ],
         ],
       ),
     );

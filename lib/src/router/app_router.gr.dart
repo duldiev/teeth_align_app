@@ -87,7 +87,6 @@ abstract class $AppRouter extends _i23.RootStackRouter {
         routeData: routeData,
         child: _i4.CameraScreen(
           key: args.key,
-          id: args.id,
           callbackOnSend: args.callbackOnSend,
         ),
       );
@@ -270,14 +269,12 @@ class CalendarRoute extends _i23.PageRouteInfo<void> {
 class CameraRoute extends _i23.PageRouteInfo<CameraRouteArgs> {
   CameraRoute({
     _i24.Key? key,
-    required int id,
     required void Function() callbackOnSend,
     List<_i23.PageRouteInfo>? children,
   }) : super(
           CameraRoute.name,
           args: CameraRouteArgs(
             key: key,
-            id: id,
             callbackOnSend: callbackOnSend,
           ),
           initialChildren: children,
@@ -292,19 +289,16 @@ class CameraRoute extends _i23.PageRouteInfo<CameraRouteArgs> {
 class CameraRouteArgs {
   const CameraRouteArgs({
     this.key,
-    required this.id,
     required this.callbackOnSend,
   });
 
   final _i24.Key? key;
 
-  final int id;
-
   final void Function() callbackOnSend;
 
   @override
   String toString() {
-    return 'CameraRouteArgs{key: $key, id: $id, callbackOnSend: $callbackOnSend}';
+    return 'CameraRouteArgs{key: $key, callbackOnSend: $callbackOnSend}';
   }
 }
 

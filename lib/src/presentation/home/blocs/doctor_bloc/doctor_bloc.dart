@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/helpers/app_data.dart';
@@ -15,11 +16,8 @@ class DoctorBloc extends Bloc<DoctorEvent, DoctorState> {
   final IDoctorRepository repository;
 
   DoctorBloc({required this.repository}) : super(const DoctorState.initial()) {
-    on<GetMentors>(onGetMentors);
-    on<GetPatients>(onGetPatients);
-
-    add(const GetMentors());
-    add(const GetPatients());
+    on<GetMentors>(onGetMentors, transformer: sequential());
+    on<GetPatients>(onGetPatients, transformer: sequential());
   }
 
   DoctorStateViewModel viewModel = DoctorStateViewModel();

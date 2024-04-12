@@ -1,8 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/page_route_extension.dart';
 import 'package:teeth_align_app/src/core/helpers/app_data.dart';
+import 'package:teeth_align_app/src/presentation/home/blocs/admin_bloc/admin_bloc.dart'
+    as admin;
+import 'package:teeth_align_app/src/presentation/home/blocs/doctor_bloc/doctor_bloc.dart'
+    as doc;
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 
@@ -16,6 +21,20 @@ class NavRouter extends StatefulWidget {
 
 class _NavRouterState extends State<NavRouter> {
   int currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<admin.AdminBloc>()
+        ..add(const admin.GetDoctors())
+        ..add(const admin.GetMentors())
+        ..add(const admin.GetPatients());
+      context.read<doc.DoctorBloc>()
+        ..add(const doc.GetMentors())
+        ..add(const doc.GetPatients());
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

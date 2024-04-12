@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
@@ -15,13 +16,9 @@ class AdminBloc extends Bloc<AdminEvent, AdminState> {
   final IAdminRepository repository;
 
   AdminBloc({required this.repository}) : super(const AdminState.initial()) {
-    on<GetMentors>(onGetMentors);
-    on<GetPatients>(onGetPatients);
-    on<GetDoctors>(onGetDoctors);
-
-    add(const GetMentors());
-    add(const GetPatients());
-    add(const GetDoctors());
+    on<GetMentors>(onGetMentors, transformer: sequential());
+    on<GetPatients>(onGetPatients, transformer: sequential());
+    on<GetDoctors>(onGetDoctors, transformer: sequential());
   }
 
   AdminStateViewModel viewModel = AdminStateViewModel();

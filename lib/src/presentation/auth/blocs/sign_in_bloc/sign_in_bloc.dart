@@ -64,7 +64,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     result.fold(
       (l) => emit(state.copyWith(status: LoadStatus.failed)),
       (r) {
-        router.replace(const NavRouter());
+        router.replace(const SplashRoute());
         emit(state.copyWith(status: LoadStatus.success));
       },
     );

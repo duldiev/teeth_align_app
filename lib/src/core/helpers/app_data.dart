@@ -7,6 +7,7 @@ class AppData {
 
   Role? role;
   String? fullName;
+  int userId = 0;
 
   factory AppData() {
     return _appData;

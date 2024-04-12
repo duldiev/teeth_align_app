@@ -29,7 +29,7 @@ class MentorListTile extends StatelessWidget {
           ),
         ),
         Text(
-          mentor.position,
+          mentor.speciality ?? '',
           style: context.textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.w500,
             color: AppColors.grey,

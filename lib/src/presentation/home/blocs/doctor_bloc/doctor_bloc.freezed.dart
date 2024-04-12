@@ -19,21 +19,18 @@ mixin _$DoctorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getMentors,
-    required TResult Function() getDoctors,
     required TResult Function() getPatients,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getMentors,
-    TResult? Function()? getDoctors,
     TResult? Function()? getPatients,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getMentors,
-    TResult Function()? getDoctors,
     TResult Function()? getPatients,
     required TResult orElse(),
   }) =>
@@ -41,21 +38,18 @@ mixin _$DoctorEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetMentors value) getMentors,
-    required TResult Function(GetDoctors value) getDoctors,
     required TResult Function(GetPatients value) getPatients,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetMentors value)? getMentors,
-    TResult? Function(GetDoctors value)? getDoctors,
     TResult? Function(GetPatients value)? getPatients,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetMentors value)? getMentors,
-    TResult Function(GetDoctors value)? getDoctors,
     TResult Function(GetPatients value)? getPatients,
     required TResult orElse(),
   }) =>
@@ -119,7 +113,6 @@ class _$GetMentorsImpl implements GetMentors {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getMentors,
-    required TResult Function() getDoctors,
     required TResult Function() getPatients,
   }) {
     return getMentors();
@@ -129,7 +122,6 @@ class _$GetMentorsImpl implements GetMentors {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getMentors,
-    TResult? Function()? getDoctors,
     TResult? Function()? getPatients,
   }) {
     return getMentors?.call();
@@ -139,7 +131,6 @@ class _$GetMentorsImpl implements GetMentors {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getMentors,
-    TResult Function()? getDoctors,
     TResult Function()? getPatients,
     required TResult orElse(),
   }) {
@@ -153,7 +144,6 @@ class _$GetMentorsImpl implements GetMentors {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetMentors value) getMentors,
-    required TResult Function(GetDoctors value) getDoctors,
     required TResult Function(GetPatients value) getPatients,
   }) {
     return getMentors(this);
@@ -163,7 +153,6 @@ class _$GetMentorsImpl implements GetMentors {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetMentors value)? getMentors,
-    TResult? Function(GetDoctors value)? getDoctors,
     TResult? Function(GetPatients value)? getPatients,
   }) {
     return getMentors?.call(this);
@@ -173,7 +162,6 @@ class _$GetMentorsImpl implements GetMentors {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetMentors value)? getMentors,
-    TResult Function(GetDoctors value)? getDoctors,
     TResult Function(GetPatients value)? getPatients,
     required TResult orElse(),
   }) {
@@ -186,114 +174,6 @@ class _$GetMentorsImpl implements GetMentors {
 
 abstract class GetMentors implements DoctorEvent {
   const factory GetMentors() = _$GetMentorsImpl;
-}
-
-/// @nodoc
-abstract class _$$GetDoctorsImplCopyWith<$Res> {
-  factory _$$GetDoctorsImplCopyWith(
-          _$GetDoctorsImpl value, $Res Function(_$GetDoctorsImpl) then) =
-      __$$GetDoctorsImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetDoctorsImplCopyWithImpl<$Res>
-    extends _$DoctorEventCopyWithImpl<$Res, _$GetDoctorsImpl>
-    implements _$$GetDoctorsImplCopyWith<$Res> {
-  __$$GetDoctorsImplCopyWithImpl(
-      _$GetDoctorsImpl _value, $Res Function(_$GetDoctorsImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$GetDoctorsImpl implements GetDoctors {
-  const _$GetDoctorsImpl();
-
-  @override
-  String toString() {
-    return 'DoctorEvent.getDoctors()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetDoctorsImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getMentors,
-    required TResult Function() getDoctors,
-    required TResult Function() getPatients,
-  }) {
-    return getDoctors();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getMentors,
-    TResult? Function()? getDoctors,
-    TResult? Function()? getPatients,
-  }) {
-    return getDoctors?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getMentors,
-    TResult Function()? getDoctors,
-    TResult Function()? getPatients,
-    required TResult orElse(),
-  }) {
-    if (getDoctors != null) {
-      return getDoctors();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(GetMentors value) getMentors,
-    required TResult Function(GetDoctors value) getDoctors,
-    required TResult Function(GetPatients value) getPatients,
-  }) {
-    return getDoctors(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetMentors value)? getMentors,
-    TResult? Function(GetDoctors value)? getDoctors,
-    TResult? Function(GetPatients value)? getPatients,
-  }) {
-    return getDoctors?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetMentors value)? getMentors,
-    TResult Function(GetDoctors value)? getDoctors,
-    TResult Function(GetPatients value)? getPatients,
-    required TResult orElse(),
-  }) {
-    if (getDoctors != null) {
-      return getDoctors(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetDoctors implements DoctorEvent {
-  const factory GetDoctors() = _$GetDoctorsImpl;
 }
 
 /// @nodoc
@@ -335,7 +215,6 @@ class _$GetPatientsImpl implements GetPatients {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getMentors,
-    required TResult Function() getDoctors,
     required TResult Function() getPatients,
   }) {
     return getPatients();
@@ -345,7 +224,6 @@ class _$GetPatientsImpl implements GetPatients {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getMentors,
-    TResult? Function()? getDoctors,
     TResult? Function()? getPatients,
   }) {
     return getPatients?.call();
@@ -355,7 +233,6 @@ class _$GetPatientsImpl implements GetPatients {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getMentors,
-    TResult Function()? getDoctors,
     TResult Function()? getPatients,
     required TResult orElse(),
   }) {
@@ -369,7 +246,6 @@ class _$GetPatientsImpl implements GetPatients {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetMentors value) getMentors,
-    required TResult Function(GetDoctors value) getDoctors,
     required TResult Function(GetPatients value) getPatients,
   }) {
     return getPatients(this);
@@ -379,7 +255,6 @@ class _$GetPatientsImpl implements GetPatients {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetMentors value)? getMentors,
-    TResult? Function(GetDoctors value)? getDoctors,
     TResult? Function(GetPatients value)? getPatients,
   }) {
     return getPatients?.call(this);
@@ -389,7 +264,6 @@ class _$GetPatientsImpl implements GetPatients {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetMentors value)? getMentors,
-    TResult Function(GetDoctors value)? getDoctors,
     TResult Function(GetPatients value)? getPatients,
     required TResult orElse(),
   }) {
@@ -408,8 +282,6 @@ abstract class GetPatients implements DoctorEvent {
 mixin _$DoctorState {
   List<MentorEntity> get mentors => throw _privateConstructorUsedError;
   LoadStatus get mentorsStatus => throw _privateConstructorUsedError;
-  List<DoctorEntity> get doctors => throw _privateConstructorUsedError;
-  LoadStatus get doctorsStatus => throw _privateConstructorUsedError;
   List<PatientEntity> get patients => throw _privateConstructorUsedError;
   LoadStatus get patientsStatus => throw _privateConstructorUsedError;
 
@@ -427,8 +299,6 @@ abstract class $DoctorStateCopyWith<$Res> {
   $Res call(
       {List<MentorEntity> mentors,
       LoadStatus mentorsStatus,
-      List<DoctorEntity> doctors,
-      LoadStatus doctorsStatus,
       List<PatientEntity> patients,
       LoadStatus patientsStatus});
 }
@@ -448,8 +318,6 @@ class _$DoctorStateCopyWithImpl<$Res, $Val extends DoctorState>
   $Res call({
     Object? mentors = null,
     Object? mentorsStatus = null,
-    Object? doctors = null,
-    Object? doctorsStatus = null,
     Object? patients = null,
     Object? patientsStatus = null,
   }) {
@@ -461,14 +329,6 @@ class _$DoctorStateCopyWithImpl<$Res, $Val extends DoctorState>
       mentorsStatus: null == mentorsStatus
           ? _value.mentorsStatus
           : mentorsStatus // ignore: cast_nullable_to_non_nullable
-              as LoadStatus,
-      doctors: null == doctors
-          ? _value.doctors
-          : doctors // ignore: cast_nullable_to_non_nullable
-              as List<DoctorEntity>,
-      doctorsStatus: null == doctorsStatus
-          ? _value.doctorsStatus
-          : doctorsStatus // ignore: cast_nullable_to_non_nullable
               as LoadStatus,
       patients: null == patients
           ? _value.patients
@@ -493,8 +353,6 @@ abstract class _$$DoctorStateImplCopyWith<$Res>
   $Res call(
       {List<MentorEntity> mentors,
       LoadStatus mentorsStatus,
-      List<DoctorEntity> doctors,
-      LoadStatus doctorsStatus,
       List<PatientEntity> patients,
       LoadStatus patientsStatus});
 }
@@ -512,8 +370,6 @@ class __$$DoctorStateImplCopyWithImpl<$Res>
   $Res call({
     Object? mentors = null,
     Object? mentorsStatus = null,
-    Object? doctors = null,
-    Object? doctorsStatus = null,
     Object? patients = null,
     Object? patientsStatus = null,
   }) {
@@ -525,14 +381,6 @@ class __$$DoctorStateImplCopyWithImpl<$Res>
       mentorsStatus: null == mentorsStatus
           ? _value.mentorsStatus
           : mentorsStatus // ignore: cast_nullable_to_non_nullable
-              as LoadStatus,
-      doctors: null == doctors
-          ? _value._doctors
-          : doctors // ignore: cast_nullable_to_non_nullable
-              as List<DoctorEntity>,
-      doctorsStatus: null == doctorsStatus
-          ? _value.doctorsStatus
-          : doctorsStatus // ignore: cast_nullable_to_non_nullable
               as LoadStatus,
       patients: null == patients
           ? _value._patients
@@ -552,12 +400,9 @@ class _$DoctorStateImpl extends _DoctorState {
   _$DoctorStateImpl(
       {final List<MentorEntity> mentors = const [],
       this.mentorsStatus = LoadStatus.initial,
-      final List<DoctorEntity> doctors = const [],
-      this.doctorsStatus = LoadStatus.initial,
       final List<PatientEntity> patients = const [],
       this.patientsStatus = LoadStatus.initial})
       : _mentors = mentors,
-        _doctors = doctors,
         _patients = patients,
         super._();
 
@@ -573,18 +418,6 @@ class _$DoctorStateImpl extends _DoctorState {
   @override
   @JsonKey()
   final LoadStatus mentorsStatus;
-  final List<DoctorEntity> _doctors;
-  @override
-  @JsonKey()
-  List<DoctorEntity> get doctors {
-    if (_doctors is EqualUnmodifiableListView) return _doctors;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_doctors);
-  }
-
-  @override
-  @JsonKey()
-  final LoadStatus doctorsStatus;
   final List<PatientEntity> _patients;
   @override
   @JsonKey()
@@ -600,7 +433,7 @@ class _$DoctorStateImpl extends _DoctorState {
 
   @override
   String toString() {
-    return 'DoctorState(mentors: $mentors, mentorsStatus: $mentorsStatus, doctors: $doctors, doctorsStatus: $doctorsStatus, patients: $patients, patientsStatus: $patientsStatus)';
+    return 'DoctorState(mentors: $mentors, mentorsStatus: $mentorsStatus, patients: $patients, patientsStatus: $patientsStatus)';
   }
 
   @override
@@ -611,9 +444,6 @@ class _$DoctorStateImpl extends _DoctorState {
             const DeepCollectionEquality().equals(other._mentors, _mentors) &&
             (identical(other.mentorsStatus, mentorsStatus) ||
                 other.mentorsStatus == mentorsStatus) &&
-            const DeepCollectionEquality().equals(other._doctors, _doctors) &&
-            (identical(other.doctorsStatus, doctorsStatus) ||
-                other.doctorsStatus == doctorsStatus) &&
             const DeepCollectionEquality().equals(other._patients, _patients) &&
             (identical(other.patientsStatus, patientsStatus) ||
                 other.patientsStatus == patientsStatus));
@@ -624,8 +454,6 @@ class _$DoctorStateImpl extends _DoctorState {
       runtimeType,
       const DeepCollectionEquality().hash(_mentors),
       mentorsStatus,
-      const DeepCollectionEquality().hash(_doctors),
-      doctorsStatus,
       const DeepCollectionEquality().hash(_patients),
       patientsStatus);
 
@@ -640,8 +468,6 @@ abstract class _DoctorState extends DoctorState {
   factory _DoctorState(
       {final List<MentorEntity> mentors,
       final LoadStatus mentorsStatus,
-      final List<DoctorEntity> doctors,
-      final LoadStatus doctorsStatus,
       final List<PatientEntity> patients,
       final LoadStatus patientsStatus}) = _$DoctorStateImpl;
   _DoctorState._() : super._();
@@ -650,10 +476,6 @@ abstract class _DoctorState extends DoctorState {
   List<MentorEntity> get mentors;
   @override
   LoadStatus get mentorsStatus;
-  @override
-  List<DoctorEntity> get doctors;
-  @override
-  LoadStatus get doctorsStatus;
   @override
   List<PatientEntity> get patients;
   @override

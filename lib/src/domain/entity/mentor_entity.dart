@@ -2,9 +2,10 @@ import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
 
 class MentorEntity extends AccountEntity {
-  final String clinicName;
-  final int yearsOfExperience;
-  final String position;
+  final String? education;
+  final String? workExperience;
+  final String? speciality;
+  final String? chatToken;
 
   const MentorEntity({
     required super.id,
@@ -16,9 +17,10 @@ class MentorEntity extends AccountEntity {
     required super.role,
     required super.birthDate,
     required super.avatarUrl,
-    required this.clinicName,
-    required this.yearsOfExperience,
-    required this.position,
+    required this.education,
+    required this.workExperience,
+    required this.speciality,
+    required this.chatToken,
   });
 
   factory MentorEntity.empty() => MentorEntity(
@@ -30,17 +32,19 @@ class MentorEntity extends AccountEntity {
         langKey: 'langKey',
         role: Role.mentor,
         birthDate: DateTime.now(),
-        position: 'Expert',
         avatarUrl: null,
-        clinicName: 'clinicName',
-        yearsOfExperience: 0,
+        education: null,
+        workExperience: null,
+        speciality: null,
+        chatToken: null,
       );
 
   @override
   List<Object?> get props => [
-        clinicName,
-        yearsOfExperience,
-        position,
+        education,
+        workExperience,
+        speciality,
+        chatToken,
         ...super.props,
       ];
 }

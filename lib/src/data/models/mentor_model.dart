@@ -12,9 +12,10 @@ class MentorModel extends MentorEntity {
     required super.role,
     required super.birthDate,
     required super.avatarUrl,
-    required super.position,
-    required super.clinicName,
-    required super.yearsOfExperience,
+    required super.education,
+    required super.workExperience,
+    required super.speciality,
+    required super.chatToken,
   });
 
   factory MentorModel.fromMap(Map<String, dynamic> map) => MentorModel(
@@ -29,8 +30,9 @@ class MentorModel extends MentorEntity {
         birthDate: map['birthDate'] == null
             ? DateTime.now()
             : DateTime.parse(map['birthDate']),
-        position: map['position'] as String,
-        clinicName: map['position'] as String,
-        yearsOfExperience: map['yearsOfExperience'] as int,
+        education: map['education'] as String?,
+        workExperience: map['workExperience'] as String?,
+        speciality: map['speciality'] as String?,
+        chatToken: map['chatToken'] as String?,
       );
 }

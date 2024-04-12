@@ -102,6 +102,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
       (r) {
         appData.role = r.role;
         appData.fullName = '${r.firstName}\n${r.lastName}';
+        appData.userId = r.id;
         emit(state.copyWith(status: LoadStatus.success, account: r));
       },
     );

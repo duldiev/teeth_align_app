@@ -6,6 +6,7 @@ import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/circular_bar.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/timer_circular_bar.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
+import 'package:teeth_align_app/src/shared/inputs/timer_input.dart';
 import 'package:teeth_align_app/src/shared/widgets/logo_title.dart';
 
 @RoutePage()
@@ -53,10 +54,7 @@ class PatientHomeScreen extends StatelessWidget {
                     textAlign: TextAlign.right,
                   ),
                   Gap(6.w),
-                  const CircularBar(
-                    current: 4,
-                    total: 10,
-                  ),
+                  const CircularBar(current: 4, total: 10),
                   Gap(4.w),
                   Text(
                     'дней',
@@ -72,11 +70,20 @@ class PatientHomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const TimerCircularBar(),
-                  Gap(6.w),
-                  Text(
-                    'Таймер\nвывода',
-                    style: context.textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.w800,
+                  InkWell(
+                    onTap: () => showDialog(
+                      context: context,
+                      builder: (context) => const TimerInput(),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(8.w),
+                      child: Text(
+                        'Таймер\nвывода',
+                        style: context.textTheme.headlineSmall?.copyWith(
+                          fontWeight: FontWeight.w800,
+                          color: AppColors.secondary,
+                        ),
+                      ),
                     ),
                   ),
                 ],

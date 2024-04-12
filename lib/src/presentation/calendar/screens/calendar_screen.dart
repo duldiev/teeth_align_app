@@ -1,9 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:teeth_align_app/src/shared/buttons/colored_button.dart';
 
 @RoutePage()
 class CalendarScreen extends StatelessWidget {
@@ -27,25 +25,6 @@ class CalendarScreen extends StatelessWidget {
                 lastDay: DateTime.now(),
                 startingDayOfWeek: StartingDayOfWeek.monday,
               ),
-              Gap(4.h),
-              Column(
-                children: [
-                  ColoredButton(
-                    onTap: () {},
-                    title: 'Нужно сделать снимок',
-                  ),
-                  Gap(2.h),
-                  ColoredButton(
-                    onTap: () {},
-                    title: 'Свободно',
-                  ),
-                  Gap(2.h),
-                  ColoredButton(
-                    onTap: () {},
-                    title: 'Нужно сделать снимок',
-                  ),
-                ],
-              )
             ],
           ),
         ),

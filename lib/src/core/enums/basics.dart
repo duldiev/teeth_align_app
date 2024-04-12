@@ -2,6 +2,8 @@ enum LoadStatus { initial, loading, success, failed }
 
 enum DateTimeType { days, months, years }
 
+enum TimerProperty { hh, mm, ss }
+
 enum InputSuffixType { none, obsecure }
 
 enum Role {

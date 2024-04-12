@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:circular_seek_bar/circular_seek_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -38,13 +37,9 @@ class _TimerCircularBarState extends State<TimerCircularBar> {
       const Duration(seconds: 1),
       (timer) {
         if (start == 0) {
-          setState(() {
-            timer.cancel();
-          });
+          setState(() => timer.cancel());
         } else {
-          setState(() {
-            start--;
-          });
+          setState(() => start--);
         }
       },
     );
@@ -90,9 +85,7 @@ class _TimerCircularBarState extends State<TimerCircularBar> {
             InkWell(
               onTap: () {
                 timer?.cancel();
-                setState(() {
-                  start = 0;
-                });
+                setState(() => start = 0);
               },
               child: Container(
                 padding: const EdgeInsets.all(4),
@@ -109,9 +102,7 @@ class _TimerCircularBarState extends State<TimerCircularBar> {
             ),
           ] else ...[
             InkWell(
-              onTap: () => setState(() {
-                startTimer(widget.start);
-              }),
+              onTap: () => setState(() => startTimer(widget.start)),
               child: Container(
                 padding: const EdgeInsets.all(4),
                 decoration: const BoxDecoration(

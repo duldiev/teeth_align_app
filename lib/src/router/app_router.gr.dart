@@ -11,8 +11,9 @@
 import 'package:auto_route/auto_route.dart' as _i22;
 import 'package:flutter/material.dart' as _i23;
 import 'package:stream_chat_flutter/stream_chat_flutter.dart' as _i24;
-import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart' as _i25;
-import 'package:teeth_align_app/src/domain/entity/patient_entity.dart' as _i26;
+import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart' as _i25;
+import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart' as _i26;
+import 'package:teeth_align_app/src/domain/entity/patient_entity.dart' as _i27;
 import 'package:teeth_align_app/src/presentation/account/screens/account_screen.dart'
     as _i1;
 import 'package:teeth_align_app/src/presentation/account/screens/doctor_profile_screen.dart'
@@ -101,9 +102,13 @@ abstract class $AppRouter extends _i22.RootStackRouter {
       );
     },
     DoctorProfileRoute.name: (routeData) {
+      final args = routeData.argsAs<DoctorProfileRouteArgs>();
       return _i22.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i7.DoctorProfileScreen(),
+        child: _i7.DoctorProfileScreen(
+          key: args.key,
+          doctor: args.doctor,
+        ),
       );
     },
     MentorHomeRoute.name: (routeData) {
@@ -315,16 +320,40 @@ class DoctorHomeRoute extends _i22.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i7.DoctorProfileScreen]
-class DoctorProfileRoute extends _i22.PageRouteInfo<void> {
-  const DoctorProfileRoute({List<_i22.PageRouteInfo>? children})
-      : super(
+class DoctorProfileRoute extends _i22.PageRouteInfo<DoctorProfileRouteArgs> {
+  DoctorProfileRoute({
+    _i23.Key? key,
+    required _i25.DoctorEntity doctor,
+    List<_i22.PageRouteInfo>? children,
+  }) : super(
           DoctorProfileRoute.name,
+          args: DoctorProfileRouteArgs(
+            key: key,
+            doctor: doctor,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'DoctorProfileRoute';
 
-  static const _i22.PageInfo<void> page = _i22.PageInfo<void>(name);
+  static const _i22.PageInfo<DoctorProfileRouteArgs> page =
+      _i22.PageInfo<DoctorProfileRouteArgs>(name);
+}
+
+class DoctorProfileRouteArgs {
+  const DoctorProfileRouteArgs({
+    this.key,
+    required this.doctor,
+  });
+
+  final _i23.Key? key;
+
+  final _i25.DoctorEntity doctor;
+
+  @override
+  String toString() {
+    return 'DoctorProfileRouteArgs{key: $key, doctor: $doctor}';
+  }
 }
 
 /// generated route for
@@ -346,7 +375,7 @@ class MentorHomeRoute extends _i22.PageRouteInfo<void> {
 class MentorProfileRoute extends _i22.PageRouteInfo<MentorProfileRouteArgs> {
   MentorProfileRoute({
     _i23.Key? key,
-    required _i25.MentorEntity mentor,
+    required _i26.MentorEntity mentor,
     List<_i22.PageRouteInfo>? children,
   }) : super(
           MentorProfileRoute.name,
@@ -371,7 +400,7 @@ class MentorProfileRouteArgs {
 
   final _i23.Key? key;
 
-  final _i25.MentorEntity mentor;
+  final _i26.MentorEntity mentor;
 
   @override
   String toString() {
@@ -426,7 +455,7 @@ class PatientHomeRoute extends _i22.PageRouteInfo<void> {
 class PatientProfileRoute extends _i22.PageRouteInfo<PatientProfileRouteArgs> {
   PatientProfileRoute({
     _i23.Key? key,
-    required _i26.PatientEntity patient,
+    required _i27.PatientEntity patient,
     List<_i22.PageRouteInfo>? children,
   }) : super(
           PatientProfileRoute.name,
@@ -451,7 +480,7 @@ class PatientProfileRouteArgs {
 
   final _i23.Key? key;
 
-  final _i26.PatientEntity patient;
+  final _i27.PatientEntity patient;
 
   @override
   String toString() {

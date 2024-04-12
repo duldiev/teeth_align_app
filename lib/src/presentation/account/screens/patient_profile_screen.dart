@@ -22,7 +22,7 @@ class PatientProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        title: Text('Mentor'),
+        title: Text('Patient'),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(

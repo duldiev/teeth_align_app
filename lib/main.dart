@@ -6,6 +6,8 @@ import 'package:teeth_align_app/src/core/constants/api_keys.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/utils/bloc_observer.dart';
 import 'package:teeth_align_app/src/presentation/base/app.dart';
+import 'package:camera/camera.dart';
+import 'package:teeth_align_app/src/presentation/base/globals.dart';
 
 // TASKS
 // Note: design in figma
@@ -50,6 +52,8 @@ Future<void> main() async {
     User(id: 'test-user-t-flutter'),
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidGVzdC11c2VyLXQtZmx1dHRlciJ9.yZIsmPOK4GZaXJ95Chxm-qR_dsElBic0xwHnvbisDWo',
   );
+
+  cameras = await availableCameras();
 
   runApp(const App());
 }

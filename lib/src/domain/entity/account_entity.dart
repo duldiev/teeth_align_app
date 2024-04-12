@@ -11,6 +11,8 @@ class AccountEntity extends Equatable {
   final String? avatarUrl;
   final Role role;
   final DateTime? birthDate;
+  final String? chatToken;
+  final String? bio;
 
   const AccountEntity({
     required this.id,
@@ -22,6 +24,8 @@ class AccountEntity extends Equatable {
     required this.avatarUrl,
     required this.role,
     required this.birthDate,
+    required this.chatToken,
+    required this.bio,
   });
 
   String get fullName => '$firstName $lastName';
@@ -36,6 +40,8 @@ class AccountEntity extends Equatable {
         avatarUrl: null,
         role: Role.patient,
         birthDate: DateTime.now(),
+        chatToken: null,
+        bio: null,
       );
 
   @override
@@ -49,5 +55,7 @@ class AccountEntity extends Equatable {
         avatarUrl,
         role,
         birthDate,
+        chatToken,
+        bio,
       ];
 }

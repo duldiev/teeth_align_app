@@ -13,9 +13,11 @@ class TimerInput extends StatefulWidget {
   const TimerInput({
     super.key,
     required this.onPicked,
+    required this.duration,
   });
 
   final void Function(Duration duration) onPicked;
+  final Duration duration;
 
   @override
   State<TimerInput> createState() => _TimerInputState();
@@ -47,6 +49,7 @@ class _TimerInputState extends State<TimerInput> {
             ),
             Gap(2.h),
             _TimerNumberInput(
+              duration: duration,
               onPicked: (duration) => setState(
                 () => this.duration = duration,
               ),
@@ -70,9 +73,11 @@ class _TimerInputState extends State<TimerInput> {
 class _TimerNumberInput extends StatefulWidget {
   const _TimerNumberInput({
     required this.onPicked,
+    required this.duration,
   });
 
   final void Function(Duration duration) onPicked;
+  final Duration duration;
 
   @override
   State<_TimerNumberInput> createState() => __TimerNumberInputState();
@@ -115,6 +120,7 @@ class __TimerNumberInputState extends State<_TimerNumberInput> {
                 TimerProperty.ss => _ssController,
               },
               duration: duration,
+              finalDuration: widget.duration,
               property: TimerProperty.values[index],
               onPageChanged: (value, type) {
                 switch (type) {
@@ -165,12 +171,14 @@ class _NumberPicker extends StatefulWidget {
   const _NumberPicker({
     required this.controller,
     required this.duration,
+    required this.finalDuration,
     required this.property,
     required this.onPageChanged,
   });
 
   final CarouselController controller;
   final Duration duration;
+  final Duration finalDuration;
   final TimerProperty property;
   final dynamic Function(
     int value,
@@ -269,8 +277,6 @@ class __NumberPickerState extends State<_NumberPicker> {
         enlargeFactor: 0.5,
         onPageChanged: (index, reason) => setState(() {
           selectedValue = list[index];
-          // log('$valueSeconds $remainder');
-          // log('${Duration(seconds: (all - remainder) + valueSeconds)}');
           widget.onPageChanged(list[index], widget.property);
         }),
       ),

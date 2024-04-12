@@ -11,5 +11,7 @@ class AdminEntity extends AccountEntity {
     required super.role,
     required super.birthDate,
     required super.avatarUrl,
+    required super.chatToken,
+    required super.bio,
   });
 }

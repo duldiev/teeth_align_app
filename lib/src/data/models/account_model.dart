@@ -12,6 +12,8 @@ class AccountModel extends AccountEntity {
     required super.avatarUrl,
     required super.role,
     required super.birthDate,
+    required super.chatToken,
+    required super.bio,
   });
 
   factory AccountModel.fromMap(Map<String, dynamic> map) => AccountModel(
@@ -29,5 +31,7 @@ class AccountModel extends AccountEntity {
                 map['birthDate'],
               )
             : null,
+        chatToken: map['chatToken'] as String?,
+        bio: map['bio'] as String?,
       );
 }

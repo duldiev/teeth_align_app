@@ -17,8 +17,8 @@ extension DateExtension on DateTime? {
     return result;
   }
 
-  int getAge() {
-    if (this == null) return 0;
+  int? getAge() {
+    if (this == null) return null;
     final duration = this!.difference(DateTime.now());
     return (duration.inDays ~/ 365).abs();
   }

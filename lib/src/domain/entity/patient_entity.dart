@@ -12,6 +12,8 @@ class PatientEntity extends AccountEntity {
     required super.role,
     required super.birthDate,
     required super.avatarUrl,
+    required super.chatToken,
+    required super.bio,
   });
 
   factory PatientEntity.empty() => PatientEntity(
@@ -24,6 +26,8 @@ class PatientEntity extends AccountEntity {
         role: Role.patient,
         birthDate: DateTime.now(),
         avatarUrl: null,
+        chatToken: null,
+        bio: null,
       );
 
   @override

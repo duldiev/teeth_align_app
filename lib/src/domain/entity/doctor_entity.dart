@@ -16,9 +16,11 @@ class DoctorEntity extends AccountEntity {
     required super.avatarUrl,
     required super.role,
     required super.birthDate,
+    required super.chatToken,
     required this.clinicName,
     required this.yearsOfExperience,
     required this.position,
+    required super.bio,
   });
 
   factory DoctorEntity.empty() => DoctorEntity(
@@ -34,5 +36,7 @@ class DoctorEntity extends AccountEntity {
         avatarUrl: null,
         yearsOfExperience: 0,
         position: 'Position',
+        chatToken: null,
+        bio: null,
       );
 }

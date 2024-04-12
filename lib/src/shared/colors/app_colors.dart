@@ -12,6 +12,7 @@ class AppColors {
   static const Color dark = Color(0xFF242424);
   static const Color button = Color(0xFFFB8500);
   static const Color danger = Color(0xFFFF5B22);
+  static const Color avatarBg = Color(0xFF845A29);
   static const Color success = Colors.green;
   static const Color blue = Colors.blue;
   static const Color red = Colors.red;

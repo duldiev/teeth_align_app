@@ -81,6 +81,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                     onTap: () => showDialog(
                       context: context,
                       builder: (context) => TimerInput(
+                        duration: Duration(seconds: timerSeconds.value),
                         onPicked: (Duration duration) => setState(
                           () => timerSeconds.value = duration.inSeconds,
                         ),

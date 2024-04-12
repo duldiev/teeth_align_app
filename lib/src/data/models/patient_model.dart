@@ -12,6 +12,8 @@ class PatientModel extends PatientEntity {
     required super.role,
     required super.birthDate,
     required super.avatarUrl,
+    required super.chatToken,
+    required super.bio,
   });
 
   factory PatientModel.fromMap(Map<String, dynamic> map) => PatientModel(
@@ -26,5 +28,7 @@ class PatientModel extends PatientEntity {
         birthDate: map['birthDate'] == null
             ? DateTime.now()
             : DateTime.parse(map['birthDate']),
+        chatToken: map['chatToken'] as String?,
+        bio: map['bio'] as String?,
       );
 }

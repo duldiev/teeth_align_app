@@ -9,6 +9,7 @@ import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart';
 import 'package:teeth_align_app/src/presentation/base/app_theme_data.dart';
 import 'package:teeth_align_app/src/presentation/base/globals.dart';
+import 'package:teeth_align_app/src/presentation/home/blocs/admin_bloc/admin_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/doctor_bloc/doctor_bloc.dart';
 import 'package:teeth_align_app/src/router/app_router.dart';
 
@@ -35,6 +36,7 @@ class App extends StatelessWidget {
           providers: [
             BlocProvider(create: (_) => getIt<SignInBloc>()),
             BlocProvider(create: (_) => getIt<DoctorBloc>()),
+            BlocProvider(create: (_) => getIt<AdminBloc>()),
           ],
           child: StreamChat(
             client: client,

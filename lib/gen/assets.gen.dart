@@ -33,8 +33,8 @@ class $AssetsImagesGen {
   /// File path: assets/images/doctor.png
   AssetGenImage get doctor => const AssetGenImage('assets/images/doctor.png');
 
-  /// File path: assets/images/girl.png
-  AssetGenImage get girl => const AssetGenImage('assets/images/girl.png');
+  /// File path: assets/images/girl.jpeg
+  AssetGenImage get girl => const AssetGenImage('assets/images/girl.jpeg');
 
   /// File path: assets/images/patient.png
   AssetGenImage get patient => const AssetGenImage('assets/images/patient.png');

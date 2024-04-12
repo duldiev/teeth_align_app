@@ -10,8 +10,15 @@ import 'package:teeth_align_app/src/shared/inputs/timer_input.dart';
 import 'package:teeth_align_app/src/shared/widgets/logo_title.dart';
 
 @RoutePage()
-class PatientHomeScreen extends StatelessWidget {
+class PatientHomeScreen extends StatefulWidget {
   const PatientHomeScreen({super.key});
+
+  @override
+  State<PatientHomeScreen> createState() => _PatientHomeScreenState();
+}
+
+class _PatientHomeScreenState extends State<PatientHomeScreen> {
+  ValueNotifier<int> timerSeconds = ValueNotifier(1);
 
   @override
   Widget build(BuildContext context) {
@@ -69,11 +76,15 @@ class PatientHomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const TimerCircularBar(),
+                  TimerCircularBar(start: timerSeconds.value),
                   InkWell(
                     onTap: () => showDialog(
                       context: context,
-                      builder: (context) => const TimerInput(),
+                      builder: (context) => TimerInput(
+                        onPicked: (Duration duration) => setState(
+                          () => timerSeconds.value = duration.inSeconds,
+                        ),
+                      ),
                     ),
                     child: Padding(
                       padding: EdgeInsets.all(8.w),

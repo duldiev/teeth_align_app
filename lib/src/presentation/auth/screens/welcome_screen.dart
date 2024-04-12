@@ -16,23 +16,18 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            child: Container(
-              color: AppColors.secondary,
-              child: SafeArea(
-                bottom: false,
-                child: Assets.images.girl.image(
-                  fit: BoxFit.cover,
-                ),
+      body: SafeArea(
+        top: false,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: Container(
+                color: AppColors.secondary,
+                child: Assets.images.girl.image(fit: BoxFit.cover),
               ),
             ),
-          ),
-          Expanded(
-            child: SafeArea(
-              top: false,
+            Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -42,8 +37,8 @@ class WelcomeScreen extends StatelessWidget {
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 6.w),
                       child: Text(
-                        'Доверьтесь нам на пути к вашей идеальной улыбке! С нашими выравнивающими системами ваш опыт становится удобным и эффективным.',
-                        style: context.textTheme.titleLarge,
+                        'Доверьтесь нам на пути к вашей идеальной улыбке! С нашими элайнерами ваш опыт становится удобным и эффективным.',
+                        style: context.textTheme.titleMedium,
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -75,8 +70,8 @@ class WelcomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

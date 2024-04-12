@@ -26,7 +26,15 @@ class _TimerCircularBarState extends State<TimerCircularBar> {
   @override
   void initState() {
     super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
     startTimer(widget.start);
+    setState(() {
+      start = widget.start;
+    });
+    super.didChangeDependencies();
   }
 
   void startTimer(int startTimer) {

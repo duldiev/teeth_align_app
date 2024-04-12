@@ -15,4 +15,6 @@ extension StringExtensions on String? {
   String capitalize() => this == null
       ? ''
       : '${this![0].toUpperCase()}${this!.substring(1).toLowerCase()}';
+
+  bool isExist() => this != null && this!.isNotEmpty;
 }

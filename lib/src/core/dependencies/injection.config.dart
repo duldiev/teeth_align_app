@@ -33,11 +33,12 @@ import '../../domain/repository/i_profile_repository.dart' as _i18;
 import '../../domain/repository/i_social_repository.dart' as _i20;
 import '../../presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart' as _i25;
 import '../../presentation/auth/blocs/sign_up_bloc/sign_up_bloc.dart' as _i26;
-import '../../presentation/home/blocs/doctor_bloc/doctor_bloc.dart' as _i29;
+import '../../presentation/home/blocs/admin_bloc/admin_bloc.dart' as _i28;
+import '../../presentation/home/blocs/doctor_bloc/doctor_bloc.dart' as _i30;
 import '../../presentation/social/blocs/social_bloc/social_bloc.dart' as _i27;
 import '../../router/app_router.dart' as _i3;
-import '../modules/modules.dart' as _i30;
-import '../services/api_client.dart' as _i28;
+import '../modules/modules.dart' as _i31;
+import '../services/api_client.dart' as _i29;
 import '../services/network_info.dart' as _i15;
 
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -89,13 +90,15 @@ Future<_i1.GetIt> $initGetIt(
         imagePicker: gh<_i22.ImagePicker>(),
         router: gh<_i3.AppRouter>(),
       ));
-  gh.singleton<_i28.ApiClient>(() => _i28.ApiClient(
+  gh.factory<_i28.AdminBloc>(
+      () => _i28.AdminBloc(repository: gh<_i7.IAdminRepository>()));
+  gh.singleton<_i29.ApiClient>(() => _i29.ApiClient(
         client: gh<_i5.Dio>(),
         storage: gh<_i6.FlutterSecureStorage>(),
       ));
-  gh.factory<_i29.DoctorBloc>(
-      () => _i29.DoctorBloc(repository: gh<_i11.IDoctorRepository>()));
+  gh.factory<_i30.DoctorBloc>(
+      () => _i30.DoctorBloc(repository: gh<_i11.IDoctorRepository>()));
   return getIt;
 }
 
-class _$Modules extends _i30.Modules {}
+class _$Modules extends _i31.Modules {}

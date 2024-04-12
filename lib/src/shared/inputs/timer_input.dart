@@ -1,5 +1,4 @@
-import 'dart:developer';
-
+import 'package:auto_route/auto_route.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -7,12 +6,23 @@ import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
+import 'package:teeth_align_app/src/shared/buttons/colored_button.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 
-class TimerInput extends StatelessWidget {
+class TimerInput extends StatefulWidget {
   const TimerInput({
     super.key,
+    required this.onPicked,
   });
+
+  final void Function(Duration duration) onPicked;
+
+  @override
+  State<TimerInput> createState() => _TimerInputState();
+}
+
+class _TimerInputState extends State<TimerInput> {
+  Duration duration = const Duration(seconds: 0);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +47,18 @@ class TimerInput extends StatelessWidget {
             ),
             Gap(2.h),
             _TimerNumberInput(
-              onPicked: (duration) {},
+              onPicked: (duration) => setState(
+                () => this.duration = duration,
+              ),
+            ),
+            Gap(1.h),
+            ColoredButton(
+              onTap: () {
+                widget.onPicked(duration);
+                context.router.maybePop();
+              },
+              title: 'Done',
+              padding: EdgeInsets.symmetric(vertical: 0.8.h),
             ),
           ],
         ),
@@ -61,7 +82,7 @@ class __TimerNumberInputState extends State<_TimerNumberInput> {
   late CarouselController _hhController;
   late CarouselController _mmController;
   late CarouselController _ssController;
-  Duration duration = const Duration(hours: 0, minutes: 0, seconds: 0);
+  Duration duration = const Duration(seconds: 0);
 
   @override
   void initState() {
@@ -81,7 +102,7 @@ class __TimerNumberInputState extends State<_TimerNumberInput> {
       decoration: BoxDecoration(
         color: AppColors.grey.withOpacity(0.1),
         border: Border.all(color: AppColors.dark),
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(14),
       ),
       child: Row(
         children: List.generate(
@@ -112,7 +133,8 @@ class __TimerNumberInputState extends State<_TimerNumberInput> {
                       setState(() {
                         duration = Duration(
                           seconds: value * 60 +
-                              (duration.inSeconds - (duration.inMinutes * 60)),
+                              (duration.inSeconds -
+                                  (duration.inMinutes % 60 * 60)),
                         );
                       });
                       break;
@@ -129,7 +151,6 @@ class __TimerNumberInputState extends State<_TimerNumberInput> {
                       break;
                     }
                 }
-                log(duration.toString());
                 widget.onPicked(duration);
               },
             ),

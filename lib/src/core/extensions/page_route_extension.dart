@@ -11,7 +11,7 @@ extension PageRouteInfoExtension on PageRouteInfo {
         DoctorHomeRoute() => 'Home',
         ReportRoute() => 'Report',
         SocialRoute() => 'Social',
-        NotificationRoute() => 'Notification',
+        NotificationRoute() => 'Inbox',
         AccountRoute() => 'Account',
         PageRouteInfo() => routeName,
       };

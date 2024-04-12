@@ -18,33 +18,45 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AdminEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() getMentors,
+    required TResult Function() getPatients,
+    required TResult Function() getDoctors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? getMentors,
+    TResult? Function()? getPatients,
+    TResult? Function()? getDoctors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? getMentors,
+    TResult Function()? getPatients,
+    TResult Function()? getDoctors,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(GetMentors value) getMentors,
+    required TResult Function(GetPatients value) getPatients,
+    required TResult Function(GetDoctors value) getDoctors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(GetMentors value)? getMentors,
+    TResult? Function(GetPatients value)? getPatients,
+    TResult? Function(GetDoctors value)? getDoctors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(GetMentors value)? getMentors,
+    TResult Function(GetPatients value)? getPatients,
+    TResult Function(GetDoctors value)? getDoctors,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,35 +81,35 @@ class _$AdminEventCopyWithImpl<$Res, $Val extends AdminEvent>
 }
 
 /// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
+abstract class _$$GetMentorsImplCopyWith<$Res> {
+  factory _$$GetMentorsImplCopyWith(
+          _$GetMentorsImpl value, $Res Function(_$GetMentorsImpl) then) =
+      __$$GetMentorsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$AdminEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+class __$$GetMentorsImplCopyWithImpl<$Res>
+    extends _$AdminEventCopyWithImpl<$Res, _$GetMentorsImpl>
+    implements _$$GetMentorsImplCopyWith<$Res> {
+  __$$GetMentorsImplCopyWithImpl(
+      _$GetMentorsImpl _value, $Res Function(_$GetMentorsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
-  const _$StartedImpl();
+class _$GetMentorsImpl implements GetMentors {
+  const _$GetMentorsImpl();
 
   @override
   String toString() {
-    return 'AdminEvent.started()';
+    return 'AdminEvent.getMentors()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
+        (other.runtimeType == runtimeType && other is _$GetMentorsImpl);
   }
 
   @override
@@ -106,27 +118,33 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() getMentors,
+    required TResult Function() getPatients,
+    required TResult Function() getDoctors,
   }) {
-    return started();
+    return getMentors();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? getMentors,
+    TResult? Function()? getPatients,
+    TResult? Function()? getDoctors,
   }) {
-    return started?.call();
+    return getMentors?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? getMentors,
+    TResult Function()? getPatients,
+    TResult Function()? getDoctors,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (getMentors != null) {
+      return getMentors();
     }
     return orElse();
   }
@@ -134,34 +152,256 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(GetMentors value) getMentors,
+    required TResult Function(GetPatients value) getPatients,
+    required TResult Function(GetDoctors value) getDoctors,
   }) {
-    return started(this);
+    return getMentors(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(GetMentors value)? getMentors,
+    TResult? Function(GetPatients value)? getPatients,
+    TResult? Function(GetDoctors value)? getDoctors,
   }) {
-    return started?.call(this);
+    return getMentors?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(GetMentors value)? getMentors,
+    TResult Function(GetPatients value)? getPatients,
+    TResult Function(GetDoctors value)? getDoctors,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (getMentors != null) {
+      return getMentors(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements AdminEvent {
-  const factory _Started() = _$StartedImpl;
+abstract class GetMentors implements AdminEvent {
+  const factory GetMentors() = _$GetMentorsImpl;
+}
+
+/// @nodoc
+abstract class _$$GetPatientsImplCopyWith<$Res> {
+  factory _$$GetPatientsImplCopyWith(
+          _$GetPatientsImpl value, $Res Function(_$GetPatientsImpl) then) =
+      __$$GetPatientsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetPatientsImplCopyWithImpl<$Res>
+    extends _$AdminEventCopyWithImpl<$Res, _$GetPatientsImpl>
+    implements _$$GetPatientsImplCopyWith<$Res> {
+  __$$GetPatientsImplCopyWithImpl(
+      _$GetPatientsImpl _value, $Res Function(_$GetPatientsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetPatientsImpl implements GetPatients {
+  const _$GetPatientsImpl();
+
+  @override
+  String toString() {
+    return 'AdminEvent.getPatients()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetPatientsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getMentors,
+    required TResult Function() getPatients,
+    required TResult Function() getDoctors,
+  }) {
+    return getPatients();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getMentors,
+    TResult? Function()? getPatients,
+    TResult? Function()? getDoctors,
+  }) {
+    return getPatients?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getMentors,
+    TResult Function()? getPatients,
+    TResult Function()? getDoctors,
+    required TResult orElse(),
+  }) {
+    if (getPatients != null) {
+      return getPatients();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMentors value) getMentors,
+    required TResult Function(GetPatients value) getPatients,
+    required TResult Function(GetDoctors value) getDoctors,
+  }) {
+    return getPatients(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMentors value)? getMentors,
+    TResult? Function(GetPatients value)? getPatients,
+    TResult? Function(GetDoctors value)? getDoctors,
+  }) {
+    return getPatients?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMentors value)? getMentors,
+    TResult Function(GetPatients value)? getPatients,
+    TResult Function(GetDoctors value)? getDoctors,
+    required TResult orElse(),
+  }) {
+    if (getPatients != null) {
+      return getPatients(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPatients implements AdminEvent {
+  const factory GetPatients() = _$GetPatientsImpl;
+}
+
+/// @nodoc
+abstract class _$$GetDoctorsImplCopyWith<$Res> {
+  factory _$$GetDoctorsImplCopyWith(
+          _$GetDoctorsImpl value, $Res Function(_$GetDoctorsImpl) then) =
+      __$$GetDoctorsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetDoctorsImplCopyWithImpl<$Res>
+    extends _$AdminEventCopyWithImpl<$Res, _$GetDoctorsImpl>
+    implements _$$GetDoctorsImplCopyWith<$Res> {
+  __$$GetDoctorsImplCopyWithImpl(
+      _$GetDoctorsImpl _value, $Res Function(_$GetDoctorsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetDoctorsImpl implements GetDoctors {
+  const _$GetDoctorsImpl();
+
+  @override
+  String toString() {
+    return 'AdminEvent.getDoctors()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetDoctorsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getMentors,
+    required TResult Function() getPatients,
+    required TResult Function() getDoctors,
+  }) {
+    return getDoctors();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getMentors,
+    TResult? Function()? getPatients,
+    TResult? Function()? getDoctors,
+  }) {
+    return getDoctors?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getMentors,
+    TResult Function()? getPatients,
+    TResult Function()? getDoctors,
+    required TResult orElse(),
+  }) {
+    if (getDoctors != null) {
+      return getDoctors();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMentors value) getMentors,
+    required TResult Function(GetPatients value) getPatients,
+    required TResult Function(GetDoctors value) getDoctors,
+  }) {
+    return getDoctors(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMentors value)? getMentors,
+    TResult? Function(GetPatients value)? getPatients,
+    TResult? Function(GetDoctors value)? getDoctors,
+  }) {
+    return getDoctors?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMentors value)? getMentors,
+    TResult Function(GetPatients value)? getPatients,
+    TResult Function(GetDoctors value)? getDoctors,
+    required TResult orElse(),
+  }) {
+    if (getDoctors != null) {
+      return getDoctors(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetDoctors implements AdminEvent {
+  const factory GetDoctors() = _$GetDoctorsImpl;
 }
 
 /// @nodoc
@@ -169,32 +409,50 @@ mixin _$AdminState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(AdminStateViewModel viewModel) loaded,
+    required TResult Function() failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(AdminStateViewModel viewModel)? loaded,
+    TResult? Function()? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(AdminStateViewModel viewModel)? loaded,
+    TResult Function()? failed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Failed value) failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Failed value)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -257,6 +515,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(AdminStateViewModel viewModel) loaded,
+    required TResult Function() failed,
   }) {
     return initial();
   }
@@ -265,6 +526,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(AdminStateViewModel viewModel)? loaded,
+    TResult? Function()? failed,
   }) {
     return initial?.call();
   }
@@ -273,6 +537,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(AdminStateViewModel viewModel)? loaded,
+    TResult Function()? failed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -285,6 +552,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Failed value) failed,
   }) {
     return initial(this);
   }
@@ -293,6 +563,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Failed value)? failed,
   }) {
     return initial?.call(this);
   }
@@ -301,6 +574,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -312,4 +588,578 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements AdminState {
   const factory _Initial() = _$InitialImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$AdminStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingImpl implements _Loading {
+  const _$LoadingImpl();
+
+  @override
+  String toString() {
+    return 'AdminState.loading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(AdminStateViewModel viewModel) loaded,
+    required TResult Function() failed,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(AdminStateViewModel viewModel)? loaded,
+    TResult? Function()? failed,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(AdminStateViewModel viewModel)? loaded,
+    TResult Function()? failed,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loading implements AdminState {
+  const factory _Loading() = _$LoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadedImplCopyWith<$Res> {
+  factory _$$LoadedImplCopyWith(
+          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+      __$$LoadedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AdminStateViewModel viewModel});
+
+  $AdminStateViewModelCopyWith<$Res> get viewModel;
+}
+
+/// @nodoc
+class __$$LoadedImplCopyWithImpl<$Res>
+    extends _$AdminStateCopyWithImpl<$Res, _$LoadedImpl>
+    implements _$$LoadedImplCopyWith<$Res> {
+  __$$LoadedImplCopyWithImpl(
+      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? viewModel = null,
+  }) {
+    return _then(_$LoadedImpl(
+      viewModel: null == viewModel
+          ? _value.viewModel
+          : viewModel // ignore: cast_nullable_to_non_nullable
+              as AdminStateViewModel,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AdminStateViewModelCopyWith<$Res> get viewModel {
+    return $AdminStateViewModelCopyWith<$Res>(_value.viewModel, (value) {
+      return _then(_value.copyWith(viewModel: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$LoadedImpl implements _Loaded {
+  const _$LoadedImpl({required this.viewModel});
+
+  @override
+  final AdminStateViewModel viewModel;
+
+  @override
+  String toString() {
+    return 'AdminState.loaded(viewModel: $viewModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadedImpl &&
+            (identical(other.viewModel, viewModel) ||
+                other.viewModel == viewModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, viewModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
+      __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(AdminStateViewModel viewModel) loaded,
+    required TResult Function() failed,
+  }) {
+    return loaded(viewModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(AdminStateViewModel viewModel)? loaded,
+    TResult? Function()? failed,
+  }) {
+    return loaded?.call(viewModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(AdminStateViewModel viewModel)? loaded,
+    TResult Function()? failed,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(viewModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return loaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loaded implements AdminState {
+  const factory _Loaded({required final AdminStateViewModel viewModel}) =
+      _$LoadedImpl;
+
+  AdminStateViewModel get viewModel;
+  @JsonKey(ignore: true)
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FailedImplCopyWith<$Res> {
+  factory _$$FailedImplCopyWith(
+          _$FailedImpl value, $Res Function(_$FailedImpl) then) =
+      __$$FailedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FailedImplCopyWithImpl<$Res>
+    extends _$AdminStateCopyWithImpl<$Res, _$FailedImpl>
+    implements _$$FailedImplCopyWith<$Res> {
+  __$$FailedImplCopyWithImpl(
+      _$FailedImpl _value, $Res Function(_$FailedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FailedImpl implements _Failed {
+  const _$FailedImpl();
+
+  @override
+  String toString() {
+    return 'AdminState.failed()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FailedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(AdminStateViewModel viewModel) loaded,
+    required TResult Function() failed,
+  }) {
+    return failed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(AdminStateViewModel viewModel)? loaded,
+    TResult? Function()? failed,
+  }) {
+    return failed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(AdminStateViewModel viewModel)? loaded,
+    TResult Function()? failed,
+    required TResult orElse(),
+  }) {
+    if (failed != null) {
+      return failed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return failed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return failed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (failed != null) {
+      return failed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Failed implements AdminState {
+  const factory _Failed() = _$FailedImpl;
+}
+
+/// @nodoc
+mixin _$AdminStateViewModel {
+  List<DoctorEntity> get doctors => throw _privateConstructorUsedError;
+  List<MentorEntity> get mentors => throw _privateConstructorUsedError;
+  List<PatientEntity> get patients => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AdminStateViewModelCopyWith<AdminStateViewModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AdminStateViewModelCopyWith<$Res> {
+  factory $AdminStateViewModelCopyWith(
+          AdminStateViewModel value, $Res Function(AdminStateViewModel) then) =
+      _$AdminStateViewModelCopyWithImpl<$Res, AdminStateViewModel>;
+  @useResult
+  $Res call(
+      {List<DoctorEntity> doctors,
+      List<MentorEntity> mentors,
+      List<PatientEntity> patients});
+}
+
+/// @nodoc
+class _$AdminStateViewModelCopyWithImpl<$Res, $Val extends AdminStateViewModel>
+    implements $AdminStateViewModelCopyWith<$Res> {
+  _$AdminStateViewModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? doctors = null,
+    Object? mentors = null,
+    Object? patients = null,
+  }) {
+    return _then(_value.copyWith(
+      doctors: null == doctors
+          ? _value.doctors
+          : doctors // ignore: cast_nullable_to_non_nullable
+              as List<DoctorEntity>,
+      mentors: null == mentors
+          ? _value.mentors
+          : mentors // ignore: cast_nullable_to_non_nullable
+              as List<MentorEntity>,
+      patients: null == patients
+          ? _value.patients
+          : patients // ignore: cast_nullable_to_non_nullable
+              as List<PatientEntity>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AdminStateViewModelImplCopyWith<$Res>
+    implements $AdminStateViewModelCopyWith<$Res> {
+  factory _$$AdminStateViewModelImplCopyWith(_$AdminStateViewModelImpl value,
+          $Res Function(_$AdminStateViewModelImpl) then) =
+      __$$AdminStateViewModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<DoctorEntity> doctors,
+      List<MentorEntity> mentors,
+      List<PatientEntity> patients});
+}
+
+/// @nodoc
+class __$$AdminStateViewModelImplCopyWithImpl<$Res>
+    extends _$AdminStateViewModelCopyWithImpl<$Res, _$AdminStateViewModelImpl>
+    implements _$$AdminStateViewModelImplCopyWith<$Res> {
+  __$$AdminStateViewModelImplCopyWithImpl(_$AdminStateViewModelImpl _value,
+      $Res Function(_$AdminStateViewModelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? doctors = null,
+    Object? mentors = null,
+    Object? patients = null,
+  }) {
+    return _then(_$AdminStateViewModelImpl(
+      doctors: null == doctors
+          ? _value._doctors
+          : doctors // ignore: cast_nullable_to_non_nullable
+              as List<DoctorEntity>,
+      mentors: null == mentors
+          ? _value._mentors
+          : mentors // ignore: cast_nullable_to_non_nullable
+              as List<MentorEntity>,
+      patients: null == patients
+          ? _value._patients
+          : patients // ignore: cast_nullable_to_non_nullable
+              as List<PatientEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AdminStateViewModelImpl implements _AdminStateViewModel {
+  _$AdminStateViewModelImpl(
+      {final List<DoctorEntity> doctors = const [],
+      final List<MentorEntity> mentors = const [],
+      final List<PatientEntity> patients = const []})
+      : _doctors = doctors,
+        _mentors = mentors,
+        _patients = patients;
+
+  final List<DoctorEntity> _doctors;
+  @override
+  @JsonKey()
+  List<DoctorEntity> get doctors {
+    if (_doctors is EqualUnmodifiableListView) return _doctors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_doctors);
+  }
+
+  final List<MentorEntity> _mentors;
+  @override
+  @JsonKey()
+  List<MentorEntity> get mentors {
+    if (_mentors is EqualUnmodifiableListView) return _mentors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_mentors);
+  }
+
+  final List<PatientEntity> _patients;
+  @override
+  @JsonKey()
+  List<PatientEntity> get patients {
+    if (_patients is EqualUnmodifiableListView) return _patients;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_patients);
+  }
+
+  @override
+  String toString() {
+    return 'AdminStateViewModel(doctors: $doctors, mentors: $mentors, patients: $patients)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AdminStateViewModelImpl &&
+            const DeepCollectionEquality().equals(other._doctors, _doctors) &&
+            const DeepCollectionEquality().equals(other._mentors, _mentors) &&
+            const DeepCollectionEquality().equals(other._patients, _patients));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_doctors),
+      const DeepCollectionEquality().hash(_mentors),
+      const DeepCollectionEquality().hash(_patients));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AdminStateViewModelImplCopyWith<_$AdminStateViewModelImpl> get copyWith =>
+      __$$AdminStateViewModelImplCopyWithImpl<_$AdminStateViewModelImpl>(
+          this, _$identity);
+}
+
+abstract class _AdminStateViewModel implements AdminStateViewModel {
+  factory _AdminStateViewModel(
+      {final List<DoctorEntity> doctors,
+      final List<MentorEntity> mentors,
+      final List<PatientEntity> patients}) = _$AdminStateViewModelImpl;
+
+  @override
+  List<DoctorEntity> get doctors;
+  @override
+  List<MentorEntity> get mentors;
+  @override
+  List<PatientEntity> get patients;
+  @override
+  @JsonKey(ignore: true)
+  _$$AdminStateViewModelImplCopyWith<_$AdminStateViewModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

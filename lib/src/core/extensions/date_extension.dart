@@ -22,4 +22,6 @@ extension DateExtension on DateTime? {
     final duration = this!.difference(DateTime.now());
     return (duration.inDays ~/ 365).abs();
   }
+
+  bool isExist() => this != null;
 }

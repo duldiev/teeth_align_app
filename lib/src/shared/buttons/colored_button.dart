@@ -37,7 +37,7 @@ class ColoredButton extends StatelessWidget {
               (isEnabled
                   ? AppColors.primary
                   : AppColors.primary.withOpacity(0.4)),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(12),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

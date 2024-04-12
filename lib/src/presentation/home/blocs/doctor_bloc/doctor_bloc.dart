@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/helpers/app_data.dart';
 import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/patient_entity.dart';
@@ -15,25 +14,28 @@ part 'doctor_bloc.freezed.dart';
 class DoctorBloc extends Bloc<DoctorEvent, DoctorState> {
   final IDoctorRepository repository;
 
-  DoctorBloc({required this.repository}) : super(DoctorState()) {
+  DoctorBloc({required this.repository}) : super(const DoctorState.initial()) {
     on<GetMentors>(onGetMentors);
     on<GetPatients>(onGetPatients);
 
     add(const GetMentors());
+    add(const GetPatients());
   }
+
+  DoctorStateViewModel viewModel = DoctorStateViewModel();
 
   Future<void> onGetMentors(
     GetMentors event,
     Emitter<DoctorState> emit,
   ) async {
-    emit(state.copyWith(mentorsStatus: LoadStatus.loading));
+    emit(const DoctorState.loading());
 
     (await repository.getMentors(appData.userId)).fold(
-      (l) => emit(state.copyWith(mentorsStatus: LoadStatus.failed)),
-      (r) => emit(state.copyWith(
-        mentorsStatus: LoadStatus.success,
-        mentors: r,
-      )),
+      (l) => emit(const DoctorState.failed()),
+      (r) {
+        viewModel = viewModel.copyWith(mentors: r);
+        emit(DoctorState.loaded(viewModel: viewModel));
+      },
     );
   }
 
@@ -41,14 +43,14 @@ class DoctorBloc extends Bloc<DoctorEvent, DoctorState> {
     GetPatients event,
     Emitter<DoctorState> emit,
   ) async {
-    emit(state.copyWith(patientsStatus: LoadStatus.loading));
+    emit(const DoctorState.loading());
 
     (await repository.getPatients(appData.userId)).fold(
-      (l) => emit(state.copyWith(patientsStatus: LoadStatus.failed)),
-      (r) => emit(state.copyWith(
-        patientsStatus: LoadStatus.success,
-        patients: r,
-      )),
+      (l) => emit(const DoctorState.failed()),
+      (r) {
+        viewModel = viewModel.copyWith(patients: r);
+        emit(DoctorState.loaded(viewModel: viewModel));
+      },
     );
   }
 }

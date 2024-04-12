@@ -2,12 +2,18 @@ part of 'doctor_bloc.dart';
 
 @freezed
 class DoctorState with _$DoctorState {
-  factory DoctorState({
-    @Default([]) List<MentorEntity> mentors,
-    @Default(LoadStatus.initial) LoadStatus mentorsStatus,
-    @Default([]) List<PatientEntity> patients,
-    @Default(LoadStatus.initial) LoadStatus patientsStatus,
-  }) = _DoctorState;
+  const factory DoctorState.initial() = _Initial;
+  const factory DoctorState.loading() = _Loading;
+  const factory DoctorState.loaded({
+    required DoctorStateViewModel viewModel,
+  }) = _Loaded;
+  const factory DoctorState.failed() = _Failed;
+}
 
-  const DoctorState._();
+@freezed
+class DoctorStateViewModel with _$DoctorStateViewModel {
+  factory DoctorStateViewModel({
+    @Default([]) List<MentorEntity> mentors,
+    @Default([]) List<PatientEntity> patients,
+  }) = _DoctorStateViewModel;
 }

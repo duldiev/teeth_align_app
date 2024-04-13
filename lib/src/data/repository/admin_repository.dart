@@ -16,7 +16,9 @@ class AdminRepository extends BaseClient implements IAdminRepository {
   Future<Either<Failure, List<DoctorEntity>>> getAllDoctors() async {
     return (await call(RestMethod.get, '/api/v1/doctor')).fold(
       (l) => Left(l),
-      (r) => Right((r as List).map((e) => DoctorModel.fromMap(e)).toList()),
+      (r) => Right(
+        (r['items'] as List).map((e) => DoctorModel.fromMap(e)).toList(),
+      ),
     );
   }
 
@@ -32,10 +34,15 @@ class AdminRepository extends BaseClient implements IAdminRepository {
 
   @override
   Future<Either<Failure, List<PatientEntity>>> getAllPatients() async {
-    return (await call(RestMethod.get, '/api/v1/patient')).fold(
+    return (await call(
+      RestMethod.get,
+      '/api/v1/patient',
+      parametres: {'page': 1, 'size': 20},
+    ))
+        .fold(
       (l) => Left(l),
       (r) => Right(
-        (r['content'] as List).map((e) => PatientModel.fromMap(e)).toList(),
+        (r['items'] as List).map((e) => PatientModel.fromMap(e)).toList(),
       ),
     );
   }

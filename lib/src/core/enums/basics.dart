@@ -13,7 +13,11 @@ enum Role {
   doctor;
 
   static Role fromString(String? name) => values.byName(
-        name?.toLowerCase() ?? 'patient',
+        name == null
+            ? 'patient'
+            : name == 'USER'
+                ? 'patient'
+                : name.toLowerCase(),
       );
 }
 

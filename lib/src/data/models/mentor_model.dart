@@ -17,6 +17,8 @@ class MentorModel extends MentorEntity {
     required super.speciality,
     required super.chatToken,
     required super.bio,
+    required super.clinicName,
+    required super.chatUserId,
   });
 
   factory MentorModel.fromMap(Map<String, dynamic> map) => MentorModel(
@@ -36,5 +38,7 @@ class MentorModel extends MentorEntity {
         speciality: map['speciality'] as String?,
         chatToken: map['chatToken'] as String?,
         bio: map['bio'] as String?,
+        clinicName: map['clinicName'] as String?,
+        chatUserId: map['chatUserId'] as String?,
       );
 }

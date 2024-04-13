@@ -63,7 +63,7 @@ class DoctorProfileScreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      doctor.position,
+                      doctor.speciality ?? 'General Practitioner',
                       style: context.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w400,
                       ),
@@ -216,7 +216,7 @@ class DoctorProfileScreen extends StatelessWidget {
               ),
             ),
             const Gap(2),
-            Text(doctor.position),
+            Text(doctor.clinicName ?? 'Care Medical Center'),
           ],
         ),
       ),

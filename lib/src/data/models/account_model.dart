@@ -12,6 +12,7 @@ class AccountModel extends AccountEntity {
     required super.avatarUrl,
     required super.role,
     required super.birthDate,
+    required super.chatUserId,
     required super.chatToken,
     required super.bio,
   });
@@ -31,6 +32,7 @@ class AccountModel extends AccountEntity {
                 map['birthDate'],
               )
             : null,
+        chatUserId: map['chatUserId'] as String?,
         chatToken: map['chatToken'] as String?,
         bio: map['bio'] as String?,
       );

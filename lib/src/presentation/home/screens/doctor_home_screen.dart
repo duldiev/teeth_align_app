@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
@@ -10,6 +11,7 @@ import 'package:teeth_align_app/src/presentation/home/widgets/doctor_list_tile.d
 import 'package:teeth_align_app/src/presentation/home/widgets/list_header.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/mentor_list_tile.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/patient_list_tile.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:teeth_align_app/src/shared/widgets/logo_title.dart';
 
@@ -22,9 +24,19 @@ class DoctorHomeScreen extends StatelessWidget {
     return BlocBuilder<DoctorBloc, DoctorState>(
       builder: (context, state) {
         return Scaffold(
-          appBar: const MyAppBar(
-            title: LogoTitle(),
+          appBar: MyAppBar(
+            title: const LogoTitle(),
             centerTitle: true,
+            actions: [
+              InkWell(
+                onTap: () => context.router.push(const ChatListRoute()),
+                child: const Icon(
+                  FontAwesomeIcons.inbox,
+                  size: 24,
+                ),
+              ),
+              Gap(4.w),
+            ],
           ),
           body: SafeArea(
             child: SingleChildScrollView(

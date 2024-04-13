@@ -2,6 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:stream_chat_flutter/stream_chat_flutter.dart';
+import 'package:teeth_align_app/main.dart';
 import 'package:teeth_align_app/src/core/constants/storage_keys.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
@@ -97,15 +99,28 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
       await getIt<FlutterSecureStorage>().delete(key: StorageKeys.token);
     }
 
+    AccountEntity? account;
+
     result.fold(
       (_) => emit(state.copyWith(status: LoadStatus.failed)),
       (r) {
+        account = r;
         appData.role = r.role;
         appData.fullName = '${r.firstName}\n${r.lastName}';
         appData.userId = r.id;
-        emit(state.copyWith(status: LoadStatus.success, account: r));
       },
     );
+
+    if (result.isLeft() || account == null) return;
+
+    if (account!.chatUserId != null && account!.chatToken != null) {
+      await client.connectUser(
+        User(id: account!.chatUserId!),
+        account!.chatToken!,
+      );
+    }
+
+    emit(state.copyWith(status: LoadStatus.success, account: account));
   }
 
   void onReset(

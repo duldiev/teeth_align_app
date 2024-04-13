@@ -7,7 +7,9 @@ import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/admin_bloc/admin_bloc.dart';
+import 'package:teeth_align_app/src/presentation/home/widgets/doctor_list_tile.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/list_header.dart';
+import 'package:teeth_align_app/src/presentation/home/widgets/mentor_list_tile.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/patient_list_tile.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 
@@ -50,6 +52,70 @@ class AdminHomeScreen extends StatelessWidget {
                 loading: () => const SizedBox(),
                 loaded: (data) => Column(
                   children: [
+                    if (data.mentors.isNotEmpty) ...[
+                      Divider(height: 4.h),
+                      ListHeader(title: 'My mentors', onShowAll: () {}),
+                      Gap(2.h),
+                      Column(
+                        children: [
+                          for (int i = 0;
+                              i < min(data.mentors.length, 6);
+                              i += 2) ...[
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: MentorListTile(
+                                    mentor: data.mentors[i],
+                                  ),
+                                ),
+                                Gap(4.w),
+                                if (i + 1 < data.mentors.length) ...[
+                                  Expanded(
+                                    child: MentorListTile(
+                                      mentor: data.mentors[i + 1],
+                                    ),
+                                  ),
+                                ] else ...[
+                                  const Expanded(child: SizedBox()),
+                                ],
+                              ],
+                            ),
+                          ],
+                        ],
+                      ),
+                    ],
+                    if (data.doctors.isNotEmpty) ...[
+                      Divider(height: 4.h),
+                      ListHeader(title: 'My doctors', onShowAll: () {}),
+                      Gap(2.h),
+                      Column(
+                        children: [
+                          for (int i = 0;
+                              i < min(data.doctors.length, 6);
+                              i += 2) ...[
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: DoctorListTile(
+                                    doctor: data.doctors[i],
+                                  ),
+                                ),
+                                Gap(4.w),
+                                if (i + 1 < data.doctors.length) ...[
+                                  Expanded(
+                                    child: DoctorListTile(
+                                      doctor: data.doctors[i + 1],
+                                    ),
+                                  ),
+                                ] else ...[
+                                  const Expanded(child: SizedBox()),
+                                ],
+                              ],
+                            ),
+                          ],
+                        ],
+                      ),
+                    ],
                     if (data.patients.isNotEmpty) ...[
                       Divider(height: 4.h),
                       ListHeader(title: 'My patients', onShowAll: () {}),

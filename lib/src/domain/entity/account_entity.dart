@@ -11,6 +11,7 @@ class AccountEntity extends Equatable {
   final String? avatarUrl;
   final Role role;
   final DateTime? birthDate;
+  final String? chatUserId;
   final String? chatToken;
   final String? bio;
 
@@ -24,6 +25,7 @@ class AccountEntity extends Equatable {
     required this.avatarUrl,
     required this.role,
     required this.birthDate,
+    required this.chatUserId,
     required this.chatToken,
     required this.bio,
   });
@@ -42,6 +44,7 @@ class AccountEntity extends Equatable {
         birthDate: DateTime.now(),
         chatToken: null,
         bio: null,
+        chatUserId: null,
       );
 
   @override
@@ -55,6 +58,7 @@ class AccountEntity extends Equatable {
         avatarUrl,
         role,
         birthDate,
+        chatUserId,
         chatToken,
         bio,
       ];

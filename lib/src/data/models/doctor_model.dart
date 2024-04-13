@@ -11,12 +11,15 @@ class DoctorModel extends DoctorEntity {
     required super.langKey,
     required super.role,
     required super.birthDate,
-    required super.clinicName,
     required super.avatarUrl,
-    required super.yearsOfExperience,
     required super.position,
     required super.chatToken,
     required super.bio,
+    required super.education,
+    required super.workExperience,
+    required super.speciality,
+    required super.clinicName,
+    required super.chatUserId,
   });
 
   factory DoctorModel.fromMap(Map<String, dynamic> map) => DoctorModel(
@@ -31,10 +34,13 @@ class DoctorModel extends DoctorEntity {
         birthDate: map['birthDate'] == null
             ? DateTime.now()
             : DateTime.parse(map['birthDate']),
-        position: map['position'] as String,
-        clinicName: map['position'] as String,
-        yearsOfExperience: map['yearsOfExperience'] as int,
-        chatToken: map['chatToken'] as String,
-        bio: map['bio'] as String,
+        position: map['position'] as String?,
+        bio: map['bio'] as String?,
+        education: map['education'] as String?,
+        workExperience: map['workExperience'] as String?,
+        speciality: map['speciality'] as String?,
+        clinicName: map['clinicName'] as String?,
+        chatUserId: map['chatUserId'] as String?,
+        chatToken: map['chatToken'] as String?,
       );
 }

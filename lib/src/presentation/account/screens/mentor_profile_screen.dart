@@ -217,7 +217,7 @@ class MentorProfileScreen extends StatelessWidget {
             ),
             const Gap(2),
             Text(
-              mentor.speciality ?? 'Care Medical Center',
+              mentor.clinicName ?? 'Care Medical Center',
             ),
           ],
         ),

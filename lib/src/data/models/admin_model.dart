@@ -13,5 +13,6 @@ class AdminModel extends AdminEntity {
     required super.avatarUrl,
     required super.chatToken,
     required super.bio,
+    required super.chatUserId,
   });
 }

@@ -5,6 +5,7 @@ class MentorEntity extends AccountEntity {
   final String? education;
   final String? workExperience;
   final String? speciality;
+  final String? clinicName;
 
   const MentorEntity({
     required super.id,
@@ -17,10 +18,12 @@ class MentorEntity extends AccountEntity {
     required super.birthDate,
     required super.avatarUrl,
     required super.chatToken,
+    required super.bio,
     required this.education,
     required this.workExperience,
     required this.speciality,
-    required super.bio,
+    required this.clinicName,
+    required super.chatUserId,
   });
 
   factory MentorEntity.empty() => MentorEntity(
@@ -38,6 +41,8 @@ class MentorEntity extends AccountEntity {
         speciality: null,
         chatToken: null,
         bio: null,
+        clinicName: null,
+        chatUserId: null,
       );
 
   @override
@@ -45,6 +50,7 @@ class MentorEntity extends AccountEntity {
         education,
         workExperience,
         speciality,
+        clinicName,
         ...super.props,
       ];
 }

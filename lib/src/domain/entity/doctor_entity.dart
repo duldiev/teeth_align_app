@@ -2,9 +2,11 @@ import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
 
 class DoctorEntity extends AccountEntity {
-  final String clinicName;
-  final int yearsOfExperience;
-  final String position;
+  final String? education;
+  final String? workExperience;
+  final String? position;
+  final String? speciality;
+  final String? clinicName;
 
   const DoctorEntity({
     required super.id,
@@ -17,10 +19,13 @@ class DoctorEntity extends AccountEntity {
     required super.role,
     required super.birthDate,
     required super.chatToken,
-    required this.clinicName,
-    required this.yearsOfExperience,
-    required this.position,
     required super.bio,
+    required this.education,
+    required this.workExperience,
+    required this.position,
+    required this.speciality,
+    required this.clinicName,
+    required super.chatUserId,
   });
 
   factory DoctorEntity.empty() => DoctorEntity(
@@ -32,11 +37,14 @@ class DoctorEntity extends AccountEntity {
         langKey: 'langKey',
         role: Role.doctor,
         birthDate: DateTime(1970),
-        clinicName: 'Clinic',
         avatarUrl: null,
-        yearsOfExperience: 0,
-        position: 'Position',
+        position: null,
         chatToken: null,
         bio: null,
+        education: null,
+        workExperience: null,
+        speciality: null,
+        clinicName: null,
+        chatUserId: null,
       );
 }

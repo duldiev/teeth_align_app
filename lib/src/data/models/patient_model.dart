@@ -15,13 +15,14 @@ class PatientModel extends PatientEntity {
     required super.chatToken,
     required super.bio,
     required super.chatUserId,
+    required super.chatEnabled,
   });
 
   factory PatientModel.fromMap(Map<String, dynamic> map) => PatientModel(
         id: map['id'] as int,
         username: map['username'] as String?,
-        firstName: map['firstName'] as String?,
-        lastName: map['lastName'] as String?,
+        firstName: map['firstname'] as String?,
+        lastName: map['lastname'] as String?,
         email: map['email'] as String?,
         langKey: map['langKey'] as String?,
         role: Role.patient,
@@ -32,5 +33,6 @@ class PatientModel extends PatientEntity {
         bio: map['bio'] as String?,
         chatUserId: map['chatUserId'] as String?,
         chatToken: map['chatToken'] as String?,
+        chatEnabled: map['chatEnabled'] as bool? ?? false,
       );
 }

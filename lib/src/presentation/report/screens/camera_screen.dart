@@ -112,7 +112,7 @@ class _CameraScreenState extends State<CameraScreen>
                           ),
                           Gap(2.w),
                           Text(
-                            'Back',
+                            'Назад',
                             style: context.textTheme.titleSmall?.copyWith(
                               color: AppColors.white,
                             ),
@@ -163,8 +163,9 @@ class _CameraScreenState extends State<CameraScreen>
                                 alignment: Alignment.bottomCenter,
                                 child: ListView.separated(
                                   scrollDirection: Axis.horizontal,
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 4.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 4.w,
+                                  ),
                                   itemBuilder: (context, index) => ImageCard(
                                     index: index,
                                     file: state.files[index],

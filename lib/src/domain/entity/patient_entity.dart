@@ -15,6 +15,7 @@ class PatientEntity extends AccountEntity {
     required super.chatToken,
     required super.bio,
     required super.chatUserId,
+    required super.chatEnabled,
   });
 
   factory PatientEntity.empty() => PatientEntity(
@@ -30,6 +31,7 @@ class PatientEntity extends AccountEntity {
         chatToken: null,
         bio: null,
         chatUserId: null,
+        chatEnabled: false,
       );
 
   @override

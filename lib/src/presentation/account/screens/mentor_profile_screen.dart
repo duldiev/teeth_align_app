@@ -6,14 +6,18 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/gen/assets.gen.dart';
+import 'package:teeth_align_app/main.dart';
+import 'package:teeth_align_app/src/core/constants/chat.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/core/extensions/date_extension.dart';
+import 'package:teeth_align_app/src/core/helpers/app_data.dart';
 import 'package:teeth_align_app/src/core/services/modal_bottom_sheet.dart';
 import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 import 'package:teeth_align_app/src/presentation/account/widgets/star_icon.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/admin_bloc/admin_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/mentor_bloc/mentor_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/list_header.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 
@@ -199,30 +203,51 @@ class _MentorProfileScreenState extends State<MentorProfileScreen> {
                         ),
                         Gap(3.w),
                         Expanded(
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              vertical: 8,
-                            ),
-                            decoration: BoxDecoration(
-                              color: AppColors.blue,
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Chat',
-                                  style:
-                                      context.textTheme.titleMedium?.copyWith(
-                                    fontWeight: FontWeight.bold,
+                          child: InkWell(
+                            onTap: () async {
+                              final channelState = await client.queryChannel(
+                                ChatConstants.messageType,
+                                channelData: {
+                                  'name':
+                                      '${appData.fullName} с ${data.mentor?.fullName}',
+                                  'members': [
+                                    data.mentor?.chatUserId.toString(),
+                                    appData.chaUserId.toString(),
+                                  ],
+                                },
+                              );
+                              if (!context.mounted) return;
+                              final channel = client.channel(
+                                ChatConstants.messageType,
+                                id: channelState.channel?.id,
+                              );
+                              context.router.push(ChatRoute(channel: channel));
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 8,
+                              ),
+                              decoration: BoxDecoration(
+                                color: AppColors.blue,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Chat',
+                                    style:
+                                        context.textTheme.titleMedium?.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                                Gap(2.w),
-                                const Icon(
-                                  FontAwesomeIcons.solidMessage,
-                                  size: 16,
-                                ),
-                              ],
+                                  Gap(2.w),
+                                  const Icon(
+                                    FontAwesomeIcons.solidMessage,
+                                    size: 16,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),

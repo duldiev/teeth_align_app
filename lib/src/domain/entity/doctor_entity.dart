@@ -26,6 +26,7 @@ class DoctorEntity extends AccountEntity {
     required this.speciality,
     required this.clinicName,
     required super.chatUserId,
+    required super.chatEnabled,
   });
 
   factory DoctorEntity.empty() => DoctorEntity(
@@ -46,5 +47,6 @@ class DoctorEntity extends AccountEntity {
         speciality: null,
         clinicName: null,
         chatUserId: null,
+        chatEnabled: false,
       );
 }

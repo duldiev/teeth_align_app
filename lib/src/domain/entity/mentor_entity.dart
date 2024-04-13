@@ -27,6 +27,7 @@ class MentorEntity extends AccountEntity {
     required this.speciality,
     required this.clinicName,
     required this.assignedDoctors,
+    required super.chatEnabled,
   });
 
   factory MentorEntity.empty() => MentorEntity(
@@ -47,6 +48,7 @@ class MentorEntity extends AccountEntity {
         clinicName: null,
         chatUserId: null,
         assignedDoctors: const [],
+        chatEnabled: false,
       );
 
   @override
@@ -78,6 +80,7 @@ class MentorEntity extends AccountEntity {
     String? speciality,
     String? clinicName,
     List<DoctorEntity>? assignedDoctors,
+    bool? chatEnabled,
   }) {
     return MentorEntity(
       id: id ?? super.id,
@@ -97,6 +100,7 @@ class MentorEntity extends AccountEntity {
       speciality: speciality ?? this.speciality,
       clinicName: clinicName ?? this.clinicName,
       assignedDoctors: assignedDoctors ?? this.assignedDoctors,
+      chatEnabled: chatEnabled ?? this.chatEnabled,
     );
   }
 }

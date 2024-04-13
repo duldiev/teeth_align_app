@@ -14,6 +14,7 @@ class AccountEntity extends Equatable {
   final String? chatUserId;
   final String? chatToken;
   final String? bio;
+  final bool chatEnabled;
 
   const AccountEntity({
     required this.id,
@@ -28,6 +29,7 @@ class AccountEntity extends Equatable {
     required this.chatUserId,
     required this.chatToken,
     required this.bio,
+    required this.chatEnabled,
   });
 
   String get fullName => '$firstName $lastName';
@@ -45,6 +47,7 @@ class AccountEntity extends Equatable {
         chatToken: null,
         bio: null,
         chatUserId: null,
+        chatEnabled: false,
       );
 
   @override
@@ -61,6 +64,7 @@ class AccountEntity extends Equatable {
         chatUserId,
         chatToken,
         bio,
+        chatEnabled,
       ];
 
   AccountEntity copyWith({
@@ -76,6 +80,7 @@ class AccountEntity extends Equatable {
     String? chatUserId,
     String? chatToken,
     String? bio,
+    bool? chatEnabled,
   }) {
     return AccountEntity(
       id: id ?? this.id,
@@ -90,6 +95,7 @@ class AccountEntity extends Equatable {
       chatUserId: chatUserId ?? this.chatUserId,
       chatToken: chatToken ?? this.chatToken,
       bio: bio ?? this.bio,
+      chatEnabled: chatEnabled ?? this.chatEnabled,
     );
   }
 }

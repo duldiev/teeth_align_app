@@ -15,6 +15,7 @@ class AccountModel extends AccountEntity {
     required super.chatUserId,
     required super.chatToken,
     required super.bio,
+    required super.chatEnabled,
   });
 
   factory AccountModel.fromMap(Map<String, dynamic> map) => AccountModel(
@@ -35,5 +36,6 @@ class AccountModel extends AccountEntity {
         chatUserId: map['chatUserId'] as String?,
         chatToken: map['chatToken'] as String?,
         bio: map['bio'] as String?,
+        chatEnabled: map['chatEnabled'] as bool? ?? false,
       );
 }

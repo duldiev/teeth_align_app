@@ -80,6 +80,8 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
     await getIt<FlutterSecureStorage>().delete(key: StorageKeys.token);
 
+    await client.disconnectUser();
+
     router
       ..popUntilRoot()
       ..replace(const SplashRoute());

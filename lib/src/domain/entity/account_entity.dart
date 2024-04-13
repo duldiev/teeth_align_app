@@ -62,4 +62,34 @@ class AccountEntity extends Equatable {
         chatToken,
         bio,
       ];
+
+  AccountEntity copyWith({
+    int? id,
+    String? username,
+    String? firstName,
+    String? lastName,
+    String? email,
+    String? langKey,
+    String? avatarUrl,
+    Role? role,
+    DateTime? birthDate,
+    String? chatUserId,
+    String? chatToken,
+    String? bio,
+  }) {
+    return AccountEntity(
+      id: id ?? this.id,
+      username: username ?? this.username,
+      firstName: firstName ?? this.firstName,
+      lastName: lastName ?? this.lastName,
+      email: email ?? this.email,
+      langKey: langKey ?? this.langKey,
+      avatarUrl: avatarUrl ?? this.avatarUrl,
+      role: role ?? this.role,
+      birthDate: birthDate ?? this.birthDate,
+      chatUserId: chatUserId ?? this.chatUserId,
+      chatToken: chatToken ?? this.chatToken,
+      bio: bio ?? this.bio,
+    );
+  }
 }

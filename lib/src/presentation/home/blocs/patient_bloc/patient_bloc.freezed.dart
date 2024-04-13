@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'doctor_bloc.dart';
+part of 'patient_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,64 +15,64 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$DoctorEvent {
+mixin _$PatientEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getMentors,
-    required TResult Function() getPatients,
-    required TResult Function(int id) getDoctor,
+    required TResult Function(int id) getPatient,
+    required TResult Function(int? patientId) getCases,
+    required TResult Function(CaseField field, dynamic value) updateField,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getMentors,
-    TResult? Function()? getPatients,
-    TResult? Function(int id)? getDoctor,
+    TResult? Function(int id)? getPatient,
+    TResult? Function(int? patientId)? getCases,
+    TResult? Function(CaseField field, dynamic value)? updateField,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getMentors,
-    TResult Function()? getPatients,
-    TResult Function(int id)? getDoctor,
+    TResult Function(int id)? getPatient,
+    TResult Function(int? patientId)? getCases,
+    TResult Function(CaseField field, dynamic value)? updateField,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetMentors value) getMentors,
-    required TResult Function(GetPatients value) getPatients,
-    required TResult Function(GetDoctor value) getDoctor,
+    required TResult Function(GetPatient value) getPatient,
+    required TResult Function(GetCases value) getCases,
+    required TResult Function(UpdateField value) updateField,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetMentors value)? getMentors,
-    TResult? Function(GetPatients value)? getPatients,
-    TResult? Function(GetDoctor value)? getDoctor,
+    TResult? Function(GetPatient value)? getPatient,
+    TResult? Function(GetCases value)? getCases,
+    TResult? Function(UpdateField value)? updateField,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetMentors value)? getMentors,
-    TResult Function(GetPatients value)? getPatients,
-    TResult Function(GetDoctor value)? getDoctor,
+    TResult Function(GetPatient value)? getPatient,
+    TResult Function(GetCases value)? getCases,
+    TResult Function(UpdateField value)? updateField,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DoctorEventCopyWith<$Res> {
-  factory $DoctorEventCopyWith(
-          DoctorEvent value, $Res Function(DoctorEvent) then) =
-      _$DoctorEventCopyWithImpl<$Res, DoctorEvent>;
+abstract class $PatientEventCopyWith<$Res> {
+  factory $PatientEventCopyWith(
+          PatientEvent value, $Res Function(PatientEvent) then) =
+      _$PatientEventCopyWithImpl<$Res, PatientEvent>;
 }
 
 /// @nodoc
-class _$DoctorEventCopyWithImpl<$Res, $Val extends DoctorEvent>
-    implements $DoctorEventCopyWith<$Res> {
-  _$DoctorEventCopyWithImpl(this._value, this._then);
+class _$PatientEventCopyWithImpl<$Res, $Val extends PatientEvent>
+    implements $PatientEventCopyWith<$Res> {
+  _$PatientEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -81,236 +81,20 @@ class _$DoctorEventCopyWithImpl<$Res, $Val extends DoctorEvent>
 }
 
 /// @nodoc
-abstract class _$$GetMentorsImplCopyWith<$Res> {
-  factory _$$GetMentorsImplCopyWith(
-          _$GetMentorsImpl value, $Res Function(_$GetMentorsImpl) then) =
-      __$$GetMentorsImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetMentorsImplCopyWithImpl<$Res>
-    extends _$DoctorEventCopyWithImpl<$Res, _$GetMentorsImpl>
-    implements _$$GetMentorsImplCopyWith<$Res> {
-  __$$GetMentorsImplCopyWithImpl(
-      _$GetMentorsImpl _value, $Res Function(_$GetMentorsImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$GetMentorsImpl implements GetMentors {
-  const _$GetMentorsImpl();
-
-  @override
-  String toString() {
-    return 'DoctorEvent.getMentors()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetMentorsImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getMentors,
-    required TResult Function() getPatients,
-    required TResult Function(int id) getDoctor,
-  }) {
-    return getMentors();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getMentors,
-    TResult? Function()? getPatients,
-    TResult? Function(int id)? getDoctor,
-  }) {
-    return getMentors?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getMentors,
-    TResult Function()? getPatients,
-    TResult Function(int id)? getDoctor,
-    required TResult orElse(),
-  }) {
-    if (getMentors != null) {
-      return getMentors();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(GetMentors value) getMentors,
-    required TResult Function(GetPatients value) getPatients,
-    required TResult Function(GetDoctor value) getDoctor,
-  }) {
-    return getMentors(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetMentors value)? getMentors,
-    TResult? Function(GetPatients value)? getPatients,
-    TResult? Function(GetDoctor value)? getDoctor,
-  }) {
-    return getMentors?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetMentors value)? getMentors,
-    TResult Function(GetPatients value)? getPatients,
-    TResult Function(GetDoctor value)? getDoctor,
-    required TResult orElse(),
-  }) {
-    if (getMentors != null) {
-      return getMentors(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetMentors implements DoctorEvent {
-  const factory GetMentors() = _$GetMentorsImpl;
-}
-
-/// @nodoc
-abstract class _$$GetPatientsImplCopyWith<$Res> {
-  factory _$$GetPatientsImplCopyWith(
-          _$GetPatientsImpl value, $Res Function(_$GetPatientsImpl) then) =
-      __$$GetPatientsImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetPatientsImplCopyWithImpl<$Res>
-    extends _$DoctorEventCopyWithImpl<$Res, _$GetPatientsImpl>
-    implements _$$GetPatientsImplCopyWith<$Res> {
-  __$$GetPatientsImplCopyWithImpl(
-      _$GetPatientsImpl _value, $Res Function(_$GetPatientsImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$GetPatientsImpl implements GetPatients {
-  const _$GetPatientsImpl();
-
-  @override
-  String toString() {
-    return 'DoctorEvent.getPatients()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetPatientsImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getMentors,
-    required TResult Function() getPatients,
-    required TResult Function(int id) getDoctor,
-  }) {
-    return getPatients();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getMentors,
-    TResult? Function()? getPatients,
-    TResult? Function(int id)? getDoctor,
-  }) {
-    return getPatients?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getMentors,
-    TResult Function()? getPatients,
-    TResult Function(int id)? getDoctor,
-    required TResult orElse(),
-  }) {
-    if (getPatients != null) {
-      return getPatients();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(GetMentors value) getMentors,
-    required TResult Function(GetPatients value) getPatients,
-    required TResult Function(GetDoctor value) getDoctor,
-  }) {
-    return getPatients(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetMentors value)? getMentors,
-    TResult? Function(GetPatients value)? getPatients,
-    TResult? Function(GetDoctor value)? getDoctor,
-  }) {
-    return getPatients?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetMentors value)? getMentors,
-    TResult Function(GetPatients value)? getPatients,
-    TResult Function(GetDoctor value)? getDoctor,
-    required TResult orElse(),
-  }) {
-    if (getPatients != null) {
-      return getPatients(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetPatients implements DoctorEvent {
-  const factory GetPatients() = _$GetPatientsImpl;
-}
-
-/// @nodoc
-abstract class _$$GetDoctorImplCopyWith<$Res> {
-  factory _$$GetDoctorImplCopyWith(
-          _$GetDoctorImpl value, $Res Function(_$GetDoctorImpl) then) =
-      __$$GetDoctorImplCopyWithImpl<$Res>;
+abstract class _$$GetPatientImplCopyWith<$Res> {
+  factory _$$GetPatientImplCopyWith(
+          _$GetPatientImpl value, $Res Function(_$GetPatientImpl) then) =
+      __$$GetPatientImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
 }
 
 /// @nodoc
-class __$$GetDoctorImplCopyWithImpl<$Res>
-    extends _$DoctorEventCopyWithImpl<$Res, _$GetDoctorImpl>
-    implements _$$GetDoctorImplCopyWith<$Res> {
-  __$$GetDoctorImplCopyWithImpl(
-      _$GetDoctorImpl _value, $Res Function(_$GetDoctorImpl) _then)
+class __$$GetPatientImplCopyWithImpl<$Res>
+    extends _$PatientEventCopyWithImpl<$Res, _$GetPatientImpl>
+    implements _$$GetPatientImplCopyWith<$Res> {
+  __$$GetPatientImplCopyWithImpl(
+      _$GetPatientImpl _value, $Res Function(_$GetPatientImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -318,7 +102,7 @@ class __$$GetDoctorImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
   }) {
-    return _then(_$GetDoctorImpl(
+    return _then(_$GetPatientImpl(
       null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -329,22 +113,22 @@ class __$$GetDoctorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetDoctorImpl implements GetDoctor {
-  const _$GetDoctorImpl(this.id);
+class _$GetPatientImpl implements GetPatient {
+  const _$GetPatientImpl(this.id);
 
   @override
   final int id;
 
   @override
   String toString() {
-    return 'DoctorEvent.getDoctor(id: $id)';
+    return 'PatientEvent.getPatient(id: $id)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetDoctorImpl &&
+            other is _$GetPatientImpl &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -354,39 +138,39 @@ class _$GetDoctorImpl implements GetDoctor {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetDoctorImplCopyWith<_$GetDoctorImpl> get copyWith =>
-      __$$GetDoctorImplCopyWithImpl<_$GetDoctorImpl>(this, _$identity);
+  _$$GetPatientImplCopyWith<_$GetPatientImpl> get copyWith =>
+      __$$GetPatientImplCopyWithImpl<_$GetPatientImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getMentors,
-    required TResult Function() getPatients,
-    required TResult Function(int id) getDoctor,
+    required TResult Function(int id) getPatient,
+    required TResult Function(int? patientId) getCases,
+    required TResult Function(CaseField field, dynamic value) updateField,
   }) {
-    return getDoctor(id);
+    return getPatient(id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getMentors,
-    TResult? Function()? getPatients,
-    TResult? Function(int id)? getDoctor,
+    TResult? Function(int id)? getPatient,
+    TResult? Function(int? patientId)? getCases,
+    TResult? Function(CaseField field, dynamic value)? updateField,
   }) {
-    return getDoctor?.call(id);
+    return getPatient?.call(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getMentors,
-    TResult Function()? getPatients,
-    TResult Function(int id)? getDoctor,
+    TResult Function(int id)? getPatient,
+    TResult Function(int? patientId)? getCases,
+    TResult Function(CaseField field, dynamic value)? updateField,
     required TResult orElse(),
   }) {
-    if (getDoctor != null) {
-      return getDoctor(id);
+    if (getPatient != null) {
+      return getPatient(id);
     }
     return orElse();
   }
@@ -394,54 +178,344 @@ class _$GetDoctorImpl implements GetDoctor {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetMentors value) getMentors,
-    required TResult Function(GetPatients value) getPatients,
-    required TResult Function(GetDoctor value) getDoctor,
+    required TResult Function(GetPatient value) getPatient,
+    required TResult Function(GetCases value) getCases,
+    required TResult Function(UpdateField value) updateField,
   }) {
-    return getDoctor(this);
+    return getPatient(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetMentors value)? getMentors,
-    TResult? Function(GetPatients value)? getPatients,
-    TResult? Function(GetDoctor value)? getDoctor,
+    TResult? Function(GetPatient value)? getPatient,
+    TResult? Function(GetCases value)? getCases,
+    TResult? Function(UpdateField value)? updateField,
   }) {
-    return getDoctor?.call(this);
+    return getPatient?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetMentors value)? getMentors,
-    TResult Function(GetPatients value)? getPatients,
-    TResult Function(GetDoctor value)? getDoctor,
+    TResult Function(GetPatient value)? getPatient,
+    TResult Function(GetCases value)? getCases,
+    TResult Function(UpdateField value)? updateField,
     required TResult orElse(),
   }) {
-    if (getDoctor != null) {
-      return getDoctor(this);
+    if (getPatient != null) {
+      return getPatient(this);
     }
     return orElse();
   }
 }
 
-abstract class GetDoctor implements DoctorEvent {
-  const factory GetDoctor(final int id) = _$GetDoctorImpl;
+abstract class GetPatient implements PatientEvent {
+  const factory GetPatient(final int id) = _$GetPatientImpl;
 
   int get id;
   @JsonKey(ignore: true)
-  _$$GetDoctorImplCopyWith<_$GetDoctorImpl> get copyWith =>
+  _$$GetPatientImplCopyWith<_$GetPatientImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$DoctorState {
+abstract class _$$GetCasesImplCopyWith<$Res> {
+  factory _$$GetCasesImplCopyWith(
+          _$GetCasesImpl value, $Res Function(_$GetCasesImpl) then) =
+      __$$GetCasesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int? patientId});
+}
+
+/// @nodoc
+class __$$GetCasesImplCopyWithImpl<$Res>
+    extends _$PatientEventCopyWithImpl<$Res, _$GetCasesImpl>
+    implements _$$GetCasesImplCopyWith<$Res> {
+  __$$GetCasesImplCopyWithImpl(
+      _$GetCasesImpl _value, $Res Function(_$GetCasesImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? patientId = freezed,
+  }) {
+    return _then(_$GetCasesImpl(
+      freezed == patientId
+          ? _value.patientId
+          : patientId // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetCasesImpl implements GetCases {
+  const _$GetCasesImpl(this.patientId);
+
+  @override
+  final int? patientId;
+
+  @override
+  String toString() {
+    return 'PatientEvent.getCases(patientId: $patientId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCasesImpl &&
+            (identical(other.patientId, patientId) ||
+                other.patientId == patientId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, patientId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetCasesImplCopyWith<_$GetCasesImpl> get copyWith =>
+      __$$GetCasesImplCopyWithImpl<_$GetCasesImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) getPatient,
+    required TResult Function(int? patientId) getCases,
+    required TResult Function(CaseField field, dynamic value) updateField,
+  }) {
+    return getCases(patientId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? getPatient,
+    TResult? Function(int? patientId)? getCases,
+    TResult? Function(CaseField field, dynamic value)? updateField,
+  }) {
+    return getCases?.call(patientId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? getPatient,
+    TResult Function(int? patientId)? getCases,
+    TResult Function(CaseField field, dynamic value)? updateField,
+    required TResult orElse(),
+  }) {
+    if (getCases != null) {
+      return getCases(patientId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPatient value) getPatient,
+    required TResult Function(GetCases value) getCases,
+    required TResult Function(UpdateField value) updateField,
+  }) {
+    return getCases(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPatient value)? getPatient,
+    TResult? Function(GetCases value)? getCases,
+    TResult? Function(UpdateField value)? updateField,
+  }) {
+    return getCases?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPatient value)? getPatient,
+    TResult Function(GetCases value)? getCases,
+    TResult Function(UpdateField value)? updateField,
+    required TResult orElse(),
+  }) {
+    if (getCases != null) {
+      return getCases(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCases implements PatientEvent {
+  const factory GetCases(final int? patientId) = _$GetCasesImpl;
+
+  int? get patientId;
+  @JsonKey(ignore: true)
+  _$$GetCasesImplCopyWith<_$GetCasesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateFieldImplCopyWith<$Res> {
+  factory _$$UpdateFieldImplCopyWith(
+          _$UpdateFieldImpl value, $Res Function(_$UpdateFieldImpl) then) =
+      __$$UpdateFieldImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CaseField field, dynamic value});
+}
+
+/// @nodoc
+class __$$UpdateFieldImplCopyWithImpl<$Res>
+    extends _$PatientEventCopyWithImpl<$Res, _$UpdateFieldImpl>
+    implements _$$UpdateFieldImplCopyWith<$Res> {
+  __$$UpdateFieldImplCopyWithImpl(
+      _$UpdateFieldImpl _value, $Res Function(_$UpdateFieldImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? value = freezed,
+  }) {
+    return _then(_$UpdateFieldImpl(
+      null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as CaseField,
+      freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateFieldImpl implements UpdateField {
+  const _$UpdateFieldImpl(this.field, this.value);
+
+  @override
+  final CaseField field;
+  @override
+  final dynamic value;
+
+  @override
+  String toString() {
+    return 'PatientEvent.updateField(field: $field, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateFieldImpl &&
+            (identical(other.field, field) || other.field == field) &&
+            const DeepCollectionEquality().equals(other.value, value));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, field, const DeepCollectionEquality().hash(value));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateFieldImplCopyWith<_$UpdateFieldImpl> get copyWith =>
+      __$$UpdateFieldImplCopyWithImpl<_$UpdateFieldImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) getPatient,
+    required TResult Function(int? patientId) getCases,
+    required TResult Function(CaseField field, dynamic value) updateField,
+  }) {
+    return updateField(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? getPatient,
+    TResult? Function(int? patientId)? getCases,
+    TResult? Function(CaseField field, dynamic value)? updateField,
+  }) {
+    return updateField?.call(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? getPatient,
+    TResult Function(int? patientId)? getCases,
+    TResult Function(CaseField field, dynamic value)? updateField,
+    required TResult orElse(),
+  }) {
+    if (updateField != null) {
+      return updateField(field, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPatient value) getPatient,
+    required TResult Function(GetCases value) getCases,
+    required TResult Function(UpdateField value) updateField,
+  }) {
+    return updateField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPatient value)? getPatient,
+    TResult? Function(GetCases value)? getCases,
+    TResult? Function(UpdateField value)? updateField,
+  }) {
+    return updateField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPatient value)? getPatient,
+    TResult Function(GetCases value)? getCases,
+    TResult Function(UpdateField value)? updateField,
+    required TResult orElse(),
+  }) {
+    if (updateField != null) {
+      return updateField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateField implements PatientEvent {
+  const factory UpdateField(final CaseField field, final dynamic value) =
+      _$UpdateFieldImpl;
+
+  CaseField get field;
+  dynamic get value;
+  @JsonKey(ignore: true)
+  _$$UpdateFieldImplCopyWith<_$UpdateFieldImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$PatientState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DoctorStateViewModel viewModel) loaded,
+    required TResult Function(PatientStateViewModel viewModel) loaded,
     required TResult Function() failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -449,7 +523,7 @@ mixin _$DoctorState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DoctorStateViewModel viewModel)? loaded,
+    TResult? Function(PatientStateViewModel viewModel)? loaded,
     TResult? Function()? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -457,7 +531,7 @@ mixin _$DoctorState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DoctorStateViewModel viewModel)? loaded,
+    TResult Function(PatientStateViewModel viewModel)? loaded,
     TResult Function()? failed,
     required TResult orElse(),
   }) =>
@@ -490,16 +564,16 @@ mixin _$DoctorState {
 }
 
 /// @nodoc
-abstract class $DoctorStateCopyWith<$Res> {
-  factory $DoctorStateCopyWith(
-          DoctorState value, $Res Function(DoctorState) then) =
-      _$DoctorStateCopyWithImpl<$Res, DoctorState>;
+abstract class $PatientStateCopyWith<$Res> {
+  factory $PatientStateCopyWith(
+          PatientState value, $Res Function(PatientState) then) =
+      _$PatientStateCopyWithImpl<$Res, PatientState>;
 }
 
 /// @nodoc
-class _$DoctorStateCopyWithImpl<$Res, $Val extends DoctorState>
-    implements $DoctorStateCopyWith<$Res> {
-  _$DoctorStateCopyWithImpl(this._value, this._then);
+class _$PatientStateCopyWithImpl<$Res, $Val extends PatientState>
+    implements $PatientStateCopyWith<$Res> {
+  _$PatientStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -516,7 +590,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$DoctorStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$PatientStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -530,7 +604,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'DoctorState.initial()';
+    return 'PatientState.initial()';
   }
 
   @override
@@ -547,7 +621,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DoctorStateViewModel viewModel) loaded,
+    required TResult Function(PatientStateViewModel viewModel) loaded,
     required TResult Function() failed,
   }) {
     return initial();
@@ -558,7 +632,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DoctorStateViewModel viewModel)? loaded,
+    TResult? Function(PatientStateViewModel viewModel)? loaded,
     TResult? Function()? failed,
   }) {
     return initial?.call();
@@ -569,7 +643,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DoctorStateViewModel viewModel)? loaded,
+    TResult Function(PatientStateViewModel viewModel)? loaded,
     TResult Function()? failed,
     required TResult orElse(),
   }) {
@@ -617,7 +691,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements DoctorState {
+abstract class _Initial implements PatientState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -630,7 +704,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$DoctorStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$PatientStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -644,7 +718,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'DoctorState.loading()';
+    return 'PatientState.loading()';
   }
 
   @override
@@ -661,7 +735,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DoctorStateViewModel viewModel) loaded,
+    required TResult Function(PatientStateViewModel viewModel) loaded,
     required TResult Function() failed,
   }) {
     return loading();
@@ -672,7 +746,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DoctorStateViewModel viewModel)? loaded,
+    TResult? Function(PatientStateViewModel viewModel)? loaded,
     TResult? Function()? failed,
   }) {
     return loading?.call();
@@ -683,7 +757,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DoctorStateViewModel viewModel)? loaded,
+    TResult Function(PatientStateViewModel viewModel)? loaded,
     TResult Function()? failed,
     required TResult orElse(),
   }) {
@@ -731,7 +805,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements DoctorState {
+abstract class _Loading implements PatientState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -741,14 +815,14 @@ abstract class _$$LoadedImplCopyWith<$Res> {
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({DoctorStateViewModel viewModel});
+  $Res call({PatientStateViewModel viewModel});
 
-  $DoctorStateViewModelCopyWith<$Res> get viewModel;
+  $PatientStateViewModelCopyWith<$Res> get viewModel;
 }
 
 /// @nodoc
 class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$DoctorStateCopyWithImpl<$Res, _$LoadedImpl>
+    extends _$PatientStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
       _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
@@ -763,14 +837,14 @@ class __$$LoadedImplCopyWithImpl<$Res>
       viewModel: null == viewModel
           ? _value.viewModel
           : viewModel // ignore: cast_nullable_to_non_nullable
-              as DoctorStateViewModel,
+              as PatientStateViewModel,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $DoctorStateViewModelCopyWith<$Res> get viewModel {
-    return $DoctorStateViewModelCopyWith<$Res>(_value.viewModel, (value) {
+  $PatientStateViewModelCopyWith<$Res> get viewModel {
+    return $PatientStateViewModelCopyWith<$Res>(_value.viewModel, (value) {
       return _then(_value.copyWith(viewModel: value));
     });
   }
@@ -782,11 +856,11 @@ class _$LoadedImpl implements _Loaded {
   const _$LoadedImpl({required this.viewModel});
 
   @override
-  final DoctorStateViewModel viewModel;
+  final PatientStateViewModel viewModel;
 
   @override
   String toString() {
-    return 'DoctorState.loaded(viewModel: $viewModel)';
+    return 'PatientState.loaded(viewModel: $viewModel)';
   }
 
   @override
@@ -812,7 +886,7 @@ class _$LoadedImpl implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DoctorStateViewModel viewModel) loaded,
+    required TResult Function(PatientStateViewModel viewModel) loaded,
     required TResult Function() failed,
   }) {
     return loaded(viewModel);
@@ -823,7 +897,7 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DoctorStateViewModel viewModel)? loaded,
+    TResult? Function(PatientStateViewModel viewModel)? loaded,
     TResult? Function()? failed,
   }) {
     return loaded?.call(viewModel);
@@ -834,7 +908,7 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DoctorStateViewModel viewModel)? loaded,
+    TResult Function(PatientStateViewModel viewModel)? loaded,
     TResult Function()? failed,
     required TResult orElse(),
   }) {
@@ -882,11 +956,11 @@ class _$LoadedImpl implements _Loaded {
   }
 }
 
-abstract class _Loaded implements DoctorState {
-  const factory _Loaded({required final DoctorStateViewModel viewModel}) =
+abstract class _Loaded implements PatientState {
+  const factory _Loaded({required final PatientStateViewModel viewModel}) =
       _$LoadedImpl;
 
-  DoctorStateViewModel get viewModel;
+  PatientStateViewModel get viewModel;
   @JsonKey(ignore: true)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -901,7 +975,7 @@ abstract class _$$FailedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FailedImplCopyWithImpl<$Res>
-    extends _$DoctorStateCopyWithImpl<$Res, _$FailedImpl>
+    extends _$PatientStateCopyWithImpl<$Res, _$FailedImpl>
     implements _$$FailedImplCopyWith<$Res> {
   __$$FailedImplCopyWithImpl(
       _$FailedImpl _value, $Res Function(_$FailedImpl) _then)
@@ -915,7 +989,7 @@ class _$FailedImpl implements _Failed {
 
   @override
   String toString() {
-    return 'DoctorState.failed()';
+    return 'PatientState.failed()';
   }
 
   @override
@@ -932,7 +1006,7 @@ class _$FailedImpl implements _Failed {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(DoctorStateViewModel viewModel) loaded,
+    required TResult Function(PatientStateViewModel viewModel) loaded,
     required TResult Function() failed,
   }) {
     return failed();
@@ -943,7 +1017,7 @@ class _$FailedImpl implements _Failed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(DoctorStateViewModel viewModel)? loaded,
+    TResult? Function(PatientStateViewModel viewModel)? loaded,
     TResult? Function()? failed,
   }) {
     return failed?.call();
@@ -954,7 +1028,7 @@ class _$FailedImpl implements _Failed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(DoctorStateViewModel viewModel)? loaded,
+    TResult Function(PatientStateViewModel viewModel)? loaded,
     TResult Function()? failed,
     required TResult orElse(),
   }) {
@@ -1002,38 +1076,38 @@ class _$FailedImpl implements _Failed {
   }
 }
 
-abstract class _Failed implements DoctorState {
+abstract class _Failed implements PatientState {
   const factory _Failed() = _$FailedImpl;
 }
 
 /// @nodoc
-mixin _$DoctorStateViewModel {
-  List<MentorEntity> get mentors => throw _privateConstructorUsedError;
-  List<PatientEntity> get patients => throw _privateConstructorUsedError;
-  DoctorEntity? get doctor => throw _privateConstructorUsedError;
+mixin _$PatientStateViewModel {
+  PatientEntity? get patient => throw _privateConstructorUsedError;
+  List<CaseEntity> get cases => throw _privateConstructorUsedError;
+  PatientCaseBody? get patientCaseBody => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $DoctorStateViewModelCopyWith<DoctorStateViewModel> get copyWith =>
+  $PatientStateViewModelCopyWith<PatientStateViewModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DoctorStateViewModelCopyWith<$Res> {
-  factory $DoctorStateViewModelCopyWith(DoctorStateViewModel value,
-          $Res Function(DoctorStateViewModel) then) =
-      _$DoctorStateViewModelCopyWithImpl<$Res, DoctorStateViewModel>;
+abstract class $PatientStateViewModelCopyWith<$Res> {
+  factory $PatientStateViewModelCopyWith(PatientStateViewModel value,
+          $Res Function(PatientStateViewModel) then) =
+      _$PatientStateViewModelCopyWithImpl<$Res, PatientStateViewModel>;
   @useResult
   $Res call(
-      {List<MentorEntity> mentors,
-      List<PatientEntity> patients,
-      DoctorEntity? doctor});
+      {PatientEntity? patient,
+      List<CaseEntity> cases,
+      PatientCaseBody? patientCaseBody});
 }
 
 /// @nodoc
-class _$DoctorStateViewModelCopyWithImpl<$Res,
-        $Val extends DoctorStateViewModel>
-    implements $DoctorStateViewModelCopyWith<$Res> {
-  _$DoctorStateViewModelCopyWithImpl(this._value, this._then);
+class _$PatientStateViewModelCopyWithImpl<$Res,
+        $Val extends PatientStateViewModel>
+    implements $PatientStateViewModelCopyWith<$Res> {
+  _$PatientStateViewModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1043,150 +1117,142 @@ class _$DoctorStateViewModelCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mentors = null,
-    Object? patients = null,
-    Object? doctor = freezed,
+    Object? patient = freezed,
+    Object? cases = null,
+    Object? patientCaseBody = freezed,
   }) {
     return _then(_value.copyWith(
-      mentors: null == mentors
-          ? _value.mentors
-          : mentors // ignore: cast_nullable_to_non_nullable
-              as List<MentorEntity>,
-      patients: null == patients
-          ? _value.patients
-          : patients // ignore: cast_nullable_to_non_nullable
-              as List<PatientEntity>,
-      doctor: freezed == doctor
-          ? _value.doctor
-          : doctor // ignore: cast_nullable_to_non_nullable
-              as DoctorEntity?,
+      patient: freezed == patient
+          ? _value.patient
+          : patient // ignore: cast_nullable_to_non_nullable
+              as PatientEntity?,
+      cases: null == cases
+          ? _value.cases
+          : cases // ignore: cast_nullable_to_non_nullable
+              as List<CaseEntity>,
+      patientCaseBody: freezed == patientCaseBody
+          ? _value.patientCaseBody
+          : patientCaseBody // ignore: cast_nullable_to_non_nullable
+              as PatientCaseBody?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$DoctorStateViewModelImplCopyWith<$Res>
-    implements $DoctorStateViewModelCopyWith<$Res> {
-  factory _$$DoctorStateViewModelImplCopyWith(_$DoctorStateViewModelImpl value,
-          $Res Function(_$DoctorStateViewModelImpl) then) =
-      __$$DoctorStateViewModelImplCopyWithImpl<$Res>;
+abstract class _$$PatientStateViewModelImplCopyWith<$Res>
+    implements $PatientStateViewModelCopyWith<$Res> {
+  factory _$$PatientStateViewModelImplCopyWith(
+          _$PatientStateViewModelImpl value,
+          $Res Function(_$PatientStateViewModelImpl) then) =
+      __$$PatientStateViewModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {List<MentorEntity> mentors,
-      List<PatientEntity> patients,
-      DoctorEntity? doctor});
+      {PatientEntity? patient,
+      List<CaseEntity> cases,
+      PatientCaseBody? patientCaseBody});
 }
 
 /// @nodoc
-class __$$DoctorStateViewModelImplCopyWithImpl<$Res>
-    extends _$DoctorStateViewModelCopyWithImpl<$Res, _$DoctorStateViewModelImpl>
-    implements _$$DoctorStateViewModelImplCopyWith<$Res> {
-  __$$DoctorStateViewModelImplCopyWithImpl(_$DoctorStateViewModelImpl _value,
-      $Res Function(_$DoctorStateViewModelImpl) _then)
+class __$$PatientStateViewModelImplCopyWithImpl<$Res>
+    extends _$PatientStateViewModelCopyWithImpl<$Res,
+        _$PatientStateViewModelImpl>
+    implements _$$PatientStateViewModelImplCopyWith<$Res> {
+  __$$PatientStateViewModelImplCopyWithImpl(_$PatientStateViewModelImpl _value,
+      $Res Function(_$PatientStateViewModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mentors = null,
-    Object? patients = null,
-    Object? doctor = freezed,
+    Object? patient = freezed,
+    Object? cases = null,
+    Object? patientCaseBody = freezed,
   }) {
-    return _then(_$DoctorStateViewModelImpl(
-      mentors: null == mentors
-          ? _value._mentors
-          : mentors // ignore: cast_nullable_to_non_nullable
-              as List<MentorEntity>,
-      patients: null == patients
-          ? _value._patients
-          : patients // ignore: cast_nullable_to_non_nullable
-              as List<PatientEntity>,
-      doctor: freezed == doctor
-          ? _value.doctor
-          : doctor // ignore: cast_nullable_to_non_nullable
-              as DoctorEntity?,
+    return _then(_$PatientStateViewModelImpl(
+      patient: freezed == patient
+          ? _value.patient
+          : patient // ignore: cast_nullable_to_non_nullable
+              as PatientEntity?,
+      cases: null == cases
+          ? _value._cases
+          : cases // ignore: cast_nullable_to_non_nullable
+              as List<CaseEntity>,
+      patientCaseBody: freezed == patientCaseBody
+          ? _value.patientCaseBody
+          : patientCaseBody // ignore: cast_nullable_to_non_nullable
+              as PatientCaseBody?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$DoctorStateViewModelImpl implements _DoctorStateViewModel {
-  _$DoctorStateViewModelImpl(
-      {final List<MentorEntity> mentors = const [],
-      final List<PatientEntity> patients = const [],
-      this.doctor = null})
-      : _mentors = mentors,
-        _patients = patients;
+class _$PatientStateViewModelImpl implements _PatientStateViewModel {
+  _$PatientStateViewModelImpl(
+      {this.patient = null,
+      final List<CaseEntity> cases = const [],
+      this.patientCaseBody = null})
+      : _cases = cases;
 
-  final List<MentorEntity> _mentors;
   @override
   @JsonKey()
-  List<MentorEntity> get mentors {
-    if (_mentors is EqualUnmodifiableListView) return _mentors;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_mentors);
-  }
-
-  final List<PatientEntity> _patients;
+  final PatientEntity? patient;
+  final List<CaseEntity> _cases;
   @override
   @JsonKey()
-  List<PatientEntity> get patients {
-    if (_patients is EqualUnmodifiableListView) return _patients;
+  List<CaseEntity> get cases {
+    if (_cases is EqualUnmodifiableListView) return _cases;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_patients);
+    return EqualUnmodifiableListView(_cases);
   }
 
   @override
   @JsonKey()
-  final DoctorEntity? doctor;
+  final PatientCaseBody? patientCaseBody;
 
   @override
   String toString() {
-    return 'DoctorStateViewModel(mentors: $mentors, patients: $patients, doctor: $doctor)';
+    return 'PatientStateViewModel(patient: $patient, cases: $cases, patientCaseBody: $patientCaseBody)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DoctorStateViewModelImpl &&
-            const DeepCollectionEquality().equals(other._mentors, _mentors) &&
-            const DeepCollectionEquality().equals(other._patients, _patients) &&
-            (identical(other.doctor, doctor) || other.doctor == doctor));
+            other is _$PatientStateViewModelImpl &&
+            (identical(other.patient, patient) || other.patient == patient) &&
+            const DeepCollectionEquality().equals(other._cases, _cases) &&
+            (identical(other.patientCaseBody, patientCaseBody) ||
+                other.patientCaseBody == patientCaseBody));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_mentors),
-      const DeepCollectionEquality().hash(_patients),
-      doctor);
+  int get hashCode => Object.hash(runtimeType, patient,
+      const DeepCollectionEquality().hash(_cases), patientCaseBody);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DoctorStateViewModelImplCopyWith<_$DoctorStateViewModelImpl>
-      get copyWith =>
-          __$$DoctorStateViewModelImplCopyWithImpl<_$DoctorStateViewModelImpl>(
-              this, _$identity);
+  _$$PatientStateViewModelImplCopyWith<_$PatientStateViewModelImpl>
+      get copyWith => __$$PatientStateViewModelImplCopyWithImpl<
+          _$PatientStateViewModelImpl>(this, _$identity);
 }
 
-abstract class _DoctorStateViewModel implements DoctorStateViewModel {
-  factory _DoctorStateViewModel(
-      {final List<MentorEntity> mentors,
-      final List<PatientEntity> patients,
-      final DoctorEntity? doctor}) = _$DoctorStateViewModelImpl;
+abstract class _PatientStateViewModel implements PatientStateViewModel {
+  factory _PatientStateViewModel(
+      {final PatientEntity? patient,
+      final List<CaseEntity> cases,
+      final PatientCaseBody? patientCaseBody}) = _$PatientStateViewModelImpl;
 
   @override
-  List<MentorEntity> get mentors;
+  PatientEntity? get patient;
   @override
-  List<PatientEntity> get patients;
+  List<CaseEntity> get cases;
   @override
-  DoctorEntity? get doctor;
+  PatientCaseBody? get patientCaseBody;
   @override
   @JsonKey(ignore: true)
-  _$$DoctorStateViewModelImplCopyWith<_$DoctorStateViewModelImpl>
+  _$$PatientStateViewModelImplCopyWith<_$PatientStateViewModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

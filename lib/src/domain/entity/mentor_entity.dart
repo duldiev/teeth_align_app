@@ -1,11 +1,13 @@
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
+import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 
 class MentorEntity extends AccountEntity {
   final String? education;
   final String? workExperience;
   final String? speciality;
   final String? clinicName;
+  final List<DoctorEntity> assignedDoctors;
 
   const MentorEntity({
     required super.id,
@@ -17,13 +19,14 @@ class MentorEntity extends AccountEntity {
     required super.role,
     required super.birthDate,
     required super.avatarUrl,
-    required super.chatToken,
     required super.bio,
+    required super.chatToken,
+    required super.chatUserId,
     required this.education,
     required this.workExperience,
     required this.speciality,
     required this.clinicName,
-    required super.chatUserId,
+    required this.assignedDoctors,
   });
 
   factory MentorEntity.empty() => MentorEntity(
@@ -43,6 +46,7 @@ class MentorEntity extends AccountEntity {
         bio: null,
         clinicName: null,
         chatUserId: null,
+        assignedDoctors: const [],
       );
 
   @override
@@ -51,6 +55,48 @@ class MentorEntity extends AccountEntity {
         workExperience,
         speciality,
         clinicName,
+        assignedDoctors,
         ...super.props,
       ];
+
+  @override
+  MentorEntity copyWith({
+    int? id,
+    String? username,
+    String? firstName,
+    String? lastName,
+    String? email,
+    String? langKey,
+    String? avatarUrl,
+    Role? role,
+    DateTime? birthDate,
+    String? chatUserId,
+    String? chatToken,
+    String? bio,
+    String? education,
+    String? workExperience,
+    String? speciality,
+    String? clinicName,
+    List<DoctorEntity>? assignedDoctors,
+  }) {
+    return MentorEntity(
+      id: id ?? super.id,
+      username: username ?? super.username,
+      firstName: firstName ?? super.firstName,
+      lastName: lastName ?? super.lastName,
+      email: email ?? super.email,
+      langKey: langKey ?? super.langKey,
+      role: role ?? super.role,
+      birthDate: birthDate ?? super.birthDate,
+      avatarUrl: avatarUrl ?? super.avatarUrl,
+      bio: bio ?? super.bio,
+      chatToken: chatToken ?? super.chatToken,
+      chatUserId: chatUserId ?? super.chatUserId,
+      education: education ?? this.education,
+      workExperience: workExperience ?? this.workExperience,
+      speciality: speciality ?? this.speciality,
+      clinicName: clinicName ?? this.clinicName,
+      assignedDoctors: assignedDoctors ?? this.assignedDoctors,
+    );
+  }
 }

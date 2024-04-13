@@ -1,4 +1,5 @@
 import 'package:teeth_align_app/src/core/enums/basics.dart';
+import 'package:teeth_align_app/src/data/models/doctor_model.dart';
 import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart';
 
 class MentorModel extends MentorEntity {
@@ -19,6 +20,7 @@ class MentorModel extends MentorEntity {
     required super.bio,
     required super.clinicName,
     required super.chatUserId,
+    required super.assignedDoctors,
   });
 
   factory MentorModel.fromMap(Map<String, dynamic> map) => MentorModel(
@@ -40,5 +42,10 @@ class MentorModel extends MentorEntity {
         bio: map['bio'] as String?,
         clinicName: map['clinicName'] as String?,
         chatUserId: map['chatUserId'] as String?,
+        assignedDoctors: map['assignedDoctors'] != null
+            ? (map['assignedDoctors'] as List)
+                .map((e) => DoctorModel.fromMap(e))
+                .toList()
+            : [],
       );
 }

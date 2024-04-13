@@ -19,32 +19,56 @@ mixin _$MentorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getDoctors,
+    required TResult Function(int id) getMentor,
+    required TResult Function(DoctorEntity doctor) assignDoctor,
+    required TResult Function(DoctorEntity doctor) unassignDoctor,
+    required TResult Function() assignDoctors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getDoctors,
+    TResult? Function(int id)? getMentor,
+    TResult? Function(DoctorEntity doctor)? assignDoctor,
+    TResult? Function(DoctorEntity doctor)? unassignDoctor,
+    TResult? Function()? assignDoctors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getDoctors,
+    TResult Function(int id)? getMentor,
+    TResult Function(DoctorEntity doctor)? assignDoctor,
+    TResult Function(DoctorEntity doctor)? unassignDoctor,
+    TResult Function()? assignDoctors,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetMentor value) getMentor,
+    required TResult Function(AssignDoctor value) assignDoctor,
+    required TResult Function(UnassignDoctor value) unassignDoctor,
+    required TResult Function(AssignDoctors value) assignDoctors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetMentor value)? getMentor,
+    TResult? Function(AssignDoctor value)? assignDoctor,
+    TResult? Function(UnassignDoctor value)? unassignDoctor,
+    TResult? Function(AssignDoctors value)? assignDoctors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetMentor value)? getMentor,
+    TResult Function(AssignDoctor value)? assignDoctor,
+    TResult Function(UnassignDoctor value)? unassignDoctor,
+    TResult Function(AssignDoctors value)? assignDoctors,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +131,10 @@ class _$GetDoctorsImpl implements GetDoctors {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getDoctors,
+    required TResult Function(int id) getMentor,
+    required TResult Function(DoctorEntity doctor) assignDoctor,
+    required TResult Function(DoctorEntity doctor) unassignDoctor,
+    required TResult Function() assignDoctors,
   }) {
     return getDoctors();
   }
@@ -115,6 +143,10 @@ class _$GetDoctorsImpl implements GetDoctors {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getDoctors,
+    TResult? Function(int id)? getMentor,
+    TResult? Function(DoctorEntity doctor)? assignDoctor,
+    TResult? Function(DoctorEntity doctor)? unassignDoctor,
+    TResult? Function()? assignDoctors,
   }) {
     return getDoctors?.call();
   }
@@ -123,6 +155,10 @@ class _$GetDoctorsImpl implements GetDoctors {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getDoctors,
+    TResult Function(int id)? getMentor,
+    TResult Function(DoctorEntity doctor)? assignDoctor,
+    TResult Function(DoctorEntity doctor)? unassignDoctor,
+    TResult Function()? assignDoctors,
     required TResult orElse(),
   }) {
     if (getDoctors != null) {
@@ -135,6 +171,10 @@ class _$GetDoctorsImpl implements GetDoctors {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetMentor value) getMentor,
+    required TResult Function(AssignDoctor value) assignDoctor,
+    required TResult Function(UnassignDoctor value) unassignDoctor,
+    required TResult Function(AssignDoctors value) assignDoctors,
   }) {
     return getDoctors(this);
   }
@@ -143,6 +183,10 @@ class _$GetDoctorsImpl implements GetDoctors {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetMentor value)? getMentor,
+    TResult? Function(AssignDoctor value)? assignDoctor,
+    TResult? Function(UnassignDoctor value)? unassignDoctor,
+    TResult? Function(AssignDoctors value)? assignDoctors,
   }) {
     return getDoctors?.call(this);
   }
@@ -151,6 +195,10 @@ class _$GetDoctorsImpl implements GetDoctors {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetMentor value)? getMentor,
+    TResult Function(AssignDoctor value)? assignDoctor,
+    TResult Function(UnassignDoctor value)? unassignDoctor,
+    TResult Function(AssignDoctors value)? assignDoctors,
     required TResult orElse(),
   }) {
     if (getDoctors != null) {
@@ -162,6 +210,581 @@ class _$GetDoctorsImpl implements GetDoctors {
 
 abstract class GetDoctors implements MentorEvent {
   const factory GetDoctors() = _$GetDoctorsImpl;
+}
+
+/// @nodoc
+abstract class _$$GetMentorImplCopyWith<$Res> {
+  factory _$$GetMentorImplCopyWith(
+          _$GetMentorImpl value, $Res Function(_$GetMentorImpl) then) =
+      __$$GetMentorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$GetMentorImplCopyWithImpl<$Res>
+    extends _$MentorEventCopyWithImpl<$Res, _$GetMentorImpl>
+    implements _$$GetMentorImplCopyWith<$Res> {
+  __$$GetMentorImplCopyWithImpl(
+      _$GetMentorImpl _value, $Res Function(_$GetMentorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GetMentorImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetMentorImpl implements GetMentor {
+  const _$GetMentorImpl(this.id);
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'MentorEvent.getMentor(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetMentorImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetMentorImplCopyWith<_$GetMentorImpl> get copyWith =>
+      __$$GetMentorImplCopyWithImpl<_$GetMentorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getDoctors,
+    required TResult Function(int id) getMentor,
+    required TResult Function(DoctorEntity doctor) assignDoctor,
+    required TResult Function(DoctorEntity doctor) unassignDoctor,
+    required TResult Function() assignDoctors,
+  }) {
+    return getMentor(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getDoctors,
+    TResult? Function(int id)? getMentor,
+    TResult? Function(DoctorEntity doctor)? assignDoctor,
+    TResult? Function(DoctorEntity doctor)? unassignDoctor,
+    TResult? Function()? assignDoctors,
+  }) {
+    return getMentor?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getDoctors,
+    TResult Function(int id)? getMentor,
+    TResult Function(DoctorEntity doctor)? assignDoctor,
+    TResult Function(DoctorEntity doctor)? unassignDoctor,
+    TResult Function()? assignDoctors,
+    required TResult orElse(),
+  }) {
+    if (getMentor != null) {
+      return getMentor(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetMentor value) getMentor,
+    required TResult Function(AssignDoctor value) assignDoctor,
+    required TResult Function(UnassignDoctor value) unassignDoctor,
+    required TResult Function(AssignDoctors value) assignDoctors,
+  }) {
+    return getMentor(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetMentor value)? getMentor,
+    TResult? Function(AssignDoctor value)? assignDoctor,
+    TResult? Function(UnassignDoctor value)? unassignDoctor,
+    TResult? Function(AssignDoctors value)? assignDoctors,
+  }) {
+    return getMentor?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetMentor value)? getMentor,
+    TResult Function(AssignDoctor value)? assignDoctor,
+    TResult Function(UnassignDoctor value)? unassignDoctor,
+    TResult Function(AssignDoctors value)? assignDoctors,
+    required TResult orElse(),
+  }) {
+    if (getMentor != null) {
+      return getMentor(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetMentor implements MentorEvent {
+  const factory GetMentor(final int id) = _$GetMentorImpl;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$GetMentorImplCopyWith<_$GetMentorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AssignDoctorImplCopyWith<$Res> {
+  factory _$$AssignDoctorImplCopyWith(
+          _$AssignDoctorImpl value, $Res Function(_$AssignDoctorImpl) then) =
+      __$$AssignDoctorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DoctorEntity doctor});
+}
+
+/// @nodoc
+class __$$AssignDoctorImplCopyWithImpl<$Res>
+    extends _$MentorEventCopyWithImpl<$Res, _$AssignDoctorImpl>
+    implements _$$AssignDoctorImplCopyWith<$Res> {
+  __$$AssignDoctorImplCopyWithImpl(
+      _$AssignDoctorImpl _value, $Res Function(_$AssignDoctorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? doctor = null,
+  }) {
+    return _then(_$AssignDoctorImpl(
+      null == doctor
+          ? _value.doctor
+          : doctor // ignore: cast_nullable_to_non_nullable
+              as DoctorEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AssignDoctorImpl implements AssignDoctor {
+  const _$AssignDoctorImpl(this.doctor);
+
+  @override
+  final DoctorEntity doctor;
+
+  @override
+  String toString() {
+    return 'MentorEvent.assignDoctor(doctor: $doctor)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AssignDoctorImpl &&
+            (identical(other.doctor, doctor) || other.doctor == doctor));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, doctor);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AssignDoctorImplCopyWith<_$AssignDoctorImpl> get copyWith =>
+      __$$AssignDoctorImplCopyWithImpl<_$AssignDoctorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getDoctors,
+    required TResult Function(int id) getMentor,
+    required TResult Function(DoctorEntity doctor) assignDoctor,
+    required TResult Function(DoctorEntity doctor) unassignDoctor,
+    required TResult Function() assignDoctors,
+  }) {
+    return assignDoctor(doctor);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getDoctors,
+    TResult? Function(int id)? getMentor,
+    TResult? Function(DoctorEntity doctor)? assignDoctor,
+    TResult? Function(DoctorEntity doctor)? unassignDoctor,
+    TResult? Function()? assignDoctors,
+  }) {
+    return assignDoctor?.call(doctor);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getDoctors,
+    TResult Function(int id)? getMentor,
+    TResult Function(DoctorEntity doctor)? assignDoctor,
+    TResult Function(DoctorEntity doctor)? unassignDoctor,
+    TResult Function()? assignDoctors,
+    required TResult orElse(),
+  }) {
+    if (assignDoctor != null) {
+      return assignDoctor(doctor);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetMentor value) getMentor,
+    required TResult Function(AssignDoctor value) assignDoctor,
+    required TResult Function(UnassignDoctor value) unassignDoctor,
+    required TResult Function(AssignDoctors value) assignDoctors,
+  }) {
+    return assignDoctor(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetMentor value)? getMentor,
+    TResult? Function(AssignDoctor value)? assignDoctor,
+    TResult? Function(UnassignDoctor value)? unassignDoctor,
+    TResult? Function(AssignDoctors value)? assignDoctors,
+  }) {
+    return assignDoctor?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetMentor value)? getMentor,
+    TResult Function(AssignDoctor value)? assignDoctor,
+    TResult Function(UnassignDoctor value)? unassignDoctor,
+    TResult Function(AssignDoctors value)? assignDoctors,
+    required TResult orElse(),
+  }) {
+    if (assignDoctor != null) {
+      return assignDoctor(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AssignDoctor implements MentorEvent {
+  const factory AssignDoctor(final DoctorEntity doctor) = _$AssignDoctorImpl;
+
+  DoctorEntity get doctor;
+  @JsonKey(ignore: true)
+  _$$AssignDoctorImplCopyWith<_$AssignDoctorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnassignDoctorImplCopyWith<$Res> {
+  factory _$$UnassignDoctorImplCopyWith(_$UnassignDoctorImpl value,
+          $Res Function(_$UnassignDoctorImpl) then) =
+      __$$UnassignDoctorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DoctorEntity doctor});
+}
+
+/// @nodoc
+class __$$UnassignDoctorImplCopyWithImpl<$Res>
+    extends _$MentorEventCopyWithImpl<$Res, _$UnassignDoctorImpl>
+    implements _$$UnassignDoctorImplCopyWith<$Res> {
+  __$$UnassignDoctorImplCopyWithImpl(
+      _$UnassignDoctorImpl _value, $Res Function(_$UnassignDoctorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? doctor = null,
+  }) {
+    return _then(_$UnassignDoctorImpl(
+      null == doctor
+          ? _value.doctor
+          : doctor // ignore: cast_nullable_to_non_nullable
+              as DoctorEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UnassignDoctorImpl implements UnassignDoctor {
+  const _$UnassignDoctorImpl(this.doctor);
+
+  @override
+  final DoctorEntity doctor;
+
+  @override
+  String toString() {
+    return 'MentorEvent.unassignDoctor(doctor: $doctor)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnassignDoctorImpl &&
+            (identical(other.doctor, doctor) || other.doctor == doctor));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, doctor);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnassignDoctorImplCopyWith<_$UnassignDoctorImpl> get copyWith =>
+      __$$UnassignDoctorImplCopyWithImpl<_$UnassignDoctorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getDoctors,
+    required TResult Function(int id) getMentor,
+    required TResult Function(DoctorEntity doctor) assignDoctor,
+    required TResult Function(DoctorEntity doctor) unassignDoctor,
+    required TResult Function() assignDoctors,
+  }) {
+    return unassignDoctor(doctor);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getDoctors,
+    TResult? Function(int id)? getMentor,
+    TResult? Function(DoctorEntity doctor)? assignDoctor,
+    TResult? Function(DoctorEntity doctor)? unassignDoctor,
+    TResult? Function()? assignDoctors,
+  }) {
+    return unassignDoctor?.call(doctor);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getDoctors,
+    TResult Function(int id)? getMentor,
+    TResult Function(DoctorEntity doctor)? assignDoctor,
+    TResult Function(DoctorEntity doctor)? unassignDoctor,
+    TResult Function()? assignDoctors,
+    required TResult orElse(),
+  }) {
+    if (unassignDoctor != null) {
+      return unassignDoctor(doctor);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetMentor value) getMentor,
+    required TResult Function(AssignDoctor value) assignDoctor,
+    required TResult Function(UnassignDoctor value) unassignDoctor,
+    required TResult Function(AssignDoctors value) assignDoctors,
+  }) {
+    return unassignDoctor(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetMentor value)? getMentor,
+    TResult? Function(AssignDoctor value)? assignDoctor,
+    TResult? Function(UnassignDoctor value)? unassignDoctor,
+    TResult? Function(AssignDoctors value)? assignDoctors,
+  }) {
+    return unassignDoctor?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetMentor value)? getMentor,
+    TResult Function(AssignDoctor value)? assignDoctor,
+    TResult Function(UnassignDoctor value)? unassignDoctor,
+    TResult Function(AssignDoctors value)? assignDoctors,
+    required TResult orElse(),
+  }) {
+    if (unassignDoctor != null) {
+      return unassignDoctor(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnassignDoctor implements MentorEvent {
+  const factory UnassignDoctor(final DoctorEntity doctor) =
+      _$UnassignDoctorImpl;
+
+  DoctorEntity get doctor;
+  @JsonKey(ignore: true)
+  _$$UnassignDoctorImplCopyWith<_$UnassignDoctorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AssignDoctorsImplCopyWith<$Res> {
+  factory _$$AssignDoctorsImplCopyWith(
+          _$AssignDoctorsImpl value, $Res Function(_$AssignDoctorsImpl) then) =
+      __$$AssignDoctorsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AssignDoctorsImplCopyWithImpl<$Res>
+    extends _$MentorEventCopyWithImpl<$Res, _$AssignDoctorsImpl>
+    implements _$$AssignDoctorsImplCopyWith<$Res> {
+  __$$AssignDoctorsImplCopyWithImpl(
+      _$AssignDoctorsImpl _value, $Res Function(_$AssignDoctorsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AssignDoctorsImpl implements AssignDoctors {
+  const _$AssignDoctorsImpl();
+
+  @override
+  String toString() {
+    return 'MentorEvent.assignDoctors()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AssignDoctorsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getDoctors,
+    required TResult Function(int id) getMentor,
+    required TResult Function(DoctorEntity doctor) assignDoctor,
+    required TResult Function(DoctorEntity doctor) unassignDoctor,
+    required TResult Function() assignDoctors,
+  }) {
+    return assignDoctors();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getDoctors,
+    TResult? Function(int id)? getMentor,
+    TResult? Function(DoctorEntity doctor)? assignDoctor,
+    TResult? Function(DoctorEntity doctor)? unassignDoctor,
+    TResult? Function()? assignDoctors,
+  }) {
+    return assignDoctors?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getDoctors,
+    TResult Function(int id)? getMentor,
+    TResult Function(DoctorEntity doctor)? assignDoctor,
+    TResult Function(DoctorEntity doctor)? unassignDoctor,
+    TResult Function()? assignDoctors,
+    required TResult orElse(),
+  }) {
+    if (assignDoctors != null) {
+      return assignDoctors();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetMentor value) getMentor,
+    required TResult Function(AssignDoctor value) assignDoctor,
+    required TResult Function(UnassignDoctor value) unassignDoctor,
+    required TResult Function(AssignDoctors value) assignDoctors,
+  }) {
+    return assignDoctors(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetMentor value)? getMentor,
+    TResult? Function(AssignDoctor value)? assignDoctor,
+    TResult? Function(UnassignDoctor value)? unassignDoctor,
+    TResult? Function(AssignDoctors value)? assignDoctors,
+  }) {
+    return assignDoctors?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetMentor value)? getMentor,
+    TResult Function(AssignDoctor value)? assignDoctor,
+    TResult Function(UnassignDoctor value)? unassignDoctor,
+    TResult Function(AssignDoctors value)? assignDoctors,
+    required TResult orElse(),
+  }) {
+    if (assignDoctors != null) {
+      return assignDoctors(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AssignDoctors implements MentorEvent {
+  const factory AssignDoctors() = _$AssignDoctorsImpl;
 }
 
 /// @nodoc
@@ -737,6 +1360,7 @@ abstract class _Failed implements MentorState {
 
 /// @nodoc
 mixin _$MentorStateViewModel {
+  MentorEntity? get mentor => throw _privateConstructorUsedError;
   List<DoctorEntity> get doctors => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -750,7 +1374,7 @@ abstract class $MentorStateViewModelCopyWith<$Res> {
           $Res Function(MentorStateViewModel) then) =
       _$MentorStateViewModelCopyWithImpl<$Res, MentorStateViewModel>;
   @useResult
-  $Res call({List<DoctorEntity> doctors});
+  $Res call({MentorEntity? mentor, List<DoctorEntity> doctors});
 }
 
 /// @nodoc
@@ -767,9 +1391,14 @@ class _$MentorStateViewModelCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? mentor = freezed,
     Object? doctors = null,
   }) {
     return _then(_value.copyWith(
+      mentor: freezed == mentor
+          ? _value.mentor
+          : mentor // ignore: cast_nullable_to_non_nullable
+              as MentorEntity?,
       doctors: null == doctors
           ? _value.doctors
           : doctors // ignore: cast_nullable_to_non_nullable
@@ -786,7 +1415,7 @@ abstract class _$$MentorStateViewModelImplCopyWith<$Res>
       __$$MentorStateViewModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<DoctorEntity> doctors});
+  $Res call({MentorEntity? mentor, List<DoctorEntity> doctors});
 }
 
 /// @nodoc
@@ -800,9 +1429,14 @@ class __$$MentorStateViewModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? mentor = freezed,
     Object? doctors = null,
   }) {
     return _then(_$MentorStateViewModelImpl(
+      mentor: freezed == mentor
+          ? _value.mentor
+          : mentor // ignore: cast_nullable_to_non_nullable
+              as MentorEntity?,
       doctors: null == doctors
           ? _value._doctors
           : doctors // ignore: cast_nullable_to_non_nullable
@@ -814,9 +1448,13 @@ class __$$MentorStateViewModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MentorStateViewModelImpl implements _MentorStateViewModel {
-  _$MentorStateViewModelImpl({final List<DoctorEntity> doctors = const []})
+  _$MentorStateViewModelImpl(
+      {this.mentor = null, final List<DoctorEntity> doctors = const []})
       : _doctors = doctors;
 
+  @override
+  @JsonKey()
+  final MentorEntity? mentor;
   final List<DoctorEntity> _doctors;
   @override
   @JsonKey()
@@ -828,7 +1466,7 @@ class _$MentorStateViewModelImpl implements _MentorStateViewModel {
 
   @override
   String toString() {
-    return 'MentorStateViewModel(doctors: $doctors)';
+    return 'MentorStateViewModel(mentor: $mentor, doctors: $doctors)';
   }
 
   @override
@@ -836,12 +1474,13 @@ class _$MentorStateViewModelImpl implements _MentorStateViewModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MentorStateViewModelImpl &&
+            (identical(other.mentor, mentor) || other.mentor == mentor) &&
             const DeepCollectionEquality().equals(other._doctors, _doctors));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_doctors));
+  int get hashCode => Object.hash(
+      runtimeType, mentor, const DeepCollectionEquality().hash(_doctors));
 
   @JsonKey(ignore: true)
   @override
@@ -853,9 +1492,12 @@ class _$MentorStateViewModelImpl implements _MentorStateViewModel {
 }
 
 abstract class _MentorStateViewModel implements MentorStateViewModel {
-  factory _MentorStateViewModel({final List<DoctorEntity> doctors}) =
-      _$MentorStateViewModelImpl;
+  factory _MentorStateViewModel(
+      {final MentorEntity? mentor,
+      final List<DoctorEntity> doctors}) = _$MentorStateViewModelImpl;
 
+  @override
+  MentorEntity? get mentor;
   @override
   List<DoctorEntity> get doctors;
   @override

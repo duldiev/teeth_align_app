@@ -2,8 +2,10 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/exceptions/failure.dart';
 import 'package:teeth_align_app/src/core/services/base_client.dart';
+import 'package:teeth_align_app/src/data/models/doctor_model.dart';
 import 'package:teeth_align_app/src/data/models/mentor_model.dart';
 import 'package:teeth_align_app/src/data/models/patient_model.dart';
+import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/patient_entity.dart';
 import 'package:teeth_align_app/src/domain/repository/i_doctor_repository.dart';
@@ -39,6 +41,18 @@ class DoctorRepository extends BaseClient implements IDoctorRepository {
       (r) => Right(
         (r['items'] as List).map((e) => PatientModel.fromMap(e)).toList(),
       ),
+    );
+  }
+
+  @override
+  Future<Either<Failure, DoctorEntity>> getDoctorById(int id) async {
+    return (await call(
+      RestMethod.get,
+      '/api/v1/doctor/$id',
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => Right(DoctorModel.fromMap(r)),
     );
   }
 }

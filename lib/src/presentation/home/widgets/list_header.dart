@@ -8,11 +8,11 @@ class ListHeader extends StatelessWidget {
   const ListHeader({
     super.key,
     required this.title,
-    required this.onShowAll,
+    this.onShowAll,
   });
 
   final String title;
-  final VoidCallback onShowAll;
+  final VoidCallback? onShowAll;
 
   @override
   Widget build(BuildContext context) {
@@ -34,20 +34,22 @@ class ListHeader extends StatelessWidget {
             ),
           ],
         ),
-        InkWell(
-          onTap: onShowAll,
-          borderRadius: BorderRadius.circular(6),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: Text(
-              'Show all',
-              style: context.textTheme.titleSmall?.copyWith(
-                fontWeight: FontWeight.w400,
-                color: AppColors.primary,
+        if (onShowAll != null) ...[
+          InkWell(
+            onTap: onShowAll,
+            borderRadius: BorderRadius.circular(6),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Text(
+                'Show all',
+                style: context.textTheme.titleSmall?.copyWith(
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.primary,
+                ),
               ),
             ),
           ),
-        ),
+        ],
       ],
     );
   }

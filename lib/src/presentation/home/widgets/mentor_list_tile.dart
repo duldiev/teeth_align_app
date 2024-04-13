@@ -22,7 +22,7 @@ class MentorListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => context.router.push(
-        MentorProfileRoute(mentor: mentor),
+        MentorProfileRoute(mentorId: mentor.id),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

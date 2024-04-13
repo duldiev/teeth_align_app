@@ -10,4 +10,9 @@ abstract class IAdminRepository {
   Future<Either<Failure, List<MentorEntity>>> getAllMentors();
 
   Future<Either<Failure, List<PatientEntity>>> getAllPatients();
+
+  Future<Either<Failure, Unit>> pairMentorAndDoctor(
+    int mentorId,
+    List<int> doctorIds,
+  );
 }

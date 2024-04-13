@@ -3,6 +3,7 @@ import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/helpers/app_data.dart';
+import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/patient_entity.dart';
 import 'package:teeth_align_app/src/domain/repository/i_doctor_repository.dart';
@@ -18,6 +19,7 @@ class DoctorBloc extends Bloc<DoctorEvent, DoctorState> {
   DoctorBloc({required this.repository}) : super(const DoctorState.initial()) {
     on<GetMentors>(onGetMentors, transformer: sequential());
     on<GetPatients>(onGetPatients, transformer: sequential());
+    on<GetDoctor>(onGetDoctor, transformer: sequential());
   }
 
   DoctorStateViewModel viewModel = DoctorStateViewModel();
@@ -47,6 +49,21 @@ class DoctorBloc extends Bloc<DoctorEvent, DoctorState> {
       (l) => emit(const DoctorState.failed()),
       (r) {
         viewModel = viewModel.copyWith(patients: r);
+        emit(DoctorState.loaded(viewModel: viewModel));
+      },
+    );
+  }
+
+  Future<void> onGetDoctor(
+    GetDoctor event,
+    Emitter<DoctorState> emit,
+  ) async {
+    emit(const DoctorState.loading());
+
+    (await repository.getDoctorById(event.id)).fold(
+      (l) => emit(const DoctorState.failed()),
+      (r) {
+        viewModel = viewModel.copyWith(doctor: r);
         emit(DoctorState.loaded(viewModel: viewModel));
       },
     );

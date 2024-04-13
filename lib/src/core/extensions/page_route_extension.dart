@@ -9,7 +9,7 @@ extension PageRouteInfoExtension on PageRouteInfo {
         MentorHomeRoute() => 'Home',
         AdminHomeRoute() => 'Home',
         DoctorHomeRoute() => 'Home',
-        ReportRoute() => 'Report',
+        ReportRoute() => 'Cases',
         SocialRoute() => 'Social',
         NotificationRoute() => 'Inbox',
         AccountRoute() => 'Account',

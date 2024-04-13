@@ -12,8 +12,7 @@ import 'package:auto_route/auto_route.dart' as _i23;
 import 'package:flutter/material.dart' as _i24;
 import 'package:stream_chat_flutter/stream_chat_flutter.dart' as _i25;
 import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart' as _i26;
-import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart' as _i27;
-import 'package:teeth_align_app/src/domain/entity/patient_entity.dart' as _i28;
+import 'package:teeth_align_app/src/domain/entity/patient_entity.dart' as _i27;
 import 'package:teeth_align_app/src/presentation/account/screens/account_screen.dart'
     as _i1;
 import 'package:teeth_align_app/src/presentation/account/screens/doctor_profile_screen.dart'
@@ -135,7 +134,7 @@ abstract class $AppRouter extends _i23.RootStackRouter {
         routeData: routeData,
         child: _i10.MentorProfileScreen(
           key: args.key,
-          mentor: args.mentor,
+          mentorId: args.mentorId,
         ),
       );
     },
@@ -425,13 +424,13 @@ class MentorHomeRoute extends _i23.PageRouteInfo<void> {
 class MentorProfileRoute extends _i23.PageRouteInfo<MentorProfileRouteArgs> {
   MentorProfileRoute({
     _i24.Key? key,
-    required _i27.MentorEntity mentor,
+    required int mentorId,
     List<_i23.PageRouteInfo>? children,
   }) : super(
           MentorProfileRoute.name,
           args: MentorProfileRouteArgs(
             key: key,
-            mentor: mentor,
+            mentorId: mentorId,
           ),
           initialChildren: children,
         );
@@ -445,16 +444,16 @@ class MentorProfileRoute extends _i23.PageRouteInfo<MentorProfileRouteArgs> {
 class MentorProfileRouteArgs {
   const MentorProfileRouteArgs({
     this.key,
-    required this.mentor,
+    required this.mentorId,
   });
 
   final _i24.Key? key;
 
-  final _i27.MentorEntity mentor;
+  final int mentorId;
 
   @override
   String toString() {
-    return 'MentorProfileRouteArgs{key: $key, mentor: $mentor}';
+    return 'MentorProfileRouteArgs{key: $key, mentorId: $mentorId}';
   }
 }
 
@@ -505,7 +504,7 @@ class PatientHomeRoute extends _i23.PageRouteInfo<void> {
 class PatientProfileRoute extends _i23.PageRouteInfo<PatientProfileRouteArgs> {
   PatientProfileRoute({
     _i24.Key? key,
-    required _i28.PatientEntity patient,
+    required _i27.PatientEntity patient,
     List<_i23.PageRouteInfo>? children,
   }) : super(
           PatientProfileRoute.name,
@@ -530,7 +529,7 @@ class PatientProfileRouteArgs {
 
   final _i24.Key? key;
 
-  final _i28.PatientEntity patient;
+  final _i27.PatientEntity patient;
 
   @override
   String toString() {

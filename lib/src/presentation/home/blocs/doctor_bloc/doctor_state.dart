@@ -15,5 +15,6 @@ class DoctorStateViewModel with _$DoctorStateViewModel {
   factory DoctorStateViewModel({
     @Default([]) List<MentorEntity> mentors,
     @Default([]) List<PatientEntity> patients,
+    @Default(null) DoctorEntity? doctor,
   }) = _DoctorStateViewModel;
 }

@@ -19,6 +19,8 @@ class AdminBloc extends Bloc<AdminEvent, AdminState> {
     on<GetMentors>(onGetMentors, transformer: sequential());
     on<GetPatients>(onGetPatients, transformer: sequential());
     on<GetDoctors>(onGetDoctors, transformer: sequential());
+    on<GetAll>(onGetAll, transformer: sequential());
+    on<AssignDoctorsToMentors>(onAssignDoctorsToMentors);
   }
 
   AdminStateViewModel viewModel = AdminStateViewModel();
@@ -65,6 +67,50 @@ class AdminBloc extends Bloc<AdminEvent, AdminState> {
         viewModel = viewModel.copyWith(doctors: r);
         emit(AdminState.loaded(viewModel: viewModel));
       },
+    );
+  }
+
+  Future<void> onGetAll(
+    GetAll event,
+    Emitter<AdminState> emit,
+  ) async {
+    emit(const AdminState.loading());
+
+    List<DoctorEntity> doctors = (await repository.getAllDoctors()).fold(
+      (l) => [],
+      (r) => r,
+    );
+    List<MentorEntity> mentors = (await repository.getAllMentors()).fold(
+      (l) => [],
+      (r) => r,
+    );
+    List<PatientEntity> patients = (await repository.getAllPatients()).fold(
+      (l) => [],
+      (r) => r,
+    );
+
+    viewModel = viewModel.copyWith(
+      doctors: doctors,
+      mentors: mentors,
+      patients: patients,
+    );
+
+    emit(AdminState.loaded(viewModel: viewModel));
+  }
+
+  Future<void> onAssignDoctorsToMentors(
+    AssignDoctorsToMentors event,
+    Emitter<AdminState> emit,
+  ) async {
+    emit(const AdminState.loading());
+
+    (await repository.pairMentorAndDoctor(
+      event.mentorId,
+      event.doctors.map((e) => e.id).toList(),
+    ))
+        .fold(
+      (l) => emit(AdminState.loaded(viewModel: viewModel)),
+      (r) => emit(AdminState.loaded(viewModel: viewModel)),
     );
   }
 }

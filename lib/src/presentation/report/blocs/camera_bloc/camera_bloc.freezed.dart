@@ -531,7 +531,7 @@ abstract class RemovePicture implements CameraEvent {
 /// @nodoc
 mixin _$CameraState {
   bool get isDeleteMode => throw _privateConstructorUsedError;
-  XFile? get file => throw _privateConstructorUsedError;
+  List<XFile> get files => throw _privateConstructorUsedError;
   LoadStatus get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -545,7 +545,7 @@ abstract class $CameraStateCopyWith<$Res> {
           CameraState value, $Res Function(CameraState) then) =
       _$CameraStateCopyWithImpl<$Res, CameraState>;
   @useResult
-  $Res call({bool isDeleteMode, XFile? file, LoadStatus status});
+  $Res call({bool isDeleteMode, List<XFile> files, LoadStatus status});
 }
 
 /// @nodoc
@@ -562,7 +562,7 @@ class _$CameraStateCopyWithImpl<$Res, $Val extends CameraState>
   @override
   $Res call({
     Object? isDeleteMode = null,
-    Object? file = freezed,
+    Object? files = null,
     Object? status = null,
   }) {
     return _then(_value.copyWith(
@@ -570,10 +570,10 @@ class _$CameraStateCopyWithImpl<$Res, $Val extends CameraState>
           ? _value.isDeleteMode
           : isDeleteMode // ignore: cast_nullable_to_non_nullable
               as bool,
-      file: freezed == file
-          ? _value.file
-          : file // ignore: cast_nullable_to_non_nullable
-              as XFile?,
+      files: null == files
+          ? _value.files
+          : files // ignore: cast_nullable_to_non_nullable
+              as List<XFile>,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -590,7 +590,7 @@ abstract class _$$CameraStateImplCopyWith<$Res>
       __$$CameraStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isDeleteMode, XFile? file, LoadStatus status});
+  $Res call({bool isDeleteMode, List<XFile> files, LoadStatus status});
 }
 
 /// @nodoc
@@ -605,7 +605,7 @@ class __$$CameraStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isDeleteMode = null,
-    Object? file = freezed,
+    Object? files = null,
     Object? status = null,
   }) {
     return _then(_$CameraStateImpl(
@@ -613,10 +613,10 @@ class __$$CameraStateImplCopyWithImpl<$Res>
           ? _value.isDeleteMode
           : isDeleteMode // ignore: cast_nullable_to_non_nullable
               as bool,
-      file: freezed == file
-          ? _value.file
-          : file // ignore: cast_nullable_to_non_nullable
-              as XFile?,
+      files: null == files
+          ? _value._files
+          : files // ignore: cast_nullable_to_non_nullable
+              as List<XFile>,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -630,23 +630,30 @@ class __$$CameraStateImplCopyWithImpl<$Res>
 class _$CameraStateImpl extends _CameraState with DiagnosticableTreeMixin {
   _$CameraStateImpl(
       {this.isDeleteMode = false,
-      this.file = null,
+      final List<XFile> files = const [],
       this.status = LoadStatus.initial})
-      : super._();
+      : _files = files,
+        super._();
 
   @override
   @JsonKey()
   final bool isDeleteMode;
+  final List<XFile> _files;
   @override
   @JsonKey()
-  final XFile? file;
+  List<XFile> get files {
+    if (_files is EqualUnmodifiableListView) return _files;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_files);
+  }
+
   @override
   @JsonKey()
   final LoadStatus status;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CameraState(isDeleteMode: $isDeleteMode, file: $file, status: $status)';
+    return 'CameraState(isDeleteMode: $isDeleteMode, files: $files, status: $status)';
   }
 
   @override
@@ -655,7 +662,7 @@ class _$CameraStateImpl extends _CameraState with DiagnosticableTreeMixin {
     properties
       ..add(DiagnosticsProperty('type', 'CameraState'))
       ..add(DiagnosticsProperty('isDeleteMode', isDeleteMode))
-      ..add(DiagnosticsProperty('file', file))
+      ..add(DiagnosticsProperty('files', files))
       ..add(DiagnosticsProperty('status', status));
   }
 
@@ -666,12 +673,13 @@ class _$CameraStateImpl extends _CameraState with DiagnosticableTreeMixin {
             other is _$CameraStateImpl &&
             (identical(other.isDeleteMode, isDeleteMode) ||
                 other.isDeleteMode == isDeleteMode) &&
-            (identical(other.file, file) || other.file == file) &&
+            const DeepCollectionEquality().equals(other._files, _files) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isDeleteMode, file, status);
+  int get hashCode => Object.hash(runtimeType, isDeleteMode,
+      const DeepCollectionEquality().hash(_files), status);
 
   @JsonKey(ignore: true)
   @override
@@ -683,14 +691,14 @@ class _$CameraStateImpl extends _CameraState with DiagnosticableTreeMixin {
 abstract class _CameraState extends CameraState {
   factory _CameraState(
       {final bool isDeleteMode,
-      final XFile? file,
+      final List<XFile> files,
       final LoadStatus status}) = _$CameraStateImpl;
   _CameraState._() : super._();
 
   @override
   bool get isDeleteMode;
   @override
-  XFile? get file;
+  List<XFile> get files;
   @override
   LoadStatus get status;
   @override

@@ -4,7 +4,7 @@ part of 'camera_bloc.dart';
 class CameraState with _$CameraState {
   factory CameraState({
     @Default(false) bool isDeleteMode,
-    @Default(null) XFile? file,
+    @Default([]) List<XFile> files,
     @Default(LoadStatus.initial) LoadStatus status,
   }) = _CameraState;
 

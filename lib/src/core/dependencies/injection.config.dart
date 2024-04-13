@@ -14,8 +14,8 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i7;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:image_picker/image_picker.dart' as _i23;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:package_info_plus/package_info_plus.dart' as _i24;
-import 'package:shared_preferences/shared_preferences.dart' as _i25;
+import 'package:package_info_plus/package_info_plus.dart' as _i25;
+import 'package:shared_preferences/shared_preferences.dart' as _i27;
 
 import '../../data/repository/admin_repository.dart' as _i9;
 import '../../data/repository/auth_repository.dart' as _i11;
@@ -31,15 +31,17 @@ import '../../domain/repository/i_mentor_repository.dart' as _i14;
 import '../../domain/repository/i_patient_repository.dart' as _i17;
 import '../../domain/repository/i_profile_repository.dart' as _i19;
 import '../../domain/repository/i_social_repository.dart' as _i21;
-import '../../presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart' as _i26;
-import '../../presentation/auth/blocs/sign_up_bloc/sign_up_bloc.dart' as _i27;
-import '../../presentation/home/blocs/admin_bloc/admin_bloc.dart' as _i29;
-import '../../presentation/home/blocs/doctor_bloc/doctor_bloc.dart' as _i31;
+import '../../presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart' as _i28;
+import '../../presentation/auth/blocs/sign_up_bloc/sign_up_bloc.dart' as _i29;
+import '../../presentation/home/blocs/admin_bloc/admin_bloc.dart' as _i31;
+import '../../presentation/home/blocs/doctor_bloc/doctor_bloc.dart' as _i33;
+import '../../presentation/home/blocs/mentor_bloc/mentor_bloc.dart' as _i24;
+import '../../presentation/home/blocs/patient_bloc/patient_bloc.dart' as _i26;
 import '../../presentation/report/blocs/camera_bloc/camera_bloc.dart' as _i4;
-import '../../presentation/social/blocs/social_bloc/social_bloc.dart' as _i28;
+import '../../presentation/social/blocs/social_bloc/social_bloc.dart' as _i30;
 import '../../router/app_router.dart' as _i3;
-import '../modules/modules.dart' as _i32;
-import '../services/api_client.dart' as _i30;
+import '../modules/modules.dart' as _i34;
+import '../services/api_client.dart' as _i32;
 import '../services/network_info.dart' as _i16;
 
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -69,38 +71,44 @@ Future<_i1.GetIt> $initGetIt(
   gh.lazySingleton<_i19.IProfileRepository>(() => _i20.ProfileRepository());
   gh.lazySingleton<_i21.ISocialRepository>(() => _i22.SocialRepository());
   gh.lazySingleton<_i23.ImagePicker>(() => modules.imagePicker);
-  await gh.factoryAsync<_i24.PackageInfo>(
+  gh.factory<_i24.MentorBloc>(
+      () => _i24.MentorBloc(repository: gh<_i14.IMentorRepository>()));
+  await gh.factoryAsync<_i25.PackageInfo>(
     () => modules.packageInfo,
     preResolve: true,
   );
-  await gh.factoryAsync<_i25.SharedPreferences>(
+  gh.factory<_i26.PatientBloc>(() => _i26.PatientBloc(
+        repository: gh<_i17.IPatientRepository>(),
+        imagePicker: gh<_i23.ImagePicker>(),
+      ));
+  await gh.factoryAsync<_i27.SharedPreferences>(
     () => modules.sharedPreferences,
     preResolve: true,
   );
-  gh.factory<_i26.SignInBloc>(() => _i26.SignInBloc(
+  gh.factory<_i28.SignInBloc>(() => _i28.SignInBloc(
         authRepository: gh<_i10.IAuthRepository>(),
         router: gh<_i3.AppRouter>(),
       ));
-  gh.factory<_i27.SignUpBloc>(() => _i27.SignUpBloc(
+  gh.factory<_i29.SignUpBloc>(() => _i29.SignUpBloc(
         authRepository: gh<_i10.IAuthRepository>(),
         profileRepository: gh<_i19.IProfileRepository>(),
         imagePicker: gh<_i23.ImagePicker>(),
         router: gh<_i3.AppRouter>(),
       ));
-  gh.factory<_i28.SocialBloc>(() => _i28.SocialBloc(
+  gh.factory<_i30.SocialBloc>(() => _i30.SocialBloc(
         repository: gh<_i21.ISocialRepository>(),
         imagePicker: gh<_i23.ImagePicker>(),
         router: gh<_i3.AppRouter>(),
       ));
-  gh.factory<_i29.AdminBloc>(
-      () => _i29.AdminBloc(repository: gh<_i8.IAdminRepository>()));
-  gh.singleton<_i30.ApiClient>(() => _i30.ApiClient(
+  gh.factory<_i31.AdminBloc>(
+      () => _i31.AdminBloc(repository: gh<_i8.IAdminRepository>()));
+  gh.singleton<_i32.ApiClient>(() => _i32.ApiClient(
         client: gh<_i6.Dio>(),
         storage: gh<_i7.FlutterSecureStorage>(),
       ));
-  gh.factory<_i31.DoctorBloc>(
-      () => _i31.DoctorBloc(repository: gh<_i12.IDoctorRepository>()));
+  gh.factory<_i33.DoctorBloc>(
+      () => _i33.DoctorBloc(repository: gh<_i12.IDoctorRepository>()));
   return getIt;
 }
 
-class _$Modules extends _i32.Modules {}
+class _$Modules extends _i34.Modules {}

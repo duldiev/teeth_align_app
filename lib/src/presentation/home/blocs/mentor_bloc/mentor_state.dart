@@ -13,6 +13,7 @@ class MentorState with _$MentorState {
 @freezed
 class MentorStateViewModel with _$MentorStateViewModel {
   factory MentorStateViewModel({
+    @Default(null) MentorEntity? mentor,
     @Default([]) List<DoctorEntity> doctors,
   }) = _MentorStateViewModel;
 }

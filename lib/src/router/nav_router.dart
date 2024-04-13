@@ -8,6 +8,7 @@ import 'package:teeth_align_app/src/presentation/home/blocs/admin_bloc/admin_blo
     as admin;
 import 'package:teeth_align_app/src/presentation/home/blocs/doctor_bloc/doctor_bloc.dart'
     as doc;
+import 'package:teeth_align_app/src/presentation/home/blocs/patient_bloc/patient_bloc.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 
@@ -26,13 +27,28 @@ class _NavRouterState extends State<NavRouter> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<admin.AdminBloc>()
-        ..add(const admin.GetDoctors())
-        ..add(const admin.GetMentors())
-        ..add(const admin.GetPatients());
-      context.read<doc.DoctorBloc>()
-        ..add(const doc.GetMentors())
-        ..add(const doc.GetPatients());
+      switch (appData.role) {
+        case null:
+          {}
+        case Role.patient:
+          {
+            context.read<PatientBloc>()
+              ..add(GetPatient(appData.userId))
+              ..add(GetCases(appData.userId));
+          }
+        case Role.mentor:
+          {}
+        case Role.admin:
+          {
+            context.read<admin.AdminBloc>().add(const admin.GetAll());
+          }
+        case Role.doctor:
+          {
+            context.read<doc.DoctorBloc>()
+              ..add(const doc.GetMentors())
+              ..add(const doc.GetPatients());
+          }
+      }
     });
   }
 

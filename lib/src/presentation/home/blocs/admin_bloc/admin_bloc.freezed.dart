@@ -21,6 +21,9 @@ mixin _$AdminEvent {
     required TResult Function() getMentors,
     required TResult Function() getPatients,
     required TResult Function() getDoctors,
+    required TResult Function() getAll,
+    required TResult Function(int mentorId, List<DoctorEntity> doctors)
+        assignDoctorsToMentors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +31,9 @@ mixin _$AdminEvent {
     TResult? Function()? getMentors,
     TResult? Function()? getPatients,
     TResult? Function()? getDoctors,
+    TResult? Function()? getAll,
+    TResult? Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +41,9 @@ mixin _$AdminEvent {
     TResult Function()? getMentors,
     TResult Function()? getPatients,
     TResult Function()? getDoctors,
+    TResult Function()? getAll,
+    TResult Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +52,9 @@ mixin _$AdminEvent {
     required TResult Function(GetMentors value) getMentors,
     required TResult Function(GetPatients value) getPatients,
     required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetAll value) getAll,
+    required TResult Function(AssignDoctorsToMentors value)
+        assignDoctorsToMentors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +62,8 @@ mixin _$AdminEvent {
     TResult? Function(GetMentors value)? getMentors,
     TResult? Function(GetPatients value)? getPatients,
     TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetAll value)? getAll,
+    TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +71,8 @@ mixin _$AdminEvent {
     TResult Function(GetMentors value)? getMentors,
     TResult Function(GetPatients value)? getPatients,
     TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetAll value)? getAll,
+    TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +137,9 @@ class _$GetMentorsImpl implements GetMentors {
     required TResult Function() getMentors,
     required TResult Function() getPatients,
     required TResult Function() getDoctors,
+    required TResult Function() getAll,
+    required TResult Function(int mentorId, List<DoctorEntity> doctors)
+        assignDoctorsToMentors,
   }) {
     return getMentors();
   }
@@ -131,6 +150,9 @@ class _$GetMentorsImpl implements GetMentors {
     TResult? Function()? getMentors,
     TResult? Function()? getPatients,
     TResult? Function()? getDoctors,
+    TResult? Function()? getAll,
+    TResult? Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
   }) {
     return getMentors?.call();
   }
@@ -141,6 +163,9 @@ class _$GetMentorsImpl implements GetMentors {
     TResult Function()? getMentors,
     TResult Function()? getPatients,
     TResult Function()? getDoctors,
+    TResult Function()? getAll,
+    TResult Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
     required TResult orElse(),
   }) {
     if (getMentors != null) {
@@ -155,6 +180,9 @@ class _$GetMentorsImpl implements GetMentors {
     required TResult Function(GetMentors value) getMentors,
     required TResult Function(GetPatients value) getPatients,
     required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetAll value) getAll,
+    required TResult Function(AssignDoctorsToMentors value)
+        assignDoctorsToMentors,
   }) {
     return getMentors(this);
   }
@@ -165,6 +193,8 @@ class _$GetMentorsImpl implements GetMentors {
     TResult? Function(GetMentors value)? getMentors,
     TResult? Function(GetPatients value)? getPatients,
     TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetAll value)? getAll,
+    TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
   }) {
     return getMentors?.call(this);
   }
@@ -175,6 +205,8 @@ class _$GetMentorsImpl implements GetMentors {
     TResult Function(GetMentors value)? getMentors,
     TResult Function(GetPatients value)? getPatients,
     TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetAll value)? getAll,
+    TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
     required TResult orElse(),
   }) {
     if (getMentors != null) {
@@ -229,6 +261,9 @@ class _$GetPatientsImpl implements GetPatients {
     required TResult Function() getMentors,
     required TResult Function() getPatients,
     required TResult Function() getDoctors,
+    required TResult Function() getAll,
+    required TResult Function(int mentorId, List<DoctorEntity> doctors)
+        assignDoctorsToMentors,
   }) {
     return getPatients();
   }
@@ -239,6 +274,9 @@ class _$GetPatientsImpl implements GetPatients {
     TResult? Function()? getMentors,
     TResult? Function()? getPatients,
     TResult? Function()? getDoctors,
+    TResult? Function()? getAll,
+    TResult? Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
   }) {
     return getPatients?.call();
   }
@@ -249,6 +287,9 @@ class _$GetPatientsImpl implements GetPatients {
     TResult Function()? getMentors,
     TResult Function()? getPatients,
     TResult Function()? getDoctors,
+    TResult Function()? getAll,
+    TResult Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
     required TResult orElse(),
   }) {
     if (getPatients != null) {
@@ -263,6 +304,9 @@ class _$GetPatientsImpl implements GetPatients {
     required TResult Function(GetMentors value) getMentors,
     required TResult Function(GetPatients value) getPatients,
     required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetAll value) getAll,
+    required TResult Function(AssignDoctorsToMentors value)
+        assignDoctorsToMentors,
   }) {
     return getPatients(this);
   }
@@ -273,6 +317,8 @@ class _$GetPatientsImpl implements GetPatients {
     TResult? Function(GetMentors value)? getMentors,
     TResult? Function(GetPatients value)? getPatients,
     TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetAll value)? getAll,
+    TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
   }) {
     return getPatients?.call(this);
   }
@@ -283,6 +329,8 @@ class _$GetPatientsImpl implements GetPatients {
     TResult Function(GetMentors value)? getMentors,
     TResult Function(GetPatients value)? getPatients,
     TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetAll value)? getAll,
+    TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
     required TResult orElse(),
   }) {
     if (getPatients != null) {
@@ -337,6 +385,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     required TResult Function() getMentors,
     required TResult Function() getPatients,
     required TResult Function() getDoctors,
+    required TResult Function() getAll,
+    required TResult Function(int mentorId, List<DoctorEntity> doctors)
+        assignDoctorsToMentors,
   }) {
     return getDoctors();
   }
@@ -347,6 +398,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     TResult? Function()? getMentors,
     TResult? Function()? getPatients,
     TResult? Function()? getDoctors,
+    TResult? Function()? getAll,
+    TResult? Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
   }) {
     return getDoctors?.call();
   }
@@ -357,6 +411,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     TResult Function()? getMentors,
     TResult Function()? getPatients,
     TResult Function()? getDoctors,
+    TResult Function()? getAll,
+    TResult Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
     required TResult orElse(),
   }) {
     if (getDoctors != null) {
@@ -371,6 +428,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     required TResult Function(GetMentors value) getMentors,
     required TResult Function(GetPatients value) getPatients,
     required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetAll value) getAll,
+    required TResult Function(AssignDoctorsToMentors value)
+        assignDoctorsToMentors,
   }) {
     return getDoctors(this);
   }
@@ -381,6 +441,8 @@ class _$GetDoctorsImpl implements GetDoctors {
     TResult? Function(GetMentors value)? getMentors,
     TResult? Function(GetPatients value)? getPatients,
     TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetAll value)? getAll,
+    TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
   }) {
     return getDoctors?.call(this);
   }
@@ -391,6 +453,8 @@ class _$GetDoctorsImpl implements GetDoctors {
     TResult Function(GetMentors value)? getMentors,
     TResult Function(GetPatients value)? getPatients,
     TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetAll value)? getAll,
+    TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
     required TResult orElse(),
   }) {
     if (getDoctors != null) {
@@ -402,6 +466,308 @@ class _$GetDoctorsImpl implements GetDoctors {
 
 abstract class GetDoctors implements AdminEvent {
   const factory GetDoctors() = _$GetDoctorsImpl;
+}
+
+/// @nodoc
+abstract class _$$GetAllImplCopyWith<$Res> {
+  factory _$$GetAllImplCopyWith(
+          _$GetAllImpl value, $Res Function(_$GetAllImpl) then) =
+      __$$GetAllImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetAllImplCopyWithImpl<$Res>
+    extends _$AdminEventCopyWithImpl<$Res, _$GetAllImpl>
+    implements _$$GetAllImplCopyWith<$Res> {
+  __$$GetAllImplCopyWithImpl(
+      _$GetAllImpl _value, $Res Function(_$GetAllImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetAllImpl implements GetAll {
+  const _$GetAllImpl();
+
+  @override
+  String toString() {
+    return 'AdminEvent.getAll()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetAllImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getMentors,
+    required TResult Function() getPatients,
+    required TResult Function() getDoctors,
+    required TResult Function() getAll,
+    required TResult Function(int mentorId, List<DoctorEntity> doctors)
+        assignDoctorsToMentors,
+  }) {
+    return getAll();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getMentors,
+    TResult? Function()? getPatients,
+    TResult? Function()? getDoctors,
+    TResult? Function()? getAll,
+    TResult? Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
+  }) {
+    return getAll?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getMentors,
+    TResult Function()? getPatients,
+    TResult Function()? getDoctors,
+    TResult Function()? getAll,
+    TResult Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
+    required TResult orElse(),
+  }) {
+    if (getAll != null) {
+      return getAll();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMentors value) getMentors,
+    required TResult Function(GetPatients value) getPatients,
+    required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetAll value) getAll,
+    required TResult Function(AssignDoctorsToMentors value)
+        assignDoctorsToMentors,
+  }) {
+    return getAll(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMentors value)? getMentors,
+    TResult? Function(GetPatients value)? getPatients,
+    TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetAll value)? getAll,
+    TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+  }) {
+    return getAll?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMentors value)? getMentors,
+    TResult Function(GetPatients value)? getPatients,
+    TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetAll value)? getAll,
+    TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    required TResult orElse(),
+  }) {
+    if (getAll != null) {
+      return getAll(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAll implements AdminEvent {
+  const factory GetAll() = _$GetAllImpl;
+}
+
+/// @nodoc
+abstract class _$$AssignDoctorsToMentorsImplCopyWith<$Res> {
+  factory _$$AssignDoctorsToMentorsImplCopyWith(
+          _$AssignDoctorsToMentorsImpl value,
+          $Res Function(_$AssignDoctorsToMentorsImpl) then) =
+      __$$AssignDoctorsToMentorsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int mentorId, List<DoctorEntity> doctors});
+}
+
+/// @nodoc
+class __$$AssignDoctorsToMentorsImplCopyWithImpl<$Res>
+    extends _$AdminEventCopyWithImpl<$Res, _$AssignDoctorsToMentorsImpl>
+    implements _$$AssignDoctorsToMentorsImplCopyWith<$Res> {
+  __$$AssignDoctorsToMentorsImplCopyWithImpl(
+      _$AssignDoctorsToMentorsImpl _value,
+      $Res Function(_$AssignDoctorsToMentorsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? mentorId = null,
+    Object? doctors = null,
+  }) {
+    return _then(_$AssignDoctorsToMentorsImpl(
+      null == mentorId
+          ? _value.mentorId
+          : mentorId // ignore: cast_nullable_to_non_nullable
+              as int,
+      null == doctors
+          ? _value._doctors
+          : doctors // ignore: cast_nullable_to_non_nullable
+              as List<DoctorEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AssignDoctorsToMentorsImpl implements AssignDoctorsToMentors {
+  const _$AssignDoctorsToMentorsImpl(
+      this.mentorId, final List<DoctorEntity> doctors)
+      : _doctors = doctors;
+
+  @override
+  final int mentorId;
+  final List<DoctorEntity> _doctors;
+  @override
+  List<DoctorEntity> get doctors {
+    if (_doctors is EqualUnmodifiableListView) return _doctors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_doctors);
+  }
+
+  @override
+  String toString() {
+    return 'AdminEvent.assignDoctorsToMentors(mentorId: $mentorId, doctors: $doctors)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AssignDoctorsToMentorsImpl &&
+            (identical(other.mentorId, mentorId) ||
+                other.mentorId == mentorId) &&
+            const DeepCollectionEquality().equals(other._doctors, _doctors));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, mentorId, const DeepCollectionEquality().hash(_doctors));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AssignDoctorsToMentorsImplCopyWith<_$AssignDoctorsToMentorsImpl>
+      get copyWith => __$$AssignDoctorsToMentorsImplCopyWithImpl<
+          _$AssignDoctorsToMentorsImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getMentors,
+    required TResult Function() getPatients,
+    required TResult Function() getDoctors,
+    required TResult Function() getAll,
+    required TResult Function(int mentorId, List<DoctorEntity> doctors)
+        assignDoctorsToMentors,
+  }) {
+    return assignDoctorsToMentors(mentorId, doctors);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getMentors,
+    TResult? Function()? getPatients,
+    TResult? Function()? getDoctors,
+    TResult? Function()? getAll,
+    TResult? Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
+  }) {
+    return assignDoctorsToMentors?.call(mentorId, doctors);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getMentors,
+    TResult Function()? getPatients,
+    TResult Function()? getDoctors,
+    TResult Function()? getAll,
+    TResult Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
+    required TResult orElse(),
+  }) {
+    if (assignDoctorsToMentors != null) {
+      return assignDoctorsToMentors(mentorId, doctors);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMentors value) getMentors,
+    required TResult Function(GetPatients value) getPatients,
+    required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetAll value) getAll,
+    required TResult Function(AssignDoctorsToMentors value)
+        assignDoctorsToMentors,
+  }) {
+    return assignDoctorsToMentors(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMentors value)? getMentors,
+    TResult? Function(GetPatients value)? getPatients,
+    TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetAll value)? getAll,
+    TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+  }) {
+    return assignDoctorsToMentors?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMentors value)? getMentors,
+    TResult Function(GetPatients value)? getPatients,
+    TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetAll value)? getAll,
+    TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    required TResult orElse(),
+  }) {
+    if (assignDoctorsToMentors != null) {
+      return assignDoctorsToMentors(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AssignDoctorsToMentors implements AdminEvent {
+  const factory AssignDoctorsToMentors(
+          final int mentorId, final List<DoctorEntity> doctors) =
+      _$AssignDoctorsToMentorsImpl;
+
+  int get mentorId;
+  List<DoctorEntity> get doctors;
+  @JsonKey(ignore: true)
+  _$$AssignDoctorsToMentorsImplCopyWith<_$AssignDoctorsToMentorsImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

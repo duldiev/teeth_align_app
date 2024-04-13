@@ -46,4 +46,23 @@ class AdminRepository extends BaseClient implements IAdminRepository {
       ),
     );
   }
+
+  @override
+  Future<Either<Failure, Unit>> pairMentorAndDoctor(
+    int mentorId,
+    List<int> doctorIds,
+  ) async {
+    return (await call(
+      RestMethod.get,
+      '/api/v1/mentor/assign',
+      parametres: {
+        'mentorId': mentorId,
+        'doctorIds': doctorIds,
+      },
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => const Right(unit),
+    );
+  }
 }

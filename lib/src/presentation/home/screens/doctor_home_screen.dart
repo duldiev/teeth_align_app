@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:teeth_align_app/main.dart';
 import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/doctor_bloc/doctor_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/doctor_list_tile.dart';
@@ -27,16 +28,18 @@ class DoctorHomeScreen extends StatelessWidget {
           appBar: MyAppBar(
             title: const LogoTitle(),
             centerTitle: true,
-            actions: [
-              InkWell(
-                onTap: () => context.router.push(const ChatListRoute()),
-                child: const Icon(
-                  FontAwesomeIcons.inbox,
-                  size: 24,
-                ),
-              ),
-              Gap(4.w),
-            ],
+            actions: client.state.currentUser != null
+                ? [
+                    InkWell(
+                      onTap: () => context.router.push(const ChatListRoute()),
+                      child: const Icon(
+                        FontAwesomeIcons.inbox,
+                        size: 24,
+                      ),
+                    ),
+                    Gap(4.w),
+                  ]
+                : [],
           ),
           body: SafeArea(
             child: SingleChildScrollView(

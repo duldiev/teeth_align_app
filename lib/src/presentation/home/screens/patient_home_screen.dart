@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:teeth_align_app/main.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/circular_bar.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/timer_circular_bar.dart';
@@ -29,16 +30,18 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
       appBar: MyAppBar(
         title: const LogoTitle(),
         centerTitle: true,
-        actions: [
-          InkWell(
-            onTap: () => context.router.push(const ChatListRoute()),
-            child: const Icon(
-              FontAwesomeIcons.inbox,
-              size: 24,
-            ),
-          ),
-          Gap(4.w),
-        ],
+        actions: client.state.currentUser != null
+            ? [
+                InkWell(
+                  onTap: () => context.router.push(const ChatListRoute()),
+                  child: const Icon(
+                    FontAwesomeIcons.inbox,
+                    size: 24,
+                  ),
+                ),
+                Gap(4.w),
+              ]
+            : [],
       ),
       body: SafeArea(
         child: SingleChildScrollView(

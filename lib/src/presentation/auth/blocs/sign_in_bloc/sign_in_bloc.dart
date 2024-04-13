@@ -118,6 +118,8 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
         User(id: account!.chatUserId!),
         account!.chatToken!,
       );
+
+      appData.isChatAvailable = client.state.currentUser != null;
     }
 
     emit(state.copyWith(status: LoadStatus.success, account: account));

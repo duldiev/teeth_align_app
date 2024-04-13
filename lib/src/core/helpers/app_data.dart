@@ -8,6 +8,7 @@ class AppData {
   Role? role;
   String? fullName;
   int userId = 0;
+  bool isChatAvailable = false;
 
   factory AppData() {
     return _appData;

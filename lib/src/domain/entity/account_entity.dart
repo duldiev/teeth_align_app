@@ -15,6 +15,9 @@ class AccountEntity extends Equatable {
   final String? chatToken;
   final String? bio;
   final bool chatEnabled;
+  final int? currentSet;
+  final int? maxSet;
+  final DateTime? nextAlignerDate;
 
   const AccountEntity({
     required this.id,
@@ -30,6 +33,9 @@ class AccountEntity extends Equatable {
     required this.chatToken,
     required this.bio,
     required this.chatEnabled,
+    this.currentSet,
+    this.maxSet,
+    this.nextAlignerDate,
   });
 
   String get fullName => '$firstName $lastName';
@@ -65,6 +71,9 @@ class AccountEntity extends Equatable {
         chatToken,
         bio,
         chatEnabled,
+        maxSet,
+        currentSet,
+        nextAlignerDate,
       ];
 
   AccountEntity copyWith({

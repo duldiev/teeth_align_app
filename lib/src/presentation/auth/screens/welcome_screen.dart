@@ -22,12 +22,14 @@ class WelcomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
+              flex: 10,
               child: Container(
                 color: AppColors.secondary,
                 child: Assets.images.girl.image(fit: BoxFit.cover),
               ),
             ),
             Expanded(
+              flex: 7,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

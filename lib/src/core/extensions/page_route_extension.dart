@@ -4,15 +4,15 @@ import 'package:teeth_align_app/src/router/app_router.gr.dart';
 
 extension PageRouteInfoExtension on PageRouteInfo {
   String get label => switch (this) {
-        CalendarRoute() => 'Calendar',
-        PatientHomeRoute() => 'Home',
-        MentorHomeRoute() => 'Home',
-        AdminHomeRoute() => 'Home',
-        DoctorHomeRoute() => 'Home',
-        ReportRoute() => 'Cases',
-        SocialRoute() => 'Social',
-        NotificationRoute() => 'Inbox',
-        AccountRoute() => 'Account',
+        CalendarRoute() => 'Календарь',
+        PatientHomeRoute() => 'Главная',
+        MentorHomeRoute() => 'Главная',
+        AdminHomeRoute() => 'Главная',
+        DoctorHomeRoute() => 'Главная',
+        ReportRoute() => 'Отчеты',
+        SocialRoute() => 'Сообщество',
+        NotificationRoute() => 'Увед.',
+        AccountRoute() => 'Аккаунт',
         PageRouteInfo() => routeName,
       };
 

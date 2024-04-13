@@ -42,7 +42,7 @@ class _TimerInputState extends State<TimerInput> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Set timer',
+              'Установить таймер',
               style: context.textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
@@ -60,7 +60,7 @@ class _TimerInputState extends State<TimerInput> {
                 widget.onPicked(duration);
                 context.router.maybePop();
               },
-              title: 'Done',
+              title: 'Принять',
               padding: EdgeInsets.symmetric(vertical: 0.8.h),
             ),
           ],
@@ -213,9 +213,9 @@ class __NumberPickerState extends State<_NumberPicker> {
     };
 
     final identifier = switch (widget.property) {
-      TimerProperty.hh => 'h',
-      TimerProperty.mm => 'm',
-      TimerProperty.ss => 's',
+      TimerProperty.hh => 'ч',
+      TimerProperty.mm => 'м',
+      TimerProperty.ss => 'с',
     };
 
     final list = List.generate(value, (index) => index);

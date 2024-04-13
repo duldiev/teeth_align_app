@@ -19,7 +19,7 @@ class ReportScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        title: Text('Cases'),
+        title: Text('Отчеты'),
       ),
       body: BlocBuilder<PatientBloc, PatientState>(
         builder: (context, state) {

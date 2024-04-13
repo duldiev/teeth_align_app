@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
+import 'package:teeth_align_app/src/core/extensions/date_extension.dart';
+import 'package:teeth_align_app/src/core/helpers/app_data.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/circular_bar.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/timer_circular_bar.dart';
 import 'package:teeth_align_app/src/shared/app_bar/buttons/chat_button.dart';
@@ -41,9 +43,9 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const CircularBar(
-                    current: 12,
-                    total: 31,
+                  CircularBar(
+                    current: appData.account?.currentSet ?? 0,
+                    total: appData.account?.maxSet ?? 0,
                   ),
                   Gap(6.w),
                   Text(
@@ -66,7 +68,10 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                     textAlign: TextAlign.right,
                   ),
                   Gap(6.w),
-                  const CircularBar(current: 4, total: 10),
+                  CircularBar(
+                    current: appData.account!.nextAlignerDate.left(),
+                    total: 13,
+                  ),
                   Gap(4.w),
                   Text(
                     'дней',

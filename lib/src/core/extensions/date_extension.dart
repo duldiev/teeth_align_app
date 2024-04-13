@@ -17,6 +17,12 @@ extension DateExtension on DateTime? {
     return result;
   }
 
+  int left() {
+    if (this == null) return 0;
+    final duration = this!.difference(DateTime.now());
+    return duration.inDays;
+  }
+
   int? getAge() {
     if (this == null) return null;
     final duration = this!.difference(DateTime.now());

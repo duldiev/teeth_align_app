@@ -22,7 +22,7 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        title: Text('Account'),
+        title: Text('Аккаунт'),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(
@@ -46,7 +46,7 @@ class AccountScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  appData.fullName ?? '',
+                  appData.account?.fullName ?? '',
                   style: context.textTheme.titleLarge?.copyWith(height: 1.2),
                 ),
               ],

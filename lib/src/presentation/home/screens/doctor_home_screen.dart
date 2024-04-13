@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/doctor_bloc/doctor_bloc.dart';
-import 'package:teeth_align_app/src/presentation/home/widgets/doctor_list_tile.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/list_header.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/mentor_list_tile.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/patient_list_tile.dart';
@@ -39,7 +37,7 @@ class DoctorHomeScreen extends StatelessWidget {
                 loading: () => const SizedBox(),
                 loaded: (data) => Column(
                   children: [
-                    ListHeader(title: 'My mentors', onShowAll: () {}),
+                    ListHeader(title: 'Мои менторы', onShowAll: () {}),
                     Gap(2.h),
                     Column(
                       children: [
@@ -71,7 +69,7 @@ class DoctorHomeScreen extends StatelessWidget {
                     ),
                     if (data.patients.isNotEmpty) ...[
                       Divider(height: 4.h),
-                      ListHeader(title: 'My patients', onShowAll: () {}),
+                      ListHeader(title: 'Мои пациенты', onShowAll: () {}),
                       Gap(2.h),
                       Column(
                         children: [
@@ -102,20 +100,6 @@ class DoctorHomeScreen extends StatelessWidget {
                         ],
                       ),
                     ],
-                    Divider(height: 4.h),
-                    ListHeader(title: 'My doctors (test)', onShowAll: () {}),
-                    Gap(2.h),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: DoctorListTile(
-                            doctor: DoctorEntity.empty(),
-                          ),
-                        ),
-                        Gap(4.w),
-                        const Expanded(child: SizedBox()),
-                      ],
-                    ),
                   ],
                 ),
                 failed: () => const SizedBox(),

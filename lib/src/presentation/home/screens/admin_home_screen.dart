@@ -23,7 +23,7 @@ class AdminHomeScreen extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           appBar: MyAppBar(
-            title: const Text('Welcome, Arman!'),
+            title: const Text('Добро пожаловать, Arman!'),
             titleTextStyle: context.textTheme.headlineMedium?.copyWith(
               fontWeight: FontWeight.bold,
             ),
@@ -33,6 +33,7 @@ class AdminHomeScreen extends StatelessWidget {
               InkWell(
                 onTap: () {},
                 child: const Icon(
+                  // ignore: deprecated_member_use
                   FontAwesomeIcons.search,
                   size: 20,
                 ),
@@ -54,7 +55,7 @@ class AdminHomeScreen extends StatelessWidget {
                   children: [
                     if (data.mentors.isNotEmpty) ...[
                       Divider(height: 4.h),
-                      ListHeader(title: 'My mentors', onShowAll: () {}),
+                      ListHeader(title: 'Мои менторы', onShowAll: () {}),
                       Gap(2.h),
                       Column(
                         children: [
@@ -87,7 +88,7 @@ class AdminHomeScreen extends StatelessWidget {
                     ],
                     if (data.doctors.isNotEmpty) ...[
                       Divider(height: 4.h),
-                      ListHeader(title: 'My doctors', onShowAll: () {}),
+                      ListHeader(title: 'Мои доктора', onShowAll: () {}),
                       Gap(2.h),
                       Column(
                         children: [
@@ -120,7 +121,7 @@ class AdminHomeScreen extends StatelessWidget {
                     ],
                     if (data.patients.isNotEmpty) ...[
                       Divider(height: 4.h),
-                      ListHeader(title: 'My patients', onShowAll: () {}),
+                      ListHeader(title: 'Мои пациенты', onShowAll: () {}),
                       Gap(2.h),
                       Column(
                         children: [

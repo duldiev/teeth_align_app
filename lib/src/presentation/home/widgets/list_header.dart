@@ -41,7 +41,7 @@ class ListHeader extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4),
               child: Text(
-                'Show all',
+                'Еще',
                 style: context.textTheme.titleSmall?.copyWith(
                   fontWeight: FontWeight.w400,
                   color: AppColors.primary,

@@ -34,13 +34,13 @@ class PatientListTile extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
-          Text(
-            '${patient.birthDate.getAge()} years old',
-            style: context.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w500,
-              color: AppColors.grey,
-            ),
-          ),
+          // Text(
+          //   '${patient.birthDate.getAge()} years old',
+          //   style: context.textTheme.titleMedium?.copyWith(
+          //     fontWeight: FontWeight.w500,
+          //     color: AppColors.grey,
+          //   ),
+          // ),
         ],
       ),
     );

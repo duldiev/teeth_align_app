@@ -141,7 +141,7 @@ class PatientProfileScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Chat',
+                                'Чат',
                                 style: context.textTheme.titleMedium?.copyWith(
                                   fontWeight: FontWeight.bold,
                                 ),

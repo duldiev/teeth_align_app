@@ -54,12 +54,12 @@ class AccountScreen extends StatelessWidget {
             Gap(2.h),
             const AccountTileDivider(),
             AccountTile(
-              title: 'Edit personal data',
+              title: 'Изменить данные',
               onTap: () {},
             ),
             const AccountTileDivider(),
             AccountTile(
-              title: 'Sign out',
+              title: 'Выйти из аккаунта',
               icon: const Icon(
                 FontAwesomeIcons.signOut,
                 color: AppColors.danger,

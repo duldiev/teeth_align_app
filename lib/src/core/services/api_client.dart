@@ -32,7 +32,7 @@ class ApiClient {
   addInterceptors() {
     client.interceptors.addAll([
       QueuedInterceptor(),
-      ChuckerDioInterceptor(),
+      // ChuckerDioInterceptor(),
       MessageInterceptor(),
       TokenInterceptor(),
       LogInterceptor(

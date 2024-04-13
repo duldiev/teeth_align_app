@@ -45,13 +45,13 @@ class MentorListTile extends StatelessWidget {
             ),
           ],
           if (mentor.birthDate.isExist()) ...[
-            Text(
-              '${mentor.birthDate.getAge()} years old',
-              style: context.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w500,
-                color: AppColors.grey,
-              ),
-            ),
+            // Text(
+            //   '${mentor.birthDate.getAge()} years old',
+            //   style: context.textTheme.titleMedium?.copyWith(
+            //     fontWeight: FontWeight.w500,
+            //     color: AppColors.grey,
+            //   ),
+            // ),
           ],
         ],
       ),

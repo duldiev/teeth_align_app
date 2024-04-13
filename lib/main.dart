@@ -46,7 +46,7 @@ Future<void> main() async {
 
   Bloc.observer = GlobalBlocObserver();
 
-  ChuckerFlutter.showOnRelease = true;
+  ChuckerFlutter.showOnRelease = false;
 
   cameras = await availableCameras();
 

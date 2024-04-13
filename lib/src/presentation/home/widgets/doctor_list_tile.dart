@@ -41,13 +41,13 @@ class DoctorListTile extends StatelessWidget {
               color: AppColors.grey,
             ),
           ),
-          Text(
-            '${doctor.birthDate.getAge()} years old',
-            style: context.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w500,
-              color: AppColors.grey,
-            ),
-          ),
+          // Text(
+          //   '${doctor.birthDate.getAge()} years old',
+          //   style: context.textTheme.titleMedium?.copyWith(
+          //     fontWeight: FontWeight.w500,
+          //     color: AppColors.grey,
+          //   ),
+          // ),
         ],
       ),
     );

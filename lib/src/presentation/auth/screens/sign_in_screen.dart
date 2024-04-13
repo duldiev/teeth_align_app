@@ -47,7 +47,7 @@ class SignInScreen extends StatelessWidget {
                             children: [
                               TextInput(
                                 label: 'E-mail',
-                                hintText: 'Enter',
+                                hintText: 'Введите E-mail',
                                 onChanged: (value) => context.read<SIB>().add(
                                       ChangeField(
                                         field: SignInField.email,
@@ -57,8 +57,8 @@ class SignInScreen extends StatelessWidget {
                               ),
                               Gap(2.h),
                               TextInput(
-                                label: 'Password',
-                                hintText: 'Enter',
+                                label: 'Пароль',
+                                hintText: 'Введите пароль',
                                 onChanged: (value) => context.read<SIB>().add(
                                       ChangeField(
                                         field: SignInField.password,

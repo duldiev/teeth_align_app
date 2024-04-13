@@ -33,7 +33,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        title: Text('Chats'),
+        title: Text('Чат'),
       ),
       body: StreamChannelListView(
         controller: _listController,

@@ -235,7 +235,7 @@ class _MentorProfileScreenState extends State<MentorProfileScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Chat',
+                                    'Чат',
                                     style:
                                         context.textTheme.titleMedium?.copyWith(
                                       fontWeight: FontWeight.bold,
@@ -343,7 +343,7 @@ class _ListOfDoctors extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const ListHeader(title: 'Doctors'),
+                            const ListHeader(title: 'Доктора'),
                             GestureDetector(
                               onTap: () {
                                 context.read<AdminBloc>().add(
@@ -355,7 +355,7 @@ class _ListOfDoctors extends StatelessWidget {
                                 context.router.maybePop();
                               },
                               child: Text(
-                                'Done',
+                                'Применить',
                                 style: context.textTheme.titleMedium?.copyWith(
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.blue,

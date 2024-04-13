@@ -8,8 +8,5 @@ class PatientEvent with _$PatientEvent {
     int? patientId,
   ) = GetCases;
 
-  const factory PatientEvent.updateField(
-    CaseField field,
-    dynamic value,
-  ) = UpdateField;
+  const factory PatientEvent.postCase(PatientCaseBody body) = PostCase;
 }

@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
@@ -8,20 +10,21 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
+import 'package:teeth_align_app/src/data/body/patient_case_body.dart';
 import 'package:teeth_align_app/src/presentation/base/globals.dart';
+import 'package:teeth_align_app/src/presentation/home/blocs/patient_bloc/patient_bloc.dart';
 import 'package:teeth_align_app/src/presentation/report/blocs/camera_bloc/camera_bloc.dart';
 import 'package:teeth_align_app/src/presentation/report/widgets/image_card.dart';
+import 'package:teeth_align_app/src/shared/buttons/colored_button.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
+import 'package:teeth_align_app/src/shared/inputs/text_input.dart';
 import 'package:teeth_align_app/src/shared/loader/circlular_loader.dart';
 
 @RoutePage()
 class CameraScreen extends StatefulWidget {
   const CameraScreen({
     super.key,
-    required this.callbackOnSend,
   });
-
-  final VoidCallback callbackOnSend;
 
   @override
   State<CameraScreen> createState() => _CameraScreenState();
@@ -178,7 +181,6 @@ class _CameraScreenState extends State<CameraScreen>
                               _ButtonsView(
                                 controller: controller,
                                 state: state,
-                                callbackOnSend: widget.callbackOnSend,
                                 onSwitch: onNewCameraSelected,
                               ),
                               Gap(4.h),
@@ -204,13 +206,11 @@ class _ButtonsView extends StatefulWidget {
   const _ButtonsView({
     required this.controller,
     required this.state,
-    required this.callbackOnSend,
     required this.onSwitch,
   });
 
   final CameraController controller;
   final CameraState state;
-  final VoidCallback callbackOnSend;
   final void Function(CameraDescription description) onSwitch;
 
   @override
@@ -291,9 +291,17 @@ class _ButtonsViewState extends State<_ButtonsView> {
           ] else ...[
             Expanded(
               child: InkWell(
-                onTap: () {
-                  widget.callbackOnSend();
-                  context.router.maybePop();
+                onTap: () async {
+                  final result = await showDialog(
+                    context: context,
+                    builder: (context) => _CommentDialog(
+                      widget.state.uintFiles,
+                    ),
+                  );
+                  if (!context.mounted) return;
+                  if (result == true) {
+                    context.router.maybePop();
+                  }
                 },
                 child: const Icon(
                   Icons.arrow_circle_right_outlined,
@@ -304,6 +312,79 @@ class _ButtonsViewState extends State<_ButtonsView> {
             ),
           ],
         ],
+      ),
+    );
+  }
+}
+
+class _CommentDialog extends StatefulWidget {
+  const _CommentDialog(this.images);
+
+  final List<Uint8List> images;
+
+  @override
+  State<_CommentDialog> createState() => _CommentDialogState();
+}
+
+class _CommentDialogState extends State<_CommentDialog> {
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: 4.w,
+          vertical: 1.5.h,
+        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: AppColors.background,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'Коммент',
+              style: context.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Gap(2.h),
+            TextInput(
+              controller: _controller,
+              hintText: 'Оставьте комментарии',
+            ),
+            Gap(2.h),
+            ColoredButton(
+              onTap: () {
+                context.read<PatientBloc>().add(PostCase(
+                      PatientCaseBody(
+                        comment: _controller.text,
+                        front: widget.images[0],
+                        right: widget.images[1],
+                        left: widget.images[2],
+                      ),
+                    ));
+                context.router.maybePop(true);
+              },
+              title: 'Отправить',
+              padding: EdgeInsets.symmetric(vertical: 0.8.h),
+            ),
+          ],
+        ),
       ),
     );
   }

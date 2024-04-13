@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
-import 'package:teeth_align_app/src/core/enums/case.dart';
+import 'package:teeth_align_app/src/core/helpers/app_data.dart';
 import 'package:teeth_align_app/src/data/body/patient_case_body.dart';
 import 'package:teeth_align_app/src/domain/entity/case_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/patient_entity.dart';
@@ -23,7 +23,7 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
   }) : super(const PatientState.initial()) {
     on<GetPatient>(onGetPatient);
     on<GetCases>(onGetCases);
-    on<UpdateField>(onUpdateField);
+    on<PostCase>(onPostCase);
   }
 
   PatientStateViewModel viewModel = PatientStateViewModel();
@@ -63,17 +63,19 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
     );
   }
 
-  Future<void> onUpdateField(
-    UpdateField event,
+  Future<void> onPostCase(
+    PostCase event,
     Emitter<PatientState> emit,
   ) async {
     emit(const PatientState.loading());
 
-    dynamic value = switch (event.field) {
-      CaseField.comment => {},
-      CaseField.front => {},
-      CaseField.right => {},
-      CaseField.left => {},
-    };
+    (await repository.createPatientCase(
+      appData.userId,
+      event.body,
+    ))
+        .fold(
+      (l) => emit(PatientState.loaded(viewModel: viewModel)),
+      (r) => emit(PatientState.loaded(viewModel: viewModel)),
+    );
   }
 }

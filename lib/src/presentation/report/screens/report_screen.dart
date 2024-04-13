@@ -52,9 +52,9 @@ class ReportScreen extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => context.router.push(CameraRoute(
-          callbackOnSend: () {},
-        )),
+        onPressed: () {
+          context.router.push(const CameraRoute());
+        },
         child: const Icon(
           FontAwesomeIcons.camera,
           size: 20,

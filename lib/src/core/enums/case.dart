@@ -1,1 +1,1 @@
-enum CaseField { comment, front, right, left }
+enum CaseField { comment, images }

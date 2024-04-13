@@ -20,21 +20,21 @@ mixin _$PatientEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(int id) getPatient,
     required TResult Function(int? patientId) getCases,
-    required TResult Function(CaseField field, dynamic value) updateField,
+    required TResult Function(PatientCaseBody body) postCase,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? getPatient,
     TResult? Function(int? patientId)? getCases,
-    TResult? Function(CaseField field, dynamic value)? updateField,
+    TResult? Function(PatientCaseBody body)? postCase,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? getPatient,
     TResult Function(int? patientId)? getCases,
-    TResult Function(CaseField field, dynamic value)? updateField,
+    TResult Function(PatientCaseBody body)? postCase,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -42,21 +42,21 @@ mixin _$PatientEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(GetPatient value) getPatient,
     required TResult Function(GetCases value) getCases,
-    required TResult Function(UpdateField value) updateField,
+    required TResult Function(PostCase value) postCase,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPatient value)? getPatient,
     TResult? Function(GetCases value)? getCases,
-    TResult? Function(UpdateField value)? updateField,
+    TResult? Function(PostCase value)? postCase,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPatient value)? getPatient,
     TResult Function(GetCases value)? getCases,
-    TResult Function(UpdateField value)? updateField,
+    TResult Function(PostCase value)? postCase,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -146,7 +146,7 @@ class _$GetPatientImpl implements GetPatient {
   TResult when<TResult extends Object?>({
     required TResult Function(int id) getPatient,
     required TResult Function(int? patientId) getCases,
-    required TResult Function(CaseField field, dynamic value) updateField,
+    required TResult Function(PatientCaseBody body) postCase,
   }) {
     return getPatient(id);
   }
@@ -156,7 +156,7 @@ class _$GetPatientImpl implements GetPatient {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? getPatient,
     TResult? Function(int? patientId)? getCases,
-    TResult? Function(CaseField field, dynamic value)? updateField,
+    TResult? Function(PatientCaseBody body)? postCase,
   }) {
     return getPatient?.call(id);
   }
@@ -166,7 +166,7 @@ class _$GetPatientImpl implements GetPatient {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? getPatient,
     TResult Function(int? patientId)? getCases,
-    TResult Function(CaseField field, dynamic value)? updateField,
+    TResult Function(PatientCaseBody body)? postCase,
     required TResult orElse(),
   }) {
     if (getPatient != null) {
@@ -180,7 +180,7 @@ class _$GetPatientImpl implements GetPatient {
   TResult map<TResult extends Object?>({
     required TResult Function(GetPatient value) getPatient,
     required TResult Function(GetCases value) getCases,
-    required TResult Function(UpdateField value) updateField,
+    required TResult Function(PostCase value) postCase,
   }) {
     return getPatient(this);
   }
@@ -190,7 +190,7 @@ class _$GetPatientImpl implements GetPatient {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPatient value)? getPatient,
     TResult? Function(GetCases value)? getCases,
-    TResult? Function(UpdateField value)? updateField,
+    TResult? Function(PostCase value)? postCase,
   }) {
     return getPatient?.call(this);
   }
@@ -200,7 +200,7 @@ class _$GetPatientImpl implements GetPatient {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPatient value)? getPatient,
     TResult Function(GetCases value)? getCases,
-    TResult Function(UpdateField value)? updateField,
+    TResult Function(PostCase value)? postCase,
     required TResult orElse(),
   }) {
     if (getPatient != null) {
@@ -286,7 +286,7 @@ class _$GetCasesImpl implements GetCases {
   TResult when<TResult extends Object?>({
     required TResult Function(int id) getPatient,
     required TResult Function(int? patientId) getCases,
-    required TResult Function(CaseField field, dynamic value) updateField,
+    required TResult Function(PatientCaseBody body) postCase,
   }) {
     return getCases(patientId);
   }
@@ -296,7 +296,7 @@ class _$GetCasesImpl implements GetCases {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? getPatient,
     TResult? Function(int? patientId)? getCases,
-    TResult? Function(CaseField field, dynamic value)? updateField,
+    TResult? Function(PatientCaseBody body)? postCase,
   }) {
     return getCases?.call(patientId);
   }
@@ -306,7 +306,7 @@ class _$GetCasesImpl implements GetCases {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? getPatient,
     TResult Function(int? patientId)? getCases,
-    TResult Function(CaseField field, dynamic value)? updateField,
+    TResult Function(PatientCaseBody body)? postCase,
     required TResult orElse(),
   }) {
     if (getCases != null) {
@@ -320,7 +320,7 @@ class _$GetCasesImpl implements GetCases {
   TResult map<TResult extends Object?>({
     required TResult Function(GetPatient value) getPatient,
     required TResult Function(GetCases value) getCases,
-    required TResult Function(UpdateField value) updateField,
+    required TResult Function(PostCase value) postCase,
   }) {
     return getCases(this);
   }
@@ -330,7 +330,7 @@ class _$GetCasesImpl implements GetCases {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPatient value)? getPatient,
     TResult? Function(GetCases value)? getCases,
-    TResult? Function(UpdateField value)? updateField,
+    TResult? Function(PostCase value)? postCase,
   }) {
     return getCases?.call(this);
   }
@@ -340,7 +340,7 @@ class _$GetCasesImpl implements GetCases {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPatient value)? getPatient,
     TResult Function(GetCases value)? getCases,
-    TResult Function(UpdateField value)? updateField,
+    TResult Function(PostCase value)? postCase,
     required TResult orElse(),
   }) {
     if (getCases != null) {
@@ -360,83 +360,74 @@ abstract class GetCases implements PatientEvent {
 }
 
 /// @nodoc
-abstract class _$$UpdateFieldImplCopyWith<$Res> {
-  factory _$$UpdateFieldImplCopyWith(
-          _$UpdateFieldImpl value, $Res Function(_$UpdateFieldImpl) then) =
-      __$$UpdateFieldImplCopyWithImpl<$Res>;
+abstract class _$$PostCaseImplCopyWith<$Res> {
+  factory _$$PostCaseImplCopyWith(
+          _$PostCaseImpl value, $Res Function(_$PostCaseImpl) then) =
+      __$$PostCaseImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CaseField field, dynamic value});
+  $Res call({PatientCaseBody body});
 }
 
 /// @nodoc
-class __$$UpdateFieldImplCopyWithImpl<$Res>
-    extends _$PatientEventCopyWithImpl<$Res, _$UpdateFieldImpl>
-    implements _$$UpdateFieldImplCopyWith<$Res> {
-  __$$UpdateFieldImplCopyWithImpl(
-      _$UpdateFieldImpl _value, $Res Function(_$UpdateFieldImpl) _then)
+class __$$PostCaseImplCopyWithImpl<$Res>
+    extends _$PatientEventCopyWithImpl<$Res, _$PostCaseImpl>
+    implements _$$PostCaseImplCopyWith<$Res> {
+  __$$PostCaseImplCopyWithImpl(
+      _$PostCaseImpl _value, $Res Function(_$PostCaseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? field = null,
-    Object? value = freezed,
+    Object? body = null,
   }) {
-    return _then(_$UpdateFieldImpl(
-      null == field
-          ? _value.field
-          : field // ignore: cast_nullable_to_non_nullable
-              as CaseField,
-      freezed == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+    return _then(_$PostCaseImpl(
+      null == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as PatientCaseBody,
     ));
   }
 }
 
 /// @nodoc
 
-class _$UpdateFieldImpl implements UpdateField {
-  const _$UpdateFieldImpl(this.field, this.value);
+class _$PostCaseImpl implements PostCase {
+  const _$PostCaseImpl(this.body);
 
   @override
-  final CaseField field;
-  @override
-  final dynamic value;
+  final PatientCaseBody body;
 
   @override
   String toString() {
-    return 'PatientEvent.updateField(field: $field, value: $value)';
+    return 'PatientEvent.postCase(body: $body)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateFieldImpl &&
-            (identical(other.field, field) || other.field == field) &&
-            const DeepCollectionEquality().equals(other.value, value));
+            other is _$PostCaseImpl &&
+            (identical(other.body, body) || other.body == body));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, field, const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(runtimeType, body);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateFieldImplCopyWith<_$UpdateFieldImpl> get copyWith =>
-      __$$UpdateFieldImplCopyWithImpl<_$UpdateFieldImpl>(this, _$identity);
+  _$$PostCaseImplCopyWith<_$PostCaseImpl> get copyWith =>
+      __$$PostCaseImplCopyWithImpl<_$PostCaseImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int id) getPatient,
     required TResult Function(int? patientId) getCases,
-    required TResult Function(CaseField field, dynamic value) updateField,
+    required TResult Function(PatientCaseBody body) postCase,
   }) {
-    return updateField(field, value);
+    return postCase(body);
   }
 
   @override
@@ -444,9 +435,9 @@ class _$UpdateFieldImpl implements UpdateField {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int id)? getPatient,
     TResult? Function(int? patientId)? getCases,
-    TResult? Function(CaseField field, dynamic value)? updateField,
+    TResult? Function(PatientCaseBody body)? postCase,
   }) {
-    return updateField?.call(field, value);
+    return postCase?.call(body);
   }
 
   @override
@@ -454,11 +445,11 @@ class _$UpdateFieldImpl implements UpdateField {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int id)? getPatient,
     TResult Function(int? patientId)? getCases,
-    TResult Function(CaseField field, dynamic value)? updateField,
+    TResult Function(PatientCaseBody body)? postCase,
     required TResult orElse(),
   }) {
-    if (updateField != null) {
-      return updateField(field, value);
+    if (postCase != null) {
+      return postCase(body);
     }
     return orElse();
   }
@@ -468,9 +459,9 @@ class _$UpdateFieldImpl implements UpdateField {
   TResult map<TResult extends Object?>({
     required TResult Function(GetPatient value) getPatient,
     required TResult Function(GetCases value) getCases,
-    required TResult Function(UpdateField value) updateField,
+    required TResult Function(PostCase value) postCase,
   }) {
-    return updateField(this);
+    return postCase(this);
   }
 
   @override
@@ -478,9 +469,9 @@ class _$UpdateFieldImpl implements UpdateField {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetPatient value)? getPatient,
     TResult? Function(GetCases value)? getCases,
-    TResult? Function(UpdateField value)? updateField,
+    TResult? Function(PostCase value)? postCase,
   }) {
-    return updateField?.call(this);
+    return postCase?.call(this);
   }
 
   @override
@@ -488,24 +479,22 @@ class _$UpdateFieldImpl implements UpdateField {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetPatient value)? getPatient,
     TResult Function(GetCases value)? getCases,
-    TResult Function(UpdateField value)? updateField,
+    TResult Function(PostCase value)? postCase,
     required TResult orElse(),
   }) {
-    if (updateField != null) {
-      return updateField(this);
+    if (postCase != null) {
+      return postCase(this);
     }
     return orElse();
   }
 }
 
-abstract class UpdateField implements PatientEvent {
-  const factory UpdateField(final CaseField field, final dynamic value) =
-      _$UpdateFieldImpl;
+abstract class PostCase implements PatientEvent {
+  const factory PostCase(final PatientCaseBody body) = _$PostCaseImpl;
 
-  CaseField get field;
-  dynamic get value;
+  PatientCaseBody get body;
   @JsonKey(ignore: true)
-  _$$UpdateFieldImplCopyWith<_$UpdateFieldImpl> get copyWith =>
+  _$$PostCaseImplCopyWith<_$PostCaseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

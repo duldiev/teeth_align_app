@@ -31,10 +31,12 @@ class CameraBloc extends Bloc<CameraEvent, CameraState> {
 
     try {
       final file = await event.controller.takePicture();
+      final uintFile = await file.readAsBytes();
 
       emit(state.copyWith(
         status: LoadStatus.success,
         files: [...state.files, file],
+        uintFiles: [...state.uintFiles, uintFile],
       ));
     } catch (e) {
       emit(state.copyWith(status: LoadStatus.failed));
@@ -45,8 +47,16 @@ class CameraBloc extends Bloc<CameraEvent, CameraState> {
     RemovePicture event,
     Emitter<CameraState> emit,
   ) {
-    var list = [...state.files];
-    list.removeAt(event.index);
-    emit(state.copyWith(files: list, isDeleteMode: false));
+    var files = [...state.files];
+    var uintFiles = [...state.uintFiles];
+
+    files.removeAt(event.index);
+    uintFiles.removeAt(event.index);
+
+    emit(state.copyWith(
+      files: files,
+      uintFiles: uintFiles,
+      isDeleteMode: false,
+    ));
   }
 }

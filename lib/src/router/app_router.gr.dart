@@ -81,13 +81,9 @@ abstract class $AppRouter extends _i23.RootStackRouter {
       );
     },
     CameraRoute.name: (routeData) {
-      final args = routeData.argsAs<CameraRouteArgs>();
       return _i23.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i4.CameraScreen(
-          key: args.key,
-          callbackOnSend: args.callbackOnSend,
-        ),
+        child: const _i4.CameraScreen(),
       );
     },
     ChatListRoute.name: (routeData) {
@@ -265,40 +261,16 @@ class CalendarRoute extends _i23.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.CameraScreen]
-class CameraRoute extends _i23.PageRouteInfo<CameraRouteArgs> {
-  CameraRoute({
-    _i24.Key? key,
-    required void Function() callbackOnSend,
-    List<_i23.PageRouteInfo>? children,
-  }) : super(
+class CameraRoute extends _i23.PageRouteInfo<void> {
+  const CameraRoute({List<_i23.PageRouteInfo>? children})
+      : super(
           CameraRoute.name,
-          args: CameraRouteArgs(
-            key: key,
-            callbackOnSend: callbackOnSend,
-          ),
           initialChildren: children,
         );
 
   static const String name = 'CameraRoute';
 
-  static const _i23.PageInfo<CameraRouteArgs> page =
-      _i23.PageInfo<CameraRouteArgs>(name);
-}
-
-class CameraRouteArgs {
-  const CameraRouteArgs({
-    this.key,
-    required this.callbackOnSend,
-  });
-
-  final _i24.Key? key;
-
-  final void Function() callbackOnSend;
-
-  @override
-  String toString() {
-    return 'CameraRouteArgs{key: $key, callbackOnSend: $callbackOnSend}';
-  }
+  static const _i23.PageInfo<void> page = _i23.PageInfo<void>(name);
 }
 
 /// generated route for

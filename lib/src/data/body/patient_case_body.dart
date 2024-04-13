@@ -5,10 +5,10 @@ import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 
 class PatientCaseBody extends Equatable {
-  final String comment;
-  final Uint8List front;
-  final Uint8List right;
-  final Uint8List left;
+  final String? comment;
+  final Uint8List? front;
+  final Uint8List? right;
+  final Uint8List? left;
 
   const PatientCaseBody({
     required this.comment,
@@ -19,10 +19,23 @@ class PatientCaseBody extends Equatable {
 
   FormData toDataMap() => FormData.fromMap({
         'comment': comment,
-        'front': MultipartFile.fromBytes(front, filename: 'front'),
-        'right': MultipartFile.fromBytes(right, filename: 'right'),
-        'left': MultipartFile.fromBytes(left, filename: 'left'),
+        'front': front != null
+            ? MultipartFile.fromBytes(front!, filename: 'front')
+            : null,
+        'right': right != null
+            ? MultipartFile.fromBytes(right!, filename: 'right')
+            : null,
+        'left': left != null
+            ? MultipartFile.fromBytes(left!, filename: 'left')
+            : null,
       });
+
+  factory PatientCaseBody.empty() => const PatientCaseBody(
+        comment: null,
+        front: null,
+        right: null,
+        left: null,
+      );
 
   PatientCaseBody copyWith({
     String? comment,

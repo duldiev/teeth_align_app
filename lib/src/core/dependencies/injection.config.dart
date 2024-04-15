@@ -34,13 +34,15 @@ import '../../domain/repository/i_social_repository.dart' as _i21;
 import '../../presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart' as _i28;
 import '../../presentation/auth/blocs/sign_up_bloc/sign_up_bloc.dart' as _i29;
 import '../../presentation/home/blocs/admin_bloc/admin_bloc.dart' as _i31;
-import '../../presentation/home/blocs/doctor_bloc/doctor_bloc.dart' as _i33;
+import '../../presentation/home/blocs/doctor_bloc/doctor_bloc.dart' as _i34;
 import '../../presentation/home/blocs/mentor_bloc/mentor_bloc.dart' as _i24;
 import '../../presentation/home/blocs/patient_bloc/patient_bloc.dart' as _i26;
 import '../../presentation/report/blocs/camera_bloc/camera_bloc.dart' as _i4;
+import '../../presentation/report/blocs/create_case_bloc/create_case_bloc.dart'
+    as _i33;
 import '../../presentation/social/blocs/social_bloc/social_bloc.dart' as _i30;
 import '../../router/app_router.dart' as _i3;
-import '../modules/modules.dart' as _i34;
+import '../modules/modules.dart' as _i35;
 import '../services/api_client.dart' as _i32;
 import '../services/network_info.dart' as _i16;
 
@@ -106,9 +108,11 @@ Future<_i1.GetIt> $initGetIt(
         client: gh<_i6.Dio>(),
         storage: gh<_i7.FlutterSecureStorage>(),
       ));
-  gh.factory<_i33.DoctorBloc>(
-      () => _i33.DoctorBloc(repository: gh<_i12.IDoctorRepository>()));
+  gh.factory<_i33.CreateCaseBloc>(
+      () => _i33.CreateCaseBloc(imagePicker: gh<_i23.ImagePicker>()));
+  gh.factory<_i34.DoctorBloc>(
+      () => _i34.DoctorBloc(repository: gh<_i12.IDoctorRepository>()));
   return getIt;
 }
 
-class _$Modules extends _i34.Modules {}
+class _$Modules extends _i35.Modules {}

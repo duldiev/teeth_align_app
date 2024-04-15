@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/gen/assets.gen.dart';
@@ -107,55 +106,95 @@ class PatientProfileScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const Gap(10),
-                      InkWell(
-                        onTap: () async {
-                          final channelState = await client.queryChannel(
-                            ChatConstants.messageType,
-                            channelData: {
-                              'name':
-                                  '${appData.fullName} with ${patient.fullName}',
-                              'members': [
-                                patient.chatUserId.toString(),
-                                appData.chaUserId.toString(),
-                              ],
-                            },
-                          );
-                          if (!context.mounted) return;
-                          final channel = client.channel(
-                            ChatConstants.messageType,
-                            id: channelState.channel?.id,
-                          );
-                          context.router.push(ChatRoute(channel: channel));
-                        },
-                        borderRadius: BorderRadius.circular(8),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 4,
-                          ),
-                          decoration: BoxDecoration(
-                            color: AppColors.blue,
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Чат',
-                                style: context.textTheme.titleMedium?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Gap(2.w),
-                              const Icon(
-                                FontAwesomeIcons.solidMessage,
-                                size: 16,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
                     ],
+                  ),
+                ),
+              ],
+            ),
+            Gap(2.h),
+            Row(
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: InkWell(
+                    onTap: () => context.router.push(const CreateCaseRoute()),
+                    borderRadius: BorderRadius.circular(8),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.primary,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.format_list_bulleted_add,
+                            size: 16,
+                          ),
+                          Gap(1.w),
+                          Text(
+                            'Create a case',
+                            style: context.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Gap(2.w),
+                Expanded(
+                  flex: 2,
+                  child: InkWell(
+                    onTap: () async {
+                      final channelState = await client.queryChannel(
+                        ChatConstants.messageType,
+                        channelData: {
+                          'name':
+                              '${appData.fullName} with ${patient.fullName}',
+                          'members': [
+                            patient.chatUserId.toString(),
+                            appData.chaUserId.toString(),
+                          ],
+                        },
+                      );
+                      if (!context.mounted) return;
+                      final channel = client.channel(
+                        ChatConstants.messageType,
+                        id: channelState.channel?.id,
+                      );
+                      context.router.push(ChatRoute(channel: channel));
+                    },
+                    borderRadius: BorderRadius.circular(8),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.blue,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.chat_rounded,
+                            size: 16,
+                          ),
+                          Gap(1.w),
+                          Text(
+                            'Чат',
+                            style: context.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ],

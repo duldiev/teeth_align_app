@@ -321,7 +321,7 @@ class _TextInputState extends State<TextInput> {
             offset: const Offset(6, 0),
             child: Text(
               widget.label!,
-              style: context.textTheme.titleLarge?.copyWith(
+              style: context.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),

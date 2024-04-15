@@ -33,6 +33,7 @@ import 'package:teeth_align_app/src/presentation/base/globals.dart';
 //          next change date.
 // + Client home screen: current aligner, next aligner (date), timer. (Profile api)
 // + Connect chat client to user token.
+// 12. List screen for patient, mentor and doctor list.
 
 final client = StreamChatClient(
   APIKeys.streamChatTest,

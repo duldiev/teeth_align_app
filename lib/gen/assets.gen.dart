@@ -49,6 +49,13 @@ class $AssetsImagesGen {
   AssetGenImage get frontOcc =>
       const AssetGenImage('assets/images/frontOcc.jpg');
 
+  /// File path: assets/images/frontal.jpg
+  AssetGenImage get frontal => const AssetGenImage('assets/images/frontal.jpg');
+
+  /// File path: assets/images/frontalDynamic.jpg
+  AssetGenImage get frontalDynamic =>
+      const AssetGenImage('assets/images/frontalDynamic.jpg');
+
   /// File path: assets/images/girl.jpeg
   AssetGenImage get girl => const AssetGenImage('assets/images/girl.jpeg');
 
@@ -66,6 +73,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/patient.png
   AssetGenImage get patient => const AssetGenImage('assets/images/patient.png');
 
+  /// File path: assets/images/profile.jpg
+  AssetGenImage get profile => const AssetGenImage('assets/images/profile.jpg');
+
   /// File path: assets/images/rightOcc.jpg
   AssetGenImage get rightOcc =>
       const AssetGenImage('assets/images/rightOcc.jpg');
@@ -78,11 +88,14 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [
         doctor,
         frontOcc,
+        frontal,
+        frontalDynamic,
         girl,
         leftOcc,
         mandibularOcc,
         maxilaryOcc,
         patient,
+        profile,
         rightOcc,
         thumbsUp
       ];

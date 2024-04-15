@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/presentation/report/blocs/create_case_bloc/create_case_bloc.dart';
 import 'package:teeth_align_app/src/presentation/report/core/enum.dart';
 import 'package:teeth_align_app/src/presentation/report/core/keys.dart';
@@ -39,7 +40,13 @@ class CreateCaseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _Provider(
-      child: BlocBuilder<CreateCaseBloc, CreateCaseState>(
+      child: BlocConsumer<CreateCaseBloc, CreateCaseState>(
+        listener: (context, state) {
+          if (state.uploadStatus == LoadStatus.success) {
+            context.router.maybePop();
+          }
+        },
+        listenWhen: (prev, curr) => prev.status != curr.status,
         builder: (context, state) {
           return Scaffold(
             appBar: const MyAppBar(

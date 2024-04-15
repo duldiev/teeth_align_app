@@ -10,14 +10,15 @@ extension CaseExtension on CaseField {
         CaseField.rightOcc => Assets.images.rightOcc,
         CaseField.maxillaryOcc => Assets.images.maxilaryOcc,
         CaseField.mandibularOcc => Assets.images.mandibularOcc,
-        CaseField.profile => Assets.images.leftOcc,
-        CaseField.frontal => Assets.images.leftOcc,
-        CaseField.frontalDynamic => Assets.images.leftOcc,
+        CaseField.profile => Assets.images.profile,
+        CaseField.frontal => Assets.images.frontal,
+        CaseField.frontalDynamic => Assets.images.frontalDynamic,
       }
           .image(
-        height: 100,
+        height: 150,
         fit: BoxFit.cover,
         color: AppColors.grey,
+        alignment: Alignment.center,
         colorBlendMode: BlendMode.color,
       );
 }

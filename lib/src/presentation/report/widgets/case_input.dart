@@ -45,7 +45,7 @@ class CaseInput extends StatelessWidget {
             child: image != null
                 ? Image.file(
                     File(image!.path),
-                    height: 100,
+                    height: 150,
                     fit: BoxFit.cover,
                   )
                 : field.image,
@@ -63,10 +63,12 @@ class CaseInput extends StatelessWidget {
                       : null,
                   child: TextInput(
                     hintText: image?.name ?? 'Tap to upload',
-                    prefixIcon: const Icon(
-                      Icons.upload_file_rounded,
-                      color: AppColors.primary,
-                    ),
+                    prefixIcon: image == null
+                        ? const Icon(
+                            Icons.upload_file_rounded,
+                            color: AppColors.primary,
+                          )
+                        : null,
                     hintStyle: context.textTheme.labelLarge?.copyWith(
                       color: AppColors.grey,
                     ),

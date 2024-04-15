@@ -4,6 +4,20 @@ import 'package:teeth_align_app/src/core/extensions/string_extension.dart';
 class Validators {
   static const String _emptyText = 'Please, enter your';
 
+  static String? file(String? imageName) {
+    if (imageName == null) {
+      return 'You haven\'t uploaded the image!';
+    }
+    return null;
+  }
+
+  static String? comment(String? value) {
+    if (value == null) {
+      return 'You haven\'t uploaded the image!';
+    }
+    return null;
+  }
+
   static String? iin(String? value) {
     if (value?.isEmpty == true) {
       return '$_emptyText IIN';

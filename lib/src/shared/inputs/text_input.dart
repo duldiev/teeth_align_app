@@ -18,6 +18,7 @@ class TextInput extends StatefulWidget {
     this.keyboardType,
     this.textInputAction,
     this.style,
+    this.hintStyle,
     this.strutStyle,
     this.textDirection,
     this.textAlignVertical,
@@ -94,6 +95,7 @@ class TextInput extends StatefulWidget {
   final TextCapitalization textCapitalization;
   final TextInputAction? textInputAction;
   final TextStyle? style;
+  final TextStyle? hintStyle;
   final StrutStyle? strutStyle;
   final TextDirection? textDirection;
   final TextAlign textAlign;
@@ -191,12 +193,13 @@ class _TextInputState extends State<TextInput> {
       fillColor: widget.fillColor ?? AppColors.white,
       filled: true,
       hintText: widget.hintText,
-      hintStyle: context.textTheme.bodyLarge?.copyWith(
-        color: switch (widget.brightness) {
-          Brightness.dark => AppColors.dark.withOpacity(0.6),
-          Brightness.light => AppColors.white80op,
-        },
-      ),
+      hintStyle: widget.hintStyle ??
+          context.textTheme.bodyLarge?.copyWith(
+            color: switch (widget.brightness) {
+              Brightness.dark => AppColors.dark.withOpacity(0.6),
+              Brightness.light => AppColors.white80op,
+            },
+          ),
       prefixIcon: widget.prefixIcon,
       contentPadding: const EdgeInsets.symmetric(
         horizontal: 16,

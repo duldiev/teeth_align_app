@@ -108,8 +108,10 @@ Future<_i1.GetIt> $initGetIt(
         client: gh<_i6.Dio>(),
         storage: gh<_i7.FlutterSecureStorage>(),
       ));
-  gh.factory<_i33.CreateCaseBloc>(
-      () => _i33.CreateCaseBloc(imagePicker: gh<_i23.ImagePicker>()));
+  gh.factory<_i33.CreateCaseBloc>(() => _i33.CreateCaseBloc(
+        imagePicker: gh<_i23.ImagePicker>(),
+        repository: gh<_i12.IDoctorRepository>(),
+      ));
   gh.factory<_i34.DoctorBloc>(
       () => _i34.DoctorBloc(repository: gh<_i12.IDoctorRepository>()));
   return getIt;

@@ -105,9 +105,13 @@ abstract class $AppRouter extends _i24.RootStackRouter {
       );
     },
     CreateCaseRoute.name: (routeData) {
+      final args = routeData.argsAs<CreateCaseRouteArgs>();
       return _i24.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i7.CreateCaseScreen(),
+        child: _i7.CreateCaseScreen(
+          key: args.key,
+          patientId: args.patientId,
+        ),
       );
     },
     DoctorHomeRoute.name: (routeData) {
@@ -335,16 +339,40 @@ class ChatRouteArgs {
 
 /// generated route for
 /// [_i7.CreateCaseScreen]
-class CreateCaseRoute extends _i24.PageRouteInfo<void> {
-  const CreateCaseRoute({List<_i24.PageRouteInfo>? children})
-      : super(
+class CreateCaseRoute extends _i24.PageRouteInfo<CreateCaseRouteArgs> {
+  CreateCaseRoute({
+    _i25.Key? key,
+    required int patientId,
+    List<_i24.PageRouteInfo>? children,
+  }) : super(
           CreateCaseRoute.name,
+          args: CreateCaseRouteArgs(
+            key: key,
+            patientId: patientId,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'CreateCaseRoute';
 
-  static const _i24.PageInfo<void> page = _i24.PageInfo<void>(name);
+  static const _i24.PageInfo<CreateCaseRouteArgs> page =
+      _i24.PageInfo<CreateCaseRouteArgs>(name);
+}
+
+class CreateCaseRouteArgs {
+  const CreateCaseRouteArgs({
+    this.key,
+    required this.patientId,
+  });
+
+  final _i25.Key? key;
+
+  final int patientId;
+
+  @override
+  String toString() {
+    return 'CreateCaseRouteArgs{key: $key, patientId: $patientId}';
+  }
 }
 
 /// generated route for

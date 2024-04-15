@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:teeth_align_app/src/core/exceptions/failure.dart';
+import 'package:teeth_align_app/src/data/body/doctor_case_body.dart';
 import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/patient_entity.dart';
@@ -10,4 +11,6 @@ abstract class IDoctorRepository {
   Future<Either<Failure, List<MentorEntity>>> getMentors(int userId);
 
   Future<Either<Failure, DoctorEntity>> getDoctorById(int id);
+
+  Future<Either<Failure, Unit>> createCase(int patientId, DoctorCaseBody body);
 }

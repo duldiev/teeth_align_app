@@ -45,18 +45,47 @@ class $AssetsImagesGen {
   /// File path: assets/images/doctor.png
   AssetGenImage get doctor => const AssetGenImage('assets/images/doctor.png');
 
+  /// File path: assets/images/frontOcc.jpg
+  AssetGenImage get frontOcc =>
+      const AssetGenImage('assets/images/frontOcc.jpg');
+
   /// File path: assets/images/girl.jpeg
   AssetGenImage get girl => const AssetGenImage('assets/images/girl.jpeg');
 
+  /// File path: assets/images/leftOcc.jpg
+  AssetGenImage get leftOcc => const AssetGenImage('assets/images/leftOcc.jpg');
+
+  /// File path: assets/images/mandibularOcc.jpg
+  AssetGenImage get mandibularOcc =>
+      const AssetGenImage('assets/images/mandibularOcc.jpg');
+
+  /// File path: assets/images/maxilaryOcc.jpg
+  AssetGenImage get maxilaryOcc =>
+      const AssetGenImage('assets/images/maxilaryOcc.jpg');
+
   /// File path: assets/images/patient.png
   AssetGenImage get patient => const AssetGenImage('assets/images/patient.png');
+
+  /// File path: assets/images/rightOcc.jpg
+  AssetGenImage get rightOcc =>
+      const AssetGenImage('assets/images/rightOcc.jpg');
 
   /// File path: assets/images/thumbsUp.png
   AssetGenImage get thumbsUp =>
       const AssetGenImage('assets/images/thumbsUp.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [doctor, girl, patient, thumbsUp];
+  List<AssetGenImage> get values => [
+        doctor,
+        frontOcc,
+        girl,
+        leftOcc,
+        mandibularOcc,
+        maxilaryOcc,
+        patient,
+        rightOcc,
+        thumbsUp
+      ];
 }
 
 class Assets {

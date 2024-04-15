@@ -16,12 +16,13 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CreateCaseEvent {
-  CaseField get field => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CaseField field) uploadImage,
     required TResult Function(CaseField field) captureImage,
     required TResult Function(CaseField field) deleteImage,
+    required TResult Function(String value) changeComment,
+    required TResult Function(int patientId) create,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,6 +30,8 @@ mixin _$CreateCaseEvent {
     TResult? Function(CaseField field)? uploadImage,
     TResult? Function(CaseField field)? captureImage,
     TResult? Function(CaseField field)? deleteImage,
+    TResult? Function(String value)? changeComment,
+    TResult? Function(int patientId)? create,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +39,8 @@ mixin _$CreateCaseEvent {
     TResult Function(CaseField field)? uploadImage,
     TResult Function(CaseField field)? captureImage,
     TResult Function(CaseField field)? deleteImage,
+    TResult Function(String value)? changeComment,
+    TResult Function(int patientId)? create,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -44,6 +49,8 @@ mixin _$CreateCaseEvent {
     required TResult Function(UploadImage value) uploadImage,
     required TResult Function(CaptureImage value) captureImage,
     required TResult Function(DeleteImage value) deleteImage,
+    required TResult Function(ChangeComment value) changeComment,
+    required TResult Function(Create value) create,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +58,8 @@ mixin _$CreateCaseEvent {
     TResult? Function(UploadImage value)? uploadImage,
     TResult? Function(CaptureImage value)? captureImage,
     TResult? Function(DeleteImage value)? deleteImage,
+    TResult? Function(ChangeComment value)? changeComment,
+    TResult? Function(Create value)? create,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,12 +67,10 @@ mixin _$CreateCaseEvent {
     TResult Function(UploadImage value)? uploadImage,
     TResult Function(CaptureImage value)? captureImage,
     TResult Function(DeleteImage value)? deleteImage,
+    TResult Function(ChangeComment value)? changeComment,
+    TResult Function(Create value)? create,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $CreateCaseEventCopyWith<CreateCaseEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -72,8 +79,6 @@ abstract class $CreateCaseEventCopyWith<$Res> {
   factory $CreateCaseEventCopyWith(
           CreateCaseEvent value, $Res Function(CreateCaseEvent) then) =
       _$CreateCaseEventCopyWithImpl<$Res, CreateCaseEvent>;
-  @useResult
-  $Res call({CaseField field});
 }
 
 /// @nodoc
@@ -85,28 +90,13 @@ class _$CreateCaseEventCopyWithImpl<$Res, $Val extends CreateCaseEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? field = null,
-  }) {
-    return _then(_value.copyWith(
-      field: null == field
-          ? _value.field
-          : field // ignore: cast_nullable_to_non_nullable
-              as CaseField,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$UploadImageImplCopyWith<$Res>
-    implements $CreateCaseEventCopyWith<$Res> {
+abstract class _$$UploadImageImplCopyWith<$Res> {
   factory _$$UploadImageImplCopyWith(
           _$UploadImageImpl value, $Res Function(_$UploadImageImpl) then) =
       __$$UploadImageImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({CaseField field});
 }
@@ -169,6 +159,8 @@ class _$UploadImageImpl implements UploadImage {
     required TResult Function(CaseField field) uploadImage,
     required TResult Function(CaseField field) captureImage,
     required TResult Function(CaseField field) deleteImage,
+    required TResult Function(String value) changeComment,
+    required TResult Function(int patientId) create,
   }) {
     return uploadImage(field);
   }
@@ -179,6 +171,8 @@ class _$UploadImageImpl implements UploadImage {
     TResult? Function(CaseField field)? uploadImage,
     TResult? Function(CaseField field)? captureImage,
     TResult? Function(CaseField field)? deleteImage,
+    TResult? Function(String value)? changeComment,
+    TResult? Function(int patientId)? create,
   }) {
     return uploadImage?.call(field);
   }
@@ -189,6 +183,8 @@ class _$UploadImageImpl implements UploadImage {
     TResult Function(CaseField field)? uploadImage,
     TResult Function(CaseField field)? captureImage,
     TResult Function(CaseField field)? deleteImage,
+    TResult Function(String value)? changeComment,
+    TResult Function(int patientId)? create,
     required TResult orElse(),
   }) {
     if (uploadImage != null) {
@@ -203,6 +199,8 @@ class _$UploadImageImpl implements UploadImage {
     required TResult Function(UploadImage value) uploadImage,
     required TResult Function(CaptureImage value) captureImage,
     required TResult Function(DeleteImage value) deleteImage,
+    required TResult Function(ChangeComment value) changeComment,
+    required TResult Function(Create value) create,
   }) {
     return uploadImage(this);
   }
@@ -213,6 +211,8 @@ class _$UploadImageImpl implements UploadImage {
     TResult? Function(UploadImage value)? uploadImage,
     TResult? Function(CaptureImage value)? captureImage,
     TResult? Function(DeleteImage value)? deleteImage,
+    TResult? Function(ChangeComment value)? changeComment,
+    TResult? Function(Create value)? create,
   }) {
     return uploadImage?.call(this);
   }
@@ -223,6 +223,8 @@ class _$UploadImageImpl implements UploadImage {
     TResult Function(UploadImage value)? uploadImage,
     TResult Function(CaptureImage value)? captureImage,
     TResult Function(DeleteImage value)? deleteImage,
+    TResult Function(ChangeComment value)? changeComment,
+    TResult Function(Create value)? create,
     required TResult orElse(),
   }) {
     if (uploadImage != null) {
@@ -235,21 +237,17 @@ class _$UploadImageImpl implements UploadImage {
 abstract class UploadImage implements CreateCaseEvent {
   const factory UploadImage(final CaseField field) = _$UploadImageImpl;
 
-  @override
   CaseField get field;
-  @override
   @JsonKey(ignore: true)
   _$$UploadImageImplCopyWith<_$UploadImageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CaptureImageImplCopyWith<$Res>
-    implements $CreateCaseEventCopyWith<$Res> {
+abstract class _$$CaptureImageImplCopyWith<$Res> {
   factory _$$CaptureImageImplCopyWith(
           _$CaptureImageImpl value, $Res Function(_$CaptureImageImpl) then) =
       __$$CaptureImageImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({CaseField field});
 }
@@ -312,6 +310,8 @@ class _$CaptureImageImpl implements CaptureImage {
     required TResult Function(CaseField field) uploadImage,
     required TResult Function(CaseField field) captureImage,
     required TResult Function(CaseField field) deleteImage,
+    required TResult Function(String value) changeComment,
+    required TResult Function(int patientId) create,
   }) {
     return captureImage(field);
   }
@@ -322,6 +322,8 @@ class _$CaptureImageImpl implements CaptureImage {
     TResult? Function(CaseField field)? uploadImage,
     TResult? Function(CaseField field)? captureImage,
     TResult? Function(CaseField field)? deleteImage,
+    TResult? Function(String value)? changeComment,
+    TResult? Function(int patientId)? create,
   }) {
     return captureImage?.call(field);
   }
@@ -332,6 +334,8 @@ class _$CaptureImageImpl implements CaptureImage {
     TResult Function(CaseField field)? uploadImage,
     TResult Function(CaseField field)? captureImage,
     TResult Function(CaseField field)? deleteImage,
+    TResult Function(String value)? changeComment,
+    TResult Function(int patientId)? create,
     required TResult orElse(),
   }) {
     if (captureImage != null) {
@@ -346,6 +350,8 @@ class _$CaptureImageImpl implements CaptureImage {
     required TResult Function(UploadImage value) uploadImage,
     required TResult Function(CaptureImage value) captureImage,
     required TResult Function(DeleteImage value) deleteImage,
+    required TResult Function(ChangeComment value) changeComment,
+    required TResult Function(Create value) create,
   }) {
     return captureImage(this);
   }
@@ -356,6 +362,8 @@ class _$CaptureImageImpl implements CaptureImage {
     TResult? Function(UploadImage value)? uploadImage,
     TResult? Function(CaptureImage value)? captureImage,
     TResult? Function(DeleteImage value)? deleteImage,
+    TResult? Function(ChangeComment value)? changeComment,
+    TResult? Function(Create value)? create,
   }) {
     return captureImage?.call(this);
   }
@@ -366,6 +374,8 @@ class _$CaptureImageImpl implements CaptureImage {
     TResult Function(UploadImage value)? uploadImage,
     TResult Function(CaptureImage value)? captureImage,
     TResult Function(DeleteImage value)? deleteImage,
+    TResult Function(ChangeComment value)? changeComment,
+    TResult Function(Create value)? create,
     required TResult orElse(),
   }) {
     if (captureImage != null) {
@@ -378,21 +388,17 @@ class _$CaptureImageImpl implements CaptureImage {
 abstract class CaptureImage implements CreateCaseEvent {
   const factory CaptureImage(final CaseField field) = _$CaptureImageImpl;
 
-  @override
   CaseField get field;
-  @override
   @JsonKey(ignore: true)
   _$$CaptureImageImplCopyWith<_$CaptureImageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DeleteImageImplCopyWith<$Res>
-    implements $CreateCaseEventCopyWith<$Res> {
+abstract class _$$DeleteImageImplCopyWith<$Res> {
   factory _$$DeleteImageImplCopyWith(
           _$DeleteImageImpl value, $Res Function(_$DeleteImageImpl) then) =
       __$$DeleteImageImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({CaseField field});
 }
@@ -455,6 +461,8 @@ class _$DeleteImageImpl implements DeleteImage {
     required TResult Function(CaseField field) uploadImage,
     required TResult Function(CaseField field) captureImage,
     required TResult Function(CaseField field) deleteImage,
+    required TResult Function(String value) changeComment,
+    required TResult Function(int patientId) create,
   }) {
     return deleteImage(field);
   }
@@ -465,6 +473,8 @@ class _$DeleteImageImpl implements DeleteImage {
     TResult? Function(CaseField field)? uploadImage,
     TResult? Function(CaseField field)? captureImage,
     TResult? Function(CaseField field)? deleteImage,
+    TResult? Function(String value)? changeComment,
+    TResult? Function(int patientId)? create,
   }) {
     return deleteImage?.call(field);
   }
@@ -475,6 +485,8 @@ class _$DeleteImageImpl implements DeleteImage {
     TResult Function(CaseField field)? uploadImage,
     TResult Function(CaseField field)? captureImage,
     TResult Function(CaseField field)? deleteImage,
+    TResult Function(String value)? changeComment,
+    TResult Function(int patientId)? create,
     required TResult orElse(),
   }) {
     if (deleteImage != null) {
@@ -489,6 +501,8 @@ class _$DeleteImageImpl implements DeleteImage {
     required TResult Function(UploadImage value) uploadImage,
     required TResult Function(CaptureImage value) captureImage,
     required TResult Function(DeleteImage value) deleteImage,
+    required TResult Function(ChangeComment value) changeComment,
+    required TResult Function(Create value) create,
   }) {
     return deleteImage(this);
   }
@@ -499,6 +513,8 @@ class _$DeleteImageImpl implements DeleteImage {
     TResult? Function(UploadImage value)? uploadImage,
     TResult? Function(CaptureImage value)? captureImage,
     TResult? Function(DeleteImage value)? deleteImage,
+    TResult? Function(ChangeComment value)? changeComment,
+    TResult? Function(Create value)? create,
   }) {
     return deleteImage?.call(this);
   }
@@ -509,6 +525,8 @@ class _$DeleteImageImpl implements DeleteImage {
     TResult Function(UploadImage value)? uploadImage,
     TResult Function(CaptureImage value)? captureImage,
     TResult Function(DeleteImage value)? deleteImage,
+    TResult Function(ChangeComment value)? changeComment,
+    TResult Function(Create value)? create,
     required TResult orElse(),
   }) {
     if (deleteImage != null) {
@@ -521,11 +539,312 @@ class _$DeleteImageImpl implements DeleteImage {
 abstract class DeleteImage implements CreateCaseEvent {
   const factory DeleteImage(final CaseField field) = _$DeleteImageImpl;
 
-  @override
   CaseField get field;
-  @override
   @JsonKey(ignore: true)
   _$$DeleteImageImplCopyWith<_$DeleteImageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeCommentImplCopyWith<$Res> {
+  factory _$$ChangeCommentImplCopyWith(
+          _$ChangeCommentImpl value, $Res Function(_$ChangeCommentImpl) then) =
+      __$$ChangeCommentImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$ChangeCommentImplCopyWithImpl<$Res>
+    extends _$CreateCaseEventCopyWithImpl<$Res, _$ChangeCommentImpl>
+    implements _$$ChangeCommentImplCopyWith<$Res> {
+  __$$ChangeCommentImplCopyWithImpl(
+      _$ChangeCommentImpl _value, $Res Function(_$ChangeCommentImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$ChangeCommentImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeCommentImpl implements ChangeComment {
+  const _$ChangeCommentImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'CreateCaseEvent.changeComment(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeCommentImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeCommentImplCopyWith<_$ChangeCommentImpl> get copyWith =>
+      __$$ChangeCommentImplCopyWithImpl<_$ChangeCommentImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CaseField field) uploadImage,
+    required TResult Function(CaseField field) captureImage,
+    required TResult Function(CaseField field) deleteImage,
+    required TResult Function(String value) changeComment,
+    required TResult Function(int patientId) create,
+  }) {
+    return changeComment(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CaseField field)? uploadImage,
+    TResult? Function(CaseField field)? captureImage,
+    TResult? Function(CaseField field)? deleteImage,
+    TResult? Function(String value)? changeComment,
+    TResult? Function(int patientId)? create,
+  }) {
+    return changeComment?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CaseField field)? uploadImage,
+    TResult Function(CaseField field)? captureImage,
+    TResult Function(CaseField field)? deleteImage,
+    TResult Function(String value)? changeComment,
+    TResult Function(int patientId)? create,
+    required TResult orElse(),
+  }) {
+    if (changeComment != null) {
+      return changeComment(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UploadImage value) uploadImage,
+    required TResult Function(CaptureImage value) captureImage,
+    required TResult Function(DeleteImage value) deleteImage,
+    required TResult Function(ChangeComment value) changeComment,
+    required TResult Function(Create value) create,
+  }) {
+    return changeComment(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UploadImage value)? uploadImage,
+    TResult? Function(CaptureImage value)? captureImage,
+    TResult? Function(DeleteImage value)? deleteImage,
+    TResult? Function(ChangeComment value)? changeComment,
+    TResult? Function(Create value)? create,
+  }) {
+    return changeComment?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UploadImage value)? uploadImage,
+    TResult Function(CaptureImage value)? captureImage,
+    TResult Function(DeleteImage value)? deleteImage,
+    TResult Function(ChangeComment value)? changeComment,
+    TResult Function(Create value)? create,
+    required TResult orElse(),
+  }) {
+    if (changeComment != null) {
+      return changeComment(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeComment implements CreateCaseEvent {
+  const factory ChangeComment(final String value) = _$ChangeCommentImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ChangeCommentImplCopyWith<_$ChangeCommentImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CreateImplCopyWith<$Res> {
+  factory _$$CreateImplCopyWith(
+          _$CreateImpl value, $Res Function(_$CreateImpl) then) =
+      __$$CreateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int patientId});
+}
+
+/// @nodoc
+class __$$CreateImplCopyWithImpl<$Res>
+    extends _$CreateCaseEventCopyWithImpl<$Res, _$CreateImpl>
+    implements _$$CreateImplCopyWith<$Res> {
+  __$$CreateImplCopyWithImpl(
+      _$CreateImpl _value, $Res Function(_$CreateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? patientId = null,
+  }) {
+    return _then(_$CreateImpl(
+      null == patientId
+          ? _value.patientId
+          : patientId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CreateImpl implements Create {
+  const _$CreateImpl(this.patientId);
+
+  @override
+  final int patientId;
+
+  @override
+  String toString() {
+    return 'CreateCaseEvent.create(patientId: $patientId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateImpl &&
+            (identical(other.patientId, patientId) ||
+                other.patientId == patientId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, patientId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreateImplCopyWith<_$CreateImpl> get copyWith =>
+      __$$CreateImplCopyWithImpl<_$CreateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CaseField field) uploadImage,
+    required TResult Function(CaseField field) captureImage,
+    required TResult Function(CaseField field) deleteImage,
+    required TResult Function(String value) changeComment,
+    required TResult Function(int patientId) create,
+  }) {
+    return create(patientId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CaseField field)? uploadImage,
+    TResult? Function(CaseField field)? captureImage,
+    TResult? Function(CaseField field)? deleteImage,
+    TResult? Function(String value)? changeComment,
+    TResult? Function(int patientId)? create,
+  }) {
+    return create?.call(patientId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CaseField field)? uploadImage,
+    TResult Function(CaseField field)? captureImage,
+    TResult Function(CaseField field)? deleteImage,
+    TResult Function(String value)? changeComment,
+    TResult Function(int patientId)? create,
+    required TResult orElse(),
+  }) {
+    if (create != null) {
+      return create(patientId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UploadImage value) uploadImage,
+    required TResult Function(CaptureImage value) captureImage,
+    required TResult Function(DeleteImage value) deleteImage,
+    required TResult Function(ChangeComment value) changeComment,
+    required TResult Function(Create value) create,
+  }) {
+    return create(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UploadImage value)? uploadImage,
+    TResult? Function(CaptureImage value)? captureImage,
+    TResult? Function(DeleteImage value)? deleteImage,
+    TResult? Function(ChangeComment value)? changeComment,
+    TResult? Function(Create value)? create,
+  }) {
+    return create?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UploadImage value)? uploadImage,
+    TResult Function(CaptureImage value)? captureImage,
+    TResult Function(DeleteImage value)? deleteImage,
+    TResult Function(ChangeComment value)? changeComment,
+    TResult Function(Create value)? create,
+    required TResult orElse(),
+  }) {
+    if (create != null) {
+      return create(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Create implements CreateCaseEvent {
+  const factory Create(final int patientId) = _$CreateImpl;
+
+  int get patientId;
+  @JsonKey(ignore: true)
+  _$$CreateImplCopyWith<_$CreateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -533,6 +852,7 @@ abstract class DeleteImage implements CreateCaseEvent {
 mixin _$CreateCaseState {
   Map<CaseField, XFile?> get caseImages => throw _privateConstructorUsedError;
   LoadStatus get status => throw _privateConstructorUsedError;
+  LoadStatus get uploadStatus => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateCaseStateCopyWith<CreateCaseState> get copyWith =>
@@ -545,7 +865,10 @@ abstract class $CreateCaseStateCopyWith<$Res> {
           CreateCaseState value, $Res Function(CreateCaseState) then) =
       _$CreateCaseStateCopyWithImpl<$Res, CreateCaseState>;
   @useResult
-  $Res call({Map<CaseField, XFile?> caseImages, LoadStatus status});
+  $Res call(
+      {Map<CaseField, XFile?> caseImages,
+      LoadStatus status,
+      LoadStatus uploadStatus});
 }
 
 /// @nodoc
@@ -563,6 +886,7 @@ class _$CreateCaseStateCopyWithImpl<$Res, $Val extends CreateCaseState>
   $Res call({
     Object? caseImages = null,
     Object? status = null,
+    Object? uploadStatus = null,
   }) {
     return _then(_value.copyWith(
       caseImages: null == caseImages
@@ -572,6 +896,10 @@ class _$CreateCaseStateCopyWithImpl<$Res, $Val extends CreateCaseState>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
+              as LoadStatus,
+      uploadStatus: null == uploadStatus
+          ? _value.uploadStatus
+          : uploadStatus // ignore: cast_nullable_to_non_nullable
               as LoadStatus,
     ) as $Val);
   }
@@ -585,7 +913,10 @@ abstract class _$$CreateCaseStateImplCopyWith<$Res>
       __$$CreateCaseStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Map<CaseField, XFile?> caseImages, LoadStatus status});
+  $Res call(
+      {Map<CaseField, XFile?> caseImages,
+      LoadStatus status,
+      LoadStatus uploadStatus});
 }
 
 /// @nodoc
@@ -601,6 +932,7 @@ class __$$CreateCaseStateImplCopyWithImpl<$Res>
   $Res call({
     Object? caseImages = null,
     Object? status = null,
+    Object? uploadStatus = null,
   }) {
     return _then(_$CreateCaseStateImpl(
       caseImages: null == caseImages
@@ -611,6 +943,10 @@ class __$$CreateCaseStateImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as LoadStatus,
+      uploadStatus: null == uploadStatus
+          ? _value.uploadStatus
+          : uploadStatus // ignore: cast_nullable_to_non_nullable
+              as LoadStatus,
     ));
   }
 }
@@ -620,7 +956,8 @@ class __$$CreateCaseStateImplCopyWithImpl<$Res>
 class _$CreateCaseStateImpl extends _CreateCaseState {
   _$CreateCaseStateImpl(
       {final Map<CaseField, XFile?> caseImages = const {},
-      this.status = LoadStatus.initial})
+      this.status = LoadStatus.initial,
+      this.uploadStatus = LoadStatus.initial})
       : _caseImages = caseImages,
         super._();
 
@@ -636,10 +973,13 @@ class _$CreateCaseStateImpl extends _CreateCaseState {
   @override
   @JsonKey()
   final LoadStatus status;
+  @override
+  @JsonKey()
+  final LoadStatus uploadStatus;
 
   @override
   String toString() {
-    return 'CreateCaseState(caseImages: $caseImages, status: $status)';
+    return 'CreateCaseState(caseImages: $caseImages, status: $status, uploadStatus: $uploadStatus)';
   }
 
   @override
@@ -649,12 +989,14 @@ class _$CreateCaseStateImpl extends _CreateCaseState {
             other is _$CreateCaseStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._caseImages, _caseImages) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.uploadStatus, uploadStatus) ||
+                other.uploadStatus == uploadStatus));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_caseImages), status);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_caseImages), status, uploadStatus);
 
   @JsonKey(ignore: true)
   @override
@@ -667,13 +1009,16 @@ class _$CreateCaseStateImpl extends _CreateCaseState {
 abstract class _CreateCaseState extends CreateCaseState {
   factory _CreateCaseState(
       {final Map<CaseField, XFile?> caseImages,
-      final LoadStatus status}) = _$CreateCaseStateImpl;
+      final LoadStatus status,
+      final LoadStatus uploadStatus}) = _$CreateCaseStateImpl;
   _CreateCaseState._() : super._();
 
   @override
   Map<CaseField, XFile?> get caseImages;
   @override
   LoadStatus get status;
+  @override
+  LoadStatus get uploadStatus;
   @override
   @JsonKey(ignore: true)
   _$$CreateCaseStateImplCopyWith<_$CreateCaseStateImpl> get copyWith =>

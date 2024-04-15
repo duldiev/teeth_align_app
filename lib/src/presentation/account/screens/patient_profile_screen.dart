@@ -117,7 +117,9 @@ class PatientProfileScreen extends StatelessWidget {
                 Expanded(
                   flex: 3,
                   child: InkWell(
-                    onTap: () => context.router.push(const CreateCaseRoute()),
+                    onTap: () => context.router.push(
+                      CreateCaseRoute(patientId: patient.id),
+                    ),
                     borderRadius: BorderRadius.circular(8),
                     child: Container(
                       padding: const EdgeInsets.symmetric(

@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/exceptions/failure.dart';
 import 'package:teeth_align_app/src/core/services/base_client.dart';
+import 'package:teeth_align_app/src/data/body/doctor_case_body.dart';
 import 'package:teeth_align_app/src/data/models/doctor_model.dart';
 import 'package:teeth_align_app/src/data/models/mentor_model.dart';
 import 'package:teeth_align_app/src/data/models/patient_model.dart';
@@ -53,6 +54,22 @@ class DoctorRepository extends BaseClient implements IDoctorRepository {
         .fold(
       (l) => Left(l),
       (r) => Right(DoctorModel.fromMap(r)),
+    );
+  }
+
+  @override
+  Future<Either<Failure, Unit>> createCase(
+    int patientId,
+    DoctorCaseBody body,
+  ) async {
+    return (await call(
+      RestMethod.post,
+      '/api/v1/patient/$patientId/case',
+      body: body.toDataMap(),
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => const Right(unit),
     );
   }
 }

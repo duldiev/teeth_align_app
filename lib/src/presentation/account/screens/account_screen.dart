@@ -11,6 +11,7 @@ import 'package:teeth_align_app/src/core/helpers/app_data.dart';
 import 'package:teeth_align_app/src/presentation/account/widgets/account_tile.dart';
 import 'package:teeth_align_app/src/presentation/account/widgets/account_tile_divider.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 
@@ -56,6 +57,11 @@ class AccountScreen extends StatelessWidget {
             AccountTile(
               title: 'Изменить данные',
               onTap: () {},
+            ),
+            const AccountTileDivider(),
+            AccountTile(
+              title: 'Настройки элайнера',
+              onTap: () => context.router.push(const AlignerSettingsRoute()),
             ),
             const AccountTileDivider(),
             AccountTile(

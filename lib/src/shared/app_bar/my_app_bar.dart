@@ -64,6 +64,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final titleTextStyle = context.textTheme.titleLarge?.copyWith(
+      fontSize: 18,
       color: foregroundColor,
       fontWeight: FontWeight.w600,
     );

@@ -7,6 +7,7 @@ import 'package:teeth_align_app/src/core/extensions/date_extension.dart';
 import 'package:teeth_align_app/src/core/helpers/app_data.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/circular_bar.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/timer_circular_bar.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/buttons/chat_button.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
@@ -110,13 +111,45 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                   ),
                 ],
               ),
-              Gap(8.h),
-              Text(
-                'Иструкций по элайнеру',
-                style: context.textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.w800,
+              if (appData.patient?.scanLink != null) ...[
+                Gap(4.h),
+                InkWell(
+                  onTap: () => context.router.push(
+                    DefaultWebView(url: appData.patient!.scanLink!),
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 6),
+                    decoration: BoxDecoration(
+                      color: AppColors.success,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          Icons.scatter_plot_outlined,
+                          size: 16,
+                        ),
+                        Gap(1.w),
+                        Text(
+                          '3D Plan',
+                          style: context.textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
+                Gap(2.h),
+                Text(
+                  'Иструкций по элайнеру',
+                  style: context.textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ],
             ],
           ),
         ),

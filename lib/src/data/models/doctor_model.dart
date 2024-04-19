@@ -21,6 +21,7 @@ class DoctorModel extends DoctorEntity {
     required super.clinicName,
     required super.chatUserId,
     required super.chatEnabled,
+    required super.place,
   });
 
   factory DoctorModel.fromMap(Map<String, dynamic> map) => DoctorModel(
@@ -44,5 +45,6 @@ class DoctorModel extends DoctorEntity {
         chatUserId: map['chatUserId'] as String?,
         chatToken: map['chatToken'] as String?,
         chatEnabled: map['chatEnabled'] as bool? ?? false,
+        place: map['place'] as int?,
       );
 }

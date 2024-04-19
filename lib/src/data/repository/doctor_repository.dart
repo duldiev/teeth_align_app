@@ -72,4 +72,18 @@ class DoctorRepository extends BaseClient implements IDoctorRepository {
       (r) => const Right(unit),
     );
   }
+
+  @override
+  Future<Either<Failure, List<DoctorEntity>>> getLeaderboard() async {
+    return (await call(
+      RestMethod.get,
+      '/api/v1/doctor/leaderboard',
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => Right(
+        (r as List).map((e) => DoctorModel.fromMap(e)).toList(),
+      ),
+    );
+  }
 }

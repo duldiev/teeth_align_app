@@ -13,4 +13,6 @@ abstract class IDoctorRepository {
   Future<Either<Failure, DoctorEntity>> getDoctorById(int id);
 
   Future<Either<Failure, Unit>> createCase(int patientId, DoctorCaseBody body);
+
+  Future<Either<Failure, List<DoctorEntity>>> getLeaderboard();
 }

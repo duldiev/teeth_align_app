@@ -7,6 +7,7 @@ class DoctorEntity extends AccountEntity {
   final String? position;
   final String? speciality;
   final String? clinicName;
+  final int? place;
 
   const DoctorEntity({
     required super.id,
@@ -20,13 +21,14 @@ class DoctorEntity extends AccountEntity {
     required super.birthDate,
     required super.chatToken,
     required super.bio,
+    required super.chatUserId,
+    required super.chatEnabled,
     required this.education,
     required this.workExperience,
     required this.position,
     required this.speciality,
     required this.clinicName,
-    required super.chatUserId,
-    required super.chatEnabled,
+    required this.place,
   });
 
   factory DoctorEntity.empty() => DoctorEntity(
@@ -48,5 +50,6 @@ class DoctorEntity extends AccountEntity {
         clinicName: null,
         chatUserId: null,
         chatEnabled: false,
+        place: null,
       );
 }

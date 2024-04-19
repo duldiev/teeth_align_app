@@ -7,6 +7,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/services/modal_bottom_sheet.dart';
 import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
+import 'package:teeth_align_app/src/presentation/social/blocs/leaderboard_bloc/leaderboard_bloc.dart';
 import 'package:teeth_align_app/src/presentation/social/blocs/social_bloc/social_bloc.dart';
 import 'package:teeth_align_app/src/presentation/social/views/new_post_view.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/post_tile.dart';
@@ -40,6 +41,17 @@ class SocialScreen extends StatelessWidget {
               title: const Text('Сообщество'),
               actions: [
                 InkWell(
+                  onTap: () {
+                    context.read<LeaderboardBloc>().add(const GetList());
+                    context.router.push(const LeaderboardRoute());
+                  },
+                  child: const Icon(
+                    FontAwesomeIcons.trophy,
+                    size: 20,
+                  ),
+                ),
+                Gap(6.w),
+                InkWell(
                   onTap: () async {
                     PostEntity? createdPost = await MBS.show<PostEntity>(
                       context,
@@ -53,15 +65,15 @@ class SocialScreen extends StatelessWidget {
                   },
                   child: const Icon(
                     FontAwesomeIcons.notesMedical,
-                    size: 26,
+                    size: 22,
                   ),
                 ),
-                Gap(5.w),
+                Gap(6.w),
                 InkWell(
                   onTap: () => context.router.push(const ChatListRoute()),
                   child: const Icon(
                     FontAwesomeIcons.inbox,
-                    size: 24,
+                    size: 22,
                   ),
                 ),
                 Gap(4.w),

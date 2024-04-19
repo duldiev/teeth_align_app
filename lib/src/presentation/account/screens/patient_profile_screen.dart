@@ -122,9 +122,7 @@ class PatientProfileScreen extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(8),
                     child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 4,
-                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 6),
                       decoration: BoxDecoration(
                         color: AppColors.primary,
                         borderRadius: BorderRadius.circular(8),
@@ -148,7 +146,7 @@ class PatientProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Gap(2.w),
+                Gap(3.w),
                 Expanded(
                   flex: 2,
                   child: InkWell(
@@ -173,9 +171,7 @@ class PatientProfileScreen extends StatelessWidget {
                     },
                     borderRadius: BorderRadius.circular(8),
                     child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 4,
-                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 6),
                       decoration: BoxDecoration(
                         color: AppColors.blue,
                         borderRadius: BorderRadius.circular(8),
@@ -209,9 +205,7 @@ class PatientProfileScreen extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(8),
                 child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 4,
-                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 6),
                   decoration: BoxDecoration(
                     color: AppColors.success,
                     borderRadius: BorderRadius.circular(8),
@@ -225,7 +219,7 @@ class PatientProfileScreen extends StatelessWidget {
                       ),
                       Gap(1.w),
                       Text(
-                        '3D scan',
+                        '3D Plan',
                         style: context.textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),

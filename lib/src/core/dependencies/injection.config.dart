@@ -40,9 +40,11 @@ import '../../presentation/home/blocs/patient_bloc/patient_bloc.dart' as _i31;
 import '../../presentation/report/blocs/camera_bloc/camera_bloc.dart' as _i5;
 import '../../presentation/report/blocs/create_case_bloc/create_case_bloc.dart'
     as _i30;
-import '../../presentation/social/blocs/social_bloc/social_bloc.dart' as _i34;
+import '../../presentation/social/blocs/leaderboard_bloc/leaderboard_bloc.dart'
+    as _i34;
+import '../../presentation/social/blocs/social_bloc/social_bloc.dart' as _i35;
 import '../../router/app_router.dart' as _i6;
-import '../modules/modules.dart' as _i35;
+import '../modules/modules.dart' as _i36;
 import '../services/api_client.dart' as _i26;
 import '../services/network_info.dart' as _i28;
 
@@ -109,7 +111,9 @@ Future<_i1.GetIt> $initGetIt(
       () => _i32.MentorBloc(repository: gh<_i22.IMentorRepository>()));
   gh.factory<_i33.AdminBloc>(
       () => _i33.AdminBloc(repository: gh<_i16.IAdminRepository>()));
-  gh.factory<_i34.SocialBloc>(() => _i34.SocialBloc(
+  gh.factory<_i34.LeaderboardBloc>(
+      () => _i34.LeaderboardBloc(repository: gh<_i16.IAdminRepository>()));
+  gh.factory<_i35.SocialBloc>(() => _i35.SocialBloc(
         repository: gh<_i14.ISocialRepository>(),
         imagePicker: gh<_i10.ImagePicker>(),
         router: gh<_i6.AppRouter>(),
@@ -117,4 +121,4 @@ Future<_i1.GetIt> $initGetIt(
   return getIt;
 }
 
-class _$Modules extends _i35.Modules {}
+class _$Modules extends _i36.Modules {}

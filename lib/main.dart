@@ -18,14 +18,12 @@ import 'package:teeth_align_app/src/presentation/base/globals.dart';
 //             moderate patients added by doctors. (not a priority)
 //    doctor -> my mentors and patients.
 //    mentor -> my doctors.
-// 3. Creating a patient by doctor. After creating, doctor create case.
-//    Case: picture (multiple, separated inputs) and comment.
 // + Finish timer.
 // + Create a channel logic. Chats to listed people.
 // !!!7. Replace calendar by Konaev.
 // + Report. Taking pictures of right and left chicks, middle teeth.
 // + Report. Preview screen. List of cases.
-// 9. Aligner settings in Account.
+// + Aligner settings in Account.
 //       Inputs:
 //          total aligners sets (int),
 //          current aligner number (int),
@@ -33,7 +31,23 @@ import 'package:teeth_align_app/src/presentation/base/globals.dart';
 //          next change date.
 // + Client home screen: current aligner, next aligner (date), timer. (Profile api)
 // + Connect chat client to user token.
-// 12. List screen for patient, mentor and doctor list.
+// + List screen for patient, mentor and doctor list.
+
+// 1. Firebase messaging.
+// 2. Leaderboard and Rating.
+// 3. Rate doctor by Mentor in Profile screen.
+// 4. Link text in post to use links in text.
+// 5. Remove social sign-ins.
+// 6. Indicator for post create case request.
+// 7. Example images for 3 image case.
+// 8. Finish register doctor by adding new fields which ?
+// 9. Replace calendar by Konaev.
+// 10. Patient/Doctor selector icon should be replaced.
+// 11. Put real data on Doctor, Patient and Mentor profile screens.
+// 12. Obsecure password input.
+// 13. Edit personal data screen.
+// 14. Fix chat button.
+// 15. Show more button -> list of items screen.
 
 final client = StreamChatClient(
   APIKeys.streamChatTest,

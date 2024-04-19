@@ -13,6 +13,7 @@ import 'package:teeth_align_app/src/presentation/home/blocs/admin_bloc/admin_blo
 import 'package:teeth_align_app/src/presentation/home/blocs/doctor_bloc/doctor_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/mentor_bloc/mentor_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/patient_bloc/patient_bloc.dart';
+import 'package:teeth_align_app/src/presentation/social/blocs/leaderboard_bloc/leaderboard_bloc.dart';
 import 'package:teeth_align_app/src/router/app_router.dart';
 
 class App extends StatelessWidget {
@@ -41,6 +42,7 @@ class App extends StatelessWidget {
             BlocProvider(create: (_) => getIt<DoctorBloc>()),
             BlocProvider(create: (_) => getIt<MentorBloc>()),
             BlocProvider(create: (_) => getIt<PatientBloc>()),
+            BlocProvider(create: (_) => getIt<LeaderboardBloc>()),
           ],
           child: StreamChat(
             client: client,

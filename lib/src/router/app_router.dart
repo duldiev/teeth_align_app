@@ -38,5 +38,6 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: CameraRoute.page),
         AutoRoute(page: CreateCaseRoute.page),
         AutoRoute(page: AlignerSettingsRoute.page),
+        AutoRoute(page: DefaultWebView.page),
       ];
 }

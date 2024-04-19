@@ -1,7 +1,15 @@
 import 'package:teeth_align_app/src/core/enums/basics.dart';
+import 'package:teeth_align_app/src/data/body/time_body.dart';
 import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
 
 class PatientEntity extends AccountEntity {
+  final int? currentSet;
+  final int? maxSet;
+  final DateTime? nextAlignerDate;
+  final TimeBody? reminderTime;
+  final int? wearDuration;
+  final String? scanLink;
+
   const PatientEntity({
     required super.id,
     required super.username,
@@ -16,6 +24,12 @@ class PatientEntity extends AccountEntity {
     required super.bio,
     required super.chatUserId,
     required super.chatEnabled,
+    required this.currentSet,
+    required this.maxSet,
+    required this.nextAlignerDate,
+    required this.reminderTime,
+    required this.wearDuration,
+    this.scanLink,
   });
 
   factory PatientEntity.empty() => PatientEntity(
@@ -32,8 +46,21 @@ class PatientEntity extends AccountEntity {
         bio: null,
         chatUserId: null,
         chatEnabled: false,
+        currentSet: null,
+        maxSet: null,
+        nextAlignerDate: null,
+        wearDuration: null,
+        reminderTime: null,
       );
 
   @override
-  List<Object?> get props => [...super.props];
+  List<Object?> get props => [
+        currentSet,
+        maxSet,
+        nextAlignerDate,
+        wearDuration,
+        reminderTime,
+        scanLink,
+        ...super.props,
+      ];
 }

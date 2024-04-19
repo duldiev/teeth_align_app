@@ -44,7 +44,17 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
     (await repository.getPatient(event.id)).fold(
       (l) => emit(const PatientState.failed()),
       (r) {
-        viewModel = viewModel.copyWith(patient: r);
+        appData.patient = r;
+        alignerSettingsBody = alignerSettingsBody.copyWith(
+          maxSet: r.maxSet,
+          currentSet: r.currentSet,
+          reminderTime: r.reminderTime,
+          wearDuration: r.wearDuration,
+        );
+        viewModel = viewModel.copyWith(
+          patient: r,
+          alignerSettingsBody: alignerSettingsBody,
+        );
         emit(PatientState.loaded(viewModel: viewModel));
       },
     );
@@ -93,9 +103,7 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
     emit(const PatientState.loading());
 
     (await repository.updateInitialSettings(alignerSettingsBody)).fold(
-      (l) {
-        emit(const PatientState.failed());
-      },
+      (l) => emit(PatientState.loaded(viewModel: viewModel)),
       (r) {
         viewModel = viewModel.copyWith(
           alignerSettingsBody: alignerSettingsBody,

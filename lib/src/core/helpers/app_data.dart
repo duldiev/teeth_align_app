@@ -1,5 +1,6 @@
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
+import 'package:teeth_align_app/src/domain/entity/patient_entity.dart';
 
 final appData = AppData();
 
@@ -12,6 +13,7 @@ class AppData {
   String? chaUserId;
   bool isChatAvailable = false;
   AccountEntity? account;
+  PatientEntity? patient;
 
   factory AppData() {
     return _appData;

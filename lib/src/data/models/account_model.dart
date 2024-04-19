@@ -16,9 +16,6 @@ class AccountModel extends AccountEntity {
     required super.chatToken,
     required super.bio,
     required super.chatEnabled,
-    required super.currentSet,
-    required super.nextAlignerDate,
-    required super.maxSet,
   });
 
   factory AccountModel.fromMap(Map<String, dynamic> map) => AccountModel(
@@ -40,8 +37,5 @@ class AccountModel extends AccountEntity {
         chatToken: map['chatToken'] as String?,
         bio: map['bio'] as String?,
         chatEnabled: map['chatEnabled'] as bool? ?? false,
-        currentSet: map['currentSet'] as int?,
-        nextAlignerDate: DateTime.tryParse(map['nextAlignerDate'] ?? ''),
-        maxSet: map['maxSet'] as int? ?? 0,
       );
 }

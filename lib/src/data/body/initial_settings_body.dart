@@ -16,11 +16,11 @@ class InitialSettingsBody extends Equatable {
     required this.reminderTime,
   });
 
-  factory InitialSettingsBody.empty() => const InitialSettingsBody(
+  factory InitialSettingsBody.empty() => InitialSettingsBody(
         maxSet: 0,
         currentSet: 0,
         wearDuration: 0,
-        reminderTime: TimeBody(hour: 0, minute: 0, second: 0, nano: 0),
+        reminderTime: TimeBody.empty(),
       );
 
   Map<String, dynamic> toMap() => {

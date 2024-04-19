@@ -3,42 +3,40 @@ import 'package:equatable/equatable.dart';
 class TimeBody extends Equatable {
   final int hour;
   final int minute;
-  final int second;
-  final int nano;
 
   const TimeBody({
     required this.hour,
     required this.minute,
-    required this.second,
-    required this.nano,
   });
 
   Map<String, dynamic> toMap() => {
         'hour': hour,
         'minute': minute,
-        'second': second,
-        'nano': nano,
       };
+
+  factory TimeBody.empty() => const TimeBody(hour: 0, minute: 0);
+
+  factory TimeBody.fromString(String? string) {
+    if (string == null) return TimeBody.empty();
+    return TimeBody(
+      hour: int.tryParse(string.substring(0, 2)) ?? 0,
+      minute: int.tryParse(string.substring(3, 5)) ?? 0,
+    );
+  }
 
   @override
   List<Object?> get props => [
         hour,
         minute,
-        second,
-        nano,
       ];
 
   TimeBody copyWith({
     int? hour,
     int? minute,
-    int? second,
-    int? nano,
   }) {
     return TimeBody(
       hour: hour ?? this.hour,
       minute: minute ?? this.minute,
-      second: second ?? this.second,
-      nano: nano ?? this.nano,
     );
   }
 }

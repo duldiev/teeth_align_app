@@ -1,4 +1,5 @@
 import 'package:teeth_align_app/src/core/enums/basics.dart';
+import 'package:teeth_align_app/src/data/body/time_body.dart';
 import 'package:teeth_align_app/src/domain/entity/patient_entity.dart';
 
 class PatientModel extends PatientEntity {
@@ -16,6 +17,12 @@ class PatientModel extends PatientEntity {
     required super.bio,
     required super.chatUserId,
     required super.chatEnabled,
+    required super.currentSet,
+    required super.maxSet,
+    required super.nextAlignerDate,
+    required super.reminderTime,
+    required super.wearDuration,
+    required super.scanLink,
   });
 
   factory PatientModel.fromMap(Map<String, dynamic> map) => PatientModel(
@@ -34,5 +41,11 @@ class PatientModel extends PatientEntity {
         chatUserId: map['chatUserId'] as String?,
         chatToken: map['chatToken'] as String?,
         chatEnabled: map['chatEnabled'] as bool? ?? false,
+        currentSet: map['currentSet'] as int?,
+        maxSet: map['maxSet'] as int?,
+        nextAlignerDate: DateTime.tryParse(map['nextAlignerDate'] ?? ''),
+        reminderTime: TimeBody.fromString(map['reminderTime']),
+        wearDuration: map['wearDuration'] as int?,
+        scanLink: map['scanLink'] as String?,
       );
 }

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 import 'package:teeth_align_app/gen/assets.gen.dart';
 import 'package:teeth_align_app/main.dart';
 import 'package:teeth_align_app/src/core/constants/chat.dart';
@@ -201,6 +202,38 @@ class PatientProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
+            if (patient.scanLink != null) ...[
+              Gap(2.h),
+              InkWell(
+                onTap: () => launchURL(context, patient.scanLink!),
+                borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.success,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.scatter_plot_outlined,
+                        size: 16,
+                      ),
+                      Gap(1.w),
+                      Text(
+                        '3D scan',
+                        style: context.textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
             Gap(2.h),
             Text(
               'Био',

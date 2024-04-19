@@ -185,6 +185,7 @@ class _TextInputState extends State<TextInput> {
     final inputBorder = OutlineInputBorder(
       borderSide: const BorderSide(
         color: AppColors.white,
+        width: 0.5,
       ),
       borderRadius: BorderRadius.circular(10),
     );

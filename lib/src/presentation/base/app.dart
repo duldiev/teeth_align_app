@@ -9,6 +9,9 @@ import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart';
 import 'package:teeth_align_app/src/presentation/base/app_theme_data.dart';
 import 'package:teeth_align_app/src/presentation/base/globals.dart';
+import 'package:teeth_align_app/src/presentation/calendar/blocs/calendar_bloc/calendar_bloc.dart';
+import 'package:teeth_align_app/src/presentation/calendar/blocs/calendar_date_bloc/calendar_date_bloc.dart';
+import 'package:teeth_align_app/src/presentation/calendar/helpers/date_helper.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/admin_bloc/admin_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/doctor_bloc/doctor_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/mentor_bloc/mentor_bloc.dart';
@@ -43,6 +46,14 @@ class App extends StatelessWidget {
             BlocProvider(create: (_) => getIt<MentorBloc>()),
             BlocProvider(create: (_) => getIt<PatientBloc>()),
             BlocProvider(create: (_) => getIt<LeaderboardBloc>()),
+            BlocProvider(create: (_) => getIt<CalendarDateBloc>()),
+            BlocProvider(
+              create: (_) => getIt<CalendarBloc>()
+                ..add(GetEvents(
+                  DateHelper.currentStartMonth,
+                  DateHelper.nextStartMonth,
+                )),
+            ),
           ],
           child: StreamChat(
             client: client,

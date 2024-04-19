@@ -50,6 +50,7 @@ dependencies:
   shared_preferences: ^2.2.2
   stream_chat_flutter: ^7.2.0
   stream_chat_flutter_core: ^7.2.0
+  syncfusion_flutter_calendar: ^25.1.40
   table_calendar: ^3.0.9
   uuid: ^4.3.3
   webview_flutter: ^4.7.0

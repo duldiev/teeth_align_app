@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 extension StringExtensions on String? {
   DateTime? toDateTime([DateTime? def]) {
     if (this == null) return def;
@@ -17,4 +19,11 @@ extension StringExtensions on String? {
       : '${this![0].toUpperCase()}${this!.substring(1).toLowerCase()}';
 
   bool isExist() => this != null && this!.isNotEmpty;
+
+  Color parseHex() => Color(
+        int.parse(
+          '${0xFF}${this?.replaceAll('#', '') ?? 000000}',
+          radix: 16,
+        ),
+      );
 }

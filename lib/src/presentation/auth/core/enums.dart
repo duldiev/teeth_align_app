@@ -31,3 +31,10 @@ enum ProfileField {
   weight,
   role,
 }
+
+enum AlignerSettingsField {
+  currentSet,
+  maxSet,
+  wearDuration,
+  reminderTime;
+}

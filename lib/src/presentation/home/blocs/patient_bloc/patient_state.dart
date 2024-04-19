@@ -16,5 +16,6 @@ class PatientStateViewModel with _$PatientStateViewModel {
     @Default(null) PatientEntity? patient,
     @Default([]) List<CaseEntity> cases,
     @Default(null) PatientCaseBody? patientCaseBody,
+    @Default(null) InitialSettingsBody? alignerSettingsBody,
   }) = _PatientStateViewModel;
 }

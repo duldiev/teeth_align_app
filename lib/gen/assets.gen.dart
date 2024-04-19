@@ -35,8 +35,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/icons/logo.svg');
 
+  /// File path: assets/icons/totalNumber.svg
+  SvgGenImage get totalNumber =>
+      const SvgGenImage('assets/icons/totalNumber.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [apple, google, logo];
+  List<SvgGenImage> get values => [apple, google, logo, totalNumber];
 }
 
 class $AssetsImagesGen {

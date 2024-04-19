@@ -44,8 +44,8 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircularBar(
-                    current: appData.account?.currentSet ?? 0,
-                    total: appData.account?.maxSet ?? 0,
+                    current: appData.account?.currentSet ?? 1,
+                    total: appData.account?.maxSet ?? 2,
                   ),
                   Gap(6.w),
                   Text(

@@ -21,6 +21,9 @@ mixin _$PatientEvent {
     required TResult Function(int id) getPatient,
     required TResult Function(int? patientId) getCases,
     required TResult Function(PatientCaseBody body) postCase,
+    required TResult Function() updateAlignerSettings,
+    required TResult Function(AlignerSettingsField field, String value)
+        changeSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +31,8 @@ mixin _$PatientEvent {
     TResult? Function(int id)? getPatient,
     TResult? Function(int? patientId)? getCases,
     TResult? Function(PatientCaseBody body)? postCase,
+    TResult? Function()? updateAlignerSettings,
+    TResult? Function(AlignerSettingsField field, String value)? changeSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +40,8 @@ mixin _$PatientEvent {
     TResult Function(int id)? getPatient,
     TResult Function(int? patientId)? getCases,
     TResult Function(PatientCaseBody body)? postCase,
+    TResult Function()? updateAlignerSettings,
+    TResult Function(AlignerSettingsField field, String value)? changeSettings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +50,9 @@ mixin _$PatientEvent {
     required TResult Function(GetPatient value) getPatient,
     required TResult Function(GetCases value) getCases,
     required TResult Function(PostCase value) postCase,
+    required TResult Function(UpdateAlignerSettings value)
+        updateAlignerSettings,
+    required TResult Function(ChangeSettings value) changeSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +60,8 @@ mixin _$PatientEvent {
     TResult? Function(GetPatient value)? getPatient,
     TResult? Function(GetCases value)? getCases,
     TResult? Function(PostCase value)? postCase,
+    TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult? Function(ChangeSettings value)? changeSettings,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +69,8 @@ mixin _$PatientEvent {
     TResult Function(GetPatient value)? getPatient,
     TResult Function(GetCases value)? getCases,
     TResult Function(PostCase value)? postCase,
+    TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult Function(ChangeSettings value)? changeSettings,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -147,6 +161,9 @@ class _$GetPatientImpl implements GetPatient {
     required TResult Function(int id) getPatient,
     required TResult Function(int? patientId) getCases,
     required TResult Function(PatientCaseBody body) postCase,
+    required TResult Function() updateAlignerSettings,
+    required TResult Function(AlignerSettingsField field, String value)
+        changeSettings,
   }) {
     return getPatient(id);
   }
@@ -157,6 +174,8 @@ class _$GetPatientImpl implements GetPatient {
     TResult? Function(int id)? getPatient,
     TResult? Function(int? patientId)? getCases,
     TResult? Function(PatientCaseBody body)? postCase,
+    TResult? Function()? updateAlignerSettings,
+    TResult? Function(AlignerSettingsField field, String value)? changeSettings,
   }) {
     return getPatient?.call(id);
   }
@@ -167,6 +186,8 @@ class _$GetPatientImpl implements GetPatient {
     TResult Function(int id)? getPatient,
     TResult Function(int? patientId)? getCases,
     TResult Function(PatientCaseBody body)? postCase,
+    TResult Function()? updateAlignerSettings,
+    TResult Function(AlignerSettingsField field, String value)? changeSettings,
     required TResult orElse(),
   }) {
     if (getPatient != null) {
@@ -181,6 +202,9 @@ class _$GetPatientImpl implements GetPatient {
     required TResult Function(GetPatient value) getPatient,
     required TResult Function(GetCases value) getCases,
     required TResult Function(PostCase value) postCase,
+    required TResult Function(UpdateAlignerSettings value)
+        updateAlignerSettings,
+    required TResult Function(ChangeSettings value) changeSettings,
   }) {
     return getPatient(this);
   }
@@ -191,6 +215,8 @@ class _$GetPatientImpl implements GetPatient {
     TResult? Function(GetPatient value)? getPatient,
     TResult? Function(GetCases value)? getCases,
     TResult? Function(PostCase value)? postCase,
+    TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult? Function(ChangeSettings value)? changeSettings,
   }) {
     return getPatient?.call(this);
   }
@@ -201,6 +227,8 @@ class _$GetPatientImpl implements GetPatient {
     TResult Function(GetPatient value)? getPatient,
     TResult Function(GetCases value)? getCases,
     TResult Function(PostCase value)? postCase,
+    TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult Function(ChangeSettings value)? changeSettings,
     required TResult orElse(),
   }) {
     if (getPatient != null) {
@@ -287,6 +315,9 @@ class _$GetCasesImpl implements GetCases {
     required TResult Function(int id) getPatient,
     required TResult Function(int? patientId) getCases,
     required TResult Function(PatientCaseBody body) postCase,
+    required TResult Function() updateAlignerSettings,
+    required TResult Function(AlignerSettingsField field, String value)
+        changeSettings,
   }) {
     return getCases(patientId);
   }
@@ -297,6 +328,8 @@ class _$GetCasesImpl implements GetCases {
     TResult? Function(int id)? getPatient,
     TResult? Function(int? patientId)? getCases,
     TResult? Function(PatientCaseBody body)? postCase,
+    TResult? Function()? updateAlignerSettings,
+    TResult? Function(AlignerSettingsField field, String value)? changeSettings,
   }) {
     return getCases?.call(patientId);
   }
@@ -307,6 +340,8 @@ class _$GetCasesImpl implements GetCases {
     TResult Function(int id)? getPatient,
     TResult Function(int? patientId)? getCases,
     TResult Function(PatientCaseBody body)? postCase,
+    TResult Function()? updateAlignerSettings,
+    TResult Function(AlignerSettingsField field, String value)? changeSettings,
     required TResult orElse(),
   }) {
     if (getCases != null) {
@@ -321,6 +356,9 @@ class _$GetCasesImpl implements GetCases {
     required TResult Function(GetPatient value) getPatient,
     required TResult Function(GetCases value) getCases,
     required TResult Function(PostCase value) postCase,
+    required TResult Function(UpdateAlignerSettings value)
+        updateAlignerSettings,
+    required TResult Function(ChangeSettings value) changeSettings,
   }) {
     return getCases(this);
   }
@@ -331,6 +369,8 @@ class _$GetCasesImpl implements GetCases {
     TResult? Function(GetPatient value)? getPatient,
     TResult? Function(GetCases value)? getCases,
     TResult? Function(PostCase value)? postCase,
+    TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult? Function(ChangeSettings value)? changeSettings,
   }) {
     return getCases?.call(this);
   }
@@ -341,6 +381,8 @@ class _$GetCasesImpl implements GetCases {
     TResult Function(GetPatient value)? getPatient,
     TResult Function(GetCases value)? getCases,
     TResult Function(PostCase value)? postCase,
+    TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult Function(ChangeSettings value)? changeSettings,
     required TResult orElse(),
   }) {
     if (getCases != null) {
@@ -426,6 +468,9 @@ class _$PostCaseImpl implements PostCase {
     required TResult Function(int id) getPatient,
     required TResult Function(int? patientId) getCases,
     required TResult Function(PatientCaseBody body) postCase,
+    required TResult Function() updateAlignerSettings,
+    required TResult Function(AlignerSettingsField field, String value)
+        changeSettings,
   }) {
     return postCase(body);
   }
@@ -436,6 +481,8 @@ class _$PostCaseImpl implements PostCase {
     TResult? Function(int id)? getPatient,
     TResult? Function(int? patientId)? getCases,
     TResult? Function(PatientCaseBody body)? postCase,
+    TResult? Function()? updateAlignerSettings,
+    TResult? Function(AlignerSettingsField field, String value)? changeSettings,
   }) {
     return postCase?.call(body);
   }
@@ -446,6 +493,8 @@ class _$PostCaseImpl implements PostCase {
     TResult Function(int id)? getPatient,
     TResult Function(int? patientId)? getCases,
     TResult Function(PatientCaseBody body)? postCase,
+    TResult Function()? updateAlignerSettings,
+    TResult Function(AlignerSettingsField field, String value)? changeSettings,
     required TResult orElse(),
   }) {
     if (postCase != null) {
@@ -460,6 +509,9 @@ class _$PostCaseImpl implements PostCase {
     required TResult Function(GetPatient value) getPatient,
     required TResult Function(GetCases value) getCases,
     required TResult Function(PostCase value) postCase,
+    required TResult Function(UpdateAlignerSettings value)
+        updateAlignerSettings,
+    required TResult Function(ChangeSettings value) changeSettings,
   }) {
     return postCase(this);
   }
@@ -470,6 +522,8 @@ class _$PostCaseImpl implements PostCase {
     TResult? Function(GetPatient value)? getPatient,
     TResult? Function(GetCases value)? getCases,
     TResult? Function(PostCase value)? postCase,
+    TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult? Function(ChangeSettings value)? changeSettings,
   }) {
     return postCase?.call(this);
   }
@@ -480,6 +534,8 @@ class _$PostCaseImpl implements PostCase {
     TResult Function(GetPatient value)? getPatient,
     TResult Function(GetCases value)? getCases,
     TResult Function(PostCase value)? postCase,
+    TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult Function(ChangeSettings value)? changeSettings,
     required TResult orElse(),
   }) {
     if (postCase != null) {
@@ -495,6 +551,295 @@ abstract class PostCase implements PatientEvent {
   PatientCaseBody get body;
   @JsonKey(ignore: true)
   _$$PostCaseImplCopyWith<_$PostCaseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateAlignerSettingsImplCopyWith<$Res> {
+  factory _$$UpdateAlignerSettingsImplCopyWith(
+          _$UpdateAlignerSettingsImpl value,
+          $Res Function(_$UpdateAlignerSettingsImpl) then) =
+      __$$UpdateAlignerSettingsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateAlignerSettingsImplCopyWithImpl<$Res>
+    extends _$PatientEventCopyWithImpl<$Res, _$UpdateAlignerSettingsImpl>
+    implements _$$UpdateAlignerSettingsImplCopyWith<$Res> {
+  __$$UpdateAlignerSettingsImplCopyWithImpl(_$UpdateAlignerSettingsImpl _value,
+      $Res Function(_$UpdateAlignerSettingsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
+  const _$UpdateAlignerSettingsImpl();
+
+  @override
+  String toString() {
+    return 'PatientEvent.updateAlignerSettings()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateAlignerSettingsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) getPatient,
+    required TResult Function(int? patientId) getCases,
+    required TResult Function(PatientCaseBody body) postCase,
+    required TResult Function() updateAlignerSettings,
+    required TResult Function(AlignerSettingsField field, String value)
+        changeSettings,
+  }) {
+    return updateAlignerSettings();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? getPatient,
+    TResult? Function(int? patientId)? getCases,
+    TResult? Function(PatientCaseBody body)? postCase,
+    TResult? Function()? updateAlignerSettings,
+    TResult? Function(AlignerSettingsField field, String value)? changeSettings,
+  }) {
+    return updateAlignerSettings?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? getPatient,
+    TResult Function(int? patientId)? getCases,
+    TResult Function(PatientCaseBody body)? postCase,
+    TResult Function()? updateAlignerSettings,
+    TResult Function(AlignerSettingsField field, String value)? changeSettings,
+    required TResult orElse(),
+  }) {
+    if (updateAlignerSettings != null) {
+      return updateAlignerSettings();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPatient value) getPatient,
+    required TResult Function(GetCases value) getCases,
+    required TResult Function(PostCase value) postCase,
+    required TResult Function(UpdateAlignerSettings value)
+        updateAlignerSettings,
+    required TResult Function(ChangeSettings value) changeSettings,
+  }) {
+    return updateAlignerSettings(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPatient value)? getPatient,
+    TResult? Function(GetCases value)? getCases,
+    TResult? Function(PostCase value)? postCase,
+    TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult? Function(ChangeSettings value)? changeSettings,
+  }) {
+    return updateAlignerSettings?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPatient value)? getPatient,
+    TResult Function(GetCases value)? getCases,
+    TResult Function(PostCase value)? postCase,
+    TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult Function(ChangeSettings value)? changeSettings,
+    required TResult orElse(),
+  }) {
+    if (updateAlignerSettings != null) {
+      return updateAlignerSettings(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateAlignerSettings implements PatientEvent {
+  const factory UpdateAlignerSettings() = _$UpdateAlignerSettingsImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangeSettingsImplCopyWith<$Res> {
+  factory _$$ChangeSettingsImplCopyWith(_$ChangeSettingsImpl value,
+          $Res Function(_$ChangeSettingsImpl) then) =
+      __$$ChangeSettingsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AlignerSettingsField field, String value});
+}
+
+/// @nodoc
+class __$$ChangeSettingsImplCopyWithImpl<$Res>
+    extends _$PatientEventCopyWithImpl<$Res, _$ChangeSettingsImpl>
+    implements _$$ChangeSettingsImplCopyWith<$Res> {
+  __$$ChangeSettingsImplCopyWithImpl(
+      _$ChangeSettingsImpl _value, $Res Function(_$ChangeSettingsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? value = null,
+  }) {
+    return _then(_$ChangeSettingsImpl(
+      null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as AlignerSettingsField,
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeSettingsImpl implements ChangeSettings {
+  const _$ChangeSettingsImpl(this.field, this.value);
+
+  @override
+  final AlignerSettingsField field;
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'PatientEvent.changeSettings(field: $field, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeSettingsImpl &&
+            (identical(other.field, field) || other.field == field) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, field, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeSettingsImplCopyWith<_$ChangeSettingsImpl> get copyWith =>
+      __$$ChangeSettingsImplCopyWithImpl<_$ChangeSettingsImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) getPatient,
+    required TResult Function(int? patientId) getCases,
+    required TResult Function(PatientCaseBody body) postCase,
+    required TResult Function() updateAlignerSettings,
+    required TResult Function(AlignerSettingsField field, String value)
+        changeSettings,
+  }) {
+    return changeSettings(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? getPatient,
+    TResult? Function(int? patientId)? getCases,
+    TResult? Function(PatientCaseBody body)? postCase,
+    TResult? Function()? updateAlignerSettings,
+    TResult? Function(AlignerSettingsField field, String value)? changeSettings,
+  }) {
+    return changeSettings?.call(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? getPatient,
+    TResult Function(int? patientId)? getCases,
+    TResult Function(PatientCaseBody body)? postCase,
+    TResult Function()? updateAlignerSettings,
+    TResult Function(AlignerSettingsField field, String value)? changeSettings,
+    required TResult orElse(),
+  }) {
+    if (changeSettings != null) {
+      return changeSettings(field, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPatient value) getPatient,
+    required TResult Function(GetCases value) getCases,
+    required TResult Function(PostCase value) postCase,
+    required TResult Function(UpdateAlignerSettings value)
+        updateAlignerSettings,
+    required TResult Function(ChangeSettings value) changeSettings,
+  }) {
+    return changeSettings(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPatient value)? getPatient,
+    TResult? Function(GetCases value)? getCases,
+    TResult? Function(PostCase value)? postCase,
+    TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult? Function(ChangeSettings value)? changeSettings,
+  }) {
+    return changeSettings?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPatient value)? getPatient,
+    TResult Function(GetCases value)? getCases,
+    TResult Function(PostCase value)? postCase,
+    TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult Function(ChangeSettings value)? changeSettings,
+    required TResult orElse(),
+  }) {
+    if (changeSettings != null) {
+      return changeSettings(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeSettings implements PatientEvent {
+  const factory ChangeSettings(
+          final AlignerSettingsField field, final String value) =
+      _$ChangeSettingsImpl;
+
+  AlignerSettingsField get field;
+  String get value;
+  @JsonKey(ignore: true)
+  _$$ChangeSettingsImplCopyWith<_$ChangeSettingsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1074,6 +1419,8 @@ mixin _$PatientStateViewModel {
   PatientEntity? get patient => throw _privateConstructorUsedError;
   List<CaseEntity> get cases => throw _privateConstructorUsedError;
   PatientCaseBody? get patientCaseBody => throw _privateConstructorUsedError;
+  InitialSettingsBody? get alignerSettingsBody =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PatientStateViewModelCopyWith<PatientStateViewModel> get copyWith =>
@@ -1089,7 +1436,8 @@ abstract class $PatientStateViewModelCopyWith<$Res> {
   $Res call(
       {PatientEntity? patient,
       List<CaseEntity> cases,
-      PatientCaseBody? patientCaseBody});
+      PatientCaseBody? patientCaseBody,
+      InitialSettingsBody? alignerSettingsBody});
 }
 
 /// @nodoc
@@ -1109,6 +1457,7 @@ class _$PatientStateViewModelCopyWithImpl<$Res,
     Object? patient = freezed,
     Object? cases = null,
     Object? patientCaseBody = freezed,
+    Object? alignerSettingsBody = freezed,
   }) {
     return _then(_value.copyWith(
       patient: freezed == patient
@@ -1123,6 +1472,10 @@ class _$PatientStateViewModelCopyWithImpl<$Res,
           ? _value.patientCaseBody
           : patientCaseBody // ignore: cast_nullable_to_non_nullable
               as PatientCaseBody?,
+      alignerSettingsBody: freezed == alignerSettingsBody
+          ? _value.alignerSettingsBody
+          : alignerSettingsBody // ignore: cast_nullable_to_non_nullable
+              as InitialSettingsBody?,
     ) as $Val);
   }
 }
@@ -1139,7 +1492,8 @@ abstract class _$$PatientStateViewModelImplCopyWith<$Res>
   $Res call(
       {PatientEntity? patient,
       List<CaseEntity> cases,
-      PatientCaseBody? patientCaseBody});
+      PatientCaseBody? patientCaseBody,
+      InitialSettingsBody? alignerSettingsBody});
 }
 
 /// @nodoc
@@ -1157,6 +1511,7 @@ class __$$PatientStateViewModelImplCopyWithImpl<$Res>
     Object? patient = freezed,
     Object? cases = null,
     Object? patientCaseBody = freezed,
+    Object? alignerSettingsBody = freezed,
   }) {
     return _then(_$PatientStateViewModelImpl(
       patient: freezed == patient
@@ -1171,6 +1526,10 @@ class __$$PatientStateViewModelImplCopyWithImpl<$Res>
           ? _value.patientCaseBody
           : patientCaseBody // ignore: cast_nullable_to_non_nullable
               as PatientCaseBody?,
+      alignerSettingsBody: freezed == alignerSettingsBody
+          ? _value.alignerSettingsBody
+          : alignerSettingsBody // ignore: cast_nullable_to_non_nullable
+              as InitialSettingsBody?,
     ));
   }
 }
@@ -1181,7 +1540,8 @@ class _$PatientStateViewModelImpl implements _PatientStateViewModel {
   _$PatientStateViewModelImpl(
       {this.patient = null,
       final List<CaseEntity> cases = const [],
-      this.patientCaseBody = null})
+      this.patientCaseBody = null,
+      this.alignerSettingsBody = null})
       : _cases = cases;
 
   @override
@@ -1199,10 +1559,13 @@ class _$PatientStateViewModelImpl implements _PatientStateViewModel {
   @override
   @JsonKey()
   final PatientCaseBody? patientCaseBody;
+  @override
+  @JsonKey()
+  final InitialSettingsBody? alignerSettingsBody;
 
   @override
   String toString() {
-    return 'PatientStateViewModel(patient: $patient, cases: $cases, patientCaseBody: $patientCaseBody)';
+    return 'PatientStateViewModel(patient: $patient, cases: $cases, patientCaseBody: $patientCaseBody, alignerSettingsBody: $alignerSettingsBody)';
   }
 
   @override
@@ -1213,12 +1576,18 @@ class _$PatientStateViewModelImpl implements _PatientStateViewModel {
             (identical(other.patient, patient) || other.patient == patient) &&
             const DeepCollectionEquality().equals(other._cases, _cases) &&
             (identical(other.patientCaseBody, patientCaseBody) ||
-                other.patientCaseBody == patientCaseBody));
+                other.patientCaseBody == patientCaseBody) &&
+            (identical(other.alignerSettingsBody, alignerSettingsBody) ||
+                other.alignerSettingsBody == alignerSettingsBody));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, patient,
-      const DeepCollectionEquality().hash(_cases), patientCaseBody);
+  int get hashCode => Object.hash(
+      runtimeType,
+      patient,
+      const DeepCollectionEquality().hash(_cases),
+      patientCaseBody,
+      alignerSettingsBody);
 
   @JsonKey(ignore: true)
   @override
@@ -1230,9 +1599,11 @@ class _$PatientStateViewModelImpl implements _PatientStateViewModel {
 
 abstract class _PatientStateViewModel implements PatientStateViewModel {
   factory _PatientStateViewModel(
-      {final PatientEntity? patient,
-      final List<CaseEntity> cases,
-      final PatientCaseBody? patientCaseBody}) = _$PatientStateViewModelImpl;
+          {final PatientEntity? patient,
+          final List<CaseEntity> cases,
+          final PatientCaseBody? patientCaseBody,
+          final InitialSettingsBody? alignerSettingsBody}) =
+      _$PatientStateViewModelImpl;
 
   @override
   PatientEntity? get patient;
@@ -1240,6 +1611,8 @@ abstract class _PatientStateViewModel implements PatientStateViewModel {
   List<CaseEntity> get cases;
   @override
   PatientCaseBody? get patientCaseBody;
+  @override
+  InitialSettingsBody? get alignerSettingsBody;
   @override
   @JsonKey(ignore: true)
   _$$PatientStateViewModelImplCopyWith<_$PatientStateViewModelImpl>

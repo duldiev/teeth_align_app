@@ -9,4 +9,11 @@ class PatientEvent with _$PatientEvent {
   ) = GetCases;
 
   const factory PatientEvent.postCase(PatientCaseBody body) = PostCase;
+
+  const factory PatientEvent.updateAlignerSettings() = UpdateAlignerSettings;
+
+  const factory PatientEvent.changeSettings(
+    AlignerSettingsField field,
+    String value,
+  ) = ChangeSettings;
 }

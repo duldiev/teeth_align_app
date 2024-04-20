@@ -40,5 +40,6 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: AlignerSettingsRoute.page),
         AutoRoute(page: DefaultWebView.page),
         AutoRoute(page: LeaderboardRoute.page),
+        AutoRoute(page: AccountListRoute.page),
       ];
 }

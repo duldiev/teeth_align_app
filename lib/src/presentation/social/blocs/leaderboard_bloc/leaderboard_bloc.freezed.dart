@@ -737,7 +737,7 @@ abstract class _Failed implements LeaderboardState {
 
 /// @nodoc
 mixin _$LeaderboardStateViewModel {
-  List<DoctorEntity> get leaders => throw _privateConstructorUsedError;
+  List<DoctorShortEntity> get leaders => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LeaderboardStateViewModelCopyWith<LeaderboardStateViewModel> get copyWith =>
@@ -750,7 +750,7 @@ abstract class $LeaderboardStateViewModelCopyWith<$Res> {
           $Res Function(LeaderboardStateViewModel) then) =
       _$LeaderboardStateViewModelCopyWithImpl<$Res, LeaderboardStateViewModel>;
   @useResult
-  $Res call({List<DoctorEntity> leaders});
+  $Res call({List<DoctorShortEntity> leaders});
 }
 
 /// @nodoc
@@ -773,7 +773,7 @@ class _$LeaderboardStateViewModelCopyWithImpl<$Res,
       leaders: null == leaders
           ? _value.leaders
           : leaders // ignore: cast_nullable_to_non_nullable
-              as List<DoctorEntity>,
+              as List<DoctorShortEntity>,
     ) as $Val);
   }
 }
@@ -787,7 +787,7 @@ abstract class _$$LeaderboardStateViewModelImplCopyWith<$Res>
       __$$LeaderboardStateViewModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<DoctorEntity> leaders});
+  $Res call({List<DoctorShortEntity> leaders});
 }
 
 /// @nodoc
@@ -809,7 +809,7 @@ class __$$LeaderboardStateViewModelImplCopyWithImpl<$Res>
       leaders: null == leaders
           ? _value._leaders
           : leaders // ignore: cast_nullable_to_non_nullable
-              as List<DoctorEntity>,
+              as List<DoctorShortEntity>,
     ));
   }
 }
@@ -817,14 +817,15 @@ class __$$LeaderboardStateViewModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LeaderboardStateViewModelImpl extends _LeaderboardStateViewModel {
-  _$LeaderboardStateViewModelImpl({final List<DoctorEntity> leaders = const []})
+  _$LeaderboardStateViewModelImpl(
+      {final List<DoctorShortEntity> leaders = const []})
       : _leaders = leaders,
         super._();
 
-  final List<DoctorEntity> _leaders;
+  final List<DoctorShortEntity> _leaders;
   @override
   @JsonKey()
-  List<DoctorEntity> get leaders {
+  List<DoctorShortEntity> get leaders {
     if (_leaders is EqualUnmodifiableListView) return _leaders;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_leaders);
@@ -856,12 +857,12 @@ class _$LeaderboardStateViewModelImpl extends _LeaderboardStateViewModel {
 }
 
 abstract class _LeaderboardStateViewModel extends LeaderboardStateViewModel {
-  factory _LeaderboardStateViewModel({final List<DoctorEntity> leaders}) =
+  factory _LeaderboardStateViewModel({final List<DoctorShortEntity> leaders}) =
       _$LeaderboardStateViewModelImpl;
   _LeaderboardStateViewModel._() : super._();
 
   @override
-  List<DoctorEntity> get leaders;
+  List<DoctorShortEntity> get leaders;
   @override
   @JsonKey(ignore: true)
   _$$LeaderboardStateViewModelImplCopyWith<_$LeaderboardStateViewModelImpl>

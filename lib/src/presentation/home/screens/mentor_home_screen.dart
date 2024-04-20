@@ -8,6 +8,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/mentor_bloc/mentor_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/doctor_list_tile.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/list_header.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/buttons/chat_button.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:teeth_align_app/src/shared/widgets/logo_title.dart';
@@ -40,7 +41,12 @@ class MentorHomeScreen extends StatelessWidget {
                 loading: () => const SizedBox(),
                 loaded: (data) => Column(
                   children: [
-                    ListHeader(title: 'My doctors', onShowAll: () {}),
+                    ListHeader(
+                      title: 'My doctors',
+                      onShowAll: () => context.router.push(
+                        AccountListRoute(accounts: data.doctors),
+                      ),
+                    ),
                     Gap(2.h),
                     Column(
                       children: [

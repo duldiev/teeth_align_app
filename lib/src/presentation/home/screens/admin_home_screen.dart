@@ -11,6 +11,7 @@ import 'package:teeth_align_app/src/presentation/home/widgets/doctor_list_tile.d
 import 'package:teeth_align_app/src/presentation/home/widgets/list_header.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/mentor_list_tile.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/patient_list_tile.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 
 @RoutePage()
@@ -55,7 +56,12 @@ class AdminHomeScreen extends StatelessWidget {
                   children: [
                     if (data.mentors.isNotEmpty) ...[
                       Divider(height: 4.h),
-                      ListHeader(title: 'Мои менторы', onShowAll: () {}),
+                      ListHeader(
+                        title: 'Мои менторы',
+                        onShowAll: () => context.router.push(
+                          AccountListRoute(accounts: data.mentors),
+                        ),
+                      ),
                       Gap(2.h),
                       Column(
                         children: [
@@ -88,7 +94,12 @@ class AdminHomeScreen extends StatelessWidget {
                     ],
                     if (data.doctors.isNotEmpty) ...[
                       Divider(height: 4.h),
-                      ListHeader(title: 'Мои доктора', onShowAll: () {}),
+                      ListHeader(
+                        title: 'Мои доктора',
+                        onShowAll: () => context.router.push(
+                          AccountListRoute(accounts: data.doctors),
+                        ),
+                      ),
                       Gap(2.h),
                       Column(
                         children: [
@@ -121,7 +132,12 @@ class AdminHomeScreen extends StatelessWidget {
                     ],
                     if (data.patients.isNotEmpty) ...[
                       Divider(height: 4.h),
-                      ListHeader(title: 'Мои пациенты', onShowAll: () {}),
+                      ListHeader(
+                        title: 'Мои пациенты',
+                        onShowAll: () => context.router.push(
+                          AccountListRoute(accounts: data.patients),
+                        ),
+                      ),
                       Gap(2.h),
                       Column(
                         children: [

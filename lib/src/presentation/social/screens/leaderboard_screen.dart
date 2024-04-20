@@ -1,12 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
-import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
+import 'package:teeth_align_app/src/domain/entity/doctor_short_entity.dart';
 import 'package:teeth_align_app/src/presentation/social/blocs/leaderboard_bloc/leaderboard_bloc.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
@@ -31,7 +30,7 @@ class LeaderboardScreen extends StatelessWidget {
               alignment: Alignment.topCenter,
               children: [
                 Positioned.fill(
-                  top: 20.h,
+                  top: 22.h,
                   child: Container(
                     decoration: BoxDecoration(
                       color: AppColors.post,
@@ -44,14 +43,14 @@ class LeaderboardScreen extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 4.w),
                       itemBuilder: (context, index) => Gap(2.h),
                       separatorBuilder: (context, index) => LeaderTile(
-                        doctor: data.leaders[index],
+                        doctor: data.leaders[index + 3],
                       ),
-                      itemCount: data.leaders.length,
+                      itemCount: data.leaders.length - 3,
                     ),
                   ),
                 ),
                 Positioned.fromRect(
-                  rect: Rect.fromLTWH(0, 4.h, 100.w, 80),
+                  rect: Rect.fromLTWH(0, 8.h, 100.w, 80),
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 4.w),
                     child: Row(
@@ -59,16 +58,16 @@ class LeaderboardScreen extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Expanded(
-                          child: TopLeader(),
+                          child: TopLeader(doctor: data.leaders[0]),
                         ),
                         Expanded(
                           child: Transform.scale(
                             scale: 1.4,
-                            child: TopLeader(),
+                            child: TopLeader(doctor: data.leaders[1]),
                           ),
                         ),
                         Expanded(
-                          child: TopLeader(),
+                          child: TopLeader(doctor: data.leaders[2]),
                         ),
                       ],
                     ),
@@ -87,7 +86,10 @@ class LeaderboardScreen extends StatelessWidget {
 class TopLeader extends StatelessWidget {
   const TopLeader({
     super.key,
+    required this.doctor,
   });
+
+  final DoctorShortEntity doctor;
 
   @override
   Widget build(BuildContext context) {
@@ -132,6 +134,20 @@ class TopLeader extends StatelessWidget {
             ),
           ),
         ),
+        Positioned(
+          top: 0,
+          child: Transform.translate(
+            offset: const Offset(0, -28),
+            child: Text(
+              '${doctor.firstName}\n${doctor.lastName}',
+              style: context.textTheme.bodySmall?.copyWith(
+                fontWeight: FontWeight.bold,
+                height: 1,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
       ],
     );
   }
@@ -143,7 +159,7 @@ class LeaderTile extends StatelessWidget {
     required this.doctor,
   });
 
-  final DoctorEntity doctor;
+  final DoctorShortEntity doctor;
 
   @override
   Widget build(BuildContext context) {

@@ -13,7 +13,7 @@ class LeaderboardState with _$LeaderboardState {
 @freezed
 class LeaderboardStateViewModel with _$LeaderboardStateViewModel {
   factory LeaderboardStateViewModel({
-    @Default([]) List<DoctorEntity> leaders,
+    @Default([]) List<DoctorShortEntity> leaders,
   }) = _LeaderboardStateViewModel;
 
   const LeaderboardStateViewModel._();

@@ -4,9 +4,11 @@ import 'package:teeth_align_app/src/core/exceptions/failure.dart';
 import 'package:teeth_align_app/src/core/services/base_client.dart';
 import 'package:teeth_align_app/src/data/body/doctor_case_body.dart';
 import 'package:teeth_align_app/src/data/models/doctor_model.dart';
+import 'package:teeth_align_app/src/data/models/doctor_short_model.dart';
 import 'package:teeth_align_app/src/data/models/mentor_model.dart';
 import 'package:teeth_align_app/src/data/models/patient_model.dart';
 import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
+import 'package:teeth_align_app/src/domain/entity/doctor_short_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/patient_entity.dart';
 import 'package:teeth_align_app/src/domain/repository/i_doctor_repository.dart';
@@ -74,7 +76,7 @@ class DoctorRepository extends BaseClient implements IDoctorRepository {
   }
 
   @override
-  Future<Either<Failure, List<DoctorEntity>>> getLeaderboard() async {
+  Future<Either<Failure, List<DoctorShortEntity>>> getLeaderboard() async {
     return (await call(
       RestMethod.get,
       '/api/v1/doctor/leaderboard',
@@ -82,7 +84,7 @@ class DoctorRepository extends BaseClient implements IDoctorRepository {
         .fold(
       (l) => Left(l),
       (r) => Right(
-        (r as List).map((e) => DoctorModel.fromMap(e)).toList(),
+        (r['items'] as List).map((e) => DoctorShortModel.fromMap(e)).toList(),
       ),
     );
   }

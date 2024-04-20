@@ -8,6 +8,7 @@ import 'package:teeth_align_app/src/presentation/home/blocs/doctor_bloc/doctor_b
 import 'package:teeth_align_app/src/presentation/home/widgets/list_header.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/mentor_list_tile.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/patient_list_tile.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/buttons/chat_button.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:teeth_align_app/src/shared/refreshers/pull_refresher.dart';
@@ -22,11 +23,14 @@ class DoctorHomeScreen extends StatelessWidget {
     return BlocBuilder<DoctorBloc, DoctorState>(
       builder: (context, state) {
         return Scaffold(
-          appBar:
-              MyAppBar(title: const LogoTitle(), centerTitle: true, actions: [
-            const ChatButton(),
-            Gap(4.w),
-          ]),
+          appBar: MyAppBar(
+            title: const LogoTitle(),
+            centerTitle: true,
+            actions: [
+              const ChatButton(),
+              Gap(4.w),
+            ],
+          ),
           body: SafeArea(
             child: PullRefresher(
               onRefresh: () async => context.read<DoctorBloc>().add(
@@ -43,7 +47,12 @@ class DoctorHomeScreen extends StatelessWidget {
                   loading: () => const SizedBox(),
                   loaded: (data) => Column(
                     children: [
-                      ListHeader(title: 'Мои менторы', onShowAll: () {}),
+                      ListHeader(
+                        title: 'Мои менторы',
+                        onShowAll: () => context.router.push(
+                          AccountListRoute(accounts: data.mentors),
+                        ),
+                      ),
                       Gap(2.h),
                       Column(
                         children: [
@@ -75,7 +84,12 @@ class DoctorHomeScreen extends StatelessWidget {
                       ),
                       if (data.patients.isNotEmpty) ...[
                         Divider(height: 4.h),
-                        ListHeader(title: 'Мои пациенты', onShowAll: () {}),
+                        ListHeader(
+                          title: 'Мои пациенты',
+                          onShowAll: () => context.router.push(
+                            AccountListRoute(accounts: data.patients),
+                          ),
+                        ),
                         Gap(2.h),
                         Column(
                           children: [

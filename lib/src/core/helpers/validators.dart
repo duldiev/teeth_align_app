@@ -18,6 +18,13 @@ class Validators {
     return null;
   }
 
+  static String? empty(String? value) {
+    if (value == null) {
+      return 'Поле пустое';
+    }
+    return null;
+  }
+
   static String? iin(String? value) {
     if (value?.isEmpty == true) {
       return '$_emptyText IIN';

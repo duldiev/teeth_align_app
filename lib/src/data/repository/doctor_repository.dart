@@ -88,4 +88,17 @@ class DoctorRepository extends BaseClient implements IDoctorRepository {
       ),
     );
   }
+
+  @override
+  Future<Either<Failure, Unit>> createProfile(DoctorEntity body) async {
+    return (await call(
+      RestMethod.put,
+      '/api/v1/doctor/profile',
+      body: body.toMap(),
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => const Right(unit),
+    );
+  }
 }

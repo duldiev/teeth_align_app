@@ -16,5 +16,12 @@ class SignUpEvent with _$SignUpEvent {
     required dynamic value,
   }) = ChangeProfileField;
 
+  const factory SignUpEvent.changeDProfileField({
+    required DProfileField field,
+    required dynamic value,
+  }) = ChangeDProfileField;
+
   const factory SignUpEvent.pickImage() = PickImage;
+
+  const factory SignUpEvent.createDoctor() = CreateDoctor;
 }

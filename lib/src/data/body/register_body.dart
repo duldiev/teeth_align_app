@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:equatable/equatable.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 
@@ -7,7 +6,7 @@ class RegisterBody extends Equatable {
   final String email;
   final String code;
   final String imageUrl;
-  final String langKey;
+  final String? langKey;
   final String password;
   final String passwordConfirm;
   final Role role;
@@ -25,11 +24,11 @@ class RegisterBody extends Equatable {
     required this.uniqueId,
   });
 
-  static RegisterBody empty() => RegisterBody(
+  static RegisterBody empty() => const RegisterBody(
         username: '',
         email: '',
         imageUrl: '',
-        langKey: Platform.localeName,
+        langKey: null,
         password: '',
         passwordConfirm: '',
         code: '',
@@ -47,7 +46,7 @@ class RegisterBody extends Equatable {
       };
 
   Map<String, dynamic> toConfirmCodeMap() => {
-        'key': code,
+        'email': email,
       }; // receives access token
 
   RegisterBody copyWith({

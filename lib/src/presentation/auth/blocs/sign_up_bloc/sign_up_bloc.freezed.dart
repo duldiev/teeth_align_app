@@ -24,7 +24,10 @@ mixin _$SignUpEvent {
         changeRegisterField,
     required TResult Function(ProfileField field, dynamic value)
         changeProfileField,
+    required TResult Function(DProfileField field, dynamic value)
+        changeDProfileField,
     required TResult Function() pickImage,
+    required TResult Function() createDoctor,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,7 +36,9 @@ mixin _$SignUpEvent {
     TResult? Function()? prevField,
     TResult? Function(SignUpField field, dynamic value)? changeRegisterField,
     TResult? Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult? Function(DProfileField field, dynamic value)? changeDProfileField,
     TResult? Function()? pickImage,
+    TResult? Function()? createDoctor,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,7 +47,9 @@ mixin _$SignUpEvent {
     TResult Function()? prevField,
     TResult Function(SignUpField field, dynamic value)? changeRegisterField,
     TResult Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult Function(DProfileField field, dynamic value)? changeDProfileField,
     TResult Function()? pickImage,
+    TResult Function()? createDoctor,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,7 +59,9 @@ mixin _$SignUpEvent {
     required TResult Function(PrevField value) prevField,
     required TResult Function(ChangeRegisterField value) changeRegisterField,
     required TResult Function(ChangeProfileField value) changeProfileField,
+    required TResult Function(ChangeDProfileField value) changeDProfileField,
     required TResult Function(PickImage value) pickImage,
+    required TResult Function(CreateDoctor value) createDoctor,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,7 +70,9 @@ mixin _$SignUpEvent {
     TResult? Function(PrevField value)? prevField,
     TResult? Function(ChangeRegisterField value)? changeRegisterField,
     TResult? Function(ChangeProfileField value)? changeProfileField,
+    TResult? Function(ChangeDProfileField value)? changeDProfileField,
     TResult? Function(PickImage value)? pickImage,
+    TResult? Function(CreateDoctor value)? createDoctor,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,7 +81,9 @@ mixin _$SignUpEvent {
     TResult Function(PrevField value)? prevField,
     TResult Function(ChangeRegisterField value)? changeRegisterField,
     TResult Function(ChangeProfileField value)? changeProfileField,
+    TResult Function(ChangeDProfileField value)? changeDProfileField,
     TResult Function(PickImage value)? pickImage,
+    TResult Function(CreateDoctor value)? createDoctor,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -138,7 +151,10 @@ class _$NextFieldImpl implements NextField {
         changeRegisterField,
     required TResult Function(ProfileField field, dynamic value)
         changeProfileField,
+    required TResult Function(DProfileField field, dynamic value)
+        changeDProfileField,
     required TResult Function() pickImage,
+    required TResult Function() createDoctor,
   }) {
     return nextField();
   }
@@ -150,7 +166,9 @@ class _$NextFieldImpl implements NextField {
     TResult? Function()? prevField,
     TResult? Function(SignUpField field, dynamic value)? changeRegisterField,
     TResult? Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult? Function(DProfileField field, dynamic value)? changeDProfileField,
     TResult? Function()? pickImage,
+    TResult? Function()? createDoctor,
   }) {
     return nextField?.call();
   }
@@ -162,7 +180,9 @@ class _$NextFieldImpl implements NextField {
     TResult Function()? prevField,
     TResult Function(SignUpField field, dynamic value)? changeRegisterField,
     TResult Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult Function(DProfileField field, dynamic value)? changeDProfileField,
     TResult Function()? pickImage,
+    TResult Function()? createDoctor,
     required TResult orElse(),
   }) {
     if (nextField != null) {
@@ -178,7 +198,9 @@ class _$NextFieldImpl implements NextField {
     required TResult Function(PrevField value) prevField,
     required TResult Function(ChangeRegisterField value) changeRegisterField,
     required TResult Function(ChangeProfileField value) changeProfileField,
+    required TResult Function(ChangeDProfileField value) changeDProfileField,
     required TResult Function(PickImage value) pickImage,
+    required TResult Function(CreateDoctor value) createDoctor,
   }) {
     return nextField(this);
   }
@@ -190,7 +212,9 @@ class _$NextFieldImpl implements NextField {
     TResult? Function(PrevField value)? prevField,
     TResult? Function(ChangeRegisterField value)? changeRegisterField,
     TResult? Function(ChangeProfileField value)? changeProfileField,
+    TResult? Function(ChangeDProfileField value)? changeDProfileField,
     TResult? Function(PickImage value)? pickImage,
+    TResult? Function(CreateDoctor value)? createDoctor,
   }) {
     return nextField?.call(this);
   }
@@ -202,7 +226,9 @@ class _$NextFieldImpl implements NextField {
     TResult Function(PrevField value)? prevField,
     TResult Function(ChangeRegisterField value)? changeRegisterField,
     TResult Function(ChangeProfileField value)? changeProfileField,
+    TResult Function(ChangeDProfileField value)? changeDProfileField,
     TResult Function(PickImage value)? pickImage,
+    TResult Function(CreateDoctor value)? createDoctor,
     required TResult orElse(),
   }) {
     if (nextField != null) {
@@ -260,7 +286,10 @@ class _$PrevFieldImpl implements PrevField {
         changeRegisterField,
     required TResult Function(ProfileField field, dynamic value)
         changeProfileField,
+    required TResult Function(DProfileField field, dynamic value)
+        changeDProfileField,
     required TResult Function() pickImage,
+    required TResult Function() createDoctor,
   }) {
     return prevField();
   }
@@ -272,7 +301,9 @@ class _$PrevFieldImpl implements PrevField {
     TResult? Function()? prevField,
     TResult? Function(SignUpField field, dynamic value)? changeRegisterField,
     TResult? Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult? Function(DProfileField field, dynamic value)? changeDProfileField,
     TResult? Function()? pickImage,
+    TResult? Function()? createDoctor,
   }) {
     return prevField?.call();
   }
@@ -284,7 +315,9 @@ class _$PrevFieldImpl implements PrevField {
     TResult Function()? prevField,
     TResult Function(SignUpField field, dynamic value)? changeRegisterField,
     TResult Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult Function(DProfileField field, dynamic value)? changeDProfileField,
     TResult Function()? pickImage,
+    TResult Function()? createDoctor,
     required TResult orElse(),
   }) {
     if (prevField != null) {
@@ -300,7 +333,9 @@ class _$PrevFieldImpl implements PrevField {
     required TResult Function(PrevField value) prevField,
     required TResult Function(ChangeRegisterField value) changeRegisterField,
     required TResult Function(ChangeProfileField value) changeProfileField,
+    required TResult Function(ChangeDProfileField value) changeDProfileField,
     required TResult Function(PickImage value) pickImage,
+    required TResult Function(CreateDoctor value) createDoctor,
   }) {
     return prevField(this);
   }
@@ -312,7 +347,9 @@ class _$PrevFieldImpl implements PrevField {
     TResult? Function(PrevField value)? prevField,
     TResult? Function(ChangeRegisterField value)? changeRegisterField,
     TResult? Function(ChangeProfileField value)? changeProfileField,
+    TResult? Function(ChangeDProfileField value)? changeDProfileField,
     TResult? Function(PickImage value)? pickImage,
+    TResult? Function(CreateDoctor value)? createDoctor,
   }) {
     return prevField?.call(this);
   }
@@ -324,7 +361,9 @@ class _$PrevFieldImpl implements PrevField {
     TResult Function(PrevField value)? prevField,
     TResult Function(ChangeRegisterField value)? changeRegisterField,
     TResult Function(ChangeProfileField value)? changeProfileField,
+    TResult Function(ChangeDProfileField value)? changeDProfileField,
     TResult Function(PickImage value)? pickImage,
+    TResult Function(CreateDoctor value)? createDoctor,
     required TResult orElse(),
   }) {
     if (prevField != null) {
@@ -418,7 +457,10 @@ class _$ChangeRegisterFieldImpl implements ChangeRegisterField {
         changeRegisterField,
     required TResult Function(ProfileField field, dynamic value)
         changeProfileField,
+    required TResult Function(DProfileField field, dynamic value)
+        changeDProfileField,
     required TResult Function() pickImage,
+    required TResult Function() createDoctor,
   }) {
     return changeRegisterField(field, value);
   }
@@ -430,7 +472,9 @@ class _$ChangeRegisterFieldImpl implements ChangeRegisterField {
     TResult? Function()? prevField,
     TResult? Function(SignUpField field, dynamic value)? changeRegisterField,
     TResult? Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult? Function(DProfileField field, dynamic value)? changeDProfileField,
     TResult? Function()? pickImage,
+    TResult? Function()? createDoctor,
   }) {
     return changeRegisterField?.call(field, value);
   }
@@ -442,7 +486,9 @@ class _$ChangeRegisterFieldImpl implements ChangeRegisterField {
     TResult Function()? prevField,
     TResult Function(SignUpField field, dynamic value)? changeRegisterField,
     TResult Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult Function(DProfileField field, dynamic value)? changeDProfileField,
     TResult Function()? pickImage,
+    TResult Function()? createDoctor,
     required TResult orElse(),
   }) {
     if (changeRegisterField != null) {
@@ -458,7 +504,9 @@ class _$ChangeRegisterFieldImpl implements ChangeRegisterField {
     required TResult Function(PrevField value) prevField,
     required TResult Function(ChangeRegisterField value) changeRegisterField,
     required TResult Function(ChangeProfileField value) changeProfileField,
+    required TResult Function(ChangeDProfileField value) changeDProfileField,
     required TResult Function(PickImage value) pickImage,
+    required TResult Function(CreateDoctor value) createDoctor,
   }) {
     return changeRegisterField(this);
   }
@@ -470,7 +518,9 @@ class _$ChangeRegisterFieldImpl implements ChangeRegisterField {
     TResult? Function(PrevField value)? prevField,
     TResult? Function(ChangeRegisterField value)? changeRegisterField,
     TResult? Function(ChangeProfileField value)? changeProfileField,
+    TResult? Function(ChangeDProfileField value)? changeDProfileField,
     TResult? Function(PickImage value)? pickImage,
+    TResult? Function(CreateDoctor value)? createDoctor,
   }) {
     return changeRegisterField?.call(this);
   }
@@ -482,7 +532,9 @@ class _$ChangeRegisterFieldImpl implements ChangeRegisterField {
     TResult Function(PrevField value)? prevField,
     TResult Function(ChangeRegisterField value)? changeRegisterField,
     TResult Function(ChangeProfileField value)? changeProfileField,
+    TResult Function(ChangeDProfileField value)? changeDProfileField,
     TResult Function(PickImage value)? pickImage,
+    TResult Function(CreateDoctor value)? createDoctor,
     required TResult orElse(),
   }) {
     if (changeRegisterField != null) {
@@ -584,7 +636,10 @@ class _$ChangeProfileFieldImpl implements ChangeProfileField {
         changeRegisterField,
     required TResult Function(ProfileField field, dynamic value)
         changeProfileField,
+    required TResult Function(DProfileField field, dynamic value)
+        changeDProfileField,
     required TResult Function() pickImage,
+    required TResult Function() createDoctor,
   }) {
     return changeProfileField(field, value);
   }
@@ -596,7 +651,9 @@ class _$ChangeProfileFieldImpl implements ChangeProfileField {
     TResult? Function()? prevField,
     TResult? Function(SignUpField field, dynamic value)? changeRegisterField,
     TResult? Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult? Function(DProfileField field, dynamic value)? changeDProfileField,
     TResult? Function()? pickImage,
+    TResult? Function()? createDoctor,
   }) {
     return changeProfileField?.call(field, value);
   }
@@ -608,7 +665,9 @@ class _$ChangeProfileFieldImpl implements ChangeProfileField {
     TResult Function()? prevField,
     TResult Function(SignUpField field, dynamic value)? changeRegisterField,
     TResult Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult Function(DProfileField field, dynamic value)? changeDProfileField,
     TResult Function()? pickImage,
+    TResult Function()? createDoctor,
     required TResult orElse(),
   }) {
     if (changeProfileField != null) {
@@ -624,7 +683,9 @@ class _$ChangeProfileFieldImpl implements ChangeProfileField {
     required TResult Function(PrevField value) prevField,
     required TResult Function(ChangeRegisterField value) changeRegisterField,
     required TResult Function(ChangeProfileField value) changeProfileField,
+    required TResult Function(ChangeDProfileField value) changeDProfileField,
     required TResult Function(PickImage value) pickImage,
+    required TResult Function(CreateDoctor value) createDoctor,
   }) {
     return changeProfileField(this);
   }
@@ -636,7 +697,9 @@ class _$ChangeProfileFieldImpl implements ChangeProfileField {
     TResult? Function(PrevField value)? prevField,
     TResult? Function(ChangeRegisterField value)? changeRegisterField,
     TResult? Function(ChangeProfileField value)? changeProfileField,
+    TResult? Function(ChangeDProfileField value)? changeDProfileField,
     TResult? Function(PickImage value)? pickImage,
+    TResult? Function(CreateDoctor value)? createDoctor,
   }) {
     return changeProfileField?.call(this);
   }
@@ -648,7 +711,9 @@ class _$ChangeProfileFieldImpl implements ChangeProfileField {
     TResult Function(PrevField value)? prevField,
     TResult Function(ChangeRegisterField value)? changeRegisterField,
     TResult Function(ChangeProfileField value)? changeProfileField,
+    TResult Function(ChangeDProfileField value)? changeDProfileField,
     TResult Function(PickImage value)? pickImage,
+    TResult Function(CreateDoctor value)? createDoctor,
     required TResult orElse(),
   }) {
     if (changeProfileField != null) {
@@ -667,6 +732,185 @@ abstract class ChangeProfileField implements SignUpEvent {
   dynamic get value;
   @JsonKey(ignore: true)
   _$$ChangeProfileFieldImplCopyWith<_$ChangeProfileFieldImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeDProfileFieldImplCopyWith<$Res> {
+  factory _$$ChangeDProfileFieldImplCopyWith(_$ChangeDProfileFieldImpl value,
+          $Res Function(_$ChangeDProfileFieldImpl) then) =
+      __$$ChangeDProfileFieldImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DProfileField field, dynamic value});
+}
+
+/// @nodoc
+class __$$ChangeDProfileFieldImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$ChangeDProfileFieldImpl>
+    implements _$$ChangeDProfileFieldImplCopyWith<$Res> {
+  __$$ChangeDProfileFieldImplCopyWithImpl(_$ChangeDProfileFieldImpl _value,
+      $Res Function(_$ChangeDProfileFieldImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? value = freezed,
+  }) {
+    return _then(_$ChangeDProfileFieldImpl(
+      field: null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as DProfileField,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeDProfileFieldImpl implements ChangeDProfileField {
+  const _$ChangeDProfileFieldImpl({required this.field, required this.value});
+
+  @override
+  final DProfileField field;
+  @override
+  final dynamic value;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.changeDProfileField(field: $field, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeDProfileFieldImpl &&
+            (identical(other.field, field) || other.field == field) &&
+            const DeepCollectionEquality().equals(other.value, value));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, field, const DeepCollectionEquality().hash(value));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeDProfileFieldImplCopyWith<_$ChangeDProfileFieldImpl> get copyWith =>
+      __$$ChangeDProfileFieldImplCopyWithImpl<_$ChangeDProfileFieldImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() nextField,
+    required TResult Function() prevField,
+    required TResult Function(SignUpField field, dynamic value)
+        changeRegisterField,
+    required TResult Function(ProfileField field, dynamic value)
+        changeProfileField,
+    required TResult Function(DProfileField field, dynamic value)
+        changeDProfileField,
+    required TResult Function() pickImage,
+    required TResult Function() createDoctor,
+  }) {
+    return changeDProfileField(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? nextField,
+    TResult? Function()? prevField,
+    TResult? Function(SignUpField field, dynamic value)? changeRegisterField,
+    TResult? Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult? Function(DProfileField field, dynamic value)? changeDProfileField,
+    TResult? Function()? pickImage,
+    TResult? Function()? createDoctor,
+  }) {
+    return changeDProfileField?.call(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nextField,
+    TResult Function()? prevField,
+    TResult Function(SignUpField field, dynamic value)? changeRegisterField,
+    TResult Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult Function(DProfileField field, dynamic value)? changeDProfileField,
+    TResult Function()? pickImage,
+    TResult Function()? createDoctor,
+    required TResult orElse(),
+  }) {
+    if (changeDProfileField != null) {
+      return changeDProfileField(field, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NextField value) nextField,
+    required TResult Function(PrevField value) prevField,
+    required TResult Function(ChangeRegisterField value) changeRegisterField,
+    required TResult Function(ChangeProfileField value) changeProfileField,
+    required TResult Function(ChangeDProfileField value) changeDProfileField,
+    required TResult Function(PickImage value) pickImage,
+    required TResult Function(CreateDoctor value) createDoctor,
+  }) {
+    return changeDProfileField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NextField value)? nextField,
+    TResult? Function(PrevField value)? prevField,
+    TResult? Function(ChangeRegisterField value)? changeRegisterField,
+    TResult? Function(ChangeProfileField value)? changeProfileField,
+    TResult? Function(ChangeDProfileField value)? changeDProfileField,
+    TResult? Function(PickImage value)? pickImage,
+    TResult? Function(CreateDoctor value)? createDoctor,
+  }) {
+    return changeDProfileField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NextField value)? nextField,
+    TResult Function(PrevField value)? prevField,
+    TResult Function(ChangeRegisterField value)? changeRegisterField,
+    TResult Function(ChangeProfileField value)? changeProfileField,
+    TResult Function(ChangeDProfileField value)? changeDProfileField,
+    TResult Function(PickImage value)? pickImage,
+    TResult Function(CreateDoctor value)? createDoctor,
+    required TResult orElse(),
+  }) {
+    if (changeDProfileField != null) {
+      return changeDProfileField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeDProfileField implements SignUpEvent {
+  const factory ChangeDProfileField(
+      {required final DProfileField field,
+      required final dynamic value}) = _$ChangeDProfileFieldImpl;
+
+  DProfileField get field;
+  dynamic get value;
+  @JsonKey(ignore: true)
+  _$$ChangeDProfileFieldImplCopyWith<_$ChangeDProfileFieldImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -714,7 +958,10 @@ class _$PickImageImpl implements PickImage {
         changeRegisterField,
     required TResult Function(ProfileField field, dynamic value)
         changeProfileField,
+    required TResult Function(DProfileField field, dynamic value)
+        changeDProfileField,
     required TResult Function() pickImage,
+    required TResult Function() createDoctor,
   }) {
     return pickImage();
   }
@@ -726,7 +973,9 @@ class _$PickImageImpl implements PickImage {
     TResult? Function()? prevField,
     TResult? Function(SignUpField field, dynamic value)? changeRegisterField,
     TResult? Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult? Function(DProfileField field, dynamic value)? changeDProfileField,
     TResult? Function()? pickImage,
+    TResult? Function()? createDoctor,
   }) {
     return pickImage?.call();
   }
@@ -738,7 +987,9 @@ class _$PickImageImpl implements PickImage {
     TResult Function()? prevField,
     TResult Function(SignUpField field, dynamic value)? changeRegisterField,
     TResult Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult Function(DProfileField field, dynamic value)? changeDProfileField,
     TResult Function()? pickImage,
+    TResult Function()? createDoctor,
     required TResult orElse(),
   }) {
     if (pickImage != null) {
@@ -754,7 +1005,9 @@ class _$PickImageImpl implements PickImage {
     required TResult Function(PrevField value) prevField,
     required TResult Function(ChangeRegisterField value) changeRegisterField,
     required TResult Function(ChangeProfileField value) changeProfileField,
+    required TResult Function(ChangeDProfileField value) changeDProfileField,
     required TResult Function(PickImage value) pickImage,
+    required TResult Function(CreateDoctor value) createDoctor,
   }) {
     return pickImage(this);
   }
@@ -766,7 +1019,9 @@ class _$PickImageImpl implements PickImage {
     TResult? Function(PrevField value)? prevField,
     TResult? Function(ChangeRegisterField value)? changeRegisterField,
     TResult? Function(ChangeProfileField value)? changeProfileField,
+    TResult? Function(ChangeDProfileField value)? changeDProfileField,
     TResult? Function(PickImage value)? pickImage,
+    TResult? Function(CreateDoctor value)? createDoctor,
   }) {
     return pickImage?.call(this);
   }
@@ -778,7 +1033,9 @@ class _$PickImageImpl implements PickImage {
     TResult Function(PrevField value)? prevField,
     TResult Function(ChangeRegisterField value)? changeRegisterField,
     TResult Function(ChangeProfileField value)? changeProfileField,
+    TResult Function(ChangeDProfileField value)? changeDProfileField,
     TResult Function(PickImage value)? pickImage,
+    TResult Function(CreateDoctor value)? createDoctor,
     required TResult orElse(),
   }) {
     if (pickImage != null) {
@@ -793,12 +1050,148 @@ abstract class PickImage implements SignUpEvent {
 }
 
 /// @nodoc
+abstract class _$$CreateDoctorImplCopyWith<$Res> {
+  factory _$$CreateDoctorImplCopyWith(
+          _$CreateDoctorImpl value, $Res Function(_$CreateDoctorImpl) then) =
+      __$$CreateDoctorImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CreateDoctorImplCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$CreateDoctorImpl>
+    implements _$$CreateDoctorImplCopyWith<$Res> {
+  __$$CreateDoctorImplCopyWithImpl(
+      _$CreateDoctorImpl _value, $Res Function(_$CreateDoctorImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CreateDoctorImpl implements CreateDoctor {
+  const _$CreateDoctorImpl();
+
+  @override
+  String toString() {
+    return 'SignUpEvent.createDoctor()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CreateDoctorImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() nextField,
+    required TResult Function() prevField,
+    required TResult Function(SignUpField field, dynamic value)
+        changeRegisterField,
+    required TResult Function(ProfileField field, dynamic value)
+        changeProfileField,
+    required TResult Function(DProfileField field, dynamic value)
+        changeDProfileField,
+    required TResult Function() pickImage,
+    required TResult Function() createDoctor,
+  }) {
+    return createDoctor();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? nextField,
+    TResult? Function()? prevField,
+    TResult? Function(SignUpField field, dynamic value)? changeRegisterField,
+    TResult? Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult? Function(DProfileField field, dynamic value)? changeDProfileField,
+    TResult? Function()? pickImage,
+    TResult? Function()? createDoctor,
+  }) {
+    return createDoctor?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? nextField,
+    TResult Function()? prevField,
+    TResult Function(SignUpField field, dynamic value)? changeRegisterField,
+    TResult Function(ProfileField field, dynamic value)? changeProfileField,
+    TResult Function(DProfileField field, dynamic value)? changeDProfileField,
+    TResult Function()? pickImage,
+    TResult Function()? createDoctor,
+    required TResult orElse(),
+  }) {
+    if (createDoctor != null) {
+      return createDoctor();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NextField value) nextField,
+    required TResult Function(PrevField value) prevField,
+    required TResult Function(ChangeRegisterField value) changeRegisterField,
+    required TResult Function(ChangeProfileField value) changeProfileField,
+    required TResult Function(ChangeDProfileField value) changeDProfileField,
+    required TResult Function(PickImage value) pickImage,
+    required TResult Function(CreateDoctor value) createDoctor,
+  }) {
+    return createDoctor(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NextField value)? nextField,
+    TResult? Function(PrevField value)? prevField,
+    TResult? Function(ChangeRegisterField value)? changeRegisterField,
+    TResult? Function(ChangeProfileField value)? changeProfileField,
+    TResult? Function(ChangeDProfileField value)? changeDProfileField,
+    TResult? Function(PickImage value)? pickImage,
+    TResult? Function(CreateDoctor value)? createDoctor,
+  }) {
+    return createDoctor?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NextField value)? nextField,
+    TResult Function(PrevField value)? prevField,
+    TResult Function(ChangeRegisterField value)? changeRegisterField,
+    TResult Function(ChangeProfileField value)? changeProfileField,
+    TResult Function(ChangeDProfileField value)? changeDProfileField,
+    TResult Function(PickImage value)? pickImage,
+    TResult Function(CreateDoctor value)? createDoctor,
+    required TResult orElse(),
+  }) {
+    if (createDoctor != null) {
+      return createDoctor(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateDoctor implements SignUpEvent {
+  const factory CreateDoctor() = _$CreateDoctorImpl;
+}
+
+/// @nodoc
 mixin _$SignUpState {
   LoadStatus get status => throw _privateConstructorUsedError;
   SignUpFieldsView get currentFieldsView => throw _privateConstructorUsedError;
   int get currentStepNumber => throw _privateConstructorUsedError;
   RegisterBody? get registerBody => throw _privateConstructorUsedError;
   ProfileEntity? get profileBody => throw _privateConstructorUsedError;
+  DoctorEntity? get doctorProfileBody => throw _privateConstructorUsedError;
   XFile? get pickedImage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -818,6 +1211,7 @@ abstract class $SignUpStateCopyWith<$Res> {
       int currentStepNumber,
       RegisterBody? registerBody,
       ProfileEntity? profileBody,
+      DoctorEntity? doctorProfileBody,
       XFile? pickedImage});
 }
 
@@ -839,6 +1233,7 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
     Object? currentStepNumber = null,
     Object? registerBody = freezed,
     Object? profileBody = freezed,
+    Object? doctorProfileBody = freezed,
     Object? pickedImage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -862,6 +1257,10 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
           ? _value.profileBody
           : profileBody // ignore: cast_nullable_to_non_nullable
               as ProfileEntity?,
+      doctorProfileBody: freezed == doctorProfileBody
+          ? _value.doctorProfileBody
+          : doctorProfileBody // ignore: cast_nullable_to_non_nullable
+              as DoctorEntity?,
       pickedImage: freezed == pickedImage
           ? _value.pickedImage
           : pickedImage // ignore: cast_nullable_to_non_nullable
@@ -884,6 +1283,7 @@ abstract class _$$SignUpStateImplCopyWith<$Res>
       int currentStepNumber,
       RegisterBody? registerBody,
       ProfileEntity? profileBody,
+      DoctorEntity? doctorProfileBody,
       XFile? pickedImage});
 }
 
@@ -903,6 +1303,7 @@ class __$$SignUpStateImplCopyWithImpl<$Res>
     Object? currentStepNumber = null,
     Object? registerBody = freezed,
     Object? profileBody = freezed,
+    Object? doctorProfileBody = freezed,
     Object? pickedImage = freezed,
   }) {
     return _then(_$SignUpStateImpl(
@@ -926,6 +1327,10 @@ class __$$SignUpStateImplCopyWithImpl<$Res>
           ? _value.profileBody
           : profileBody // ignore: cast_nullable_to_non_nullable
               as ProfileEntity?,
+      doctorProfileBody: freezed == doctorProfileBody
+          ? _value.doctorProfileBody
+          : doctorProfileBody // ignore: cast_nullable_to_non_nullable
+              as DoctorEntity?,
       pickedImage: freezed == pickedImage
           ? _value.pickedImage
           : pickedImage // ignore: cast_nullable_to_non_nullable
@@ -943,6 +1348,7 @@ class _$SignUpStateImpl extends _SignUpState {
       this.currentStepNumber = 1,
       this.registerBody = null,
       this.profileBody = null,
+      this.doctorProfileBody = null,
       this.pickedImage = null})
       : super._();
 
@@ -963,11 +1369,14 @@ class _$SignUpStateImpl extends _SignUpState {
   final ProfileEntity? profileBody;
   @override
   @JsonKey()
+  final DoctorEntity? doctorProfileBody;
+  @override
+  @JsonKey()
   final XFile? pickedImage;
 
   @override
   String toString() {
-    return 'SignUpState(status: $status, currentFieldsView: $currentFieldsView, currentStepNumber: $currentStepNumber, registerBody: $registerBody, profileBody: $profileBody, pickedImage: $pickedImage)';
+    return 'SignUpState(status: $status, currentFieldsView: $currentFieldsView, currentStepNumber: $currentStepNumber, registerBody: $registerBody, profileBody: $profileBody, doctorProfileBody: $doctorProfileBody, pickedImage: $pickedImage)';
   }
 
   @override
@@ -984,13 +1393,22 @@ class _$SignUpStateImpl extends _SignUpState {
                 other.registerBody == registerBody) &&
             (identical(other.profileBody, profileBody) ||
                 other.profileBody == profileBody) &&
+            (identical(other.doctorProfileBody, doctorProfileBody) ||
+                other.doctorProfileBody == doctorProfileBody) &&
             (identical(other.pickedImage, pickedImage) ||
                 other.pickedImage == pickedImage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, currentFieldsView,
-      currentStepNumber, registerBody, profileBody, pickedImage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      status,
+      currentFieldsView,
+      currentStepNumber,
+      registerBody,
+      profileBody,
+      doctorProfileBody,
+      pickedImage);
 
   @JsonKey(ignore: true)
   @override
@@ -1006,6 +1424,7 @@ abstract class _SignUpState extends SignUpState {
       final int currentStepNumber,
       final RegisterBody? registerBody,
       final ProfileEntity? profileBody,
+      final DoctorEntity? doctorProfileBody,
       final XFile? pickedImage}) = _$SignUpStateImpl;
   _SignUpState._() : super._();
 
@@ -1019,6 +1438,8 @@ abstract class _SignUpState extends SignUpState {
   RegisterBody? get registerBody;
   @override
   ProfileEntity? get profileBody;
+  @override
+  DoctorEntity? get doctorProfileBody;
   @override
   XFile? get pickedImage;
   @override

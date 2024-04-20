@@ -39,7 +39,7 @@ class DoctorModel extends DoctorEntity {
         position: map['position'] as String?,
         bio: map['bio'] as String?,
         education: map['education'] as String?,
-        workExperience: map['workExperience'] as String?,
+        workExperience: map['workExperience'] as int?,
         speciality: map['speciality'] as String?,
         clinicName: map['clinicName'] as String?,
         chatUserId: map['chatUserId'] as String?,

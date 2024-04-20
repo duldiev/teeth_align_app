@@ -27,11 +27,7 @@ class TokenInterceptor extends Interceptor {
     ResponseInterceptorHandler handler,
   ) async {
     if (response.statusCode == 200 || response.statusCode == 201) {
-      if (response.data != null &&
-          response.data.runtimeType != List &&
-          response.data?.toString().isEmpty == false &&
-          response.data?['id_token'] != null &&
-          response.data!['id_token'].runtimeType == String) {
+      if (response.data?.toString().contains('id_token') == true) {
         final token = response.data!['id_token'] as String;
         await storage.write(key: StorageKeys.token, value: token);
       }

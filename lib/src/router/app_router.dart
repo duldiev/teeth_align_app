@@ -41,5 +41,6 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: DefaultWebView.page),
         AutoRoute(page: LeaderboardRoute.page),
         AutoRoute(page: AccountListRoute.page),
+        AutoRoute(page: DoctorCreateProfileRoute.page),
       ];
 }

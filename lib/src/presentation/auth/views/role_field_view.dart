@@ -83,7 +83,11 @@ class _RoleSelector extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisSize: MainAxisSize.min,
           children: [
-            asset.image(height: 14.h),
+            asset.image(
+              height: 14.h,
+              color: isSelected ? AppColors.primary : AppColors.white,
+              colorBlendMode: BlendMode.darken,
+            ),
             Gap(1.2.h),
             Text(
               switch (role) {

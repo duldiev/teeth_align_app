@@ -33,18 +33,18 @@ import 'package:teeth_align_app/src/presentation/base/globals.dart';
 // + Connect chat client to user token.
 // + List screen for patient, mentor and doctor list.
 
-// 1. Firebase messaging.
-// 2. Leaderboard and Rating.
+// 1. Firebase messaging. (postponed)
+// 2. +Leaderboard and Rating.
 // 3. Rate doctor by Mentor in Profile screen.
 // 4. Link text in post to use links in text.
-// 5. Remove social sign-ins.
+// + Remove social sign-ins.
 // 6. Indicator for post create case request.
 // 7. Example images for 3 image case.
 // 8. Finish register doctor by adding new fields which ?
-// 9. Replace calendar by Konaev.
+// + Replace calendar by Konaev.
 // 10. Patient/Doctor selector icon should be replaced.
 // 11. Put real data on Doctor, Patient and Mentor profile screens.
-// 12. Obsecure password input.
+// + Obsecure password input.
 // 13. Edit personal data screen.
 // 14. Fix chat button.
 // + Show more button -> list of items screen.

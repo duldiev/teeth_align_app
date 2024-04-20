@@ -32,6 +32,15 @@ enum ProfileField {
   role,
 }
 
+enum DProfileField {
+  firstName,
+  lastName,
+  clinicName,
+  speciality,
+  education,
+  workExperience,
+}
+
 enum AlignerSettingsField {
   currentSet,
   maxSet,

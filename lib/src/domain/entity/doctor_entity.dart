@@ -1,9 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
 
 class DoctorEntity extends AccountEntity {
   final String? education;
-  final String? workExperience;
+  final int? workExperience;
   final String? position;
   final String? speciality;
   final String? clinicName;
@@ -33,11 +34,11 @@ class DoctorEntity extends AccountEntity {
 
   factory DoctorEntity.empty() => DoctorEntity(
         id: 1,
-        username: 'doctor',
-        firstName: 'Doctor',
-        lastName: 'Doctor',
-        email: 'email',
-        langKey: 'langKey',
+        username: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        langKey: null,
         role: Role.doctor,
         birthDate: DateTime(1970),
         avatarUrl: null,
@@ -52,4 +53,70 @@ class DoctorEntity extends AccountEntity {
         chatEnabled: false,
         place: null,
       );
+
+  Map<String, dynamic> toMap() => {
+        'firstName': firstName,
+        'lastName': lastName,
+        'education': education,
+        'workExperience': workExperience,
+        'position': position,
+        'speciality': speciality,
+        'clinicName': clinicName,
+      };
+
+  @override
+  List<Object?> get props => [
+        education,
+        workExperience,
+        position,
+        speciality,
+        clinicName,
+        place,
+        ...super.props,
+      ];
+
+  @override
+  DoctorEntity copyWith({
+    int? id,
+    String? username,
+    String? firstName,
+    String? lastName,
+    String? email,
+    String? langKey,
+    String? avatarUrl,
+    Role? role,
+    DateTime? birthDate,
+    String? chatUserId,
+    String? chatToken,
+    String? bio,
+    bool? chatEnabled,
+    String? education,
+    int? workExperience,
+    String? position,
+    String? speciality,
+    String? clinicName,
+    int? place,
+  }) {
+    return DoctorEntity(
+      id: id ?? this.id,
+      username: username ?? this.username,
+      firstName: firstName ?? this.firstName,
+      lastName: lastName ?? this.lastName,
+      email: email ?? this.email,
+      langKey: langKey ?? this.langKey,
+      avatarUrl: avatarUrl ?? this.avatarUrl,
+      role: role ?? this.role,
+      birthDate: birthDate ?? this.birthDate,
+      chatUserId: chatUserId ?? this.chatUserId,
+      chatToken: chatToken ?? this.chatToken,
+      bio: bio ?? this.bio,
+      chatEnabled: chatEnabled ?? this.chatEnabled,
+      education: education ?? this.education,
+      workExperience: workExperience ?? this.workExperience,
+      position: position ?? this.position,
+      speciality: speciality ?? this.speciality,
+      clinicName: clinicName ?? this.clinicName,
+      place: place ?? this.place,
+    );
+  }
 }

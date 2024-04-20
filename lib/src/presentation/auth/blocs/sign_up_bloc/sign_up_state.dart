@@ -8,6 +8,7 @@ class SignUpState with _$SignUpState {
     @Default(1) int currentStepNumber,
     @Default(null) RegisterBody? registerBody,
     @Default(null) ProfileEntity? profileBody,
+    @Default(null) DoctorEntity? doctorProfileBody,
     @Default(null) XFile? pickedImage,
   }) = _SignUpState;
 

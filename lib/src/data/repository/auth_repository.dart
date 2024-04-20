@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/exceptions/failure.dart';
@@ -70,10 +72,11 @@ class AuthRepository extends BaseClient implements IAuthRepository {
   Future<Either<Failure, Unit>> activate({
     required RegisterBody body,
   }) async {
+    log(body.email);
     final request = await call(
-      RestMethod.post,
+      RestMethod.get,
       '/api/v1/activate',
-      parametres: body.toConfirmCodeMap(),
+      parametres: {'key': body.code},
     );
     return request.fold(
       (l) => Left(l),

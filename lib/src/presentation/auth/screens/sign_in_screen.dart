@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:teeth_align_app/gen/assets.gen.dart';
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
@@ -32,7 +32,7 @@ class SignInScreen extends StatelessWidget {
                   children: [
                     const Expanded(child: LogoTitle()),
                     Expanded(
-                      flex: 4,
+                      flex: 3,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -59,6 +59,7 @@ class SignInScreen extends StatelessWidget {
                               TextInput(
                                 label: 'Пароль',
                                 hintText: 'Введите пароль',
+                                suffixType: InputSuffixType.obsecure,
                                 onChanged: (value) => context.read<SIB>().add(
                                       ChangeField(
                                         field: SignInField.password,
@@ -74,7 +75,7 @@ class SignInScreen extends StatelessWidget {
                     isKeyboardVisible
                         ? const SizedBox()
                         : const Expanded(
-                            flex: 3,
+                            flex: 2,
                             child: HideBehindKeyoard(
                               slideOffset: Offset(0, 3),
                               child: _BottomView(),
@@ -102,47 +103,47 @@ class _BottomView extends StatelessWidget {
           title: 'Войти',
           onTap: () => context.read<SIB>().add(const SignIn()),
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 3.h),
-          child: Row(
-            children: [
-              Expanded(
-                child: Divider(thickness: 1, endIndent: 4.w),
-              ),
-              Text(
-                'ИЛИ',
-                style: context.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              Expanded(
-                child: Divider(thickness: 1, indent: 4.w),
-              ),
-            ],
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: const BoxDecoration(
-                color: AppColors.white,
-                shape: BoxShape.circle,
-              ),
-              child: Assets.icons.google.svg(),
-            ),
-            Gap(8.w),
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: const BoxDecoration(
-                color: AppColors.white,
-                shape: BoxShape.circle,
-              ),
-              child: Assets.icons.apple.svg(),
-            )
-          ],
-        ),
+        // Padding(
+        //   padding: EdgeInsets.symmetric(vertical: 3.h),
+        //   child: Row(
+        //     children: [
+        //       Expanded(
+        //         child: Divider(thickness: 1, endIndent: 4.w),
+        //       ),
+        //       Text(
+        //         'ИЛИ',
+        //         style: context.textTheme.titleLarge?.copyWith(
+        //           fontWeight: FontWeight.w600,
+        //         ),
+        //       ),
+        //       Expanded(
+        //         child: Divider(thickness: 1, indent: 4.w),
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+        //     Container(
+        //       padding: const EdgeInsets.all(10),
+        //       decoration: const BoxDecoration(
+        //         color: AppColors.white,
+        //         shape: BoxShape.circle,
+        //       ),
+        //       child: Assets.icons.google.svg(),
+        //     ),
+        //     Gap(8.w),
+        //     Container(
+        //       padding: const EdgeInsets.all(10),
+        //       decoration: const BoxDecoration(
+        //         color: AppColors.white,
+        //         shape: BoxShape.circle,
+        //       ),
+        //       child: Assets.icons.apple.svg(),
+        //     )
+        //   ],
+        // ),
         Gap(4.h),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,

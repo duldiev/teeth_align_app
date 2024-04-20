@@ -64,7 +64,7 @@ class _NavRouterState extends State<NavRouter> {
       homeRoute,
       const CalendarRoute(),
       appData.role == Role.patient ? const ReportRoute() : const SocialRoute(),
-      const NotificationRoute(),
+      // const NotificationRoute(),
       const AccountRoute(),
     ];
     return AutoTabsRouter(

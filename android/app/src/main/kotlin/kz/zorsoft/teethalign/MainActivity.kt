@@ -1,4 +1,4 @@
-package com.example.teeth_align_app
+package kz.zorsoft.teethalign
 
 import io.flutter.embedding.android.FlutterActivity
 

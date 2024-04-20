@@ -47,7 +47,7 @@ import 'package:teeth_align_app/src/presentation/base/globals.dart';
 // 12. Obsecure password input.
 // 13. Edit personal data screen.
 // 14. Fix chat button.
-// 15. Show more button -> list of items screen.
+// + Show more button -> list of items screen.
 
 final client = StreamChatClient(
   APIKeys.streamChatTest,

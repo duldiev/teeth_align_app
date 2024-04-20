@@ -22,7 +22,7 @@ class PatientListTile extends StatelessWidget {
         PatientProfileRoute(patient: patient),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const ListTileImage(),
           Gap(1.h),

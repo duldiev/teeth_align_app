@@ -25,7 +25,7 @@ class MentorListTile extends StatelessWidget {
         MentorProfileRoute(mentorId: mentor.id),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const ListTileImage(),
           Gap(1.h),

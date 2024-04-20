@@ -27,8 +27,20 @@ class DoctorProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(
-        title: Text('Doctor'),
+      appBar: MyAppBar(
+        title: const Text('Doctor'),
+        actions: [
+          InkWell(
+            onTap: () => context.router.push(
+              RateDoctorRoute(doctor: doctor),
+            ),
+            child: const Icon(
+              FontAwesomeIcons.star,
+              size: 20,
+            ),
+          ),
+          Gap(4.w),
+        ],
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(
@@ -49,7 +61,7 @@ class DoctorProfileScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
                       image: AssetImage(Assets.images.doctor.path),
-                      fit: BoxFit.fitWidth,
+                      fit: BoxFit.cover,
                       alignment: Alignment.bottomCenter,
                     ),
                   ),

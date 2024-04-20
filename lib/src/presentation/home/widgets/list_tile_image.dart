@@ -15,7 +15,7 @@ class ListTileImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       clipBehavior: Clip.hardEdge,
-      child: Assets.images.doctor.image(),
+      child: Assets.images.doctor.image(fit: BoxFit.cover),
     );
   }
 }

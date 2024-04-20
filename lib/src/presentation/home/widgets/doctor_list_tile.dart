@@ -23,7 +23,7 @@ class DoctorListTile extends StatelessWidget {
         DoctorProfileRoute(doctor: doctor),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const ListTileImage(),
           Gap(1.h),

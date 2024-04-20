@@ -88,6 +88,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TimerCircularBar(start: timerSeconds.value),
+                  Gap(4.w),
                   InkWell(
                     onTap: () => showDialog(
                       context: context,
@@ -98,8 +99,9 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                         ),
                       ),
                     ),
+                    borderRadius: BorderRadius.circular(12),
                     child: Padding(
-                      padding: EdgeInsets.all(8.w),
+                      padding: EdgeInsets.all(4.w),
                       child: Text(
                         'Таймер\nвывода',
                         style: context.textTheme.headlineSmall?.copyWith(

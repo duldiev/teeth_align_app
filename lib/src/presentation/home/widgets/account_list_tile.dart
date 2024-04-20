@@ -30,7 +30,7 @@ class AccountListTile extends StatelessWidget {
       },
       borderRadius: BorderRadius.circular(12),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const ListTileImage(),
           Gap(1.h),

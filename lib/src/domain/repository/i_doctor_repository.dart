@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:teeth_align_app/src/core/exceptions/failure.dart';
 import 'package:teeth_align_app/src/data/body/doctor_case_body.dart';
+import 'package:teeth_align_app/src/data/body/rate_doctor_body.dart';
 import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/doctor_short_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart';
@@ -18,4 +19,6 @@ abstract class IDoctorRepository {
   Future<Either<Failure, List<DoctorShortEntity>>> getLeaderboard();
 
   Future<Either<Failure, Unit>> createProfile(DoctorEntity body);
+
+  Future<Either<Failure, Unit>> rateDoctor(RateDoctorBody body);
 }

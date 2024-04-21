@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/exceptions/failure.dart';
 import 'package:teeth_align_app/src/core/services/base_client.dart';
 import 'package:teeth_align_app/src/data/body/doctor_case_body.dart';
+import 'package:teeth_align_app/src/data/body/rate_doctor_body.dart';
 import 'package:teeth_align_app/src/data/models/doctor_model.dart';
 import 'package:teeth_align_app/src/data/models/doctor_short_model.dart';
 import 'package:teeth_align_app/src/data/models/mentor_model.dart';
@@ -94,6 +95,19 @@ class DoctorRepository extends BaseClient implements IDoctorRepository {
     return (await call(
       RestMethod.put,
       '/api/v1/doctor/profile',
+      body: body.toMap(),
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => const Right(unit),
+    );
+  }
+
+  @override
+  Future<Either<Failure, Unit>> rateDoctor(RateDoctorBody body) async {
+    return (await call(
+      RestMethod.post,
+      '/api/v1/evaluation',
       body: body.toMap(),
     ))
         .fold(

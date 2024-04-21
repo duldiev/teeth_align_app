@@ -25,7 +25,7 @@ class RateDoctorBody extends Equatable {
 
   Map<String, dynamic> toMap() => {
         'stars': stars,
-        'onlineExamination': onlineExamination,
+        'onLineExamination': onlineExamination,
         'consultation': consultation,
         'medicineInstruction': medicineInstruction,
         'comment': comment,

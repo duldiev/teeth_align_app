@@ -9,6 +9,8 @@ class PatientEntity extends AccountEntity {
   final TimeBody? reminderTime;
   final int? wearDuration;
   final String? scanLink;
+  final String? referralCode;
+  final int? balance;
 
   const PatientEntity({
     required super.id,
@@ -29,6 +31,8 @@ class PatientEntity extends AccountEntity {
     required this.nextAlignerDate,
     required this.reminderTime,
     required this.wearDuration,
+    this.referralCode,
+    this.balance,
     this.scanLink,
   });
 
@@ -61,6 +65,7 @@ class PatientEntity extends AccountEntity {
         wearDuration,
         reminderTime,
         scanLink,
+        referralCode,balance,
         ...super.props,
       ];
 }

@@ -28,6 +28,7 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
     on<PostCase>(onPostCase);
     on<UpdateAlignerSettings>(onUpdateAlignerSettings);
     on<ChangeSettings>(onChangeSettings);
+    on<ApplyRefCode>(onApplyRefCode);
   }
 
   InitialSettingsBody alignerSettingsBody = InitialSettingsBody.empty();
@@ -138,5 +139,17 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
       alignerSettingsBody: alignerSettingsBody,
     );
     emit(PatientState.loaded(viewModel: viewModel));
+  }
+
+  Future<void> onApplyRefCode(
+    ApplyRefCode event,
+    Emitter<PatientState> emit,
+  ) async {
+    emit(const PatientState.loading());
+
+    (await repository.applyRefCode(event.code)).fold(
+      (l) => emit(const PatientState.failed()),
+      (r) => emit(PatientState.loaded(viewModel: viewModel)),
+    );
   }
 }

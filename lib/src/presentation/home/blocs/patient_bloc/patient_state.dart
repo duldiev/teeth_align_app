@@ -6,7 +6,7 @@ class PatientState with _$PatientState {
   const factory PatientState.loading() = _Loading;
   const factory PatientState.loaded({
     required PatientStateViewModel viewModel,
-  }) = _Loaded;
+  }) = Loaded;
   const factory PatientState.failed() = _Failed;
 }
 

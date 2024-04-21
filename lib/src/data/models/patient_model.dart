@@ -23,6 +23,8 @@ class PatientModel extends PatientEntity {
     required super.reminderTime,
     required super.wearDuration,
     required super.scanLink,
+    required super.balance,
+    required super.referralCode,
   });
 
   factory PatientModel.fromMap(Map<String, dynamic> map) => PatientModel(
@@ -47,5 +49,7 @@ class PatientModel extends PatientEntity {
         reminderTime: TimeBody.fromString(map['reminderTime']),
         wearDuration: map['wearDuration'] as int?,
         scanLink: map['scanLink'] as String?,
+        balance: map['balance'] as int?,
+        referralCode: map['referralCode'] as String?,
       );
 }

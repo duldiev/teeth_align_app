@@ -212,7 +212,7 @@ class RateDoctorScreen extends StatelessWidget {
                     Gap(4.h),
                     ColoredButton(
                       title: 'Отправить',
-                      onTap: () => context.read<RDB>().add(const Send()),
+                      onTap: () => context.read<RDB>().add(Send(doctor.id)),
                     ),
                     Gap(2.h),
                   ],

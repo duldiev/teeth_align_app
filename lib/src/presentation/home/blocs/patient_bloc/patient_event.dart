@@ -16,4 +16,6 @@ class PatientEvent with _$PatientEvent {
     AlignerSettingsField field,
     String value,
   ) = ChangeSettings;
+
+  const factory PatientEvent.applyRefCode(String code) = ApplyRefCode;
 }

@@ -104,10 +104,13 @@ class DoctorRepository extends BaseClient implements IDoctorRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> rateDoctor(RateDoctorBody body) async {
+  Future<Either<Failure, Unit>> rateDoctor(
+    int doctorId,
+    RateDoctorBody body,
+  ) async {
     return (await call(
       RestMethod.post,
-      '/api/v1/evaluation',
+      '/api/v1/doctor/$doctorId/evaluate',
       body: body.toMap(),
     ))
         .fold(

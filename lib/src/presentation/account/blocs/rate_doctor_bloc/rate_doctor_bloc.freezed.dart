@@ -19,19 +19,19 @@ mixin _$RateDoctorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(RateDoctorField field, dynamic value) changeField,
-    required TResult Function() send,
+    required TResult Function(int doctorId) send,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(RateDoctorField field, dynamic value)? changeField,
-    TResult? Function()? send,
+    TResult? Function(int doctorId)? send,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(RateDoctorField field, dynamic value)? changeField,
-    TResult Function()? send,
+    TResult Function(int doctorId)? send,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -148,7 +148,7 @@ class _$ChangeFieldImpl implements ChangeField {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(RateDoctorField field, dynamic value) changeField,
-    required TResult Function() send,
+    required TResult Function(int doctorId) send,
   }) {
     return changeField(field, value);
   }
@@ -157,7 +157,7 @@ class _$ChangeFieldImpl implements ChangeField {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(RateDoctorField field, dynamic value)? changeField,
-    TResult? Function()? send,
+    TResult? Function(int doctorId)? send,
   }) {
     return changeField?.call(field, value);
   }
@@ -166,7 +166,7 @@ class _$ChangeFieldImpl implements ChangeField {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(RateDoctorField field, dynamic value)? changeField,
-    TResult Function()? send,
+    TResult Function(int doctorId)? send,
     required TResult orElse(),
   }) {
     if (changeField != null) {
@@ -223,6 +223,8 @@ abstract class _$$SendImplCopyWith<$Res> {
   factory _$$SendImplCopyWith(
           _$SendImpl value, $Res Function(_$SendImpl) then) =
       __$$SendImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int doctorId});
 }
 
 /// @nodoc
@@ -231,54 +233,79 @@ class __$$SendImplCopyWithImpl<$Res>
     implements _$$SendImplCopyWith<$Res> {
   __$$SendImplCopyWithImpl(_$SendImpl _value, $Res Function(_$SendImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? doctorId = null,
+  }) {
+    return _then(_$SendImpl(
+      null == doctorId
+          ? _value.doctorId
+          : doctorId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$SendImpl implements Send {
-  const _$SendImpl();
+  const _$SendImpl(this.doctorId);
+
+  @override
+  final int doctorId;
 
   @override
   String toString() {
-    return 'RateDoctorEvent.send()';
+    return 'RateDoctorEvent.send(doctorId: $doctorId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SendImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$SendImpl &&
+            (identical(other.doctorId, doctorId) ||
+                other.doctorId == doctorId));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, doctorId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SendImplCopyWith<_$SendImpl> get copyWith =>
+      __$$SendImplCopyWithImpl<_$SendImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(RateDoctorField field, dynamic value) changeField,
-    required TResult Function() send,
+    required TResult Function(int doctorId) send,
   }) {
-    return send();
+    return send(doctorId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(RateDoctorField field, dynamic value)? changeField,
-    TResult? Function()? send,
+    TResult? Function(int doctorId)? send,
   }) {
-    return send?.call();
+    return send?.call(doctorId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(RateDoctorField field, dynamic value)? changeField,
-    TResult Function()? send,
+    TResult Function(int doctorId)? send,
     required TResult orElse(),
   }) {
     if (send != null) {
-      return send();
+      return send(doctorId);
     }
     return orElse();
   }
@@ -316,7 +343,12 @@ class _$SendImpl implements Send {
 }
 
 abstract class Send implements RateDoctorEvent {
-  const factory Send() = _$SendImpl;
+  const factory Send(final int doctorId) = _$SendImpl;
+
+  int get doctorId;
+  @JsonKey(ignore: true)
+  _$$SendImplCopyWith<_$SendImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

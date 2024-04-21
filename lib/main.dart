@@ -35,7 +35,7 @@ import 'package:teeth_align_app/src/presentation/base/globals.dart';
 
 // 1. Firebase messaging. (postponed)
 // 2. +Leaderboard and Rating.
-// 3. Rate doctor by Mentor in Profile screen.
+// + Rate doctor by Mentor in Profile screen.
 // 4. Link text in post to use links in text.
 // + Remove social sign-ins.
 // 6. Indicator for post create case request.

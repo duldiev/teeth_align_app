@@ -53,7 +53,7 @@ class RateDoctorBloc extends Bloc<RateDoctorEvent, RateDoctorState> {
   ) async {
     emit(state.copyWith(status: LoadStatus.loading));
 
-    (await repository.rateDoctor(state.body!)).fold(
+    (await repository.rateDoctor(event.doctorId, state.body!)).fold(
       (l) => emit(state.copyWith(status: LoadStatus.failed)),
       (r) => emit(state.copyWith(status: LoadStatus.success)),
     );

@@ -20,5 +20,5 @@ abstract class IDoctorRepository {
 
   Future<Either<Failure, Unit>> createProfile(DoctorEntity body);
 
-  Future<Either<Failure, Unit>> rateDoctor(RateDoctorBody body);
+  Future<Either<Failure, Unit>> rateDoctor(int doctorId, RateDoctorBody body);
 }

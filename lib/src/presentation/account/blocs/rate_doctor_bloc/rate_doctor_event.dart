@@ -7,5 +7,5 @@ class RateDoctorEvent with _$RateDoctorEvent {
     dynamic value,
   ) = ChangeField;
 
-  const factory RateDoctorEvent.send() = Send;
+  const factory RateDoctorEvent.send(int doctorId) = Send;
 }

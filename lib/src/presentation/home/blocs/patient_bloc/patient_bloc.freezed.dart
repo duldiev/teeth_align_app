@@ -24,6 +24,7 @@ mixin _$PatientEvent {
     required TResult Function() updateAlignerSettings,
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
+    required TResult Function(String code) applyRefCode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,6 +34,7 @@ mixin _$PatientEvent {
     TResult? Function(PatientCaseBody body)? postCase,
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult? Function(String code)? applyRefCode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +44,7 @@ mixin _$PatientEvent {
     TResult Function(PatientCaseBody body)? postCase,
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult Function(String code)? applyRefCode,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +56,7 @@ mixin _$PatientEvent {
     required TResult Function(UpdateAlignerSettings value)
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
+    required TResult Function(ApplyRefCode value) applyRefCode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +66,7 @@ mixin _$PatientEvent {
     TResult? Function(PostCase value)? postCase,
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
+    TResult? Function(ApplyRefCode value)? applyRefCode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +76,7 @@ mixin _$PatientEvent {
     TResult Function(PostCase value)? postCase,
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
+    TResult Function(ApplyRefCode value)? applyRefCode,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -164,6 +170,7 @@ class _$GetPatientImpl implements GetPatient {
     required TResult Function() updateAlignerSettings,
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
+    required TResult Function(String code) applyRefCode,
   }) {
     return getPatient(id);
   }
@@ -176,6 +183,7 @@ class _$GetPatientImpl implements GetPatient {
     TResult? Function(PatientCaseBody body)? postCase,
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult? Function(String code)? applyRefCode,
   }) {
     return getPatient?.call(id);
   }
@@ -188,6 +196,7 @@ class _$GetPatientImpl implements GetPatient {
     TResult Function(PatientCaseBody body)? postCase,
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult Function(String code)? applyRefCode,
     required TResult orElse(),
   }) {
     if (getPatient != null) {
@@ -205,6 +214,7 @@ class _$GetPatientImpl implements GetPatient {
     required TResult Function(UpdateAlignerSettings value)
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
+    required TResult Function(ApplyRefCode value) applyRefCode,
   }) {
     return getPatient(this);
   }
@@ -217,6 +227,7 @@ class _$GetPatientImpl implements GetPatient {
     TResult? Function(PostCase value)? postCase,
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
+    TResult? Function(ApplyRefCode value)? applyRefCode,
   }) {
     return getPatient?.call(this);
   }
@@ -229,6 +240,7 @@ class _$GetPatientImpl implements GetPatient {
     TResult Function(PostCase value)? postCase,
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
+    TResult Function(ApplyRefCode value)? applyRefCode,
     required TResult orElse(),
   }) {
     if (getPatient != null) {
@@ -318,6 +330,7 @@ class _$GetCasesImpl implements GetCases {
     required TResult Function() updateAlignerSettings,
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
+    required TResult Function(String code) applyRefCode,
   }) {
     return getCases(patientId);
   }
@@ -330,6 +343,7 @@ class _$GetCasesImpl implements GetCases {
     TResult? Function(PatientCaseBody body)? postCase,
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult? Function(String code)? applyRefCode,
   }) {
     return getCases?.call(patientId);
   }
@@ -342,6 +356,7 @@ class _$GetCasesImpl implements GetCases {
     TResult Function(PatientCaseBody body)? postCase,
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult Function(String code)? applyRefCode,
     required TResult orElse(),
   }) {
     if (getCases != null) {
@@ -359,6 +374,7 @@ class _$GetCasesImpl implements GetCases {
     required TResult Function(UpdateAlignerSettings value)
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
+    required TResult Function(ApplyRefCode value) applyRefCode,
   }) {
     return getCases(this);
   }
@@ -371,6 +387,7 @@ class _$GetCasesImpl implements GetCases {
     TResult? Function(PostCase value)? postCase,
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
+    TResult? Function(ApplyRefCode value)? applyRefCode,
   }) {
     return getCases?.call(this);
   }
@@ -383,6 +400,7 @@ class _$GetCasesImpl implements GetCases {
     TResult Function(PostCase value)? postCase,
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
+    TResult Function(ApplyRefCode value)? applyRefCode,
     required TResult orElse(),
   }) {
     if (getCases != null) {
@@ -471,6 +489,7 @@ class _$PostCaseImpl implements PostCase {
     required TResult Function() updateAlignerSettings,
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
+    required TResult Function(String code) applyRefCode,
   }) {
     return postCase(body);
   }
@@ -483,6 +502,7 @@ class _$PostCaseImpl implements PostCase {
     TResult? Function(PatientCaseBody body)? postCase,
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult? Function(String code)? applyRefCode,
   }) {
     return postCase?.call(body);
   }
@@ -495,6 +515,7 @@ class _$PostCaseImpl implements PostCase {
     TResult Function(PatientCaseBody body)? postCase,
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult Function(String code)? applyRefCode,
     required TResult orElse(),
   }) {
     if (postCase != null) {
@@ -512,6 +533,7 @@ class _$PostCaseImpl implements PostCase {
     required TResult Function(UpdateAlignerSettings value)
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
+    required TResult Function(ApplyRefCode value) applyRefCode,
   }) {
     return postCase(this);
   }
@@ -524,6 +546,7 @@ class _$PostCaseImpl implements PostCase {
     TResult? Function(PostCase value)? postCase,
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
+    TResult? Function(ApplyRefCode value)? applyRefCode,
   }) {
     return postCase?.call(this);
   }
@@ -536,6 +559,7 @@ class _$PostCaseImpl implements PostCase {
     TResult Function(PostCase value)? postCase,
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
+    TResult Function(ApplyRefCode value)? applyRefCode,
     required TResult orElse(),
   }) {
     if (postCase != null) {
@@ -600,6 +624,7 @@ class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
     required TResult Function() updateAlignerSettings,
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
+    required TResult Function(String code) applyRefCode,
   }) {
     return updateAlignerSettings();
   }
@@ -612,6 +637,7 @@ class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
     TResult? Function(PatientCaseBody body)? postCase,
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult? Function(String code)? applyRefCode,
   }) {
     return updateAlignerSettings?.call();
   }
@@ -624,6 +650,7 @@ class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
     TResult Function(PatientCaseBody body)? postCase,
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult Function(String code)? applyRefCode,
     required TResult orElse(),
   }) {
     if (updateAlignerSettings != null) {
@@ -641,6 +668,7 @@ class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
     required TResult Function(UpdateAlignerSettings value)
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
+    required TResult Function(ApplyRefCode value) applyRefCode,
   }) {
     return updateAlignerSettings(this);
   }
@@ -653,6 +681,7 @@ class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
     TResult? Function(PostCase value)? postCase,
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
+    TResult? Function(ApplyRefCode value)? applyRefCode,
   }) {
     return updateAlignerSettings?.call(this);
   }
@@ -665,6 +694,7 @@ class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
     TResult Function(PostCase value)? postCase,
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
+    TResult Function(ApplyRefCode value)? applyRefCode,
     required TResult orElse(),
   }) {
     if (updateAlignerSettings != null) {
@@ -757,6 +787,7 @@ class _$ChangeSettingsImpl implements ChangeSettings {
     required TResult Function() updateAlignerSettings,
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
+    required TResult Function(String code) applyRefCode,
   }) {
     return changeSettings(field, value);
   }
@@ -769,6 +800,7 @@ class _$ChangeSettingsImpl implements ChangeSettings {
     TResult? Function(PatientCaseBody body)? postCase,
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult? Function(String code)? applyRefCode,
   }) {
     return changeSettings?.call(field, value);
   }
@@ -781,6 +813,7 @@ class _$ChangeSettingsImpl implements ChangeSettings {
     TResult Function(PatientCaseBody body)? postCase,
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult Function(String code)? applyRefCode,
     required TResult orElse(),
   }) {
     if (changeSettings != null) {
@@ -798,6 +831,7 @@ class _$ChangeSettingsImpl implements ChangeSettings {
     required TResult Function(UpdateAlignerSettings value)
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
+    required TResult Function(ApplyRefCode value) applyRefCode,
   }) {
     return changeSettings(this);
   }
@@ -810,6 +844,7 @@ class _$ChangeSettingsImpl implements ChangeSettings {
     TResult? Function(PostCase value)? postCase,
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
+    TResult? Function(ApplyRefCode value)? applyRefCode,
   }) {
     return changeSettings?.call(this);
   }
@@ -822,6 +857,7 @@ class _$ChangeSettingsImpl implements ChangeSettings {
     TResult Function(PostCase value)? postCase,
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
+    TResult Function(ApplyRefCode value)? applyRefCode,
     required TResult orElse(),
   }) {
     if (changeSettings != null) {
@@ -840,6 +876,165 @@ abstract class ChangeSettings implements PatientEvent {
   String get value;
   @JsonKey(ignore: true)
   _$$ChangeSettingsImplCopyWith<_$ChangeSettingsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ApplyRefCodeImplCopyWith<$Res> {
+  factory _$$ApplyRefCodeImplCopyWith(
+          _$ApplyRefCodeImpl value, $Res Function(_$ApplyRefCodeImpl) then) =
+      __$$ApplyRefCodeImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String code});
+}
+
+/// @nodoc
+class __$$ApplyRefCodeImplCopyWithImpl<$Res>
+    extends _$PatientEventCopyWithImpl<$Res, _$ApplyRefCodeImpl>
+    implements _$$ApplyRefCodeImplCopyWith<$Res> {
+  __$$ApplyRefCodeImplCopyWithImpl(
+      _$ApplyRefCodeImpl _value, $Res Function(_$ApplyRefCodeImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? code = null,
+  }) {
+    return _then(_$ApplyRefCodeImpl(
+      null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ApplyRefCodeImpl implements ApplyRefCode {
+  const _$ApplyRefCodeImpl(this.code);
+
+  @override
+  final String code;
+
+  @override
+  String toString() {
+    return 'PatientEvent.applyRefCode(code: $code)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ApplyRefCodeImpl &&
+            (identical(other.code, code) || other.code == code));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, code);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ApplyRefCodeImplCopyWith<_$ApplyRefCodeImpl> get copyWith =>
+      __$$ApplyRefCodeImplCopyWithImpl<_$ApplyRefCodeImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) getPatient,
+    required TResult Function(int? patientId) getCases,
+    required TResult Function(PatientCaseBody body) postCase,
+    required TResult Function() updateAlignerSettings,
+    required TResult Function(AlignerSettingsField field, String value)
+        changeSettings,
+    required TResult Function(String code) applyRefCode,
+  }) {
+    return applyRefCode(code);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? getPatient,
+    TResult? Function(int? patientId)? getCases,
+    TResult? Function(PatientCaseBody body)? postCase,
+    TResult? Function()? updateAlignerSettings,
+    TResult? Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult? Function(String code)? applyRefCode,
+  }) {
+    return applyRefCode?.call(code);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? getPatient,
+    TResult Function(int? patientId)? getCases,
+    TResult Function(PatientCaseBody body)? postCase,
+    TResult Function()? updateAlignerSettings,
+    TResult Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult Function(String code)? applyRefCode,
+    required TResult orElse(),
+  }) {
+    if (applyRefCode != null) {
+      return applyRefCode(code);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPatient value) getPatient,
+    required TResult Function(GetCases value) getCases,
+    required TResult Function(PostCase value) postCase,
+    required TResult Function(UpdateAlignerSettings value)
+        updateAlignerSettings,
+    required TResult Function(ChangeSettings value) changeSettings,
+    required TResult Function(ApplyRefCode value) applyRefCode,
+  }) {
+    return applyRefCode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPatient value)? getPatient,
+    TResult? Function(GetCases value)? getCases,
+    TResult? Function(PostCase value)? postCase,
+    TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult? Function(ChangeSettings value)? changeSettings,
+    TResult? Function(ApplyRefCode value)? applyRefCode,
+  }) {
+    return applyRefCode?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPatient value)? getPatient,
+    TResult Function(GetCases value)? getCases,
+    TResult Function(PostCase value)? postCase,
+    TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult Function(ChangeSettings value)? changeSettings,
+    TResult Function(ApplyRefCode value)? applyRefCode,
+    required TResult orElse(),
+  }) {
+    if (applyRefCode != null) {
+      return applyRefCode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ApplyRefCode implements PatientEvent {
+  const factory ApplyRefCode(final String code) = _$ApplyRefCodeImpl;
+
+  String get code;
+  @JsonKey(ignore: true)
+  _$$ApplyRefCodeImplCopyWith<_$ApplyRefCodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -874,7 +1069,7 @@ mixin _$PatientState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(Loaded value) loaded,
     required TResult Function(_Failed value) failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -882,7 +1077,7 @@ mixin _$PatientState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(Loaded value)? loaded,
     TResult? Function(_Failed value)? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -890,7 +1085,7 @@ mixin _$PatientState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(Loaded value)? loaded,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) =>
@@ -992,7 +1187,7 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(Loaded value) loaded,
     required TResult Function(_Failed value) failed,
   }) {
     return initial(this);
@@ -1003,7 +1198,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(Loaded value)? loaded,
     TResult? Function(_Failed value)? failed,
   }) {
     return initial?.call(this);
@@ -1014,7 +1209,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(Loaded value)? loaded,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -1106,7 +1301,7 @@ class _$LoadingImpl implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(Loaded value) loaded,
     required TResult Function(_Failed value) failed,
   }) {
     return loading(this);
@@ -1117,7 +1312,7 @@ class _$LoadingImpl implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(Loaded value)? loaded,
     TResult? Function(_Failed value)? failed,
   }) {
     return loading?.call(this);
@@ -1128,7 +1323,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(Loaded value)? loaded,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -1186,7 +1381,7 @@ class __$$LoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadedImpl implements _Loaded {
+class _$LoadedImpl implements Loaded {
   const _$LoadedImpl({required this.viewModel});
 
   @override
@@ -1257,7 +1452,7 @@ class _$LoadedImpl implements _Loaded {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(Loaded value) loaded,
     required TResult Function(_Failed value) failed,
   }) {
     return loaded(this);
@@ -1268,7 +1463,7 @@ class _$LoadedImpl implements _Loaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(Loaded value)? loaded,
     TResult? Function(_Failed value)? failed,
   }) {
     return loaded?.call(this);
@@ -1279,7 +1474,7 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(Loaded value)? loaded,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -1290,8 +1485,8 @@ class _$LoadedImpl implements _Loaded {
   }
 }
 
-abstract class _Loaded implements PatientState {
-  const factory _Loaded({required final PatientStateViewModel viewModel}) =
+abstract class Loaded implements PatientState {
+  const factory Loaded({required final PatientStateViewModel viewModel}) =
       _$LoadedImpl;
 
   PatientStateViewModel get viewModel;
@@ -1377,7 +1572,7 @@ class _$FailedImpl implements _Failed {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
+    required TResult Function(Loaded value) loaded,
     required TResult Function(_Failed value) failed,
   }) {
     return failed(this);
@@ -1388,7 +1583,7 @@ class _$FailedImpl implements _Failed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(Loaded value)? loaded,
     TResult? Function(_Failed value)? failed,
   }) {
     return failed?.call(this);
@@ -1399,7 +1594,7 @@ class _$FailedImpl implements _Failed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
+    TResult Function(Loaded value)? loaded,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {

@@ -20,4 +20,6 @@ abstract class IPatientRepository {
   Future<Either<Failure, Unit>> updateInitialSettings(
     InitialSettingsBody body,
   );
+
+  Future<Either<Failure, Unit>> applyRefCode(String code);
 }

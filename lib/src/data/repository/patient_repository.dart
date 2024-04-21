@@ -70,4 +70,17 @@ class PatientRepository extends BaseClient implements IPatientRepository {
       (r) => const Right(unit),
     );
   }
+
+  @override
+  Future<Either<Failure, Unit>> applyRefCode(String code) async {
+    return (await call(
+      RestMethod.put,
+      '/api/v1/redeem-code',
+      body: {'code': code},
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => const Right(unit),
+    );
+  }
 }

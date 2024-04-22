@@ -68,6 +68,9 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           SignUpField.role => state.registerBody?.copyWith(
               role: event.value,
             ),
+          SignUpField.refCode => state.registerBody?.copyWith(
+              refCode: event.value,
+            ),
           SignUpField.uniqueId => state.registerBody?.copyWith(
               uniqueId: event.value,
             ),

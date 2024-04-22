@@ -101,6 +101,15 @@ class SignUpScreen extends StatelessWidget {
                             step: 4,
                             isActive: state.currentStepNumber >= 4,
                           ),
+                          Expanded(
+                            child: _StepLine(
+                              isActive: state.currentStepNumber >= 4,
+                            ),
+                          ),
+                          _StepCircle(
+                            step: 5,
+                            isActive: state.currentStepNumber >= 5,
+                          ),
                         ],
                       ),
                     ),

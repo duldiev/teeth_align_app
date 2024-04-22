@@ -35,7 +35,7 @@ class App extends StatelessWidget {
         ),
         theme: AppThemeData.themeData,
         scaffoldMessengerKey: snackbarKey,
-        locale: const Locale('en'),
+        locale: const Locale('ru'),
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         builder: (context, child) => MultiBlocProvider(

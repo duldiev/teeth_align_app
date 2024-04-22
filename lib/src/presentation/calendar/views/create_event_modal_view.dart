@@ -11,6 +11,7 @@ import 'package:teeth_align_app/src/presentation/calendar/helpers/meeting.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 import 'package:teeth_align_app/src/shared/inputs/date_picker_cupertino.dart';
 import 'package:teeth_align_app/src/shared/inputs/text_input.dart';
+import 'package:teeth_align_app/src/shared/loader/circlular_loader.dart';
 
 class CreateEventModalView extends StatelessWidget {
   const CreateEventModalView({
@@ -73,6 +74,9 @@ class _Content extends StatelessWidget {
           context.router.maybePop();
           callback();
         }
+        if (state.failed == true) {
+          context.router.maybePop();
+        }
       },
       builder: (context, state) {
         return Column(
@@ -83,7 +87,7 @@ class _Content extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  isEdit ? 'Change' : 'Add event',
+                  isEdit ? 'Изменить' : 'Добавить событью',
                   style: context.textTheme.titleMedium?.copyWith(
                     fontSize: 22,
                   ),
@@ -102,21 +106,27 @@ class _Content extends StatelessWidget {
                           }
                         }
                       : null,
-                  child: Text(
-                    'Done',
-                    style: context.textTheme.titleMedium?.copyWith(
-                      color:
-                          state.isValid ? AppColors.primary : AppColors.white,
-                    ),
-                  ),
+                  child: state.loading
+                      ? Transform.scale(
+                          scale: 0.6,
+                          child: const CircularLoader(),
+                        )
+                      : Text(
+                          'Готово',
+                          style: context.textTheme.titleMedium?.copyWith(
+                            color: state.isValid
+                                ? AppColors.primary
+                                : AppColors.white,
+                          ),
+                        ),
                 ),
               ],
             ),
             const Divider(),
             Gap(1.h),
             TextInput(
-              label: 'Name',
-              hintText: 'Name',
+              label: 'Название',
+              hintText: 'Название события',
               initialValue: event?.eventName,
               onChanged: (value) => context.read<CreateEventBloc>().add(
                     ChangeName(value),
@@ -124,7 +134,7 @@ class _Content extends StatelessWidget {
             ),
             Gap(2.5.h),
             TextInput(
-              hintText: 'Description',
+              hintText: 'Описание',
               initialValue: event?.description,
               minLines: 2,
               maxLines: 5,
@@ -134,7 +144,7 @@ class _Content extends StatelessWidget {
             ),
             Gap(2.h),
             DatePickerCupertino(
-              label: 'Start',
+              label: 'Начнется',
               initialDateTime: state.formDataEvent.from,
               maximumDate: state.formDataEvent.to,
               mode: CupertinoDatePickerMode.dateAndTime,
@@ -144,7 +154,7 @@ class _Content extends StatelessWidget {
             ),
             Gap(2.h),
             DatePickerCupertino(
-              label: 'End',
+              label: 'Закончится',
               initialDateTime: state.formDataEvent.to,
               minimumDate: state.formDataEvent.from,
               mode: CupertinoDatePickerMode.dateAndTime,

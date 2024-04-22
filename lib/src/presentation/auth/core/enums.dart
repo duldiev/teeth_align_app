@@ -6,6 +6,7 @@ enum SignUpField {
   password,
   passwordConfirm,
   role,
+  refCode,
   uniqueId,
 }
 

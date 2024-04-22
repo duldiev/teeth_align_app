@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as services;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/helpers/validators.dart';
@@ -8,6 +9,7 @@ import 'package:teeth_align_app/src/core/utils/masks.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_up_bloc/sign_up_bloc.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/keys.dart';
+import 'package:teeth_align_app/src/presentation/auth/views/ref_code_view.dart';
 import 'package:teeth_align_app/src/shared/inputs/text_input.dart';
 
 class UniqueIdFieldView extends StatefulWidget {
@@ -53,22 +55,30 @@ class _UniqueIdFieldViewState extends State<UniqueIdFieldView> {
       key: patientFormKey,
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 2.h),
-        child: TextInput(
-          controller: _controller,
-          label: 'Введите код ${isPatient ? 'пациента' : 'доктора'}',
-          hintText: isPatient ? 'PETA-45' : 'Unique code',
-          inputFormatters: [
-            isPatient ? Masks.patientId : Masks.doctorId,
-            onlyUpperCase,
+        child: Column(
+          children: [
+            TextInput(
+              controller: _controller,
+              label: 'Введите код ${isPatient ? 'пациента' : 'доктора'}',
+              hintText: isPatient ? 'PETA-45' : 'Unique code',
+              inputFormatters: [
+                isPatient ? Masks.patientId : Masks.doctorId,
+                onlyUpperCase,
+              ],
+              textCapitalization: TextCapitalization.characters,
+              validator: Validators.patientId,
+              onChanged: (value) => context.read<SUB>().add(
+                    ChangeRegisterField(
+                      field: SignUpField.uniqueId,
+                      value: value,
+                    ),
+                  ),
+            ),
+            if (isPatient) ...[
+              Gap(2.h),
+              const RefCodeView(),
+            ],
           ],
-          textCapitalization: TextCapitalization.characters,
-          validator: Validators.patientId,
-          onChanged: (value) => context.read<SUB>().add(
-                ChangeRegisterField(
-                  field: SignUpField.uniqueId,
-                  value: value,
-                ),
-              ),
         ),
       ),
     );

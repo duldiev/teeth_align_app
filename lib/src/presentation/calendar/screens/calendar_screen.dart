@@ -45,7 +45,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
           builder: (context, state) {
             return Scaffold(
               appBar: MyAppBar(
-                title: const Text('Calendar'),
+                title: const Text('Календарь'),
                 actions: [
                   GestureDetector(
                     onTap: () => MBS.show(

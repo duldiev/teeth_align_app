@@ -10,17 +10,19 @@ class RegisterBody extends Equatable {
   final String password;
   final String passwordConfirm;
   final Role role;
+  final String? refCode;
   final String uniqueId;
 
   const RegisterBody({
     required this.username,
     required this.email,
     required this.imageUrl,
-    required this.langKey,
+    this.langKey,
     required this.password,
     required this.passwordConfirm,
     required this.code,
     required this.role,
+    this.refCode,
     required this.uniqueId,
   });
 
@@ -28,7 +30,6 @@ class RegisterBody extends Equatable {
         username: '',
         email: '',
         imageUrl: '',
-        langKey: null,
         password: '',
         passwordConfirm: '',
         code: '',
@@ -43,6 +44,7 @@ class RegisterBody extends Equatable {
         'password': password,
         'passwordConfirm': passwordConfirm,
         'uniqueId': uniqueId,
+        'referralCode': refCode,
       };
 
   Map<String, dynamic> toConfirmCodeMap() => {
@@ -58,6 +60,7 @@ class RegisterBody extends Equatable {
     String? passwordConfirm,
     String? code,
     Role? role,
+    String? refCode,
     String? uniqueId,
   }) {
     return RegisterBody(
@@ -69,6 +72,7 @@ class RegisterBody extends Equatable {
       passwordConfirm: passwordConfirm ?? this.passwordConfirm,
       code: code ?? this.code,
       role: role ?? this.role,
+      refCode: refCode ?? this.refCode,
       uniqueId: uniqueId ?? this.uniqueId,
     );
   }
@@ -83,6 +87,7 @@ class RegisterBody extends Equatable {
         password,
         passwordConfirm,
         role,
+        refCode,
         uniqueId,
       ];
 }

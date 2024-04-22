@@ -327,6 +327,7 @@ class _TextInputState extends State<TextInput> {
               widget.label!,
               style: context.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
+                height: 1,
               ),
             ),
           ),

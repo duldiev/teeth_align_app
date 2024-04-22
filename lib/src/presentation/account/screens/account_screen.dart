@@ -122,11 +122,13 @@ class AccountScreen extends StatelessWidget {
               onTap: () {},
             ),
             const AccountTileDivider(),
-            AccountTile(
-              title: 'Настройки элайнера',
-              onTap: () => context.router.push(const AlignerSettingsRoute()),
-            ),
-            const AccountTileDivider(),
+            if (appData.role == Role.patient) ...[
+              AccountTile(
+                title: 'Настройки элайнера',
+                onTap: () => context.router.push(const AlignerSettingsRoute()),
+              ),
+              const AccountTileDivider(),
+            ],
             AccountTile(
               title: 'Выйти из аккаунта',
               icon: const Icon(

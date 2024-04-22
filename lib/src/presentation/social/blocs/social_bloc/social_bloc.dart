@@ -99,7 +99,7 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
       List<XFile?> images = await imagePicker.pickMultiImage(
         maxWidth: 800,
         maxHeight: 800,
-        imageQuality: 80,
+        imageQuality: 40,
       );
       value = images;
     }

@@ -9,7 +9,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
-import 'package:teeth_align_app/src/core/extensions/string_extension.dart';
+import 'package:teeth_align_app/src/core/extensions/enum_extension.dart';
 import 'package:teeth_align_app/src/data/body/create_post_body.dart';
 import 'package:teeth_align_app/src/presentation/social/blocs/social_bloc/social_bloc.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
@@ -46,14 +46,14 @@ class NewPostView extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 4.w, bottom: 1.5.h),
                 child: Text(
-                  'New post',
+                  'Новый пост',
                   style: context.textTheme.headlineMedium?.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
               TextInput(
-                hintText: 'Here goes your text',
+                hintText: 'Пишите сюда',
                 fillColor: AppColors.white.withOpacity(0.03),
                 hideBorder: true,
                 maxLines: 10,
@@ -81,7 +81,7 @@ class NewPostView extends StatelessWidget {
                           ),
                           const Gap(6),
                           Text(
-                            'Upload\nimage',
+                            'Загрузить\nфото',
                             style: context.textTheme.titleSmall?.copyWith(
                               height: 1,
                               color: AppColors.upload,
@@ -125,7 +125,7 @@ class NewPostView extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 4.w, bottom: 1.5.h),
                   child: Text(
-                    'Uploaded images:',
+                    'Фото:',
                     style: context.textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
@@ -180,8 +180,8 @@ class NewPostImageTile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Preview',
-                    style: context.textTheme.headlineLarge?.copyWith(
+                    'Предварительный\nпросмотр',
+                    style: context.textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -276,7 +276,7 @@ class PostTypeSelectDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Select type',
+              'Выберите тип',
               style: context.textTheme.headlineMedium?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
@@ -313,7 +313,7 @@ class PostTypeSelectTile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              type.name.capitalize(),
+              type.localize,
               style: context.textTheme.titleLarge?.copyWith(
                 color: AppColors.primary,
               ),

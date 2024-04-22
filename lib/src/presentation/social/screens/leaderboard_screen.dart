@@ -21,7 +21,7 @@ class LeaderboardScreen extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           appBar: const MyAppBar(
-            title: Text('Leaderboard'),
+            title: Text('Таблица лидеров'),
           ),
           body: state.when(
             initial: () => const SizedBox(),
@@ -29,6 +29,30 @@ class LeaderboardScreen extends StatelessWidget {
             loaded: (data) => Stack(
               alignment: Alignment.topCenter,
               children: [
+                Positioned.fromRect(
+                  rect: Rect.fromLTWH(0, 8.h, 100.w, 80),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 4.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Expanded(
+                          child: TopLeader(doctor: data.leaders[1]),
+                        ),
+                        Expanded(
+                          child: Transform.scale(
+                            scale: 1.4,
+                            child: TopLeader(doctor: data.leaders[0]),
+                          ),
+                        ),
+                        Expanded(
+                          child: TopLeader(doctor: data.leaders[2]),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
                 Positioned.fill(
                   top: 22.h,
                   child: Container(
@@ -40,36 +64,15 @@ class LeaderboardScreen extends StatelessWidget {
                       ),
                     ),
                     child: ListView.separated(
-                      padding: EdgeInsets.symmetric(horizontal: 4.w),
-                      itemBuilder: (context, index) => Gap(2.h),
-                      separatorBuilder: (context, index) => LeaderTile(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 4.w,
+                        vertical: 2.h,
+                      ),
+                      itemBuilder: (context, index) => LeaderTile(
                         doctor: data.leaders[index + 3],
                       ),
+                      separatorBuilder: (context, index) => Gap(2.h),
                       itemCount: data.leaders.length - 3,
-                    ),
-                  ),
-                ),
-                Positioned.fromRect(
-                  rect: Rect.fromLTWH(0, 8.h, 100.w, 80),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 4.w),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Expanded(
-                          child: TopLeader(doctor: data.leaders[0]),
-                        ),
-                        Expanded(
-                          child: Transform.scale(
-                            scale: 1.4,
-                            child: TopLeader(doctor: data.leaders[1]),
-                          ),
-                        ),
-                        Expanded(
-                          child: TopLeader(doctor: data.leaders[2]),
-                        ),
-                      ],
                     ),
                   ),
                 ),
@@ -125,7 +128,7 @@ class TopLeader extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Text(
-            '4.5 pt',
+            doctor.score.toString(),
             style: context.textTheme.labelSmall?.copyWith(
               fontWeight: FontWeight.w600,
               color: AppColors.black,
@@ -180,23 +183,28 @@ class LeaderTile extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            '${doctor.place}',
+            '${doctor.place}.',
             style: context.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),
           Gap(3.w),
           Expanded(
-            child: Text(
-              doctor.fullName,
-              style: context.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  doctor.fullName,
+                  style: context.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
             ),
           ),
           Text(
-            '4.5 pt',
-            style: context.textTheme.titleMedium?.copyWith(
+            doctor.score.toString(),
+            style: context.textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),

@@ -1,10 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/core/extensions/date_extension.dart';
 import 'package:teeth_align_app/src/core/helpers/app_data.dart';
+import 'package:teeth_align_app/src/presentation/home/blocs/patient_bloc/patient_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/circular_bar.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/timer_circular_bar.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
@@ -113,45 +116,66 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                   ),
                 ],
               ),
-              if (appData.patient?.scanLink != null) ...[
-                Gap(4.h),
-                InkWell(
-                  onTap: () => context.router.push(
-                    DefaultWebView(url: appData.patient!.scanLink!),
-                  ),
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: 6),
-                    decoration: BoxDecoration(
-                      color: AppColors.success,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(
-                          Icons.scatter_plot_outlined,
-                          size: 16,
-                        ),
-                        Gap(1.w),
-                        Text(
-                          '3D Plan',
-                          style: context.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Gap(2.h),
-                Text(
-                  'Иструкций по элайнеру',
-                  style: context.textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.w800,
-                  ),
+              if (appData.role == Role.patient) ...[
+                BlocBuilder<PatientBloc, PatientState>(
+                  builder: (context, state) {
+                    return state.when(
+                      initial: () => const SizedBox(),
+                      loading: () => const SizedBox(),
+                      loaded: (data) {
+                        if (data.patient?.scanLink == null) {
+                          return const SizedBox();
+                        }
+                        return Column(
+                          children: [
+                            Gap(4.h),
+                            InkWell(
+                              onTap: () => context.router.push(
+                                DefaultWebView(url: data.patient!.scanLink!),
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 6,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: AppColors.success,
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Icon(
+                                      Icons.scatter_plot_outlined,
+                                      size: 16,
+                                    ),
+                                    Gap(1.w),
+                                    Text(
+                                      '3D Plan',
+                                      style: context.textTheme.titleMedium
+                                          ?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                      failed: () => const SizedBox(),
+                    );
+                  },
                 ),
               ],
+              Gap(2.h),
+              Text(
+                'Иструкций по элайнеру',
+                style: context.textTheme.headlineSmall?.copyWith(
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
             ],
           ),
         ),

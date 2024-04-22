@@ -45,7 +45,7 @@ class DoctorCreateProfileScreen extends StatelessWidget {
         },
         builder: (context, state) {
           return Scaffold(
-            appBar: MyAppBar(
+            appBar: const MyAppBar(
               title: Text('Создать профиль'),
             ),
             body: Padding(
@@ -55,6 +55,30 @@ class DoctorCreateProfileScreen extends StatelessWidget {
               ),
               child: Column(
                 children: [
+                  TextInput(
+                    label: 'Имя',
+                    hintText: 'Введите имя',
+                    validator: Validators.empty,
+                    onChanged: (value) => context.read<SUB>().add(
+                          ChangeDProfileField(
+                            field: DProfileField.firstName,
+                            value: value,
+                          ),
+                        ),
+                  ),
+                  Gap(1.5.h),
+                  TextInput(
+                    label: 'Фамилия',
+                    hintText: 'Введите фамилия',
+                    validator: Validators.empty,
+                    onChanged: (value) => context.read<SUB>().add(
+                          ChangeDProfileField(
+                            field: DProfileField.lastName,
+                            value: value,
+                          ),
+                        ),
+                  ),
+                  Gap(1.5.h),
                   TextInput(
                     label: 'Название клиники',
                     hintText: 'Введите название клиники',
@@ -86,30 +110,6 @@ class DoctorCreateProfileScreen extends StatelessWidget {
                     onChanged: (value) => context.read<SUB>().add(
                           ChangeDProfileField(
                             field: DProfileField.education,
-                            value: value,
-                          ),
-                        ),
-                  ),
-                  Gap(1.5.h),
-                  TextInput(
-                    label: 'Имя',
-                    hintText: 'Введите имя',
-                    validator: Validators.empty,
-                    onChanged: (value) => context.read<SUB>().add(
-                          ChangeDProfileField(
-                            field: DProfileField.firstName,
-                            value: value,
-                          ),
-                        ),
-                  ),
-                  Gap(1.5.h),
-                  TextInput(
-                    label: 'Фамилия',
-                    hintText: 'Введите фамилия',
-                    validator: Validators.empty,
-                    onChanged: (value) => context.read<SUB>().add(
-                          ChangeDProfileField(
-                            field: DProfileField.lastName,
                             value: value,
                           ),
                         ),

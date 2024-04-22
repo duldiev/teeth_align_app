@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
@@ -192,8 +192,8 @@ class _Content extends StatelessWidget {
             ],
           ),
           Gap(1.5.h),
-          Text(
-            post.text,
+          Linkify(
+            text: post.text,
             overflow: TextOverflow.ellipsis,
             maxLines: 200,
           ),

@@ -70,7 +70,7 @@ class SocialScreen extends StatelessWidget {
                 ),
                 Gap(6.w),
                 InkWell(
-                  onTap: () => context.router.push(const ChatListRoute()),
+                  onTap: () => context.router.push(ChatListRoute()),
                   child: const Icon(
                     FontAwesomeIcons.inbox,
                     size: 22,

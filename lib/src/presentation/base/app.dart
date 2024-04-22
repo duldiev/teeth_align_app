@@ -38,28 +38,30 @@ class App extends StatelessWidget {
         locale: const Locale('ru'),
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        builder: (context, child) => MultiBlocProvider(
-          providers: [
-            BlocProvider(create: (_) => getIt<SignInBloc>()),
-            BlocProvider(create: (_) => getIt<AdminBloc>()),
-            BlocProvider(create: (_) => getIt<DoctorBloc>()),
-            BlocProvider(create: (_) => getIt<MentorBloc>()),
-            BlocProvider(create: (_) => getIt<PatientBloc>()),
-            BlocProvider(create: (_) => getIt<LeaderboardBloc>()),
-            BlocProvider(create: (_) => getIt<CalendarDateBloc>()),
-            BlocProvider(
-              create: (_) => getIt<CalendarBloc>()
-                ..add(GetEvents(
-                  DateHelper.currentStartMonth,
-                  DateHelper.nextStartMonth,
-                )),
+        builder: (context, child) {
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (_) => getIt<SignInBloc>()),
+              BlocProvider(create: (_) => getIt<AdminBloc>()),
+              BlocProvider(create: (_) => getIt<DoctorBloc>()),
+              BlocProvider(create: (_) => getIt<MentorBloc>()),
+              BlocProvider(create: (_) => getIt<PatientBloc>()),
+              BlocProvider(create: (_) => getIt<LeaderboardBloc>()),
+              BlocProvider(create: (_) => getIt<CalendarDateBloc>()),
+              BlocProvider(
+                create: (_) => getIt<CalendarBloc>()
+                  ..add(GetEvents(
+                    DateHelper.currentStartMonth,
+                    DateHelper.nextStartMonth,
+                  )),
+              ),
+            ],
+            child: StreamChat(
+              client: client,
+              child: child,
             ),
-          ],
-          child: StreamChat(
-            client: client,
-            child: child,
-          ),
-        ),
+          );
+        },
       ),
     );
   }

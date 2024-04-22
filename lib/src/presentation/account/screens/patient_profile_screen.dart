@@ -151,6 +151,7 @@ class PatientProfileScreen extends StatelessWidget {
                   flex: 2,
                   child: InkWell(
                     onTap: () async {
+                      WidgetsFlutterBinding.ensureInitialized();
                       final channelState = await client.queryChannel(
                         ChatConstants.messageType,
                         channelData: {
@@ -162,12 +163,12 @@ class PatientProfileScreen extends StatelessWidget {
                           ],
                         },
                       );
-                      if (!context.mounted) return;
                       final channel = client.channel(
                         ChatConstants.messageType,
                         id: channelState.channel?.id,
                       );
-                      context.router.push(ChatRoute(channel: channel));
+                      if (!context.mounted) return;
+                      context.router.push(ChatListRoute(channel: channel));
                     },
                     borderRadius: BorderRadius.circular(8),
                     child: Container(

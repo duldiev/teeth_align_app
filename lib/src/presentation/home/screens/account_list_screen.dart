@@ -18,7 +18,7 @@ class AccountListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(title: Text('List')),
+      appBar: const MyAppBar(title: Text('Список')),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
         child: Column(

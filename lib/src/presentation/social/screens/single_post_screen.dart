@@ -12,6 +12,7 @@ import 'package:teeth_align_app/src/presentation/social/blocs/social_bloc/social
 import 'package:teeth_align_app/src/presentation/social/views/post_images_url_view.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/comment_icon.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/comment_tile.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
@@ -196,6 +197,10 @@ class _Content extends StatelessWidget {
             text: post.text,
             overflow: TextOverflow.ellipsis,
             maxLines: 200,
+            linkStyle: const TextStyle(color: Colors.blue),
+            onOpen: (link) => context.router.push(
+              DefaultWebView(url: link.url),
+            ),
           ),
           Gap(2.h),
           PostImagesUrlView(imageUrls: post.imageUrls),

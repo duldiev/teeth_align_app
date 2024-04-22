@@ -12,7 +12,7 @@ class ChatButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: appData.isChatAvailable
-          ? () => context.router.push(const ChatListRoute())
+          ? () => context.router.push(ChatListRoute())
           : null,
       child: Icon(
         FontAwesomeIcons.inbox,

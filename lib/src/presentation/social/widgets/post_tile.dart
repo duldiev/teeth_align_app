@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -67,10 +68,14 @@ class PostTile extends StatelessWidget {
               ],
             ),
             Gap(1.5.h),
-            Text(
-              post.text,
+            Linkify(
+              text: post.text,
               overflow: TextOverflow.ellipsis,
               maxLines: post.imageUrls.isNotEmpty ? 6 : 10,
+              linkStyle: const TextStyle(color: Colors.blue),
+              onOpen: (link) => context.router.push(
+                DefaultWebView(url: link.url),
+              ),
             ),
             Gap(2.h),
             PostImagesUrlView(imageUrls: post.imageUrls),

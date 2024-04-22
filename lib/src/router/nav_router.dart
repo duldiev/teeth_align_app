@@ -8,6 +8,7 @@ import 'package:teeth_align_app/src/presentation/home/blocs/admin_bloc/admin_blo
     as admin;
 import 'package:teeth_align_app/src/presentation/home/blocs/doctor_bloc/doctor_bloc.dart'
     as doc;
+import 'package:teeth_align_app/src/presentation/home/blocs/mentor_bloc/mentor_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/patient_bloc/patient_bloc.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
@@ -37,7 +38,9 @@ class _NavRouterState extends State<NavRouter> {
               ..add(GetCases(appData.userId));
           }
         case Role.mentor:
-          {}
+          {
+            context.read<MentorBloc>().add(const GetDoctors());
+          }
         case Role.admin:
           {
             context.read<admin.AdminBloc>().add(const admin.GetAll());

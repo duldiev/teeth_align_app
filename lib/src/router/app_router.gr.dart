@@ -122,9 +122,14 @@ abstract class $AppRouter extends _i31.RootStackRouter {
       );
     },
     ChatListRoute.name: (routeData) {
+      final args = routeData.argsAs<ChatListRouteArgs>(
+          orElse: () => const ChatListRouteArgs());
       return _i31.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i7.ChatListScreen(),
+        child: _i7.ChatListScreen(
+          key: args.key,
+          channel: args.channel,
+        ),
       );
     },
     ChatRoute.name: (routeData) {
@@ -415,16 +420,40 @@ class CameraRoute extends _i31.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i7.ChatListScreen]
-class ChatListRoute extends _i31.PageRouteInfo<void> {
-  const ChatListRoute({List<_i31.PageRouteInfo>? children})
-      : super(
+class ChatListRoute extends _i31.PageRouteInfo<ChatListRouteArgs> {
+  ChatListRoute({
+    _i32.Key? key,
+    _i34.Channel? channel,
+    List<_i31.PageRouteInfo>? children,
+  }) : super(
           ChatListRoute.name,
+          args: ChatListRouteArgs(
+            key: key,
+            channel: channel,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'ChatListRoute';
 
-  static const _i31.PageInfo<void> page = _i31.PageInfo<void>(name);
+  static const _i31.PageInfo<ChatListRouteArgs> page =
+      _i31.PageInfo<ChatListRouteArgs>(name);
+}
+
+class ChatListRouteArgs {
+  const ChatListRouteArgs({
+    this.key,
+    this.channel,
+  });
+
+  final _i32.Key? key;
+
+  final _i34.Channel? channel;
+
+  @override
+  String toString() {
+    return 'ChatListRouteArgs{key: $key, channel: $channel}';
+  }
 }
 
 /// generated route for

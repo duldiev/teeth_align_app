@@ -9,6 +9,8 @@ class DoctorEntity extends AccountEntity {
   final String? speciality;
   final String? clinicName;
   final int? place;
+  final int? score;
+  final int? patientsAmount;
 
   const DoctorEntity({
     required super.id,
@@ -30,6 +32,8 @@ class DoctorEntity extends AccountEntity {
     required this.speciality,
     required this.clinicName,
     required this.place,
+    this.score,
+    this.patientsAmount,
   });
 
   factory DoctorEntity.empty() => DoctorEntity(
@@ -72,6 +76,8 @@ class DoctorEntity extends AccountEntity {
         speciality,
         clinicName,
         place,
+        score,
+        patientsAmount,
         ...super.props,
       ];
 
@@ -96,6 +102,8 @@ class DoctorEntity extends AccountEntity {
     String? speciality,
     String? clinicName,
     int? place,
+    int? score,
+    int? patientsAmount,
   }) {
     return DoctorEntity(
       id: id ?? this.id,
@@ -117,6 +125,8 @@ class DoctorEntity extends AccountEntity {
       speciality: speciality ?? this.speciality,
       clinicName: clinicName ?? this.clinicName,
       place: place ?? this.place,
+      score: score ?? this.score,
+      patientsAmount: patientsAmount ?? this.patientsAmount,
     );
   }
 }

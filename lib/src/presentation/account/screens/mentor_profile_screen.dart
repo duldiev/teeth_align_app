@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
@@ -13,7 +12,6 @@ import 'package:teeth_align_app/src/core/extensions/date_extension.dart';
 import 'package:teeth_align_app/src/core/helpers/app_data.dart';
 import 'package:teeth_align_app/src/core/services/modal_bottom_sheet.dart';
 import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
-import 'package:teeth_align_app/src/presentation/account/widgets/star_icon.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/admin_bloc/admin_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/mentor_bloc/mentor_bloc.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/list_header.dart';
@@ -114,94 +112,44 @@ class _MentorProfileScreenState extends State<MentorProfileScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Expanded(
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              vertical: 6,
-                            ),
-                            decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Column(
-                              children: [
-                                Text(
-                                  'Пациенты',
-                                  style: context.textTheme.labelSmall?.copyWith(
-                                    color: AppColors.dark,
-                                    height: 1,
+                        if (data.mentor!.doctorsAmount != null) ...[
+                          Expanded(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 6,
+                              ),
+                              decoration: BoxDecoration(
+                                color: AppColors.white,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Доктора',
+                                    style:
+                                        context.textTheme.labelSmall?.copyWith(
+                                      color: AppColors.dark,
+                                      height: 1,
+                                    ),
+                                    textAlign: TextAlign.center,
                                   ),
-                                  textAlign: TextAlign.center,
-                                ),
-                                const Gap(3),
-                                Text(
-                                  '1000+',
-                                  style:
-                                      context.textTheme.titleMedium?.copyWith(
-                                    color: AppColors.dark,
-                                    fontWeight: FontWeight.bold,
-                                    height: 1,
+                                  const Gap(3),
+                                  Text(
+                                    '1000+',
+                                    style:
+                                        context.textTheme.titleMedium?.copyWith(
+                                      color: AppColors.dark,
+                                      fontWeight: FontWeight.bold,
+                                      height: 1,
+                                    ),
+                                    textAlign: TextAlign.center,
                                   ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        Gap(3.w),
-                        Expanded(
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              vertical: 6,
-                            ).copyWith(left: 10),
-                            decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Рейтинг',
-                                  style: context.textTheme.labelSmall?.copyWith(
-                                    color: AppColors.dark,
-                                    height: 1,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                                const Gap(3),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '4.5',
-                                      style: context.textTheme.titleMedium
-                                          ?.copyWith(
-                                        color: AppColors.dark,
-                                        fontWeight: FontWeight.bold,
-                                        height: 1,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                    const Gap(10),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        const StarIcon(enabled: 0.75 > 0.33),
-                                        Gap(2.w),
-                                        const StarIcon(enabled: 0.75 > 0.66),
-                                        Gap(2.w),
-                                        const StarIcon(enabled: 0.75 == 1.00),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Gap(3.w),
+                          Gap(3.w),
+                        ],
                         Expanded(
                           child: InkWell(
                             onTap: () async {

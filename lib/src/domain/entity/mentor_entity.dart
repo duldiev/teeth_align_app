@@ -8,6 +8,7 @@ class MentorEntity extends AccountEntity {
   final String? speciality;
   final String? clinicName;
   final List<DoctorEntity> assignedDoctors;
+  final int? doctorsAmount;
 
   const MentorEntity({
     required super.id,
@@ -22,12 +23,13 @@ class MentorEntity extends AccountEntity {
     required super.bio,
     required super.chatToken,
     required super.chatUserId,
+    required super.chatEnabled,
     required this.education,
     required this.workExperience,
     required this.speciality,
     required this.clinicName,
     required this.assignedDoctors,
-    required super.chatEnabled,
+    this.doctorsAmount,
   });
 
   factory MentorEntity.empty() => MentorEntity(
@@ -58,6 +60,7 @@ class MentorEntity extends AccountEntity {
         speciality,
         clinicName,
         assignedDoctors,
+        doctorsAmount,
         ...super.props,
       ];
 
@@ -81,6 +84,7 @@ class MentorEntity extends AccountEntity {
     String? clinicName,
     List<DoctorEntity>? assignedDoctors,
     bool? chatEnabled,
+    int? doctorsAmount,
   }) {
     return MentorEntity(
       id: id ?? super.id,
@@ -101,6 +105,7 @@ class MentorEntity extends AccountEntity {
       clinicName: clinicName ?? this.clinicName,
       assignedDoctors: assignedDoctors ?? this.assignedDoctors,
       chatEnabled: chatEnabled ?? this.chatEnabled,
+      doctorsAmount: doctorsAmount ?? this.doctorsAmount,
     );
   }
 }

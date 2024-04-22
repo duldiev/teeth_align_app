@@ -22,6 +22,7 @@ class DoctorModel extends DoctorEntity {
     required super.chatUserId,
     required super.chatEnabled,
     required super.place,
+    required super.score,
   });
 
   factory DoctorModel.fromMap(Map<String, dynamic> map) => DoctorModel(
@@ -46,5 +47,6 @@ class DoctorModel extends DoctorEntity {
         chatToken: map['chatToken'] as String?,
         chatEnabled: map['chatEnabled'] as bool? ?? false,
         place: map['place'] as int?,
+        score: map['score'] as int?,
       );
 }

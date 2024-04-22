@@ -22,6 +22,7 @@ class MentorModel extends MentorEntity {
     required super.chatUserId,
     required super.assignedDoctors,
     required super.chatEnabled,
+    required super.doctorsAmount,
   });
 
   factory MentorModel.fromMap(Map<String, dynamic> map) => MentorModel(
@@ -49,5 +50,6 @@ class MentorModel extends MentorEntity {
                 .toList()
             : [],
         chatEnabled: map['chatEnabled'] as bool? ?? false,
+        doctorsAmount: map['doctorsAmount'] as int?,
       );
 }

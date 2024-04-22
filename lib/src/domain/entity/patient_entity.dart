@@ -11,6 +11,7 @@ class PatientEntity extends AccountEntity {
   final String? scanLink;
   final String? referralCode;
   final int? balance;
+  final String? treatmentPeriod;
 
   const PatientEntity({
     required super.id,
@@ -34,6 +35,7 @@ class PatientEntity extends AccountEntity {
     this.referralCode,
     this.balance,
     this.scanLink,
+    this.treatmentPeriod,
   });
 
   factory PatientEntity.empty() => PatientEntity(
@@ -65,7 +67,9 @@ class PatientEntity extends AccountEntity {
         wearDuration,
         reminderTime,
         scanLink,
-        referralCode,balance,
+        referralCode,
+        balance,
+        treatmentPeriod,
         ...super.props,
       ];
 }

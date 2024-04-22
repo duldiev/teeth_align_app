@@ -98,90 +98,100 @@ class DoctorProfileScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 6,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.white,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Пациенты',
-                          style: context.textTheme.labelSmall?.copyWith(
-                            color: AppColors.dark,
-                            height: 1,
+                if (doctor.patientsAmount != null) ...[
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 6,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.white,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            'Пациенты',
+                            style: context.textTheme.labelSmall?.copyWith(
+                              color: AppColors.dark,
+                              height: 1,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
-                        ),
-                        const Gap(3),
-                        Text(
-                          '1000+',
-                          style: context.textTheme.titleMedium?.copyWith(
-                            color: AppColors.dark,
-                            fontWeight: FontWeight.bold,
-                            height: 1,
+                          const Gap(3),
+                          Text(
+                            doctor.patientsAmount.toString(),
+                            style: context.textTheme.titleMedium?.copyWith(
+                              color: AppColors.dark,
+                              fontWeight: FontWeight.bold,
+                              height: 1,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                Gap(3.w),
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 6,
-                    ).copyWith(left: 10),
-                    decoration: BoxDecoration(
-                      color: AppColors.white,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Рейтинг',
-                          style: context.textTheme.labelSmall?.copyWith(
-                            color: AppColors.dark,
-                            height: 1,
+                ],
+                if (doctor.score != null) ...[
+                  Gap(3.w),
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 6,
+                      ).copyWith(left: 10),
+                      decoration: BoxDecoration(
+                        color: AppColors.white,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Рейтинг',
+                            style: context.textTheme.labelSmall?.copyWith(
+                              color: AppColors.dark,
+                              height: 1,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
-                        ),
-                        const Gap(3),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              '4.5',
-                              style: context.textTheme.titleMedium?.copyWith(
-                                color: AppColors.dark,
-                                fontWeight: FontWeight.bold,
-                                height: 1,
+                          const Gap(3),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                doctor.score!.toString(),
+                                style: context.textTheme.titleMedium?.copyWith(
+                                  color: AppColors.dark,
+                                  fontWeight: FontWeight.bold,
+                                  height: 1,
+                                ),
+                                textAlign: TextAlign.center,
                               ),
-                              textAlign: TextAlign.center,
-                            ),
-                            const Gap(10),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const StarIcon(enabled: 0.75 > 0.33),
-                                Gap(2.w),
-                                const StarIcon(enabled: 0.75 > 0.66),
-                                Gap(2.w),
-                                const StarIcon(enabled: 0.75 == 1.00),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
+                              const Gap(10),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  StarIcon(
+                                    enabled: (doctor.score! / 5) > 0.33,
+                                  ),
+                                  Gap(2.w),
+                                  StarIcon(
+                                    enabled: (doctor.score! / 5) > 0.66,
+                                  ),
+                                  Gap(2.w),
+                                  StarIcon(
+                                    enabled: (doctor.score! / 5) == 1.00,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
+                ],
                 Gap(3.w),
                 Expanded(
                   child: InkWell(
@@ -233,27 +243,30 @@ class DoctorProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Gap(2.h),
-            Text(
-              'Био',
-              style: context.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
+            if (doctor.bio != null) ...[
+              Gap(2.h),
+              Text(
+                'Био',
+                style: context.textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const Gap(2),
-            Text(
-              doctor.bio ??
-                  'Orthodontist Extraordinaire | Creating Smiles, Changing Lives 🌟 Transforming Smiles with Precision and Care 🌟',
-            ),
-            Gap(2.h),
-            Text(
-              'Клиника',
-              style: context.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
+              const Gap(2),
+              Text(
+                doctor.bio!,
               ),
-            ),
-            const Gap(2),
-            Text(doctor.clinicName ?? 'Care Medical Center'),
+            ],
+            if (doctor.clinicName != null) ...[
+              Gap(2.h),
+              Text(
+                'Клиника',
+                style: context.textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Gap(2),
+              Text(doctor.clinicName!),
+            ],
           ],
         ),
       ),

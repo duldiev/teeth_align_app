@@ -73,39 +73,41 @@ class PatientProfileScreen extends StatelessWidget {
                           ),
                         ),
                       ],
-                      const Gap(4),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 6,
-                        ).copyWith(left: 10),
-                        decoration: BoxDecoration(
-                          color: AppColors.white,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Срок лечения',
-                              style: context.textTheme.labelSmall?.copyWith(
-                                color: AppColors.dark,
-                                height: 1,
+                      if (patient.treatmentPeriod != null) ...[
+                        const Gap(4),
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 6,
+                          ).copyWith(left: 10),
+                          decoration: BoxDecoration(
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Срок лечения',
+                                style: context.textTheme.labelSmall?.copyWith(
+                                  color: AppColors.dark,
+                                  height: 1,
+                                ),
+                                textAlign: TextAlign.center,
                               ),
-                              textAlign: TextAlign.center,
-                            ),
-                            const Gap(3),
-                            Text(
-                              '1 год 1 месяцов 15 дней',
-                              style: context.textTheme.titleMedium?.copyWith(
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.dark,
-                                height: 1,
+                              const Gap(3),
+                              Text(
+                                patient.treatmentPeriod!,
+                                style: context.textTheme.titleMedium?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.dark,
+                                  height: 1,
+                                ),
+                                textAlign: TextAlign.center,
                               ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
+                      ],
                     ],
                   ),
                 ),
@@ -136,7 +138,7 @@ class PatientProfileScreen extends StatelessWidget {
                           ),
                           Gap(1.w),
                           Text(
-                            'Create a case',
+                            'Прикрепить отчет',
                             style: context.textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
@@ -231,17 +233,18 @@ class PatientProfileScreen extends StatelessWidget {
               ),
             ],
             Gap(2.h),
-            Text(
-              'Био',
-              style: context.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
+            if (patient.bio != null) ...[
+              Text(
+                'Био',
+                style: context.textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const Gap(2),
-            Text(
-              patient.bio ??
-                  'Orthodontist Extraordinaire | Creating Smiles, Changing Lives 🌟 Transforming Smiles with Precision and Care 🌟',
-            ),
+              const Gap(2),
+              Text(
+                patient.bio!,
+              ),
+            ],
           ],
         ),
       ),

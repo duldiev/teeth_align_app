@@ -25,6 +25,7 @@ class PatientModel extends PatientEntity {
     required super.scanLink,
     required super.balance,
     required super.referralCode,
+    required super.treatmentPeriod,
   });
 
   factory PatientModel.fromMap(Map<String, dynamic> map) => PatientModel(
@@ -51,5 +52,6 @@ class PatientModel extends PatientEntity {
         scanLink: map['scanLink'] as String?,
         balance: map['balance'] as int?,
         referralCode: map['referralCode'] as String?,
+        treatmentPeriod: map['treatmentPeriod'] as String?,
       );
 }

@@ -46,6 +46,9 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/center.jpeg
+  AssetGenImage get center => const AssetGenImage('assets/images/center.jpeg');
+
   /// File path: assets/images/doctor.png
   AssetGenImage get doctor => const AssetGenImage('assets/images/doctor.png');
 
@@ -62,6 +65,9 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/girl.jpeg
   AssetGenImage get girl => const AssetGenImage('assets/images/girl.jpeg');
+
+  /// File path: assets/images/left.jpeg
+  AssetGenImage get left => const AssetGenImage('assets/images/left.jpeg');
 
   /// File path: assets/images/leftOcc.jpg
   AssetGenImage get leftOcc => const AssetGenImage('assets/images/leftOcc.jpg');
@@ -80,6 +86,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/profile.jpg
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.jpg');
 
+  /// File path: assets/images/right.jpeg
+  AssetGenImage get right => const AssetGenImage('assets/images/right.jpeg');
+
   /// File path: assets/images/rightOcc.jpg
   AssetGenImage get rightOcc =>
       const AssetGenImage('assets/images/rightOcc.jpg');
@@ -90,16 +99,19 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        center,
         doctor,
         frontOcc,
         frontal,
         frontalDynamic,
         girl,
+        left,
         leftOcc,
         mandibularOcc,
         maxilaryOcc,
         patient,
         profile,
+        right,
         rightOcc,
         thumbsUp
       ];

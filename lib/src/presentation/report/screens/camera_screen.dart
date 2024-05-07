@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:teeth_align_app/gen/assets.gen.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
@@ -93,103 +93,66 @@ class _CameraScreenState extends State<CameraScreen>
             listener: (context, state) {},
             listenWhen: (prev, curr) => prev.status != curr.status,
             builder: (context, state) {
-              return CameraPreview(
-                controller,
-                child: Scaffold(
+              return Scaffold(
+                backgroundColor: AppColors.transparent,
+                appBar: AppBar(
                   backgroundColor: AppColors.transparent,
-                  appBar: AppBar(
-                    backgroundColor: AppColors.transparent,
-                    scrolledUnderElevation: 0,
-                    elevation: 0,
-                    leadingWidth: double.maxFinite,
-                    leading: InkWell(
-                      onTap: () => context.router.maybePop(),
-                      customBorder: const CircleBorder(),
-                      child: Row(
-                        children: [
-                          Gap(4.w),
-                          const Icon(
-                            FontAwesomeIcons.arrowLeft,
+                  scrolledUnderElevation: 0,
+                  elevation: 0,
+                  leadingWidth: double.maxFinite,
+                  leading: InkWell(
+                    onTap: () => context.router.maybePop(),
+                    customBorder: const CircleBorder(),
+                    child: Row(
+                      children: [
+                        Gap(4.w),
+                        const Icon(
+                          FontAwesomeIcons.arrowLeft,
+                          color: AppColors.white,
+                          size: 18,
+                        ),
+                        Gap(3.w),
+                        Text(
+                          'Сфотографируйте зубы',
+                          style: context.textTheme.titleMedium?.copyWith(
                             color: AppColors.white,
-                            size: 18,
+                            fontWeight: FontWeight.w600,
                           ),
-                          Gap(2.w),
-                          Text(
-                            'Назад',
-                            style: context.textTheme.titleSmall?.copyWith(
-                              color: AppColors.white,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
-                  body: SafeArea(
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: 2.h),
-                            child: Column(
-                              children: [
-                                Text(
-                                  'Сфотографируйте зубы',
-                                  style:
-                                      context.textTheme.headlineSmall?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                Text(
-                                  switch (state.files.length) {
-                                    0 => 'Слева',
-                                    1 => 'Центр',
-                                    2 => 'Справа',
-                                    int() => '',
-                                  },
-                                  style: context.textTheme.headlineMedium
-                                      ?.copyWith(
-                                    color: AppColors.primary,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
+                ),
+                extendBodyBehindAppBar: true,
+                body: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Builder(
+                      builder: (context) {
+                        var camera = controller.value;
+                        final size = MediaQuery.of(context).size;
+                        var scale = size.aspectRatio * camera.aspectRatio;
+                        if (scale < 1) scale = 1 / scale;
+                        return Transform.scale(
+                          scale: 16 / 6,
+                          child: Align(
+                            alignment: Alignment.bottomCenter,
+                            child: CameraPreview(controller),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Container(
-                                height: 100,
-                                margin: EdgeInsets.only(bottom: 3.h),
-                                alignment: Alignment.bottomCenter,
-                                child: ListView.separated(
-                                  scrollDirection: Axis.horizontal,
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 4.w,
-                                  ),
-                                  itemBuilder: (context, index) => ImageCard(
-                                    index: index,
-                                    file: state.files[index],
-                                  ),
-                                  separatorBuilder: (context, index) =>
-                                      Gap(4.w),
-                                  itemCount: state.files.length,
-                                ),
-                              ),
-                              _ButtonsView(
-                                controller: controller,
-                                state: state,
-                                onSwitch: onNewCameraSelected,
-                              ),
-                              Gap(4.h),
-                            ],
-                          ),
-                        ],
+                        );
+                      },
+                    ),
+                    SafeArea(
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: _TopView(
+                          controller,
+                          state,
+                          onNewCameraSelected,
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
               );
             },
@@ -199,6 +162,99 @@ class _CameraScreenState extends State<CameraScreen>
         }
       },
     ));
+  }
+}
+
+class _TopView extends StatelessWidget {
+  const _TopView(
+    this.controller,
+    this.state,
+    this.onSwitch,
+  );
+
+  final CameraController controller;
+  final CameraState state;
+  final void Function(CameraDescription description) onSwitch;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(top: 1.h),
+          child: SizedBox(
+            height: 120,
+            width: 200,
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: switch (state.files.length) {
+                    0 => Assets.images.left,
+                    1 => Assets.images.center,
+                    2 => Assets.images.right,
+                    int() => Assets.images.center,
+                  }
+                      .image(
+                    fit: BoxFit.cover,
+                    width: 200,
+                    colorBlendMode: BlendMode.color,
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.black.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                Text(
+                  switch (state.files.length) {
+                    0 => 'Слева',
+                    1 => 'Центр',
+                    2 => 'Справа',
+                    int() => '',
+                  },
+                  style: context.textTheme.headlineMedium?.copyWith(
+                    color: AppColors.primary,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Container(
+              height: 100,
+              margin: EdgeInsets.only(bottom: 3.h),
+              alignment: Alignment.bottomCenter,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 4.w,
+                ),
+                itemBuilder: (context, index) => ImageCard(
+                  index: index,
+                  file: state.files[index],
+                ),
+                separatorBuilder: (context, index) => Gap(4.w),
+                itemCount: state.files.length,
+              ),
+            ),
+            _ButtonsView(
+              controller: controller,
+              state: state,
+              onSwitch: onSwitch,
+            ),
+            Gap(4.h),
+          ],
+        ),
+      ],
+    );
   }
 }
 

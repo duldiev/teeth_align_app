@@ -128,7 +128,7 @@ class RateDoctorScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Online examination',
+                          'Качественное онлайн-обследование',
                           style: context.textTheme.titleLarge?.copyWith(
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
@@ -150,7 +150,7 @@ class RateDoctorScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Consultation',
+                          'Качественная консультация',
                           style: context.textTheme.titleLarge?.copyWith(
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
@@ -172,7 +172,7 @@ class RateDoctorScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Medicine instruction',
+                          'Корректные медицинские инструкции',
                           style: context.textTheme.titleLarge?.copyWith(
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
@@ -192,7 +192,7 @@ class RateDoctorScreen extends StatelessWidget {
                     ),
                     Gap(2.h),
                     Text(
-                      'Оставить комментарий',
+                      'Комментарий к оценке',
                       style: context.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w400,
                       ),
@@ -200,7 +200,7 @@ class RateDoctorScreen extends StatelessWidget {
                     ),
                     const Gap(4),
                     TextInput(
-                      hintText: 'Eg. The doctor is very friendly',
+                      hintText: 'Например. Профессиональное обследование',
                       maxLines: 4,
                       onChanged: (value) => context.read<RDB>().add(
                             ChangeField(

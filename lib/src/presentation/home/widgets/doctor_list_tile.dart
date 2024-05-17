@@ -34,7 +34,7 @@ class DoctorListTile extends StatelessWidget {
             ),
           ),
           Text(
-            doctor.speciality ?? 'General Practitioner',
+            doctor.speciality ?? 'Практикующий ортодонт',
             style: context.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w500,
               color: AppColors.grey,

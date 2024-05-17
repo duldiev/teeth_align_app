@@ -79,7 +79,7 @@ class DoctorProfileScreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      doctor.speciality ?? 'General Practitioner',
+                      doctor.speciality ?? 'Практикующий ортодонт',
                       style: context.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w400,
                       ),

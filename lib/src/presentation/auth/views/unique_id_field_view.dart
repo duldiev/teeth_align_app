@@ -60,7 +60,7 @@ class _UniqueIdFieldViewState extends State<UniqueIdFieldView> {
             TextInput(
               controller: _controller,
               label: 'Введите код ${isPatient ? 'пациента' : 'доктора'}',
-              hintText: isPatient ? 'PETA-45' : 'Unique code',
+              hintText: isPatient ? 'PETA-45' : 'Уникальный код',
               inputFormatters: [
                 isPatient ? Masks.patientId : Masks.doctorId,
                 onlyUpperCase,

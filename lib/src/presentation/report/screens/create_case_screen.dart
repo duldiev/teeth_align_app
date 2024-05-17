@@ -50,7 +50,7 @@ class CreateCaseScreen extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
             appBar: const MyAppBar(
-              title: Text('Create a case'),
+              title: Text('Создать отчет'),
             ),
             body: SingleChildScrollView(
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
@@ -91,10 +91,10 @@ class CreateCaseScreen extends StatelessWidget {
                       //   },
                       // ),
                       TextInput(
-                        label: 'Leave the comment',
+                        label: 'Оставить комментарий',
                         brightness: Brightness.light,
                         fillColor: AppColors.dark.withOpacity(0.5),
-                        hintText: 'Describe',
+                        hintText: 'Описать',
                         maxLines: 5,
                         onChanged: (value) =>
                             context.read<CreateCaseBloc>().add(
@@ -103,7 +103,7 @@ class CreateCaseScreen extends StatelessWidget {
                       ),
                       Gap(3.h),
                       ColoredButton(
-                        title: 'Create',
+                        title: 'Отправить',
                         onTap: () => context.read<CreateCaseBloc>().add(
                               Create(patientId),
                             ),

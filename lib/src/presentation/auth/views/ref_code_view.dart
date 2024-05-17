@@ -16,7 +16,7 @@ class RefCodeView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextInput(
-          label: 'Укажите реферальный код\nчтобы получить баланс',
+          label: 'Укажите реферальный код\nчтобы получить бонус на ваш аккаунт',
           hintText: 'Введите реферальный код',
           onChanged: (value) => context.read<SignUpBloc>().add(
                 ChangeRegisterField(

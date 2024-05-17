@@ -62,7 +62,7 @@ class CaseInput extends StatelessWidget {
                           context.read<CreateCaseBloc>().add(UploadImage(field))
                       : null,
                   child: TextInput(
-                    hintText: image?.name ?? 'Tap to upload',
+                    hintText: image?.name ?? 'Загрузить',
                     prefixIcon: image == null
                         ? const Icon(
                             Icons.upload_file_rounded,

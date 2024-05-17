@@ -93,7 +93,8 @@ class _MentorProfileScreenState extends State<MentorProfileScreen> {
                               ),
                             ),
                             Text(
-                              data.mentor!.speciality ?? 'General Practitioner',
+                              data.mentor!.speciality ??
+                                  'Практикующий ортодонт',
                               style: context.textTheme.titleMedium?.copyWith(
                                 fontWeight: FontWeight.w400,
                               ),
@@ -222,14 +223,14 @@ class _MentorProfileScreenState extends State<MentorProfileScreen> {
                     ),
                     const Gap(2),
                     Text(
-                      data.mentor!.clinicName ?? 'Care Medical Center',
+                      data.mentor!.clinicName ?? 'Не указан',
                     ),
                     Gap(2.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Assigned doctors',
+                          'Доктора на менторстве',
                           style: context.textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
@@ -240,7 +241,7 @@ class _MentorProfileScreenState extends State<MentorProfileScreen> {
                             const _ListOfDoctors(),
                           ),
                           child: Text(
-                            'Assign',
+                            'Добавить доктора',
                             style: context.textTheme.titleSmall?.copyWith(
                               fontWeight: FontWeight.bold,
                               color: AppColors.blue,

@@ -14,6 +14,7 @@ import 'package:teeth_align_app/src/core/services/toast.dart';
 import 'package:teeth_align_app/src/presentation/account/widgets/account_tile.dart';
 import 'package:teeth_align_app/src/presentation/account/widgets/account_tile_divider.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart';
+import 'package:teeth_align_app/src/presentation/home/blocs/patient_bloc/patient_bloc.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
@@ -62,25 +63,26 @@ class AccountScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      if (appData.account?.role == Role.patient) ...[
-                        if (appData.patient?.referralCode == null) ...[
-                          const Gap(6),
-                          Padding(
-                            padding: EdgeInsets.only(left: 1.2.w),
-                            child: Column(
+                      BlocBuilder<PatientBloc, PatientState>(
+                        builder: (context, state) => Padding(
+                          padding: EdgeInsets.only(left: 1.2.w),
+                          child: state.maybeMap(
+                            orElse: () => const SizedBox(),
+                            loaded: (value) => Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
                                   children: [
                                     Text(
-                                      'Ваш код: ${appData.patient?.referralCode}',
+                                      'Ваш код: ${value.viewModel.patient?.referralCode}',
                                       style: context.textTheme.labelMedium,
                                     ),
                                     Gap(3.w),
                                     InkWell(
                                       onTap: () => ser.Clipboard.setData(
                                         ser.ClipboardData(
-                                          text: appData.patient?.referralCode ??
+                                          text: value.viewModel.patient
+                                                  ?.referralCode ??
                                               '',
                                         ),
                                       ).whenComplete(
@@ -102,14 +104,14 @@ class AccountScreen extends StatelessWidget {
                                 ),
                                 const Gap(4),
                                 Text(
-                                  'Баланс: ${appData.patient?.balance}',
+                                  'Баланс: ${value.viewModel.patient?.balance}',
                                   style: context.textTheme.labelMedium,
                                 ),
                               ],
                             ),
                           ),
-                        ],
-                      ],
+                        ),
+                      ),
                     ],
                   ),
                 ),

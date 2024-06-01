@@ -128,8 +128,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           DProfileField.speciality => state.doctorProfileBody!.copyWith(
               speciality: event.value,
             ),
-          DProfileField.education => state.doctorProfileBody!.copyWith(
-              education: event.value,
+          DProfileField.city => state.doctorProfileBody!.copyWith(
+              city: event.value,
             ),
           DProfileField.workExperience => state.doctorProfileBody!.copyWith(
               workExperience: int.tryParse(event.value) ?? 0,
@@ -282,7 +282,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
     emit(state.copyWith(status: LoadStatus.loading));
 
-    (await doctorRepository.createProfile(state.doctorProfileBody!)).fold(
+    (await doctorRepository.updateProfile(state.doctorProfileBody!)).fold(
       (l) => emit(state.copyWith(status: LoadStatus.failed)),
       (r) {
         router

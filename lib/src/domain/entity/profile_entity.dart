@@ -42,8 +42,8 @@ class ProfileEntity extends Equatable {
 
   Map<String, dynamic> toMap() => {
         'username': username,
-        'firstName': firstName,
-        'lastName': lastName,
+        'firstname': firstName,
+        'lastname': lastName,
         'birthdate': birthDate?.toIso8601String(),
         'bio': bio,
         'gender': gender?.name.toUpperCase(),

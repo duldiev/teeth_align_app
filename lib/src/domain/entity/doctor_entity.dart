@@ -1,9 +1,9 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
 
 class DoctorEntity extends AccountEntity {
   final String? education;
+  final String? city;
   final int? workExperience;
   final String? position;
   final String? speciality;
@@ -27,6 +27,7 @@ class DoctorEntity extends AccountEntity {
     required super.chatUserId,
     required super.chatEnabled,
     required this.education,
+    required this.city,
     required this.workExperience,
     required this.position,
     required this.speciality,
@@ -50,6 +51,7 @@ class DoctorEntity extends AccountEntity {
         chatToken: null,
         bio: null,
         education: null,
+        city: null,
         workExperience: null,
         speciality: null,
         clinicName: null,
@@ -66,11 +68,13 @@ class DoctorEntity extends AccountEntity {
         'position': position,
         'speciality': speciality,
         'clinicName': clinicName,
+        'city': city,
       };
 
   @override
   List<Object?> get props => [
         education,
+        city,
         workExperience,
         position,
         speciality,
@@ -97,6 +101,7 @@ class DoctorEntity extends AccountEntity {
     String? bio,
     bool? chatEnabled,
     String? education,
+    String? city,
     int? workExperience,
     String? position,
     String? speciality,
@@ -120,6 +125,7 @@ class DoctorEntity extends AccountEntity {
       bio: bio ?? this.bio,
       chatEnabled: chatEnabled ?? this.chatEnabled,
       education: education ?? this.education,
+      city: city ?? this.city,
       workExperience: workExperience ?? this.workExperience,
       position: position ?? this.position,
       speciality: speciality ?? this.speciality,

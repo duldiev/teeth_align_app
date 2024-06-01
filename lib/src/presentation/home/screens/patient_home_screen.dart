@@ -106,7 +106,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                     child: Padding(
                       padding: EdgeInsets.all(4.w),
                       child: Text(
-                        'Таймер\nвывода',
+                        'Таймер отдыха',
                         style: context.textTheme.headlineSmall?.copyWith(
                           fontWeight: FontWeight.w800,
                           color: AppColors.secondary,

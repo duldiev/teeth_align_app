@@ -38,7 +38,7 @@ enum DProfileField {
   lastName,
   clinicName,
   speciality,
-  education,
+  city,
   workExperience,
 }
 

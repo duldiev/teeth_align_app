@@ -7,4 +7,13 @@ class DoctorEvent with _$DoctorEvent {
   const factory DoctorEvent.getPatients() = GetPatients;
 
   const factory DoctorEvent.getDoctor(int id) = GetDoctor;
+
+  const factory DoctorEvent.getDoctorMe() = GetDoctorMe;
+
+  const factory DoctorEvent.changeField({
+    required DProfileField field,
+    required dynamic value,
+  }) = ChangeField;
+
+  const factory DoctorEvent.saveFields() = SaveFields;
 }

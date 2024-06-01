@@ -104,12 +104,12 @@ class DoctorCreateProfileScreen extends StatelessWidget {
                   ),
                   Gap(1.5.h),
                   TextInput(
-                    label: 'Образование',
-                    hintText: 'Введите образование',
+                    label: 'Место образование',
+                    hintText: 'Введите место образование',
                     validator: Validators.empty,
                     onChanged: (value) => context.read<SUB>().add(
                           ChangeDProfileField(
-                            field: DProfileField.education,
+                            field: DProfileField.city,
                             value: value,
                           ),
                         ),

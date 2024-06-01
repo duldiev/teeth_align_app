@@ -21,6 +21,9 @@ mixin _$DoctorEvent {
     required TResult Function() getMentors,
     required TResult Function() getPatients,
     required TResult Function(int id) getDoctor,
+    required TResult Function() getDoctorMe,
+    required TResult Function(DProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +31,9 @@ mixin _$DoctorEvent {
     TResult? Function()? getMentors,
     TResult? Function()? getPatients,
     TResult? Function(int id)? getDoctor,
+    TResult? Function()? getDoctorMe,
+    TResult? Function(DProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +41,9 @@ mixin _$DoctorEvent {
     TResult Function()? getMentors,
     TResult Function()? getPatients,
     TResult Function(int id)? getDoctor,
+    TResult Function()? getDoctorMe,
+    TResult Function(DProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +52,9 @@ mixin _$DoctorEvent {
     required TResult Function(GetMentors value) getMentors,
     required TResult Function(GetPatients value) getPatients,
     required TResult Function(GetDoctor value) getDoctor,
+    required TResult Function(GetDoctorMe value) getDoctorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +62,9 @@ mixin _$DoctorEvent {
     TResult? Function(GetMentors value)? getMentors,
     TResult? Function(GetPatients value)? getPatients,
     TResult? Function(GetDoctor value)? getDoctor,
+    TResult? Function(GetDoctorMe value)? getDoctorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +72,9 @@ mixin _$DoctorEvent {
     TResult Function(GetMentors value)? getMentors,
     TResult Function(GetPatients value)? getPatients,
     TResult Function(GetDoctor value)? getDoctor,
+    TResult Function(GetDoctorMe value)? getDoctorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +139,9 @@ class _$GetMentorsImpl implements GetMentors {
     required TResult Function() getMentors,
     required TResult Function() getPatients,
     required TResult Function(int id) getDoctor,
+    required TResult Function() getDoctorMe,
+    required TResult Function(DProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return getMentors();
   }
@@ -131,6 +152,9 @@ class _$GetMentorsImpl implements GetMentors {
     TResult? Function()? getMentors,
     TResult? Function()? getPatients,
     TResult? Function(int id)? getDoctor,
+    TResult? Function()? getDoctorMe,
+    TResult? Function(DProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return getMentors?.call();
   }
@@ -141,6 +165,9 @@ class _$GetMentorsImpl implements GetMentors {
     TResult Function()? getMentors,
     TResult Function()? getPatients,
     TResult Function(int id)? getDoctor,
+    TResult Function()? getDoctorMe,
+    TResult Function(DProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (getMentors != null) {
@@ -155,6 +182,9 @@ class _$GetMentorsImpl implements GetMentors {
     required TResult Function(GetMentors value) getMentors,
     required TResult Function(GetPatients value) getPatients,
     required TResult Function(GetDoctor value) getDoctor,
+    required TResult Function(GetDoctorMe value) getDoctorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return getMentors(this);
   }
@@ -165,6 +195,9 @@ class _$GetMentorsImpl implements GetMentors {
     TResult? Function(GetMentors value)? getMentors,
     TResult? Function(GetPatients value)? getPatients,
     TResult? Function(GetDoctor value)? getDoctor,
+    TResult? Function(GetDoctorMe value)? getDoctorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return getMentors?.call(this);
   }
@@ -175,6 +208,9 @@ class _$GetMentorsImpl implements GetMentors {
     TResult Function(GetMentors value)? getMentors,
     TResult Function(GetPatients value)? getPatients,
     TResult Function(GetDoctor value)? getDoctor,
+    TResult Function(GetDoctorMe value)? getDoctorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (getMentors != null) {
@@ -229,6 +265,9 @@ class _$GetPatientsImpl implements GetPatients {
     required TResult Function() getMentors,
     required TResult Function() getPatients,
     required TResult Function(int id) getDoctor,
+    required TResult Function() getDoctorMe,
+    required TResult Function(DProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return getPatients();
   }
@@ -239,6 +278,9 @@ class _$GetPatientsImpl implements GetPatients {
     TResult? Function()? getMentors,
     TResult? Function()? getPatients,
     TResult? Function(int id)? getDoctor,
+    TResult? Function()? getDoctorMe,
+    TResult? Function(DProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return getPatients?.call();
   }
@@ -249,6 +291,9 @@ class _$GetPatientsImpl implements GetPatients {
     TResult Function()? getMentors,
     TResult Function()? getPatients,
     TResult Function(int id)? getDoctor,
+    TResult Function()? getDoctorMe,
+    TResult Function(DProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (getPatients != null) {
@@ -263,6 +308,9 @@ class _$GetPatientsImpl implements GetPatients {
     required TResult Function(GetMentors value) getMentors,
     required TResult Function(GetPatients value) getPatients,
     required TResult Function(GetDoctor value) getDoctor,
+    required TResult Function(GetDoctorMe value) getDoctorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return getPatients(this);
   }
@@ -273,6 +321,9 @@ class _$GetPatientsImpl implements GetPatients {
     TResult? Function(GetMentors value)? getMentors,
     TResult? Function(GetPatients value)? getPatients,
     TResult? Function(GetDoctor value)? getDoctor,
+    TResult? Function(GetDoctorMe value)? getDoctorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return getPatients?.call(this);
   }
@@ -283,6 +334,9 @@ class _$GetPatientsImpl implements GetPatients {
     TResult Function(GetMentors value)? getMentors,
     TResult Function(GetPatients value)? getPatients,
     TResult Function(GetDoctor value)? getDoctor,
+    TResult Function(GetDoctorMe value)? getDoctorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (getPatients != null) {
@@ -363,6 +417,9 @@ class _$GetDoctorImpl implements GetDoctor {
     required TResult Function() getMentors,
     required TResult Function() getPatients,
     required TResult Function(int id) getDoctor,
+    required TResult Function() getDoctorMe,
+    required TResult Function(DProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return getDoctor(id);
   }
@@ -373,6 +430,9 @@ class _$GetDoctorImpl implements GetDoctor {
     TResult? Function()? getMentors,
     TResult? Function()? getPatients,
     TResult? Function(int id)? getDoctor,
+    TResult? Function()? getDoctorMe,
+    TResult? Function(DProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return getDoctor?.call(id);
   }
@@ -383,6 +443,9 @@ class _$GetDoctorImpl implements GetDoctor {
     TResult Function()? getMentors,
     TResult Function()? getPatients,
     TResult Function(int id)? getDoctor,
+    TResult Function()? getDoctorMe,
+    TResult Function(DProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (getDoctor != null) {
@@ -397,6 +460,9 @@ class _$GetDoctorImpl implements GetDoctor {
     required TResult Function(GetMentors value) getMentors,
     required TResult Function(GetPatients value) getPatients,
     required TResult Function(GetDoctor value) getDoctor,
+    required TResult Function(GetDoctorMe value) getDoctorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return getDoctor(this);
   }
@@ -407,6 +473,9 @@ class _$GetDoctorImpl implements GetDoctor {
     TResult? Function(GetMentors value)? getMentors,
     TResult? Function(GetPatients value)? getPatients,
     TResult? Function(GetDoctor value)? getDoctor,
+    TResult? Function(GetDoctorMe value)? getDoctorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return getDoctor?.call(this);
   }
@@ -417,6 +486,9 @@ class _$GetDoctorImpl implements GetDoctor {
     TResult Function(GetMentors value)? getMentors,
     TResult Function(GetPatients value)? getPatients,
     TResult Function(GetDoctor value)? getDoctor,
+    TResult Function(GetDoctorMe value)? getDoctorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (getDoctor != null) {
@@ -433,6 +505,427 @@ abstract class GetDoctor implements DoctorEvent {
   @JsonKey(ignore: true)
   _$$GetDoctorImplCopyWith<_$GetDoctorImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetDoctorMeImplCopyWith<$Res> {
+  factory _$$GetDoctorMeImplCopyWith(
+          _$GetDoctorMeImpl value, $Res Function(_$GetDoctorMeImpl) then) =
+      __$$GetDoctorMeImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetDoctorMeImplCopyWithImpl<$Res>
+    extends _$DoctorEventCopyWithImpl<$Res, _$GetDoctorMeImpl>
+    implements _$$GetDoctorMeImplCopyWith<$Res> {
+  __$$GetDoctorMeImplCopyWithImpl(
+      _$GetDoctorMeImpl _value, $Res Function(_$GetDoctorMeImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetDoctorMeImpl implements GetDoctorMe {
+  const _$GetDoctorMeImpl();
+
+  @override
+  String toString() {
+    return 'DoctorEvent.getDoctorMe()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetDoctorMeImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getMentors,
+    required TResult Function() getPatients,
+    required TResult Function(int id) getDoctor,
+    required TResult Function() getDoctorMe,
+    required TResult Function(DProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
+  }) {
+    return getDoctorMe();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getMentors,
+    TResult? Function()? getPatients,
+    TResult? Function(int id)? getDoctor,
+    TResult? Function()? getDoctorMe,
+    TResult? Function(DProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
+  }) {
+    return getDoctorMe?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getMentors,
+    TResult Function()? getPatients,
+    TResult Function(int id)? getDoctor,
+    TResult Function()? getDoctorMe,
+    TResult Function(DProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
+    required TResult orElse(),
+  }) {
+    if (getDoctorMe != null) {
+      return getDoctorMe();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMentors value) getMentors,
+    required TResult Function(GetPatients value) getPatients,
+    required TResult Function(GetDoctor value) getDoctor,
+    required TResult Function(GetDoctorMe value) getDoctorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
+  }) {
+    return getDoctorMe(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMentors value)? getMentors,
+    TResult? Function(GetPatients value)? getPatients,
+    TResult? Function(GetDoctor value)? getDoctor,
+    TResult? Function(GetDoctorMe value)? getDoctorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
+  }) {
+    return getDoctorMe?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMentors value)? getMentors,
+    TResult Function(GetPatients value)? getPatients,
+    TResult Function(GetDoctor value)? getDoctor,
+    TResult Function(GetDoctorMe value)? getDoctorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
+    required TResult orElse(),
+  }) {
+    if (getDoctorMe != null) {
+      return getDoctorMe(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetDoctorMe implements DoctorEvent {
+  const factory GetDoctorMe() = _$GetDoctorMeImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangeFieldImplCopyWith<$Res> {
+  factory _$$ChangeFieldImplCopyWith(
+          _$ChangeFieldImpl value, $Res Function(_$ChangeFieldImpl) then) =
+      __$$ChangeFieldImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DProfileField field, dynamic value});
+}
+
+/// @nodoc
+class __$$ChangeFieldImplCopyWithImpl<$Res>
+    extends _$DoctorEventCopyWithImpl<$Res, _$ChangeFieldImpl>
+    implements _$$ChangeFieldImplCopyWith<$Res> {
+  __$$ChangeFieldImplCopyWithImpl(
+      _$ChangeFieldImpl _value, $Res Function(_$ChangeFieldImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? value = freezed,
+  }) {
+    return _then(_$ChangeFieldImpl(
+      field: null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as DProfileField,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeFieldImpl implements ChangeField {
+  const _$ChangeFieldImpl({required this.field, required this.value});
+
+  @override
+  final DProfileField field;
+  @override
+  final dynamic value;
+
+  @override
+  String toString() {
+    return 'DoctorEvent.changeField(field: $field, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeFieldImpl &&
+            (identical(other.field, field) || other.field == field) &&
+            const DeepCollectionEquality().equals(other.value, value));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, field, const DeepCollectionEquality().hash(value));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeFieldImplCopyWith<_$ChangeFieldImpl> get copyWith =>
+      __$$ChangeFieldImplCopyWithImpl<_$ChangeFieldImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getMentors,
+    required TResult Function() getPatients,
+    required TResult Function(int id) getDoctor,
+    required TResult Function() getDoctorMe,
+    required TResult Function(DProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
+  }) {
+    return changeField(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getMentors,
+    TResult? Function()? getPatients,
+    TResult? Function(int id)? getDoctor,
+    TResult? Function()? getDoctorMe,
+    TResult? Function(DProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
+  }) {
+    return changeField?.call(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getMentors,
+    TResult Function()? getPatients,
+    TResult Function(int id)? getDoctor,
+    TResult Function()? getDoctorMe,
+    TResult Function(DProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
+    required TResult orElse(),
+  }) {
+    if (changeField != null) {
+      return changeField(field, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMentors value) getMentors,
+    required TResult Function(GetPatients value) getPatients,
+    required TResult Function(GetDoctor value) getDoctor,
+    required TResult Function(GetDoctorMe value) getDoctorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
+  }) {
+    return changeField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMentors value)? getMentors,
+    TResult? Function(GetPatients value)? getPatients,
+    TResult? Function(GetDoctor value)? getDoctor,
+    TResult? Function(GetDoctorMe value)? getDoctorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
+  }) {
+    return changeField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMentors value)? getMentors,
+    TResult Function(GetPatients value)? getPatients,
+    TResult Function(GetDoctor value)? getDoctor,
+    TResult Function(GetDoctorMe value)? getDoctorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
+    required TResult orElse(),
+  }) {
+    if (changeField != null) {
+      return changeField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeField implements DoctorEvent {
+  const factory ChangeField(
+      {required final DProfileField field,
+      required final dynamic value}) = _$ChangeFieldImpl;
+
+  DProfileField get field;
+  dynamic get value;
+  @JsonKey(ignore: true)
+  _$$ChangeFieldImplCopyWith<_$ChangeFieldImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveFieldsImplCopyWith<$Res> {
+  factory _$$SaveFieldsImplCopyWith(
+          _$SaveFieldsImpl value, $Res Function(_$SaveFieldsImpl) then) =
+      __$$SaveFieldsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SaveFieldsImplCopyWithImpl<$Res>
+    extends _$DoctorEventCopyWithImpl<$Res, _$SaveFieldsImpl>
+    implements _$$SaveFieldsImplCopyWith<$Res> {
+  __$$SaveFieldsImplCopyWithImpl(
+      _$SaveFieldsImpl _value, $Res Function(_$SaveFieldsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SaveFieldsImpl implements SaveFields {
+  const _$SaveFieldsImpl();
+
+  @override
+  String toString() {
+    return 'DoctorEvent.saveFields()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SaveFieldsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getMentors,
+    required TResult Function() getPatients,
+    required TResult Function(int id) getDoctor,
+    required TResult Function() getDoctorMe,
+    required TResult Function(DProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
+  }) {
+    return saveFields();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getMentors,
+    TResult? Function()? getPatients,
+    TResult? Function(int id)? getDoctor,
+    TResult? Function()? getDoctorMe,
+    TResult? Function(DProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
+  }) {
+    return saveFields?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getMentors,
+    TResult Function()? getPatients,
+    TResult Function(int id)? getDoctor,
+    TResult Function()? getDoctorMe,
+    TResult Function(DProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
+    required TResult orElse(),
+  }) {
+    if (saveFields != null) {
+      return saveFields();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMentors value) getMentors,
+    required TResult Function(GetPatients value) getPatients,
+    required TResult Function(GetDoctor value) getDoctor,
+    required TResult Function(GetDoctorMe value) getDoctorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
+  }) {
+    return saveFields(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMentors value)? getMentors,
+    TResult? Function(GetPatients value)? getPatients,
+    TResult? Function(GetDoctor value)? getDoctor,
+    TResult? Function(GetDoctorMe value)? getDoctorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
+  }) {
+    return saveFields?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMentors value)? getMentors,
+    TResult Function(GetPatients value)? getPatients,
+    TResult Function(GetDoctor value)? getDoctor,
+    TResult Function(GetDoctorMe value)? getDoctorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
+    required TResult orElse(),
+  }) {
+    if (saveFields != null) {
+      return saveFields(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveFields implements DoctorEvent {
+  const factory SaveFields() = _$SaveFieldsImpl;
 }
 
 /// @nodoc

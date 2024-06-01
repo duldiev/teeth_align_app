@@ -29,6 +29,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/apple.svg
   SvgGenImage get apple => const SvgGenImage('assets/icons/apple.svg');
 
+  /// File path: assets/icons/gold_card_icon.svg
+  SvgGenImage get goldCardIcon =>
+      const SvgGenImage('assets/icons/gold_card_icon.svg');
+
   /// File path: assets/icons/google.svg
   SvgGenImage get google => const SvgGenImage('assets/icons/google.svg');
 
@@ -40,7 +44,8 @@ class $AssetsIconsGen {
       const SvgGenImage('assets/icons/totalNumber.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [apple, google, logo, totalNumber];
+  List<SvgGenImage> get values =>
+      [apple, goldCardIcon, google, logo, totalNumber];
 }
 
 class $AssetsImagesGen {
@@ -51,6 +56,14 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/doctor.png
   AssetGenImage get doctor => const AssetGenImage('assets/images/doctor.png');
+
+  /// File path: assets/images/doctor_female.png
+  AssetGenImage get doctorFemale =>
+      const AssetGenImage('assets/images/doctor_female.png');
+
+  /// File path: assets/images/doctor_male.png
+  AssetGenImage get doctorMale =>
+      const AssetGenImage('assets/images/doctor_male.png');
 
   /// File path: assets/images/frontOcc.jpg
   AssetGenImage get frontOcc =>
@@ -101,6 +114,8 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [
         center,
         doctor,
+        doctorFemale,
+        doctorMale,
         frontOcc,
         frontal,
         frontalDynamic,

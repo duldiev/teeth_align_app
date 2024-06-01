@@ -204,12 +204,13 @@ class _TextInputState extends State<TextInput> {
       prefixIcon: widget.prefixIcon,
       contentPadding: const EdgeInsets.symmetric(
         horizontal: 16,
-        vertical: 10,
+        vertical: 8,
       ),
       errorStyle: context.textTheme.labelSmall?.copyWith(
         color: AppColors.danger,
         height: 1,
       ),
+      isDense: true,
       border: InputBorder.none,
       suffixIcon: switch (widget.suffixType) {
         InputSuffixType.none => widget.suffixIcon,
@@ -238,6 +239,7 @@ class _TextInputState extends State<TextInput> {
     }
 
     final textInput = TextFormField(
+      initialValue: widget.initialValue,
       restorationId: widget.restorationId,
       controller: widget.controller,
       focusNode: widget.focusNode,

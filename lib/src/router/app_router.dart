@@ -43,5 +43,6 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: AccountListRoute.page),
         AutoRoute(page: DoctorCreateProfileRoute.page),
         AutoRoute(page: RateDoctorRoute.page),
+        AutoRoute(page: PersonalDataRoute.page),
       ];
 }

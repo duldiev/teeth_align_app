@@ -121,7 +121,7 @@ class AccountScreen extends StatelessWidget {
             const AccountTileDivider(),
             AccountTile(
               title: 'Изменить данные',
-              onTap: () {},
+              onTap: () => context.router.push(const PersonalDataRoute()),
             ),
             const AccountTileDivider(),
             if (appData.role == Role.patient) ...[

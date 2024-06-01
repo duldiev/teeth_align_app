@@ -31,7 +31,7 @@ class ColoredButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: padding ?? EdgeInsets.symmetric(vertical: 1.4.h),
+        padding: padding ?? EdgeInsets.symmetric(vertical: 1.h),
         decoration: BoxDecoration(
           color: color ??
               (isEnabled

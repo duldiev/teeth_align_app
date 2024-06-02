@@ -15,4 +15,13 @@ class MentorEvent with _$MentorEvent {
   ) = UnassignDoctor;
 
   const factory MentorEvent.assignDoctors() = AssignDoctors;
+
+  const factory MentorEvent.getMentorMe() = GetMentorMe;
+
+  const factory MentorEvent.changeField({
+    required MProfileField field,
+    required dynamic value,
+  }) = ChangeField;
+
+  const factory MentorEvent.saveFields() = SaveFields;
 }

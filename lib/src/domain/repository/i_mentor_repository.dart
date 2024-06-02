@@ -7,4 +7,6 @@ abstract class IMentorRepository {
   Future<Either<Failure, List<DoctorEntity>>> getDoctors(int userId);
 
   Future<Either<Failure, MentorEntity>> getMentorById(int id);
+
+  Future<Either<Failure, Unit>> updateProfile(MentorEntity body);
 }

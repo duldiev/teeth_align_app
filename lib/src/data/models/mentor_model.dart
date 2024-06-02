@@ -23,6 +23,7 @@ class MentorModel extends MentorEntity {
     required super.assignedDoctors,
     required super.chatEnabled,
     required super.doctorsAmount,
+    required super.city,
   });
 
   factory MentorModel.fromMap(Map<String, dynamic> map) => MentorModel(
@@ -38,7 +39,7 @@ class MentorModel extends MentorEntity {
             ? DateTime.now()
             : DateTime.parse(map['birthDate']),
         education: map['education'] as String?,
-        workExperience: map['workExperience'] as String?,
+        workExperience: map['workExperience'] as int? ?? 0,
         speciality: map['speciality'] as String?,
         chatToken: map['chatToken'] as String?,
         bio: map['bio'] as String?,
@@ -50,6 +51,7 @@ class MentorModel extends MentorEntity {
                 .toList()
             : [],
         chatEnabled: map['chatEnabled'] as bool? ?? false,
+        city: map['city'] as String?,
         doctorsAmount: map['doctorsAmount'] as int?,
       );
 }

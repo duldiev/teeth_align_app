@@ -45,11 +45,11 @@ import '../../presentation/calendar/blocs/create_event_bloc/create_event_bloc.da
     as _i26;
 import '../../presentation/home/blocs/admin_bloc/admin_bloc.dart' as _i39;
 import '../../presentation/home/blocs/doctor_bloc/doctor_bloc.dart' as _i41;
-import '../../presentation/home/blocs/mentor_bloc/mentor_bloc.dart' as _i37;
-import '../../presentation/home/blocs/patient_bloc/patient_bloc.dart' as _i36;
+import '../../presentation/home/blocs/mentor_bloc/mentor_bloc.dart' as _i35;
+import '../../presentation/home/blocs/patient_bloc/patient_bloc.dart' as _i37;
 import '../../presentation/report/blocs/camera_bloc/camera_bloc.dart' as _i6;
 import '../../presentation/report/blocs/create_case_bloc/create_case_bloc.dart'
-    as _i35;
+    as _i36;
 import '../../presentation/social/blocs/leaderboard_bloc/leaderboard_bloc.dart'
     as _i14;
 import '../../presentation/social/blocs/social_bloc/social_bloc.dart' as _i40;
@@ -111,16 +111,18 @@ Future<_i1.GetIt> $initGetIt(
         authRepository: gh<_i30.IAuthRepository>(),
         router: gh<_i7.AppRouter>(),
       ));
-  gh.factory<_i35.CreateCaseBloc>(() => _i35.CreateCaseBloc(
+  gh.factory<_i35.MentorBloc>(() => _i35.MentorBloc(
+        repository: gh<_i28.IMentorRepository>(),
+        authRepository: gh<_i30.IAuthRepository>(),
+      ));
+  gh.factory<_i36.CreateCaseBloc>(() => _i36.CreateCaseBloc(
         imagePicker: gh<_i11.ImagePicker>(),
         repository: gh<_i12.IDoctorRepository>(),
       ));
-  gh.factory<_i36.PatientBloc>(() => _i36.PatientBloc(
+  gh.factory<_i37.PatientBloc>(() => _i37.PatientBloc(
         repository: gh<_i24.IPatientRepository>(),
         imagePicker: gh<_i11.ImagePicker>(),
       ));
-  gh.factory<_i37.MentorBloc>(
-      () => _i37.MentorBloc(repository: gh<_i28.IMentorRepository>()));
   gh.factory<_i38.SignUpBloc>(() => _i38.SignUpBloc(
         authRepository: gh<_i30.IAuthRepository>(),
         profileRepository: gh<_i22.IProfileRepository>(),

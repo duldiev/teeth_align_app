@@ -31,4 +31,17 @@ class MentorRepository extends BaseClient implements IMentorRepository {
       (r) => Right(MentorModel.fromMap(r)),
     );
   }
+
+  @override
+  Future<Either<Failure, Unit>> updateProfile(MentorEntity body) async {
+    return (await call(
+      RestMethod.put,
+      '/api/v1/mentor/profile',
+      body: body.toMap(),
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => const Right(unit),
+    );
+  }
 }

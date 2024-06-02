@@ -23,6 +23,9 @@ mixin _$MentorEvent {
     required TResult Function(DoctorEntity doctor) assignDoctor,
     required TResult Function(DoctorEntity doctor) unassignDoctor,
     required TResult Function() assignDoctors,
+    required TResult Function() getMentorMe,
+    required TResult Function(MProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +35,9 @@ mixin _$MentorEvent {
     TResult? Function(DoctorEntity doctor)? assignDoctor,
     TResult? Function(DoctorEntity doctor)? unassignDoctor,
     TResult? Function()? assignDoctors,
+    TResult? Function()? getMentorMe,
+    TResult? Function(MProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +47,9 @@ mixin _$MentorEvent {
     TResult Function(DoctorEntity doctor)? assignDoctor,
     TResult Function(DoctorEntity doctor)? unassignDoctor,
     TResult Function()? assignDoctors,
+    TResult Function()? getMentorMe,
+    TResult Function(MProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +60,9 @@ mixin _$MentorEvent {
     required TResult Function(AssignDoctor value) assignDoctor,
     required TResult Function(UnassignDoctor value) unassignDoctor,
     required TResult Function(AssignDoctors value) assignDoctors,
+    required TResult Function(GetMentorMe value) getMentorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +72,9 @@ mixin _$MentorEvent {
     TResult? Function(AssignDoctor value)? assignDoctor,
     TResult? Function(UnassignDoctor value)? unassignDoctor,
     TResult? Function(AssignDoctors value)? assignDoctors,
+    TResult? Function(GetMentorMe value)? getMentorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +84,9 @@ mixin _$MentorEvent {
     TResult Function(AssignDoctor value)? assignDoctor,
     TResult Function(UnassignDoctor value)? unassignDoctor,
     TResult Function(AssignDoctors value)? assignDoctors,
+    TResult Function(GetMentorMe value)? getMentorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,6 +153,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     required TResult Function(DoctorEntity doctor) assignDoctor,
     required TResult Function(DoctorEntity doctor) unassignDoctor,
     required TResult Function() assignDoctors,
+    required TResult Function() getMentorMe,
+    required TResult Function(MProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return getDoctors();
   }
@@ -147,6 +168,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     TResult? Function(DoctorEntity doctor)? assignDoctor,
     TResult? Function(DoctorEntity doctor)? unassignDoctor,
     TResult? Function()? assignDoctors,
+    TResult? Function()? getMentorMe,
+    TResult? Function(MProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return getDoctors?.call();
   }
@@ -159,6 +183,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     TResult Function(DoctorEntity doctor)? assignDoctor,
     TResult Function(DoctorEntity doctor)? unassignDoctor,
     TResult Function()? assignDoctors,
+    TResult Function()? getMentorMe,
+    TResult Function(MProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (getDoctors != null) {
@@ -175,6 +202,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     required TResult Function(AssignDoctor value) assignDoctor,
     required TResult Function(UnassignDoctor value) unassignDoctor,
     required TResult Function(AssignDoctors value) assignDoctors,
+    required TResult Function(GetMentorMe value) getMentorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return getDoctors(this);
   }
@@ -187,6 +217,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     TResult? Function(AssignDoctor value)? assignDoctor,
     TResult? Function(UnassignDoctor value)? unassignDoctor,
     TResult? Function(AssignDoctors value)? assignDoctors,
+    TResult? Function(GetMentorMe value)? getMentorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return getDoctors?.call(this);
   }
@@ -199,6 +232,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     TResult Function(AssignDoctor value)? assignDoctor,
     TResult Function(UnassignDoctor value)? unassignDoctor,
     TResult Function(AssignDoctors value)? assignDoctors,
+    TResult Function(GetMentorMe value)? getMentorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (getDoctors != null) {
@@ -281,6 +317,9 @@ class _$GetMentorImpl implements GetMentor {
     required TResult Function(DoctorEntity doctor) assignDoctor,
     required TResult Function(DoctorEntity doctor) unassignDoctor,
     required TResult Function() assignDoctors,
+    required TResult Function() getMentorMe,
+    required TResult Function(MProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return getMentor(id);
   }
@@ -293,6 +332,9 @@ class _$GetMentorImpl implements GetMentor {
     TResult? Function(DoctorEntity doctor)? assignDoctor,
     TResult? Function(DoctorEntity doctor)? unassignDoctor,
     TResult? Function()? assignDoctors,
+    TResult? Function()? getMentorMe,
+    TResult? Function(MProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return getMentor?.call(id);
   }
@@ -305,6 +347,9 @@ class _$GetMentorImpl implements GetMentor {
     TResult Function(DoctorEntity doctor)? assignDoctor,
     TResult Function(DoctorEntity doctor)? unassignDoctor,
     TResult Function()? assignDoctors,
+    TResult Function()? getMentorMe,
+    TResult Function(MProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (getMentor != null) {
@@ -321,6 +366,9 @@ class _$GetMentorImpl implements GetMentor {
     required TResult Function(AssignDoctor value) assignDoctor,
     required TResult Function(UnassignDoctor value) unassignDoctor,
     required TResult Function(AssignDoctors value) assignDoctors,
+    required TResult Function(GetMentorMe value) getMentorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return getMentor(this);
   }
@@ -333,6 +381,9 @@ class _$GetMentorImpl implements GetMentor {
     TResult? Function(AssignDoctor value)? assignDoctor,
     TResult? Function(UnassignDoctor value)? unassignDoctor,
     TResult? Function(AssignDoctors value)? assignDoctors,
+    TResult? Function(GetMentorMe value)? getMentorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return getMentor?.call(this);
   }
@@ -345,6 +396,9 @@ class _$GetMentorImpl implements GetMentor {
     TResult Function(AssignDoctor value)? assignDoctor,
     TResult Function(UnassignDoctor value)? unassignDoctor,
     TResult Function(AssignDoctors value)? assignDoctors,
+    TResult Function(GetMentorMe value)? getMentorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (getMentor != null) {
@@ -432,6 +486,9 @@ class _$AssignDoctorImpl implements AssignDoctor {
     required TResult Function(DoctorEntity doctor) assignDoctor,
     required TResult Function(DoctorEntity doctor) unassignDoctor,
     required TResult Function() assignDoctors,
+    required TResult Function() getMentorMe,
+    required TResult Function(MProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return assignDoctor(doctor);
   }
@@ -444,6 +501,9 @@ class _$AssignDoctorImpl implements AssignDoctor {
     TResult? Function(DoctorEntity doctor)? assignDoctor,
     TResult? Function(DoctorEntity doctor)? unassignDoctor,
     TResult? Function()? assignDoctors,
+    TResult? Function()? getMentorMe,
+    TResult? Function(MProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return assignDoctor?.call(doctor);
   }
@@ -456,6 +516,9 @@ class _$AssignDoctorImpl implements AssignDoctor {
     TResult Function(DoctorEntity doctor)? assignDoctor,
     TResult Function(DoctorEntity doctor)? unassignDoctor,
     TResult Function()? assignDoctors,
+    TResult Function()? getMentorMe,
+    TResult Function(MProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (assignDoctor != null) {
@@ -472,6 +535,9 @@ class _$AssignDoctorImpl implements AssignDoctor {
     required TResult Function(AssignDoctor value) assignDoctor,
     required TResult Function(UnassignDoctor value) unassignDoctor,
     required TResult Function(AssignDoctors value) assignDoctors,
+    required TResult Function(GetMentorMe value) getMentorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return assignDoctor(this);
   }
@@ -484,6 +550,9 @@ class _$AssignDoctorImpl implements AssignDoctor {
     TResult? Function(AssignDoctor value)? assignDoctor,
     TResult? Function(UnassignDoctor value)? unassignDoctor,
     TResult? Function(AssignDoctors value)? assignDoctors,
+    TResult? Function(GetMentorMe value)? getMentorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return assignDoctor?.call(this);
   }
@@ -496,6 +565,9 @@ class _$AssignDoctorImpl implements AssignDoctor {
     TResult Function(AssignDoctor value)? assignDoctor,
     TResult Function(UnassignDoctor value)? unassignDoctor,
     TResult Function(AssignDoctors value)? assignDoctors,
+    TResult Function(GetMentorMe value)? getMentorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (assignDoctor != null) {
@@ -584,6 +656,9 @@ class _$UnassignDoctorImpl implements UnassignDoctor {
     required TResult Function(DoctorEntity doctor) assignDoctor,
     required TResult Function(DoctorEntity doctor) unassignDoctor,
     required TResult Function() assignDoctors,
+    required TResult Function() getMentorMe,
+    required TResult Function(MProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return unassignDoctor(doctor);
   }
@@ -596,6 +671,9 @@ class _$UnassignDoctorImpl implements UnassignDoctor {
     TResult? Function(DoctorEntity doctor)? assignDoctor,
     TResult? Function(DoctorEntity doctor)? unassignDoctor,
     TResult? Function()? assignDoctors,
+    TResult? Function()? getMentorMe,
+    TResult? Function(MProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return unassignDoctor?.call(doctor);
   }
@@ -608,6 +686,9 @@ class _$UnassignDoctorImpl implements UnassignDoctor {
     TResult Function(DoctorEntity doctor)? assignDoctor,
     TResult Function(DoctorEntity doctor)? unassignDoctor,
     TResult Function()? assignDoctors,
+    TResult Function()? getMentorMe,
+    TResult Function(MProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (unassignDoctor != null) {
@@ -624,6 +705,9 @@ class _$UnassignDoctorImpl implements UnassignDoctor {
     required TResult Function(AssignDoctor value) assignDoctor,
     required TResult Function(UnassignDoctor value) unassignDoctor,
     required TResult Function(AssignDoctors value) assignDoctors,
+    required TResult Function(GetMentorMe value) getMentorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return unassignDoctor(this);
   }
@@ -636,6 +720,9 @@ class _$UnassignDoctorImpl implements UnassignDoctor {
     TResult? Function(AssignDoctor value)? assignDoctor,
     TResult? Function(UnassignDoctor value)? unassignDoctor,
     TResult? Function(AssignDoctors value)? assignDoctors,
+    TResult? Function(GetMentorMe value)? getMentorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return unassignDoctor?.call(this);
   }
@@ -648,6 +735,9 @@ class _$UnassignDoctorImpl implements UnassignDoctor {
     TResult Function(AssignDoctor value)? assignDoctor,
     TResult Function(UnassignDoctor value)? unassignDoctor,
     TResult Function(AssignDoctors value)? assignDoctors,
+    TResult Function(GetMentorMe value)? getMentorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (unassignDoctor != null) {
@@ -710,6 +800,9 @@ class _$AssignDoctorsImpl implements AssignDoctors {
     required TResult Function(DoctorEntity doctor) assignDoctor,
     required TResult Function(DoctorEntity doctor) unassignDoctor,
     required TResult Function() assignDoctors,
+    required TResult Function() getMentorMe,
+    required TResult Function(MProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return assignDoctors();
   }
@@ -722,6 +815,9 @@ class _$AssignDoctorsImpl implements AssignDoctors {
     TResult? Function(DoctorEntity doctor)? assignDoctor,
     TResult? Function(DoctorEntity doctor)? unassignDoctor,
     TResult? Function()? assignDoctors,
+    TResult? Function()? getMentorMe,
+    TResult? Function(MProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return assignDoctors?.call();
   }
@@ -734,6 +830,9 @@ class _$AssignDoctorsImpl implements AssignDoctors {
     TResult Function(DoctorEntity doctor)? assignDoctor,
     TResult Function(DoctorEntity doctor)? unassignDoctor,
     TResult Function()? assignDoctors,
+    TResult Function()? getMentorMe,
+    TResult Function(MProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (assignDoctors != null) {
@@ -750,6 +849,9 @@ class _$AssignDoctorsImpl implements AssignDoctors {
     required TResult Function(AssignDoctor value) assignDoctor,
     required TResult Function(UnassignDoctor value) unassignDoctor,
     required TResult Function(AssignDoctors value) assignDoctors,
+    required TResult Function(GetMentorMe value) getMentorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return assignDoctors(this);
   }
@@ -762,6 +864,9 @@ class _$AssignDoctorsImpl implements AssignDoctors {
     TResult? Function(AssignDoctor value)? assignDoctor,
     TResult? Function(UnassignDoctor value)? unassignDoctor,
     TResult? Function(AssignDoctors value)? assignDoctors,
+    TResult? Function(GetMentorMe value)? getMentorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return assignDoctors?.call(this);
   }
@@ -774,6 +879,9 @@ class _$AssignDoctorsImpl implements AssignDoctors {
     TResult Function(AssignDoctor value)? assignDoctor,
     TResult Function(UnassignDoctor value)? unassignDoctor,
     TResult Function(AssignDoctors value)? assignDoctors,
+    TResult Function(GetMentorMe value)? getMentorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (assignDoctors != null) {
@@ -785,6 +893,463 @@ class _$AssignDoctorsImpl implements AssignDoctors {
 
 abstract class AssignDoctors implements MentorEvent {
   const factory AssignDoctors() = _$AssignDoctorsImpl;
+}
+
+/// @nodoc
+abstract class _$$GetMentorMeImplCopyWith<$Res> {
+  factory _$$GetMentorMeImplCopyWith(
+          _$GetMentorMeImpl value, $Res Function(_$GetMentorMeImpl) then) =
+      __$$GetMentorMeImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetMentorMeImplCopyWithImpl<$Res>
+    extends _$MentorEventCopyWithImpl<$Res, _$GetMentorMeImpl>
+    implements _$$GetMentorMeImplCopyWith<$Res> {
+  __$$GetMentorMeImplCopyWithImpl(
+      _$GetMentorMeImpl _value, $Res Function(_$GetMentorMeImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetMentorMeImpl implements GetMentorMe {
+  const _$GetMentorMeImpl();
+
+  @override
+  String toString() {
+    return 'MentorEvent.getMentorMe()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetMentorMeImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getDoctors,
+    required TResult Function(int id) getMentor,
+    required TResult Function(DoctorEntity doctor) assignDoctor,
+    required TResult Function(DoctorEntity doctor) unassignDoctor,
+    required TResult Function() assignDoctors,
+    required TResult Function() getMentorMe,
+    required TResult Function(MProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
+  }) {
+    return getMentorMe();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getDoctors,
+    TResult? Function(int id)? getMentor,
+    TResult? Function(DoctorEntity doctor)? assignDoctor,
+    TResult? Function(DoctorEntity doctor)? unassignDoctor,
+    TResult? Function()? assignDoctors,
+    TResult? Function()? getMentorMe,
+    TResult? Function(MProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
+  }) {
+    return getMentorMe?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getDoctors,
+    TResult Function(int id)? getMentor,
+    TResult Function(DoctorEntity doctor)? assignDoctor,
+    TResult Function(DoctorEntity doctor)? unassignDoctor,
+    TResult Function()? assignDoctors,
+    TResult Function()? getMentorMe,
+    TResult Function(MProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
+    required TResult orElse(),
+  }) {
+    if (getMentorMe != null) {
+      return getMentorMe();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetMentor value) getMentor,
+    required TResult Function(AssignDoctor value) assignDoctor,
+    required TResult Function(UnassignDoctor value) unassignDoctor,
+    required TResult Function(AssignDoctors value) assignDoctors,
+    required TResult Function(GetMentorMe value) getMentorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
+  }) {
+    return getMentorMe(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetMentor value)? getMentor,
+    TResult? Function(AssignDoctor value)? assignDoctor,
+    TResult? Function(UnassignDoctor value)? unassignDoctor,
+    TResult? Function(AssignDoctors value)? assignDoctors,
+    TResult? Function(GetMentorMe value)? getMentorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
+  }) {
+    return getMentorMe?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetMentor value)? getMentor,
+    TResult Function(AssignDoctor value)? assignDoctor,
+    TResult Function(UnassignDoctor value)? unassignDoctor,
+    TResult Function(AssignDoctors value)? assignDoctors,
+    TResult Function(GetMentorMe value)? getMentorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
+    required TResult orElse(),
+  }) {
+    if (getMentorMe != null) {
+      return getMentorMe(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetMentorMe implements MentorEvent {
+  const factory GetMentorMe() = _$GetMentorMeImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangeFieldImplCopyWith<$Res> {
+  factory _$$ChangeFieldImplCopyWith(
+          _$ChangeFieldImpl value, $Res Function(_$ChangeFieldImpl) then) =
+      __$$ChangeFieldImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({MProfileField field, dynamic value});
+}
+
+/// @nodoc
+class __$$ChangeFieldImplCopyWithImpl<$Res>
+    extends _$MentorEventCopyWithImpl<$Res, _$ChangeFieldImpl>
+    implements _$$ChangeFieldImplCopyWith<$Res> {
+  __$$ChangeFieldImplCopyWithImpl(
+      _$ChangeFieldImpl _value, $Res Function(_$ChangeFieldImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? value = freezed,
+  }) {
+    return _then(_$ChangeFieldImpl(
+      field: null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as MProfileField,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeFieldImpl implements ChangeField {
+  const _$ChangeFieldImpl({required this.field, required this.value});
+
+  @override
+  final MProfileField field;
+  @override
+  final dynamic value;
+
+  @override
+  String toString() {
+    return 'MentorEvent.changeField(field: $field, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeFieldImpl &&
+            (identical(other.field, field) || other.field == field) &&
+            const DeepCollectionEquality().equals(other.value, value));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, field, const DeepCollectionEquality().hash(value));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeFieldImplCopyWith<_$ChangeFieldImpl> get copyWith =>
+      __$$ChangeFieldImplCopyWithImpl<_$ChangeFieldImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getDoctors,
+    required TResult Function(int id) getMentor,
+    required TResult Function(DoctorEntity doctor) assignDoctor,
+    required TResult Function(DoctorEntity doctor) unassignDoctor,
+    required TResult Function() assignDoctors,
+    required TResult Function() getMentorMe,
+    required TResult Function(MProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
+  }) {
+    return changeField(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getDoctors,
+    TResult? Function(int id)? getMentor,
+    TResult? Function(DoctorEntity doctor)? assignDoctor,
+    TResult? Function(DoctorEntity doctor)? unassignDoctor,
+    TResult? Function()? assignDoctors,
+    TResult? Function()? getMentorMe,
+    TResult? Function(MProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
+  }) {
+    return changeField?.call(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getDoctors,
+    TResult Function(int id)? getMentor,
+    TResult Function(DoctorEntity doctor)? assignDoctor,
+    TResult Function(DoctorEntity doctor)? unassignDoctor,
+    TResult Function()? assignDoctors,
+    TResult Function()? getMentorMe,
+    TResult Function(MProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
+    required TResult orElse(),
+  }) {
+    if (changeField != null) {
+      return changeField(field, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetMentor value) getMentor,
+    required TResult Function(AssignDoctor value) assignDoctor,
+    required TResult Function(UnassignDoctor value) unassignDoctor,
+    required TResult Function(AssignDoctors value) assignDoctors,
+    required TResult Function(GetMentorMe value) getMentorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
+  }) {
+    return changeField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetMentor value)? getMentor,
+    TResult? Function(AssignDoctor value)? assignDoctor,
+    TResult? Function(UnassignDoctor value)? unassignDoctor,
+    TResult? Function(AssignDoctors value)? assignDoctors,
+    TResult? Function(GetMentorMe value)? getMentorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
+  }) {
+    return changeField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetMentor value)? getMentor,
+    TResult Function(AssignDoctor value)? assignDoctor,
+    TResult Function(UnassignDoctor value)? unassignDoctor,
+    TResult Function(AssignDoctors value)? assignDoctors,
+    TResult Function(GetMentorMe value)? getMentorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
+    required TResult orElse(),
+  }) {
+    if (changeField != null) {
+      return changeField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeField implements MentorEvent {
+  const factory ChangeField(
+      {required final MProfileField field,
+      required final dynamic value}) = _$ChangeFieldImpl;
+
+  MProfileField get field;
+  dynamic get value;
+  @JsonKey(ignore: true)
+  _$$ChangeFieldImplCopyWith<_$ChangeFieldImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveFieldsImplCopyWith<$Res> {
+  factory _$$SaveFieldsImplCopyWith(
+          _$SaveFieldsImpl value, $Res Function(_$SaveFieldsImpl) then) =
+      __$$SaveFieldsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SaveFieldsImplCopyWithImpl<$Res>
+    extends _$MentorEventCopyWithImpl<$Res, _$SaveFieldsImpl>
+    implements _$$SaveFieldsImplCopyWith<$Res> {
+  __$$SaveFieldsImplCopyWithImpl(
+      _$SaveFieldsImpl _value, $Res Function(_$SaveFieldsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SaveFieldsImpl implements SaveFields {
+  const _$SaveFieldsImpl();
+
+  @override
+  String toString() {
+    return 'MentorEvent.saveFields()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SaveFieldsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getDoctors,
+    required TResult Function(int id) getMentor,
+    required TResult Function(DoctorEntity doctor) assignDoctor,
+    required TResult Function(DoctorEntity doctor) unassignDoctor,
+    required TResult Function() assignDoctors,
+    required TResult Function() getMentorMe,
+    required TResult Function(MProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
+  }) {
+    return saveFields();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getDoctors,
+    TResult? Function(int id)? getMentor,
+    TResult? Function(DoctorEntity doctor)? assignDoctor,
+    TResult? Function(DoctorEntity doctor)? unassignDoctor,
+    TResult? Function()? assignDoctors,
+    TResult? Function()? getMentorMe,
+    TResult? Function(MProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
+  }) {
+    return saveFields?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getDoctors,
+    TResult Function(int id)? getMentor,
+    TResult Function(DoctorEntity doctor)? assignDoctor,
+    TResult Function(DoctorEntity doctor)? unassignDoctor,
+    TResult Function()? assignDoctors,
+    TResult Function()? getMentorMe,
+    TResult Function(MProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
+    required TResult orElse(),
+  }) {
+    if (saveFields != null) {
+      return saveFields();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetMentor value) getMentor,
+    required TResult Function(AssignDoctor value) assignDoctor,
+    required TResult Function(UnassignDoctor value) unassignDoctor,
+    required TResult Function(AssignDoctors value) assignDoctors,
+    required TResult Function(GetMentorMe value) getMentorMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
+  }) {
+    return saveFields(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetMentor value)? getMentor,
+    TResult? Function(AssignDoctor value)? assignDoctor,
+    TResult? Function(UnassignDoctor value)? unassignDoctor,
+    TResult? Function(AssignDoctors value)? assignDoctors,
+    TResult? Function(GetMentorMe value)? getMentorMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
+  }) {
+    return saveFields?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetMentor value)? getMentor,
+    TResult Function(AssignDoctor value)? assignDoctor,
+    TResult Function(UnassignDoctor value)? unassignDoctor,
+    TResult Function(AssignDoctors value)? assignDoctors,
+    TResult Function(GetMentorMe value)? getMentorMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
+    required TResult orElse(),
+  }) {
+    if (saveFields != null) {
+      return saveFields(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveFields implements MentorEvent {
+  const factory SaveFields() = _$SaveFieldsImpl;
 }
 
 /// @nodoc

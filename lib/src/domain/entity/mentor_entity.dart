@@ -4,11 +4,12 @@ import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 
 class MentorEntity extends AccountEntity {
   final String? education;
-  final String? workExperience;
+  final int? workExperience;
   final String? speciality;
   final String? clinicName;
   final List<DoctorEntity> assignedDoctors;
   final int? doctorsAmount;
+  final String? city;
 
   const MentorEntity({
     required super.id,
@@ -29,6 +30,7 @@ class MentorEntity extends AccountEntity {
     required this.speciality,
     required this.clinicName,
     required this.assignedDoctors,
+    required this.city,
     this.doctorsAmount,
   });
 
@@ -51,7 +53,18 @@ class MentorEntity extends AccountEntity {
         chatUserId: null,
         assignedDoctors: const [],
         chatEnabled: false,
+        city: null,
       );
+
+  Map<String, dynamic> toMap() => {
+        'firstName': firstName,
+        'lastName': lastName,
+        'education': education,
+        'workExperience': workExperience,
+        'speciality': speciality,
+        'clinicName': clinicName,
+        'city': city,
+      };
 
   @override
   List<Object?> get props => [
@@ -79,11 +92,12 @@ class MentorEntity extends AccountEntity {
     String? chatToken,
     String? bio,
     String? education,
-    String? workExperience,
+    int? workExperience,
     String? speciality,
     String? clinicName,
     List<DoctorEntity>? assignedDoctors,
     bool? chatEnabled,
+    String? city,
     int? doctorsAmount,
   }) {
     return MentorEntity(
@@ -105,6 +119,7 @@ class MentorEntity extends AccountEntity {
       clinicName: clinicName ?? this.clinicName,
       assignedDoctors: assignedDoctors ?? this.assignedDoctors,
       chatEnabled: chatEnabled ?? this.chatEnabled,
+      city: city ?? this.city,
       doctorsAmount: doctorsAmount ?? this.doctorsAmount,
     );
   }

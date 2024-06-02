@@ -1,9 +1,13 @@
+// ignore_for_file: avoid_print
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/core/extensions/date_extension.dart';
 import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
@@ -35,37 +39,54 @@ class PostTile extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                AuthorAvatar(account: post.author),
-                Gap(3.w),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      post.author.fullName,
-                      style: context.textTheme.titleMedium,
+            GestureDetector(
+              onTap: () {
+                final authorId = post.author.id;
+                return switch (post.author.role) {
+                  Role.patient => context.router.push(
+                      PatientProfileRoute(patientId: authorId),
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          post.type.name.toUpperCase(),
-                          style: context.textTheme.titleSmall?.copyWith(
-                            color: AppColors.blue,
-                          ),
-                        ),
-                        const Gap(5),
-                        Text(
-                          post.publishedDate.howLongAgo(),
-                          style: context.textTheme.titleSmall?.copyWith(
-                            color: AppColors.grey.withOpacity(0.6),
-                          ),
-                        ),
-                      ],
+                  Role.mentor => context.router.push(
+                      MentorProfileRoute(mentorId: authorId),
                     ),
-                  ],
-                )
-              ],
+                  Role.admin => print('admin doesn\'t exist!'),
+                  Role.doctor => context.router.push(
+                      DoctorProfileRoute(doctorId: authorId),
+                    ),
+                };
+              },
+              child: Row(
+                children: [
+                  AuthorAvatar(account: post.author),
+                  Gap(3.w),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        post.author.fullName,
+                        style: context.textTheme.titleMedium,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            post.type.name.toUpperCase(),
+                            style: context.textTheme.titleSmall?.copyWith(
+                              color: AppColors.blue,
+                            ),
+                          ),
+                          const Gap(5),
+                          Text(
+                            post.publishedDate.howLongAgo(),
+                            style: context.textTheme.titleSmall?.copyWith(
+                              color: AppColors.grey.withOpacity(0.6),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
             Gap(1.5.h),
             Linkify(

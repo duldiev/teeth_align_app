@@ -5,7 +5,6 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/domain/entity/account_entity.dart';
-import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 import 'package:teeth_align_app/src/presentation/home/widgets/list_tile_image.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
 
@@ -25,7 +24,7 @@ class AccountListTile extends StatelessWidget {
         Role.mentor => null,
         Role.admin => null,
         Role.doctor => context.router.push(
-            DoctorProfileRoute(doctor: account as DoctorEntity),
+            DoctorProfileRoute(doctorId: account.id),
           ),
       },
       borderRadius: BorderRadius.circular(12),

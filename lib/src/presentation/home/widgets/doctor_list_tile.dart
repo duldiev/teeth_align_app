@@ -20,7 +20,7 @@ class DoctorListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => context.router.push(
-        DoctorProfileRoute(doctor: doctor),
+        DoctorProfileRoute(doctorId: doctor.id),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -15,6 +15,8 @@ import 'package:teeth_align_app/src/presentation/home/blocs/doctor_bloc/doctor_b
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
+import 'package:teeth_align_app/src/shared/loader/circlular_loader.dart';
+import 'package:teeth_align_app/src/shared/views/retry_again_view.dart';
 
 @RoutePage()
 class DoctorProfileScreen extends StatefulWidget {
@@ -42,10 +44,19 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
   Widget build(BuildContext context) {
     return BlocBuilder<DoctorBloc, DoctorState>(
       builder: (context, state) => state.when(
-        initial: () => const SizedBox(),
-        loading: () => const SizedBox(),
+        initial: () => const Scaffold(body: SizedBox()),
+        loading: () => const Scaffold(body: CircularLoader()),
         loaded: (data) {
-          final doctor = data.doctor!;
+          final doctor = data.doctor;
+          if (doctor == null) {
+            return Scaffold(
+              body: RetryAgainView(
+                onRetry: () => context.read<DoctorBloc>().add(
+                      GetDoctor(widget.doctorId),
+                    ),
+              ),
+            );
+          }
           return Scaffold(
             appBar: MyAppBar(
               title: const Text('Doctor'),
@@ -298,7 +309,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
             ),
           );
         },
-        failed: () => const SizedBox(),
+        failed: () => const Scaffold(body: SizedBox()),
       ),
     );
   }

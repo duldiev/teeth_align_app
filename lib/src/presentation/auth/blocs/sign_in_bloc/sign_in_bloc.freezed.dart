@@ -23,6 +23,7 @@ mixin _$SignInEvent {
     required TResult Function() signOut,
     required TResult Function() checkAuthorized,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$SignInEvent {
     TResult? Function()? signOut,
     TResult? Function()? checkAuthorized,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$SignInEvent {
     TResult Function()? signOut,
     TResult Function()? checkAuthorized,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +54,7 @@ mixin _$SignInEvent {
     required TResult Function(SignOut value) signOut,
     required TResult Function(CheckAuthorized value) checkAuthorized,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +64,7 @@ mixin _$SignInEvent {
     TResult? Function(SignOut value)? signOut,
     TResult? Function(CheckAuthorized value)? checkAuthorized,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +74,7 @@ mixin _$SignInEvent {
     TResult Function(SignOut value)? signOut,
     TResult Function(CheckAuthorized value)? checkAuthorized,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -169,6 +175,7 @@ class _$ChangeFieldImpl implements ChangeField {
     required TResult Function() signOut,
     required TResult Function() checkAuthorized,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
   }) {
     return changeField(field, value);
   }
@@ -181,6 +188,7 @@ class _$ChangeFieldImpl implements ChangeField {
     TResult? Function()? signOut,
     TResult? Function()? checkAuthorized,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
   }) {
     return changeField?.call(field, value);
   }
@@ -193,6 +201,7 @@ class _$ChangeFieldImpl implements ChangeField {
     TResult Function()? signOut,
     TResult Function()? checkAuthorized,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (changeField != null) {
@@ -209,6 +218,7 @@ class _$ChangeFieldImpl implements ChangeField {
     required TResult Function(SignOut value) signOut,
     required TResult Function(CheckAuthorized value) checkAuthorized,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
   }) {
     return changeField(this);
   }
@@ -221,6 +231,7 @@ class _$ChangeFieldImpl implements ChangeField {
     TResult? Function(SignOut value)? signOut,
     TResult? Function(CheckAuthorized value)? checkAuthorized,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
   }) {
     return changeField?.call(this);
   }
@@ -233,6 +244,7 @@ class _$ChangeFieldImpl implements ChangeField {
     TResult Function(SignOut value)? signOut,
     TResult Function(CheckAuthorized value)? checkAuthorized,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (changeField != null) {
@@ -297,6 +309,7 @@ class _$SignInImpl implements SignIn {
     required TResult Function() signOut,
     required TResult Function() checkAuthorized,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
   }) {
     return signIn();
   }
@@ -309,6 +322,7 @@ class _$SignInImpl implements SignIn {
     TResult? Function()? signOut,
     TResult? Function()? checkAuthorized,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
   }) {
     return signIn?.call();
   }
@@ -321,6 +335,7 @@ class _$SignInImpl implements SignIn {
     TResult Function()? signOut,
     TResult Function()? checkAuthorized,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (signIn != null) {
@@ -337,6 +352,7 @@ class _$SignInImpl implements SignIn {
     required TResult Function(SignOut value) signOut,
     required TResult Function(CheckAuthorized value) checkAuthorized,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
   }) {
     return signIn(this);
   }
@@ -349,6 +365,7 @@ class _$SignInImpl implements SignIn {
     TResult? Function(SignOut value)? signOut,
     TResult? Function(CheckAuthorized value)? checkAuthorized,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
   }) {
     return signIn?.call(this);
   }
@@ -361,6 +378,7 @@ class _$SignInImpl implements SignIn {
     TResult Function(SignOut value)? signOut,
     TResult Function(CheckAuthorized value)? checkAuthorized,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (signIn != null) {
@@ -417,6 +435,7 @@ class _$SignOutImpl implements SignOut {
     required TResult Function() signOut,
     required TResult Function() checkAuthorized,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
   }) {
     return signOut();
   }
@@ -429,6 +448,7 @@ class _$SignOutImpl implements SignOut {
     TResult? Function()? signOut,
     TResult? Function()? checkAuthorized,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
   }) {
     return signOut?.call();
   }
@@ -441,6 +461,7 @@ class _$SignOutImpl implements SignOut {
     TResult Function()? signOut,
     TResult Function()? checkAuthorized,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -457,6 +478,7 @@ class _$SignOutImpl implements SignOut {
     required TResult Function(SignOut value) signOut,
     required TResult Function(CheckAuthorized value) checkAuthorized,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
   }) {
     return signOut(this);
   }
@@ -469,6 +491,7 @@ class _$SignOutImpl implements SignOut {
     TResult? Function(SignOut value)? signOut,
     TResult? Function(CheckAuthorized value)? checkAuthorized,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
   }) {
     return signOut?.call(this);
   }
@@ -481,6 +504,7 @@ class _$SignOutImpl implements SignOut {
     TResult Function(SignOut value)? signOut,
     TResult Function(CheckAuthorized value)? checkAuthorized,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -537,6 +561,7 @@ class _$CheckAuthorizedImpl implements CheckAuthorized {
     required TResult Function() signOut,
     required TResult Function() checkAuthorized,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
   }) {
     return checkAuthorized();
   }
@@ -549,6 +574,7 @@ class _$CheckAuthorizedImpl implements CheckAuthorized {
     TResult? Function()? signOut,
     TResult? Function()? checkAuthorized,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
   }) {
     return checkAuthorized?.call();
   }
@@ -561,6 +587,7 @@ class _$CheckAuthorizedImpl implements CheckAuthorized {
     TResult Function()? signOut,
     TResult Function()? checkAuthorized,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (checkAuthorized != null) {
@@ -577,6 +604,7 @@ class _$CheckAuthorizedImpl implements CheckAuthorized {
     required TResult Function(SignOut value) signOut,
     required TResult Function(CheckAuthorized value) checkAuthorized,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
   }) {
     return checkAuthorized(this);
   }
@@ -589,6 +617,7 @@ class _$CheckAuthorizedImpl implements CheckAuthorized {
     TResult? Function(SignOut value)? signOut,
     TResult? Function(CheckAuthorized value)? checkAuthorized,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
   }) {
     return checkAuthorized?.call(this);
   }
@@ -601,6 +630,7 @@ class _$CheckAuthorizedImpl implements CheckAuthorized {
     TResult Function(SignOut value)? signOut,
     TResult Function(CheckAuthorized value)? checkAuthorized,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (checkAuthorized != null) {
@@ -657,6 +687,7 @@ class _$ResetImpl implements Reset {
     required TResult Function() signOut,
     required TResult Function() checkAuthorized,
     required TResult Function() reset,
+    required TResult Function() deleteAccount,
   }) {
     return reset();
   }
@@ -669,6 +700,7 @@ class _$ResetImpl implements Reset {
     TResult? Function()? signOut,
     TResult? Function()? checkAuthorized,
     TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
   }) {
     return reset?.call();
   }
@@ -681,6 +713,7 @@ class _$ResetImpl implements Reset {
     TResult Function()? signOut,
     TResult Function()? checkAuthorized,
     TResult Function()? reset,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -697,6 +730,7 @@ class _$ResetImpl implements Reset {
     required TResult Function(SignOut value) signOut,
     required TResult Function(CheckAuthorized value) checkAuthorized,
     required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
   }) {
     return reset(this);
   }
@@ -709,6 +743,7 @@ class _$ResetImpl implements Reset {
     TResult? Function(SignOut value)? signOut,
     TResult? Function(CheckAuthorized value)? checkAuthorized,
     TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
   }) {
     return reset?.call(this);
   }
@@ -721,6 +756,7 @@ class _$ResetImpl implements Reset {
     TResult Function(SignOut value)? signOut,
     TResult Function(CheckAuthorized value)? checkAuthorized,
     TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -732,6 +768,132 @@ class _$ResetImpl implements Reset {
 
 abstract class Reset implements SignInEvent {
   const factory Reset() = _$ResetImpl;
+}
+
+/// @nodoc
+abstract class _$$DeleteAccountImplCopyWith<$Res> {
+  factory _$$DeleteAccountImplCopyWith(
+          _$DeleteAccountImpl value, $Res Function(_$DeleteAccountImpl) then) =
+      __$$DeleteAccountImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteAccountImplCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$DeleteAccountImpl>
+    implements _$$DeleteAccountImplCopyWith<$Res> {
+  __$$DeleteAccountImplCopyWithImpl(
+      _$DeleteAccountImpl _value, $Res Function(_$DeleteAccountImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteAccountImpl implements DeleteAccount {
+  const _$DeleteAccountImpl();
+
+  @override
+  String toString() {
+    return 'SignInEvent.deleteAccount()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DeleteAccountImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(SignInField field, String value) changeField,
+    required TResult Function() signIn,
+    required TResult Function() signOut,
+    required TResult Function() checkAuthorized,
+    required TResult Function() reset,
+    required TResult Function() deleteAccount,
+  }) {
+    return deleteAccount();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(SignInField field, String value)? changeField,
+    TResult? Function()? signIn,
+    TResult? Function()? signOut,
+    TResult? Function()? checkAuthorized,
+    TResult? Function()? reset,
+    TResult? Function()? deleteAccount,
+  }) {
+    return deleteAccount?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SignInField field, String value)? changeField,
+    TResult Function()? signIn,
+    TResult Function()? signOut,
+    TResult Function()? checkAuthorized,
+    TResult Function()? reset,
+    TResult Function()? deleteAccount,
+    required TResult orElse(),
+  }) {
+    if (deleteAccount != null) {
+      return deleteAccount();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SignIn value) signIn,
+    required TResult Function(SignOut value) signOut,
+    required TResult Function(CheckAuthorized value) checkAuthorized,
+    required TResult Function(Reset value) reset,
+    required TResult Function(DeleteAccount value) deleteAccount,
+  }) {
+    return deleteAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SignIn value)? signIn,
+    TResult? Function(SignOut value)? signOut,
+    TResult? Function(CheckAuthorized value)? checkAuthorized,
+    TResult? Function(Reset value)? reset,
+    TResult? Function(DeleteAccount value)? deleteAccount,
+  }) {
+    return deleteAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SignIn value)? signIn,
+    TResult Function(SignOut value)? signOut,
+    TResult Function(CheckAuthorized value)? checkAuthorized,
+    TResult Function(Reset value)? reset,
+    TResult Function(DeleteAccount value)? deleteAccount,
+    required TResult orElse(),
+  }) {
+    if (deleteAccount != null) {
+      return deleteAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteAccount implements SignInEvent {
+  const factory DeleteAccount() = _$DeleteAccountImpl;
 }
 
 /// @nodoc

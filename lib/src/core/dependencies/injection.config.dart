@@ -35,7 +35,7 @@ import '../../domain/repository/i_profile_repository.dart' as _i22;
 import '../../domain/repository/i_social_repository.dart' as _i16;
 import '../../presentation/account/blocs/rate_doctor_bloc/rate_doctor_bloc.dart'
     as _i15;
-import '../../presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart' as _i34;
+import '../../presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart' as _i33;
 import '../../presentation/auth/blocs/sign_up_bloc/sign_up_bloc.dart' as _i38;
 import '../../presentation/calendar/blocs/calendar_bloc/calendar_bloc.dart'
     as _i27;
@@ -56,7 +56,7 @@ import '../../presentation/social/blocs/social_bloc/social_bloc.dart' as _i40;
 import '../../router/app_router.dart' as _i7;
 import '../modules/modules.dart' as _i42;
 import '../services/api_client.dart' as _i32;
-import '../services/network_info.dart' as _i33;
+import '../services/network_info.dart' as _i34;
 
 // initializes the registration of main-scope dependencies inside of GetIt
 Future<_i1.GetIt> $initGetIt(
@@ -105,12 +105,13 @@ Future<_i1.GetIt> $initGetIt(
         client: gh<_i8.Dio>(),
         storage: gh<_i10.FlutterSecureStorage>(),
       ));
-  gh.lazySingleton<_i33.INetworkInfo>(
-      () => _i33.NetworkInfo(connectivity: gh<_i9.Connectivity>()));
-  gh.factory<_i34.SignInBloc>(() => _i34.SignInBloc(
+  gh.factory<_i33.SignInBloc>(() => _i33.SignInBloc(
         authRepository: gh<_i30.IAuthRepository>(),
         router: gh<_i7.AppRouter>(),
+        secureStorage: gh<_i10.FlutterSecureStorage>(),
       ));
+  gh.lazySingleton<_i34.INetworkInfo>(
+      () => _i34.NetworkInfo(connectivity: gh<_i9.Connectivity>()));
   gh.factory<_i35.MentorBloc>(() => _i35.MentorBloc(
         repository: gh<_i28.IMentorRepository>(),
         authRepository: gh<_i30.IAuthRepository>(),

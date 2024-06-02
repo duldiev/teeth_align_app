@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:teeth_align_app/src/presentation/account/widgets/delete_account_button.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/mentor_bloc/mentor_bloc.dart';
 import 'package:teeth_align_app/src/shared/buttons/colored_button.dart';
@@ -111,6 +112,7 @@ class _MentorPersonalDataViewState extends State<MentorPersonalDataView> {
                           const SaveFields(),
                         ),
                   ),
+                  const DeleteAccountBtton(),
                 ],
               ),
             ),

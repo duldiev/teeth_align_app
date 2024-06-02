@@ -21,4 +21,6 @@ abstract class IAuthRepository {
   });
 
   Future<Either<Failure, Unit>> getAuthenticated();
+
+  Future<Either<Failure, Unit>> deleteAccount();
 }

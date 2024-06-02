@@ -17,4 +17,6 @@ class SignInEvent with _$SignInEvent {
   // Other
   const factory SignInEvent.checkAuthorized() = CheckAuthorized;
   const factory SignInEvent.reset() = Reset;
+
+  const factory SignInEvent.deleteAccount() = DeleteAccount;
 }

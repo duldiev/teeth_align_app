@@ -95,4 +95,16 @@ class AuthRepository extends BaseClient implements IAuthRepository {
       (r) => const Right(unit),
     );
   }
+
+  @override
+  Future<Either<Failure, Unit>> deleteAccount() async {
+    final request = await call(
+      RestMethod.delete,
+      '/api/v1/deactivate',
+    );
+    return request.fold(
+      (l) => Left(l),
+      (r) => const Right(unit),
+    );
+  }
 }

@@ -25,16 +25,19 @@ typedef SIB = SignInBloc;
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final IAuthRepository authRepository;
   final AppRouter router;
+  final FlutterSecureStorage secureStorage;
 
   SignInBloc({
     required this.authRepository,
     required this.router,
+    required this.secureStorage,
   }) : super(SignInState(signInBody: SignInBody.empty())) {
     on<ChangeField>(onChangeField);
     on<SignIn>(onSignIn);
     on<SignOut>(onSignOut);
     on<CheckAuthorized>(onCheckAuthorized);
     on<Reset>(onReset);
+    on<DeleteAccount>(onDeleteAccount);
   }
 
   void onChangeField(
@@ -135,4 +138,22 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     Emitter<SignInState> emit,
   ) =>
       emit(state.copyWith(status: LoadStatus.initial));
+
+  Future<void> onDeleteAccount(
+    DeleteAccount event,
+    Emitter<SignInState> emit,
+  ) async {
+    emit(state.copyWith(status: LoadStatus.loading));
+
+    (await authRepository.deleteAccount()).fold(
+      (l) => emit(state.copyWith(status: LoadStatus.failed)),
+      (r) {
+        secureStorage.delete(key: StorageKeys.token);
+        router
+          ..popUntilRoot()
+          ..replace(const SplashRoute());
+        emit(state.copyWith(status: LoadStatus.success));
+      },
+    );
+  }
 }

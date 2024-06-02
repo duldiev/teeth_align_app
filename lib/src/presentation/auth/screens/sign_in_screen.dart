@@ -48,6 +48,7 @@ class SignInScreen extends StatelessWidget {
                               TextInput(
                                 label: 'E-mail',
                                 hintText: 'Введите E-mail',
+                                initialValue: 'teys@rizeup.kz',
                                 onChanged: (value) => context.read<SIB>().add(
                                       ChangeField(
                                         field: SignInField.email,
@@ -59,6 +60,7 @@ class SignInScreen extends StatelessWidget {
                               TextInput(
                                 label: 'Пароль',
                                 hintText: 'Введите пароль',
+                                initialValue: 'testPath123',
                                 suffixType: InputSuffixType.obsecure,
                                 onChanged: (value) => context.read<SIB>().add(
                                       ChangeField(
@@ -74,11 +76,13 @@ class SignInScreen extends StatelessWidget {
                     ),
                     isKeyboardVisible
                         ? const SizedBox()
-                        : const Expanded(
+                        : Expanded(
                             flex: 2,
                             child: HideBehindKeyoard(
-                              slideOffset: Offset(0, 3),
-                              child: _BottomView(),
+                              slideOffset: const Offset(0, 3),
+                              child: _BottomView(
+                                state.status == LoadStatus.loading,
+                              ),
                             ),
                           ),
                   ],
@@ -93,7 +97,9 @@ class SignInScreen extends StatelessWidget {
 }
 
 class _BottomView extends StatelessWidget {
-  const _BottomView();
+  const _BottomView(this.isLoading);
+
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +107,7 @@ class _BottomView extends StatelessWidget {
       children: [
         ColoredButton(
           title: 'Войти',
+          isLoading: isLoading,
           onTap: () => context.read<SIB>().add(const SignIn()),
         ),
         // Padding(

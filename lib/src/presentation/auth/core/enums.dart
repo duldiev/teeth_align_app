@@ -42,6 +42,15 @@ enum DProfileField {
   workExperience,
 }
 
+enum MProfileField {
+  firstName,
+  lastName,
+  clinicName,
+  speciality,
+  city,
+  workExperience,
+}
+
 enum AlignerSettingsField {
   currentSet,
   maxSet,

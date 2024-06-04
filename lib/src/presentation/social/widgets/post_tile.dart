@@ -1,8 +1,6 @@
-// ignore_for_file: avoid_print
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
@@ -11,6 +9,7 @@ import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/core/extensions/date_extension.dart';
 import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
+import 'package:teeth_align_app/src/presentation/social/blocs/social_bloc/social_bloc.dart';
 import 'package:teeth_align_app/src/presentation/social/views/post_images_url_view.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/author_avatar.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/like_icon.dart';
@@ -21,9 +20,11 @@ class PostTile extends StatelessWidget {
   const PostTile({
     super.key,
     required this.post,
+    required this.isLiking,
   });
 
   final PostEntity post;
+  final bool isLiking;
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +103,16 @@ class PostTile extends StatelessWidget {
             PostImagesUrlView(imageUrls: post.imageUrls),
             Row(
               children: [
-                LikeIcon(post: post),
+                LikeIcon(
+                  post: post,
+                  onLike: (int postId) {
+                    if (!isLiking) {
+                      context.read<SocialBloc>().add(
+                            LikePost(postId, post.isLiked),
+                          );
+                    }
+                  },
+                ),
                 Gap(5.w),
                 InkWell(
                   child: Icon(

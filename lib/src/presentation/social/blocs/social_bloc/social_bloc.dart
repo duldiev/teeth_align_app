@@ -34,6 +34,7 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
     on<CreateComment>(onCreateComment);
     on<GetPostComments>(onGetPostComments);
     on<LikePost>(onLikePost);
+    on<LikeSinglePost>(onLikeSinglePost);
     on<RemoveImage>(onRemoveImage);
   }
 
@@ -171,9 +172,9 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
         var post = posts.firstWhere((post) => post.id == event.id);
 
         if (event.unlike == true) {
-          post = post.copyWith(likes: post.likes - 1);
+          post = post.copyWith(likes: post.likes - 1, isLiked: false);
         } else {
-          post = post.copyWith(likes: post.likes + 1);
+          post = post.copyWith(likes: post.likes + 1, isLiked: true);
         }
 
         final index = posts.indexWhere((post) => post.id == event.id);
@@ -181,6 +182,26 @@ class SocialBloc extends Bloc<SocialEvent, SocialState> {
         posts.insert(index, post);
 
         emit(state.copyWith(likeStatus: LoadStatus.success, posts: posts));
+      },
+    );
+  }
+
+  Future<void> onLikeSinglePost(
+    LikeSinglePost event,
+    Emitter<SocialState> emit,
+  ) async {
+    emit(state.copyWith(likeStatus: LoadStatus.loading));
+
+    (await repository.likePost(event.id)).fold(
+      (l) => emit(state.copyWith(likeStatus: LoadStatus.failed)),
+      (r) {
+        var post = state.post!.copyWith(
+          likes: event.unlike == true
+              ? state.post!.likes - 1
+              : state.post!.likes + 1,
+          isLiked: event.unlike == true ? false : true,
+        );
+        emit(state.copyWith(likeStatus: LoadStatus.success, post: post));
       },
     );
   }

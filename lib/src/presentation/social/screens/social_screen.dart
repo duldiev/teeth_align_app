@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/services/modal_bottom_sheet.dart';
 import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
 import 'package:teeth_align_app/src/presentation/social/blocs/leaderboard_bloc/leaderboard_bloc.dart';
@@ -87,6 +88,7 @@ class SocialScreen extends StatelessWidget {
                 ),
                 itemBuilder: (context, index) => PostTile(
                   post: state.posts[index],
+                  isLiking: state.likeStatus == LoadStatus.loading,
                 ),
                 separatorBuilder: (context, index) => Gap(2.h),
                 itemCount: state.posts.length,

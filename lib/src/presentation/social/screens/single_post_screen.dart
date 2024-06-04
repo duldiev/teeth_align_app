@@ -7,7 +7,6 @@ import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/extensions/date_extension.dart';
 import 'package:teeth_align_app/src/domain/entity/comment_entity.dart';
-import 'package:teeth_align_app/src/domain/entity/post_entity.dart';
 import 'package:teeth_align_app/src/presentation/social/blocs/social_bloc/social_bloc.dart';
 import 'package:teeth_align_app/src/presentation/social/views/post_images_url_view.dart';
 import 'package:teeth_align_app/src/presentation/social/widgets/comment_icon.dart';
@@ -61,7 +60,7 @@ class SinglePostScreen extends StatelessWidget {
             body: switch (state.status) {
               LoadStatus.initial => const SizedBox(),
               LoadStatus.loading => const SizedBox(),
-              LoadStatus.success => _Content(state.post!, state.comments),
+              LoadStatus.success => _Content(state),
               LoadStatus.failed => const SizedBox(),
             },
             bottomNavigationBar: SafeArea(
@@ -145,13 +144,14 @@ class _BottomCommentViewState extends State<_BottomCommentView> {
 }
 
 class _Content extends StatelessWidget {
-  const _Content(this.post, this.comments);
+  const _Content(this.state);
 
-  final PostEntity post;
-  final List<CommentEntity> comments;
+  final SocialState state;
 
   @override
   Widget build(BuildContext context) {
+    final post = state.post!;
+    final comments = state.comments;
     return SingleChildScrollView(
       padding: EdgeInsets.symmetric(
         horizontal: 4.w,
@@ -206,7 +206,16 @@ class _Content extends StatelessWidget {
           PostImagesUrlView(imageUrls: post.imageUrls),
           Row(
             children: [
-              LikeIcon(post: post),
+              LikeIcon(
+                post: post,
+                onLike: (int postId) {
+                  if (state.likeStatus != LoadStatus.loading) {
+                    context.read<SocialBloc>().add(
+                          LikeSinglePost(postId, state.post!.isLiked),
+                        );
+                  }
+                },
+              ),
               Gap(5.w),
               const CommentIcon(),
               Gap(5.w),

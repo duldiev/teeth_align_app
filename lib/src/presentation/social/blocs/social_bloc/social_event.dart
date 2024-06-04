@@ -24,7 +24,15 @@ class SocialEvent with _$SocialEvent {
 
   const factory SocialEvent.getPostComments(int id) = GetPostComments;
 
-  const factory SocialEvent.likePost(int id, [bool? unlike]) = LikePost;
+  const factory SocialEvent.likePost(
+    int id, [
+    bool? unlike,
+  ]) = LikePost;
+
+  const factory SocialEvent.likeSinglePost(
+    int id, [
+    bool? unlike,
+  ]) = LikeSinglePost;
 
   const factory SocialEvent.removeImage(XFile iamge) = RemoveImage;
 }

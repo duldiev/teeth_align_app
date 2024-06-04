@@ -51,6 +51,18 @@ enum MProfileField {
   workExperience,
 }
 
+enum AProfileField {
+  firstName,
+  lastName,
+  email,
+}
+
+enum PProfileField {
+  firstName,
+  lastName,
+  email,
+}
+
 enum AlignerSettingsField {
   currentSet,
   maxSet,

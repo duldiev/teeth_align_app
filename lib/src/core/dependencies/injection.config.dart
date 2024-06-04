@@ -43,7 +43,7 @@ import '../../presentation/calendar/blocs/calendar_date_bloc/calendar_date_bloc.
     as _i5;
 import '../../presentation/calendar/blocs/create_event_bloc/create_event_bloc.dart'
     as _i26;
-import '../../presentation/home/blocs/admin_bloc/admin_bloc.dart' as _i39;
+import '../../presentation/home/blocs/admin_bloc/admin_bloc.dart' as _i40;
 import '../../presentation/home/blocs/doctor_bloc/doctor_bloc.dart' as _i41;
 import '../../presentation/home/blocs/mentor_bloc/mentor_bloc.dart' as _i35;
 import '../../presentation/home/blocs/patient_bloc/patient_bloc.dart' as _i37;
@@ -52,7 +52,7 @@ import '../../presentation/report/blocs/create_case_bloc/create_case_bloc.dart'
     as _i36;
 import '../../presentation/social/blocs/leaderboard_bloc/leaderboard_bloc.dart'
     as _i14;
-import '../../presentation/social/blocs/social_bloc/social_bloc.dart' as _i40;
+import '../../presentation/social/blocs/social_bloc/social_bloc.dart' as _i39;
 import '../../router/app_router.dart' as _i7;
 import '../modules/modules.dart' as _i42;
 import '../services/api_client.dart' as _i32;
@@ -131,12 +131,14 @@ Future<_i1.GetIt> $initGetIt(
         imagePicker: gh<_i11.ImagePicker>(),
         router: gh<_i7.AppRouter>(),
       ));
-  gh.factory<_i39.AdminBloc>(
-      () => _i39.AdminBloc(repository: gh<_i18.IAdminRepository>()));
-  gh.factory<_i40.SocialBloc>(() => _i40.SocialBloc(
+  gh.factory<_i39.SocialBloc>(() => _i39.SocialBloc(
         repository: gh<_i16.ISocialRepository>(),
         imagePicker: gh<_i11.ImagePicker>(),
         router: gh<_i7.AppRouter>(),
+      ));
+  gh.factory<_i40.AdminBloc>(() => _i40.AdminBloc(
+        repository: gh<_i18.IAdminRepository>(),
+        authRepository: gh<_i30.IAuthRepository>(),
       ));
   gh.factory<_i41.DoctorBloc>(() => _i41.DoctorBloc(
         repository: gh<_i12.IDoctorRepository>(),

@@ -17,5 +17,6 @@ class AdminStateViewModel with _$AdminStateViewModel {
     @Default([]) List<MentorEntity> mentors,
     @Default([]) List<PatientEntity> patients,
     @Default(false) bool isNoData,
+    @Default(null) AdminEntity? admin,
   }) = _AdminStateViewModel;
 }

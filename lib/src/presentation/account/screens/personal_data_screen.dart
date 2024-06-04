@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:teeth_align_app/src/core/enums/basics.dart';
+import 'package:teeth_align_app/src/presentation/account/views/admin_personal_data_view.dart';
 import 'package:teeth_align_app/src/presentation/account/views/doctor_personal_data_view.dart';
 import 'package:teeth_align_app/src/presentation/account/views/mentor_personal_data_view.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart';
@@ -28,7 +29,7 @@ class PersonalDataScreen extends StatelessWidget {
               ),
             Role.patient => const SizedBox(),
             Role.mentor => const MentorPersonalDataView(),
-            Role.admin => const SizedBox(),
+            Role.admin => const AdminPersonalDataView(),
             Role.doctor => const DoctorPersonalDataView(),
           },
         );

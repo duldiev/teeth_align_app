@@ -24,6 +24,9 @@ mixin _$AdminEvent {
     required TResult Function() getAll,
     required TResult Function(int mentorId, List<DoctorEntity> doctors)
         assignDoctorsToMentors,
+    required TResult Function() getAdminMe,
+    required TResult Function(AProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +37,9 @@ mixin _$AdminEvent {
     TResult? Function()? getAll,
     TResult? Function(int mentorId, List<DoctorEntity> doctors)?
         assignDoctorsToMentors,
+    TResult? Function()? getAdminMe,
+    TResult? Function(AProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +50,9 @@ mixin _$AdminEvent {
     TResult Function()? getAll,
     TResult Function(int mentorId, List<DoctorEntity> doctors)?
         assignDoctorsToMentors,
+    TResult Function()? getAdminMe,
+    TResult Function(AProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +64,9 @@ mixin _$AdminEvent {
     required TResult Function(GetAll value) getAll,
     required TResult Function(AssignDoctorsToMentors value)
         assignDoctorsToMentors,
+    required TResult Function(GetAdminMe value) getAdminMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +76,9 @@ mixin _$AdminEvent {
     TResult? Function(GetDoctors value)? getDoctors,
     TResult? Function(GetAll value)? getAll,
     TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult? Function(GetAdminMe value)? getAdminMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,6 +88,9 @@ mixin _$AdminEvent {
     TResult Function(GetDoctors value)? getDoctors,
     TResult Function(GetAll value)? getAll,
     TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult Function(GetAdminMe value)? getAdminMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,6 +158,9 @@ class _$GetMentorsImpl implements GetMentors {
     required TResult Function() getAll,
     required TResult Function(int mentorId, List<DoctorEntity> doctors)
         assignDoctorsToMentors,
+    required TResult Function() getAdminMe,
+    required TResult Function(AProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return getMentors();
   }
@@ -153,6 +174,9 @@ class _$GetMentorsImpl implements GetMentors {
     TResult? Function()? getAll,
     TResult? Function(int mentorId, List<DoctorEntity> doctors)?
         assignDoctorsToMentors,
+    TResult? Function()? getAdminMe,
+    TResult? Function(AProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return getMentors?.call();
   }
@@ -166,6 +190,9 @@ class _$GetMentorsImpl implements GetMentors {
     TResult Function()? getAll,
     TResult Function(int mentorId, List<DoctorEntity> doctors)?
         assignDoctorsToMentors,
+    TResult Function()? getAdminMe,
+    TResult Function(AProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (getMentors != null) {
@@ -183,6 +210,9 @@ class _$GetMentorsImpl implements GetMentors {
     required TResult Function(GetAll value) getAll,
     required TResult Function(AssignDoctorsToMentors value)
         assignDoctorsToMentors,
+    required TResult Function(GetAdminMe value) getAdminMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return getMentors(this);
   }
@@ -195,6 +225,9 @@ class _$GetMentorsImpl implements GetMentors {
     TResult? Function(GetDoctors value)? getDoctors,
     TResult? Function(GetAll value)? getAll,
     TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult? Function(GetAdminMe value)? getAdminMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return getMentors?.call(this);
   }
@@ -207,6 +240,9 @@ class _$GetMentorsImpl implements GetMentors {
     TResult Function(GetDoctors value)? getDoctors,
     TResult Function(GetAll value)? getAll,
     TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult Function(GetAdminMe value)? getAdminMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (getMentors != null) {
@@ -264,6 +300,9 @@ class _$GetPatientsImpl implements GetPatients {
     required TResult Function() getAll,
     required TResult Function(int mentorId, List<DoctorEntity> doctors)
         assignDoctorsToMentors,
+    required TResult Function() getAdminMe,
+    required TResult Function(AProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return getPatients();
   }
@@ -277,6 +316,9 @@ class _$GetPatientsImpl implements GetPatients {
     TResult? Function()? getAll,
     TResult? Function(int mentorId, List<DoctorEntity> doctors)?
         assignDoctorsToMentors,
+    TResult? Function()? getAdminMe,
+    TResult? Function(AProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return getPatients?.call();
   }
@@ -290,6 +332,9 @@ class _$GetPatientsImpl implements GetPatients {
     TResult Function()? getAll,
     TResult Function(int mentorId, List<DoctorEntity> doctors)?
         assignDoctorsToMentors,
+    TResult Function()? getAdminMe,
+    TResult Function(AProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (getPatients != null) {
@@ -307,6 +352,9 @@ class _$GetPatientsImpl implements GetPatients {
     required TResult Function(GetAll value) getAll,
     required TResult Function(AssignDoctorsToMentors value)
         assignDoctorsToMentors,
+    required TResult Function(GetAdminMe value) getAdminMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return getPatients(this);
   }
@@ -319,6 +367,9 @@ class _$GetPatientsImpl implements GetPatients {
     TResult? Function(GetDoctors value)? getDoctors,
     TResult? Function(GetAll value)? getAll,
     TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult? Function(GetAdminMe value)? getAdminMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return getPatients?.call(this);
   }
@@ -331,6 +382,9 @@ class _$GetPatientsImpl implements GetPatients {
     TResult Function(GetDoctors value)? getDoctors,
     TResult Function(GetAll value)? getAll,
     TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult Function(GetAdminMe value)? getAdminMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (getPatients != null) {
@@ -388,6 +442,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     required TResult Function() getAll,
     required TResult Function(int mentorId, List<DoctorEntity> doctors)
         assignDoctorsToMentors,
+    required TResult Function() getAdminMe,
+    required TResult Function(AProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return getDoctors();
   }
@@ -401,6 +458,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     TResult? Function()? getAll,
     TResult? Function(int mentorId, List<DoctorEntity> doctors)?
         assignDoctorsToMentors,
+    TResult? Function()? getAdminMe,
+    TResult? Function(AProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return getDoctors?.call();
   }
@@ -414,6 +474,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     TResult Function()? getAll,
     TResult Function(int mentorId, List<DoctorEntity> doctors)?
         assignDoctorsToMentors,
+    TResult Function()? getAdminMe,
+    TResult Function(AProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (getDoctors != null) {
@@ -431,6 +494,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     required TResult Function(GetAll value) getAll,
     required TResult Function(AssignDoctorsToMentors value)
         assignDoctorsToMentors,
+    required TResult Function(GetAdminMe value) getAdminMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return getDoctors(this);
   }
@@ -443,6 +509,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     TResult? Function(GetDoctors value)? getDoctors,
     TResult? Function(GetAll value)? getAll,
     TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult? Function(GetAdminMe value)? getAdminMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return getDoctors?.call(this);
   }
@@ -455,6 +524,9 @@ class _$GetDoctorsImpl implements GetDoctors {
     TResult Function(GetDoctors value)? getDoctors,
     TResult Function(GetAll value)? getAll,
     TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult Function(GetAdminMe value)? getAdminMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (getDoctors != null) {
@@ -512,6 +584,9 @@ class _$GetAllImpl implements GetAll {
     required TResult Function() getAll,
     required TResult Function(int mentorId, List<DoctorEntity> doctors)
         assignDoctorsToMentors,
+    required TResult Function() getAdminMe,
+    required TResult Function(AProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return getAll();
   }
@@ -525,6 +600,9 @@ class _$GetAllImpl implements GetAll {
     TResult? Function()? getAll,
     TResult? Function(int mentorId, List<DoctorEntity> doctors)?
         assignDoctorsToMentors,
+    TResult? Function()? getAdminMe,
+    TResult? Function(AProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return getAll?.call();
   }
@@ -538,6 +616,9 @@ class _$GetAllImpl implements GetAll {
     TResult Function()? getAll,
     TResult Function(int mentorId, List<DoctorEntity> doctors)?
         assignDoctorsToMentors,
+    TResult Function()? getAdminMe,
+    TResult Function(AProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (getAll != null) {
@@ -555,6 +636,9 @@ class _$GetAllImpl implements GetAll {
     required TResult Function(GetAll value) getAll,
     required TResult Function(AssignDoctorsToMentors value)
         assignDoctorsToMentors,
+    required TResult Function(GetAdminMe value) getAdminMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return getAll(this);
   }
@@ -567,6 +651,9 @@ class _$GetAllImpl implements GetAll {
     TResult? Function(GetDoctors value)? getDoctors,
     TResult? Function(GetAll value)? getAll,
     TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult? Function(GetAdminMe value)? getAdminMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return getAll?.call(this);
   }
@@ -579,6 +666,9 @@ class _$GetAllImpl implements GetAll {
     TResult Function(GetDoctors value)? getDoctors,
     TResult Function(GetAll value)? getAll,
     TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult Function(GetAdminMe value)? getAdminMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (getAll != null) {
@@ -682,6 +772,9 @@ class _$AssignDoctorsToMentorsImpl implements AssignDoctorsToMentors {
     required TResult Function() getAll,
     required TResult Function(int mentorId, List<DoctorEntity> doctors)
         assignDoctorsToMentors,
+    required TResult Function() getAdminMe,
+    required TResult Function(AProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return assignDoctorsToMentors(mentorId, doctors);
   }
@@ -695,6 +788,9 @@ class _$AssignDoctorsToMentorsImpl implements AssignDoctorsToMentors {
     TResult? Function()? getAll,
     TResult? Function(int mentorId, List<DoctorEntity> doctors)?
         assignDoctorsToMentors,
+    TResult? Function()? getAdminMe,
+    TResult? Function(AProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return assignDoctorsToMentors?.call(mentorId, doctors);
   }
@@ -708,6 +804,9 @@ class _$AssignDoctorsToMentorsImpl implements AssignDoctorsToMentors {
     TResult Function()? getAll,
     TResult Function(int mentorId, List<DoctorEntity> doctors)?
         assignDoctorsToMentors,
+    TResult Function()? getAdminMe,
+    TResult Function(AProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (assignDoctorsToMentors != null) {
@@ -725,6 +824,9 @@ class _$AssignDoctorsToMentorsImpl implements AssignDoctorsToMentors {
     required TResult Function(GetAll value) getAll,
     required TResult Function(AssignDoctorsToMentors value)
         assignDoctorsToMentors,
+    required TResult Function(GetAdminMe value) getAdminMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return assignDoctorsToMentors(this);
   }
@@ -737,6 +839,9 @@ class _$AssignDoctorsToMentorsImpl implements AssignDoctorsToMentors {
     TResult? Function(GetDoctors value)? getDoctors,
     TResult? Function(GetAll value)? getAll,
     TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult? Function(GetAdminMe value)? getAdminMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return assignDoctorsToMentors?.call(this);
   }
@@ -749,6 +854,9 @@ class _$AssignDoctorsToMentorsImpl implements AssignDoctorsToMentors {
     TResult Function(GetDoctors value)? getDoctors,
     TResult Function(GetAll value)? getAll,
     TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult Function(GetAdminMe value)? getAdminMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (assignDoctorsToMentors != null) {
@@ -768,6 +876,475 @@ abstract class AssignDoctorsToMentors implements AdminEvent {
   @JsonKey(ignore: true)
   _$$AssignDoctorsToMentorsImplCopyWith<_$AssignDoctorsToMentorsImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAdminMeImplCopyWith<$Res> {
+  factory _$$GetAdminMeImplCopyWith(
+          _$GetAdminMeImpl value, $Res Function(_$GetAdminMeImpl) then) =
+      __$$GetAdminMeImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetAdminMeImplCopyWithImpl<$Res>
+    extends _$AdminEventCopyWithImpl<$Res, _$GetAdminMeImpl>
+    implements _$$GetAdminMeImplCopyWith<$Res> {
+  __$$GetAdminMeImplCopyWithImpl(
+      _$GetAdminMeImpl _value, $Res Function(_$GetAdminMeImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetAdminMeImpl implements GetAdminMe {
+  const _$GetAdminMeImpl();
+
+  @override
+  String toString() {
+    return 'AdminEvent.getAdminMe()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetAdminMeImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getMentors,
+    required TResult Function() getPatients,
+    required TResult Function() getDoctors,
+    required TResult Function() getAll,
+    required TResult Function(int mentorId, List<DoctorEntity> doctors)
+        assignDoctorsToMentors,
+    required TResult Function() getAdminMe,
+    required TResult Function(AProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
+  }) {
+    return getAdminMe();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getMentors,
+    TResult? Function()? getPatients,
+    TResult? Function()? getDoctors,
+    TResult? Function()? getAll,
+    TResult? Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
+    TResult? Function()? getAdminMe,
+    TResult? Function(AProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
+  }) {
+    return getAdminMe?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getMentors,
+    TResult Function()? getPatients,
+    TResult Function()? getDoctors,
+    TResult Function()? getAll,
+    TResult Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
+    TResult Function()? getAdminMe,
+    TResult Function(AProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
+    required TResult orElse(),
+  }) {
+    if (getAdminMe != null) {
+      return getAdminMe();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMentors value) getMentors,
+    required TResult Function(GetPatients value) getPatients,
+    required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetAll value) getAll,
+    required TResult Function(AssignDoctorsToMentors value)
+        assignDoctorsToMentors,
+    required TResult Function(GetAdminMe value) getAdminMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
+  }) {
+    return getAdminMe(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMentors value)? getMentors,
+    TResult? Function(GetPatients value)? getPatients,
+    TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetAll value)? getAll,
+    TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult? Function(GetAdminMe value)? getAdminMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
+  }) {
+    return getAdminMe?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMentors value)? getMentors,
+    TResult Function(GetPatients value)? getPatients,
+    TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetAll value)? getAll,
+    TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult Function(GetAdminMe value)? getAdminMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
+    required TResult orElse(),
+  }) {
+    if (getAdminMe != null) {
+      return getAdminMe(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAdminMe implements AdminEvent {
+  const factory GetAdminMe() = _$GetAdminMeImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangeFieldImplCopyWith<$Res> {
+  factory _$$ChangeFieldImplCopyWith(
+          _$ChangeFieldImpl value, $Res Function(_$ChangeFieldImpl) then) =
+      __$$ChangeFieldImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AProfileField field, dynamic value});
+}
+
+/// @nodoc
+class __$$ChangeFieldImplCopyWithImpl<$Res>
+    extends _$AdminEventCopyWithImpl<$Res, _$ChangeFieldImpl>
+    implements _$$ChangeFieldImplCopyWith<$Res> {
+  __$$ChangeFieldImplCopyWithImpl(
+      _$ChangeFieldImpl _value, $Res Function(_$ChangeFieldImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? value = freezed,
+  }) {
+    return _then(_$ChangeFieldImpl(
+      field: null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as AProfileField,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeFieldImpl implements ChangeField {
+  const _$ChangeFieldImpl({required this.field, required this.value});
+
+  @override
+  final AProfileField field;
+  @override
+  final dynamic value;
+
+  @override
+  String toString() {
+    return 'AdminEvent.changeField(field: $field, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeFieldImpl &&
+            (identical(other.field, field) || other.field == field) &&
+            const DeepCollectionEquality().equals(other.value, value));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, field, const DeepCollectionEquality().hash(value));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeFieldImplCopyWith<_$ChangeFieldImpl> get copyWith =>
+      __$$ChangeFieldImplCopyWithImpl<_$ChangeFieldImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getMentors,
+    required TResult Function() getPatients,
+    required TResult Function() getDoctors,
+    required TResult Function() getAll,
+    required TResult Function(int mentorId, List<DoctorEntity> doctors)
+        assignDoctorsToMentors,
+    required TResult Function() getAdminMe,
+    required TResult Function(AProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
+  }) {
+    return changeField(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getMentors,
+    TResult? Function()? getPatients,
+    TResult? Function()? getDoctors,
+    TResult? Function()? getAll,
+    TResult? Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
+    TResult? Function()? getAdminMe,
+    TResult? Function(AProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
+  }) {
+    return changeField?.call(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getMentors,
+    TResult Function()? getPatients,
+    TResult Function()? getDoctors,
+    TResult Function()? getAll,
+    TResult Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
+    TResult Function()? getAdminMe,
+    TResult Function(AProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
+    required TResult orElse(),
+  }) {
+    if (changeField != null) {
+      return changeField(field, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMentors value) getMentors,
+    required TResult Function(GetPatients value) getPatients,
+    required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetAll value) getAll,
+    required TResult Function(AssignDoctorsToMentors value)
+        assignDoctorsToMentors,
+    required TResult Function(GetAdminMe value) getAdminMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
+  }) {
+    return changeField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMentors value)? getMentors,
+    TResult? Function(GetPatients value)? getPatients,
+    TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetAll value)? getAll,
+    TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult? Function(GetAdminMe value)? getAdminMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
+  }) {
+    return changeField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMentors value)? getMentors,
+    TResult Function(GetPatients value)? getPatients,
+    TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetAll value)? getAll,
+    TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult Function(GetAdminMe value)? getAdminMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
+    required TResult orElse(),
+  }) {
+    if (changeField != null) {
+      return changeField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeField implements AdminEvent {
+  const factory ChangeField(
+      {required final AProfileField field,
+      required final dynamic value}) = _$ChangeFieldImpl;
+
+  AProfileField get field;
+  dynamic get value;
+  @JsonKey(ignore: true)
+  _$$ChangeFieldImplCopyWith<_$ChangeFieldImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveFieldsImplCopyWith<$Res> {
+  factory _$$SaveFieldsImplCopyWith(
+          _$SaveFieldsImpl value, $Res Function(_$SaveFieldsImpl) then) =
+      __$$SaveFieldsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SaveFieldsImplCopyWithImpl<$Res>
+    extends _$AdminEventCopyWithImpl<$Res, _$SaveFieldsImpl>
+    implements _$$SaveFieldsImplCopyWith<$Res> {
+  __$$SaveFieldsImplCopyWithImpl(
+      _$SaveFieldsImpl _value, $Res Function(_$SaveFieldsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SaveFieldsImpl implements SaveFields {
+  const _$SaveFieldsImpl();
+
+  @override
+  String toString() {
+    return 'AdminEvent.saveFields()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SaveFieldsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getMentors,
+    required TResult Function() getPatients,
+    required TResult Function() getDoctors,
+    required TResult Function() getAll,
+    required TResult Function(int mentorId, List<DoctorEntity> doctors)
+        assignDoctorsToMentors,
+    required TResult Function() getAdminMe,
+    required TResult Function(AProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
+  }) {
+    return saveFields();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getMentors,
+    TResult? Function()? getPatients,
+    TResult? Function()? getDoctors,
+    TResult? Function()? getAll,
+    TResult? Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
+    TResult? Function()? getAdminMe,
+    TResult? Function(AProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
+  }) {
+    return saveFields?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getMentors,
+    TResult Function()? getPatients,
+    TResult Function()? getDoctors,
+    TResult Function()? getAll,
+    TResult Function(int mentorId, List<DoctorEntity> doctors)?
+        assignDoctorsToMentors,
+    TResult Function()? getAdminMe,
+    TResult Function(AProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
+    required TResult orElse(),
+  }) {
+    if (saveFields != null) {
+      return saveFields();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetMentors value) getMentors,
+    required TResult Function(GetPatients value) getPatients,
+    required TResult Function(GetDoctors value) getDoctors,
+    required TResult Function(GetAll value) getAll,
+    required TResult Function(AssignDoctorsToMentors value)
+        assignDoctorsToMentors,
+    required TResult Function(GetAdminMe value) getAdminMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
+  }) {
+    return saveFields(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetMentors value)? getMentors,
+    TResult? Function(GetPatients value)? getPatients,
+    TResult? Function(GetDoctors value)? getDoctors,
+    TResult? Function(GetAll value)? getAll,
+    TResult? Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult? Function(GetAdminMe value)? getAdminMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
+  }) {
+    return saveFields?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetMentors value)? getMentors,
+    TResult Function(GetPatients value)? getPatients,
+    TResult Function(GetDoctors value)? getDoctors,
+    TResult Function(GetAll value)? getAll,
+    TResult Function(AssignDoctorsToMentors value)? assignDoctorsToMentors,
+    TResult Function(GetAdminMe value)? getAdminMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
+    required TResult orElse(),
+  }) {
+    if (saveFields != null) {
+      return saveFields(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveFields implements AdminEvent {
+  const factory SaveFields() = _$SaveFieldsImpl;
 }
 
 /// @nodoc
@@ -1347,6 +1924,7 @@ mixin _$AdminStateViewModel {
   List<MentorEntity> get mentors => throw _privateConstructorUsedError;
   List<PatientEntity> get patients => throw _privateConstructorUsedError;
   bool get isNoData => throw _privateConstructorUsedError;
+  AdminEntity? get admin => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AdminStateViewModelCopyWith<AdminStateViewModel> get copyWith =>
@@ -1363,7 +1941,8 @@ abstract class $AdminStateViewModelCopyWith<$Res> {
       {List<DoctorEntity> doctors,
       List<MentorEntity> mentors,
       List<PatientEntity> patients,
-      bool isNoData});
+      bool isNoData,
+      AdminEntity? admin});
 }
 
 /// @nodoc
@@ -1383,6 +1962,7 @@ class _$AdminStateViewModelCopyWithImpl<$Res, $Val extends AdminStateViewModel>
     Object? mentors = null,
     Object? patients = null,
     Object? isNoData = null,
+    Object? admin = freezed,
   }) {
     return _then(_value.copyWith(
       doctors: null == doctors
@@ -1401,6 +1981,10 @@ class _$AdminStateViewModelCopyWithImpl<$Res, $Val extends AdminStateViewModel>
           ? _value.isNoData
           : isNoData // ignore: cast_nullable_to_non_nullable
               as bool,
+      admin: freezed == admin
+          ? _value.admin
+          : admin // ignore: cast_nullable_to_non_nullable
+              as AdminEntity?,
     ) as $Val);
   }
 }
@@ -1417,7 +2001,8 @@ abstract class _$$AdminStateViewModelImplCopyWith<$Res>
       {List<DoctorEntity> doctors,
       List<MentorEntity> mentors,
       List<PatientEntity> patients,
-      bool isNoData});
+      bool isNoData,
+      AdminEntity? admin});
 }
 
 /// @nodoc
@@ -1435,6 +2020,7 @@ class __$$AdminStateViewModelImplCopyWithImpl<$Res>
     Object? mentors = null,
     Object? patients = null,
     Object? isNoData = null,
+    Object? admin = freezed,
   }) {
     return _then(_$AdminStateViewModelImpl(
       doctors: null == doctors
@@ -1453,6 +2039,10 @@ class __$$AdminStateViewModelImplCopyWithImpl<$Res>
           ? _value.isNoData
           : isNoData // ignore: cast_nullable_to_non_nullable
               as bool,
+      admin: freezed == admin
+          ? _value.admin
+          : admin // ignore: cast_nullable_to_non_nullable
+              as AdminEntity?,
     ));
   }
 }
@@ -1464,7 +2054,8 @@ class _$AdminStateViewModelImpl implements _AdminStateViewModel {
       {final List<DoctorEntity> doctors = const [],
       final List<MentorEntity> mentors = const [],
       final List<PatientEntity> patients = const [],
-      this.isNoData = false})
+      this.isNoData = false,
+      this.admin = null})
       : _doctors = doctors,
         _mentors = mentors,
         _patients = patients;
@@ -1499,10 +2090,13 @@ class _$AdminStateViewModelImpl implements _AdminStateViewModel {
   @override
   @JsonKey()
   final bool isNoData;
+  @override
+  @JsonKey()
+  final AdminEntity? admin;
 
   @override
   String toString() {
-    return 'AdminStateViewModel(doctors: $doctors, mentors: $mentors, patients: $patients, isNoData: $isNoData)';
+    return 'AdminStateViewModel(doctors: $doctors, mentors: $mentors, patients: $patients, isNoData: $isNoData, admin: $admin)';
   }
 
   @override
@@ -1514,7 +2108,8 @@ class _$AdminStateViewModelImpl implements _AdminStateViewModel {
             const DeepCollectionEquality().equals(other._mentors, _mentors) &&
             const DeepCollectionEquality().equals(other._patients, _patients) &&
             (identical(other.isNoData, isNoData) ||
-                other.isNoData == isNoData));
+                other.isNoData == isNoData) &&
+            (identical(other.admin, admin) || other.admin == admin));
   }
 
   @override
@@ -1523,7 +2118,8 @@ class _$AdminStateViewModelImpl implements _AdminStateViewModel {
       const DeepCollectionEquality().hash(_doctors),
       const DeepCollectionEquality().hash(_mentors),
       const DeepCollectionEquality().hash(_patients),
-      isNoData);
+      isNoData,
+      admin);
 
   @JsonKey(ignore: true)
   @override
@@ -1538,7 +2134,8 @@ abstract class _AdminStateViewModel implements AdminStateViewModel {
       {final List<DoctorEntity> doctors,
       final List<MentorEntity> mentors,
       final List<PatientEntity> patients,
-      final bool isNoData}) = _$AdminStateViewModelImpl;
+      final bool isNoData,
+      final AdminEntity? admin}) = _$AdminStateViewModelImpl;
 
   @override
   List<DoctorEntity> get doctors;
@@ -1548,6 +2145,8 @@ abstract class _AdminStateViewModel implements AdminStateViewModel {
   List<PatientEntity> get patients;
   @override
   bool get isNoData;
+  @override
+  AdminEntity? get admin;
   @override
   @JsonKey(ignore: true)
   _$$AdminStateViewModelImplCopyWith<_$AdminStateViewModelImpl> get copyWith =>

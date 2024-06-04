@@ -2,9 +2,11 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/exceptions/failure.dart';
 import 'package:teeth_align_app/src/core/services/base_client.dart';
+import 'package:teeth_align_app/src/data/models/admin_model.dart';
 import 'package:teeth_align_app/src/data/models/doctor_model.dart';
 import 'package:teeth_align_app/src/data/models/mentor_model.dart';
 import 'package:teeth_align_app/src/data/models/patient_model.dart';
+import 'package:teeth_align_app/src/domain/entity/admin_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/patient_entity.dart';
@@ -59,6 +61,31 @@ class AdminRepository extends BaseClient implements IAdminRepository {
         'mentorId': mentorId,
         'doctorIds': doctorIds,
       },
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => const Right(unit),
+    );
+  }
+
+  @override
+  Future<Either<Failure, AdminEntity>> getAdminById(int id) async {
+    return (await call(
+      RestMethod.get,
+      '/api/v1/admin/$id',
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => Right(AdminModel.fromMap(r)),
+    );
+  }
+
+  @override
+  Future<Either<Failure, Unit>> updateProfile(AdminEntity body) async {
+    return (await call(
+      RestMethod.put,
+      '/api/v1/admin/profile',
+      body: body.toMap(),
     ))
         .fold(
       (l) => Left(l),

@@ -14,4 +14,13 @@ class AdminEvent with _$AdminEvent {
     int mentorId,
     List<DoctorEntity> doctors,
   ) = AssignDoctorsToMentors;
+
+  const factory AdminEvent.getAdminMe() = GetAdminMe;
+
+  const factory AdminEvent.changeField({
+    required AProfileField field,
+    required dynamic value,
+  }) = ChangeField;
+
+  const factory AdminEvent.saveFields() = SaveFields;
 }

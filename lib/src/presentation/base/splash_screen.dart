@@ -29,7 +29,11 @@ class _SplashScreenState extends State<SplashScreen> {
       body: BlocListener<SignInBloc, SignInState>(
         listener: (context, state) {
           if (state.status == LoadStatus.success) {
-            context.router.replace(const NavRouter());
+            if (!state.isAlignerSettingsSet) {
+              context.router.replace(const AlignerSettingsRoute());
+            } else {
+              context.router.replace(const NavRouter());
+            }
           } else {
             context.router.replace(const WelcomeRoute());
           }

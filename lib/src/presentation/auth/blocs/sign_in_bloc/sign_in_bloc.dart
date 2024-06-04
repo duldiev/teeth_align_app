@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 import 'package:teeth_align_app/main.dart';
 import 'package:teeth_align_app/src/core/constants/storage_keys.dart';
@@ -26,11 +29,13 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final IAuthRepository authRepository;
   final AppRouter router;
   final FlutterSecureStorage secureStorage;
+  final SharedPreferences pref;
 
   SignInBloc({
     required this.authRepository,
     required this.router,
     required this.secureStorage,
+    required this.pref,
   }) : super(SignInState(signInBody: SignInBody.empty())) {
     on<ChangeField>(onChangeField);
     on<SignIn>(onSignIn);
@@ -118,7 +123,11 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
     if (result.isLeft() || account == null) return;
 
-    if (account!.chatUserId != null && account!.chatToken != null) {
+    log(client.chatPersistenceClient?.isConnected.toString() ?? 'NULL');
+
+    if (account!.chatUserId != null &&
+        account!.chatToken != null &&
+        !appData.isChatAvailable) {
       await client.connectUser(
         User(id: account!.chatUserId!),
         account!.chatToken!,
@@ -130,7 +139,14 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
       appData.account = account;
     }
 
-    emit(state.copyWith(status: LoadStatus.success, account: account));
+    final isSet = pref.getBool(StorageKeys.isAlignerSettingsSet) ?? false;
+    log(isSet.toString());
+
+    emit(state.copyWith(
+      status: LoadStatus.success,
+      account: account,
+      isAlignerSettingsSet: isSet,
+    ));
   }
 
   void onReset(

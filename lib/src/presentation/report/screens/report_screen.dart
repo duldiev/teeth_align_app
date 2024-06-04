@@ -9,7 +9,9 @@ import 'package:teeth_align_app/src/presentation/report/widgets/case_tile.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
+import 'package:teeth_align_app/src/shared/loader/circlular_loader.dart';
 import 'package:teeth_align_app/src/shared/refreshers/pull_refresher.dart';
+import 'package:teeth_align_app/src/shared/views/retry_again_view.dart';
 
 @RoutePage()
 class ReportScreen extends StatelessWidget {
@@ -25,28 +27,38 @@ class ReportScreen extends StatelessWidget {
         builder: (context, state) {
           return state.when(
             initial: () => const SizedBox(),
-            loading: () => const SizedBox(),
-            loaded: (data) => PullRefresher(
-              onRefresh: () async => context.read<PatientBloc>().add(
-                    GetCases(appData.userId),
-                  ),
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 2.w),
-                physics: const AlwaysScrollableScrollPhysics(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: List.generate(
-                    data.cases.length,
-                    (index) => Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: CaseTile(
-                        caseObject: data.cases[index],
+            loading: () => const CircularLoader(),
+            loaded: (data) {
+              if (data.cases.isEmpty) {
+                return RetryAgainView(
+                  type: RetryAgainViewType.empty,
+                  onRetry: () => context.read<PatientBloc>().add(
+                        GetCases(appData.userId),
+                      ),
+                );
+              }
+              return PullRefresher(
+                onRefresh: () async => context.read<PatientBloc>().add(
+                      GetCases(appData.userId),
+                    ),
+                child: SingleChildScrollView(
+                  padding: EdgeInsets.symmetric(horizontal: 2.w),
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: List.generate(
+                      data.cases.length,
+                      (index) => Padding(
+                        padding: const EdgeInsets.all(6.0),
+                        child: CaseTile(
+                          caseObject: data.cases[index],
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ),
+              );
+            },
             failed: () => const SizedBox(),
           );
         },

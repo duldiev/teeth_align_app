@@ -71,5 +71,7 @@ Future<void> main() async {
 
   cameras = await availableCameras();
 
+  // await getIt<SharedPreferences>().clear();
+
   runApp(const App());
 }

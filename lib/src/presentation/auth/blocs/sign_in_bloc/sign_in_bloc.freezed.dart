@@ -901,6 +901,7 @@ mixin _$SignInState {
   SignInBody? get signInBody => throw _privateConstructorUsedError;
   LoadStatus get status => throw _privateConstructorUsedError;
   AccountEntity? get account => throw _privateConstructorUsedError;
+  bool get isAlignerSettingsSet => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInStateCopyWith<SignInState> get copyWith =>
@@ -914,7 +915,10 @@ abstract class $SignInStateCopyWith<$Res> {
       _$SignInStateCopyWithImpl<$Res, SignInState>;
   @useResult
   $Res call(
-      {SignInBody? signInBody, LoadStatus status, AccountEntity? account});
+      {SignInBody? signInBody,
+      LoadStatus status,
+      AccountEntity? account,
+      bool isAlignerSettingsSet});
 }
 
 /// @nodoc
@@ -933,6 +937,7 @@ class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
     Object? signInBody = freezed,
     Object? status = null,
     Object? account = freezed,
+    Object? isAlignerSettingsSet = null,
   }) {
     return _then(_value.copyWith(
       signInBody: freezed == signInBody
@@ -947,6 +952,10 @@ class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
           ? _value.account
           : account // ignore: cast_nullable_to_non_nullable
               as AccountEntity?,
+      isAlignerSettingsSet: null == isAlignerSettingsSet
+          ? _value.isAlignerSettingsSet
+          : isAlignerSettingsSet // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -960,7 +969,10 @@ abstract class _$$SignInStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {SignInBody? signInBody, LoadStatus status, AccountEntity? account});
+      {SignInBody? signInBody,
+      LoadStatus status,
+      AccountEntity? account,
+      bool isAlignerSettingsSet});
 }
 
 /// @nodoc
@@ -977,6 +989,7 @@ class __$$SignInStateImplCopyWithImpl<$Res>
     Object? signInBody = freezed,
     Object? status = null,
     Object? account = freezed,
+    Object? isAlignerSettingsSet = null,
   }) {
     return _then(_$SignInStateImpl(
       signInBody: freezed == signInBody
@@ -991,6 +1004,10 @@ class __$$SignInStateImplCopyWithImpl<$Res>
           ? _value.account
           : account // ignore: cast_nullable_to_non_nullable
               as AccountEntity?,
+      isAlignerSettingsSet: null == isAlignerSettingsSet
+          ? _value.isAlignerSettingsSet
+          : isAlignerSettingsSet // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1001,7 +1018,8 @@ class _$SignInStateImpl extends _SignInState {
   _$SignInStateImpl(
       {this.signInBody = null,
       this.status = LoadStatus.initial,
-      this.account = null})
+      this.account = null,
+      this.isAlignerSettingsSet = false})
       : super._();
 
   @override
@@ -1013,10 +1031,13 @@ class _$SignInStateImpl extends _SignInState {
   @override
   @JsonKey()
   final AccountEntity? account;
+  @override
+  @JsonKey()
+  final bool isAlignerSettingsSet;
 
   @override
   String toString() {
-    return 'SignInState(signInBody: $signInBody, status: $status, account: $account)';
+    return 'SignInState(signInBody: $signInBody, status: $status, account: $account, isAlignerSettingsSet: $isAlignerSettingsSet)';
   }
 
   @override
@@ -1027,11 +1048,14 @@ class _$SignInStateImpl extends _SignInState {
             (identical(other.signInBody, signInBody) ||
                 other.signInBody == signInBody) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.account, account) || other.account == account));
+            (identical(other.account, account) || other.account == account) &&
+            (identical(other.isAlignerSettingsSet, isAlignerSettingsSet) ||
+                other.isAlignerSettingsSet == isAlignerSettingsSet));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, signInBody, status, account);
+  int get hashCode => Object.hash(
+      runtimeType, signInBody, status, account, isAlignerSettingsSet);
 
   @JsonKey(ignore: true)
   @override
@@ -1044,7 +1068,8 @@ abstract class _SignInState extends SignInState {
   factory _SignInState(
       {final SignInBody? signInBody,
       final LoadStatus status,
-      final AccountEntity? account}) = _$SignInStateImpl;
+      final AccountEntity? account,
+      final bool isAlignerSettingsSet}) = _$SignInStateImpl;
   _SignInState._() : super._();
 
   @override
@@ -1053,6 +1078,8 @@ abstract class _SignInState extends SignInState {
   LoadStatus get status;
   @override
   AccountEntity? get account;
+  @override
+  bool get isAlignerSettingsSet;
   @override
   @JsonKey(ignore: true)
   _$$SignInStateImplCopyWith<_$SignInStateImpl> get copyWith =>

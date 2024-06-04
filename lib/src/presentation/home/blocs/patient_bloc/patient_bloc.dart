@@ -2,6 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:teeth_align_app/src/core/constants/storage_keys.dart';
 import 'package:teeth_align_app/src/core/helpers/app_data.dart';
 import 'package:teeth_align_app/src/data/body/initial_settings_body.dart';
 import 'package:teeth_align_app/src/data/body/patient_case_body.dart';
@@ -10,6 +12,8 @@ import 'package:teeth_align_app/src/domain/entity/patient_entity.dart';
 import 'package:teeth_align_app/src/domain/repository/i_auth_repository.dart';
 import 'package:teeth_align_app/src/domain/repository/i_patient_repository.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
+import 'package:teeth_align_app/src/router/app_router.dart';
+import 'package:teeth_align_app/src/router/app_router.gr.dart';
 
 part 'patient_event.dart';
 part 'patient_state.dart';
@@ -20,11 +24,15 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
   final IPatientRepository repository;
   final IAuthRepository authRepository;
   final ImagePicker imagePicker;
+  final SharedPreferences pref;
+  final AppRouter router;
 
   PatientBloc({
     required this.repository,
     required this.authRepository,
     required this.imagePicker,
+    required this.pref,
+    required this.router,
   }) : super(const PatientState.initial()) {
     on<GetPatient>(onGetPatient);
     on<GetCases>(onGetCases);
@@ -38,6 +46,7 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
   }
 
   InitialSettingsBody alignerSettingsBody = InitialSettingsBody.empty();
+
   PatientStateViewModel viewModel = PatientStateViewModel(
     alignerSettingsBody: InitialSettingsBody.empty(),
   );
@@ -109,15 +118,29 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
   ) async {
     emit(const PatientState.loading());
 
-    (await repository.updateInitialSettings(alignerSettingsBody)).fold(
-      (l) => emit(PatientState.loaded(viewModel: viewModel)),
-      (r) {
-        viewModel = viewModel.copyWith(
-          alignerSettingsBody: alignerSettingsBody,
-        );
-        emit(PatientState.loaded(viewModel: viewModel));
-      },
+    final isSuccess = (await repository.updateInitialSettings(
+      alignerSettingsBody,
+    ))
+        .fold(
+      (l) => false,
+      (r) => true,
     );
+
+    if (isSuccess) {
+      viewModel = viewModel.copyWith(
+        alignerSettingsBody: alignerSettingsBody,
+      );
+      final before = pref.getBool(StorageKeys.isAlignerSettingsSet);
+      await pref.setBool(StorageKeys.isAlignerSettingsSet, true);
+      emit(PatientState.loaded(viewModel: viewModel));
+      if (before != true) {
+        router
+          ..popUntilRoot()
+          ..replace(const SplashRoute());
+      }
+    } else {
+      emit(PatientState.loaded(viewModel: viewModel));
+    }
   }
 
   void onChangeSettings(

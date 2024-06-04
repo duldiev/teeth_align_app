@@ -6,6 +6,7 @@ class SignInState with _$SignInState {
     @Default(null) SignInBody? signInBody,
     @Default(LoadStatus.initial) LoadStatus status,
     @Default(null) AccountEntity? account,
+    @Default(false) bool isAlignerSettingsSet,
   }) = _SignInState;
 
   const SignInState._();

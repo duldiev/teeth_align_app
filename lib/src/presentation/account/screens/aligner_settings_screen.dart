@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
+import 'package:teeth_align_app/src/core/helpers/app_data.dart';
 import 'package:teeth_align_app/src/presentation/account/widgets/aligner_settings_tile.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
 import 'package:teeth_align_app/src/presentation/home/blocs/patient_bloc/patient_bloc.dart';
@@ -12,8 +13,21 @@ import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 import 'package:teeth_align_app/src/shared/loader/circlular_loader.dart';
 
 @RoutePage()
-class AlignerSettingsScreen extends StatelessWidget {
+class AlignerSettingsScreen extends StatefulWidget {
   const AlignerSettingsScreen({super.key});
+
+  @override
+  State<AlignerSettingsScreen> createState() => _AlignerSettingsScreenState();
+}
+
+class _AlignerSettingsScreenState extends State<AlignerSettingsScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<PatientBloc>().add(GetPatient(appData.userId));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

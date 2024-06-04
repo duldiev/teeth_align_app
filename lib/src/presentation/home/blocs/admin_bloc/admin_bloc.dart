@@ -107,15 +107,15 @@ class AdminBloc extends Bloc<AdminEvent, AdminState> {
 
     List<DoctorEntity> doctors = (await repository.getAllDoctors()).fold(
       (l) => [],
-      (r) => [],
+      (r) => r,
     );
     List<MentorEntity> mentors = (await repository.getAllMentors()).fold(
       (l) => [],
-      (r) => [],
+      (r) => r,
     );
     List<PatientEntity> patients = (await repository.getAllPatients()).fold(
       (l) => [],
-      (r) => [],
+      (r) => r,
     );
 
     viewModel = viewModel.copyWith(

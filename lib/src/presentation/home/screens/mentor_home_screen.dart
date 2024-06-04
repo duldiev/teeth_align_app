@@ -11,6 +11,7 @@ import 'package:teeth_align_app/src/presentation/home/widgets/list_header.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/buttons/chat_button.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
+import 'package:teeth_align_app/src/shared/views/retry_again_view.dart';
 import 'package:teeth_align_app/src/shared/widgets/logo_title.dart';
 
 @RoutePage()
@@ -39,45 +40,55 @@ class MentorHomeScreen extends StatelessWidget {
               child: state.when(
                 initial: () => const SizedBox(),
                 loading: () => const SizedBox(),
-                loaded: (data) => Column(
-                  children: [
-                    ListHeader(
-                      title: 'My doctors',
-                      onShowAll: () => context.router.push(
-                        AccountListRoute(accounts: data.doctors),
+                loaded: (data) {
+                  if (data.doctors.isEmpty) {
+                    return RetryAgainView(
+                      type: RetryAgainViewType.empty,
+                      onRetry: () => context.read<MentorBloc>().add(
+                            const GetDoctors(),
+                          ),
+                    );
+                  }
+                  return Column(
+                    children: [
+                      ListHeader(
+                        title: 'Мои доктора',
+                        onShowAll: () => context.router.push(
+                          AccountListRoute(accounts: data.doctors),
+                        ),
                       ),
-                    ),
-                    Gap(2.h),
-                    Column(
-                      children: [
-                        for (int i = 0;
-                            i < min(data.doctors.length, 6);
-                            i += 2) ...[
-                          Row(
-                            children: [
-                              Expanded(
-                                child: DoctorListTile(
-                                  doctor: data.doctors[i],
-                                ),
-                              ),
-                              Gap(4.w),
-                              if (i + 1 < data.doctors.length) ...[
+                      Gap(2.h),
+                      Column(
+                        children: [
+                          for (int i = 0;
+                              i < min(data.doctors.length, 6);
+                              i += 2) ...[
+                            Row(
+                              children: [
                                 Expanded(
                                   child: DoctorListTile(
-                                    doctor: data.doctors[i + 1],
+                                    doctor: data.doctors[i],
                                   ),
                                 ),
-                              ] else ...[
-                                const Expanded(child: SizedBox()),
+                                Gap(4.w),
+                                if (i + 1 < data.doctors.length) ...[
+                                  Expanded(
+                                    child: DoctorListTile(
+                                      doctor: data.doctors[i + 1],
+                                    ),
+                                  ),
+                                ] else ...[
+                                  const Expanded(child: SizedBox()),
+                                ],
                               ],
-                            ],
-                          ),
-                          Gap(2.h),
+                            ),
+                            Gap(2.h),
+                          ],
                         ],
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  );
+                },
                 failed: () => const SizedBox(),
               ),
             ),

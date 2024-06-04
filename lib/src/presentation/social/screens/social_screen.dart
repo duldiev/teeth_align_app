@@ -14,6 +14,8 @@ import 'package:teeth_align_app/src/presentation/social/views/new_post_view.dart
 import 'package:teeth_align_app/src/presentation/social/widgets/post_tile.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
+import 'package:teeth_align_app/src/shared/loader/circlular_loader.dart';
+import 'package:teeth_align_app/src/shared/views/retry_again_view.dart';
 
 class _Provider extends StatelessWidget {
   const _Provider({required this.child});
@@ -80,20 +82,33 @@ class SocialScreen extends StatelessWidget {
                 Gap(4.w),
               ],
             ),
-            body: SafeArea(
-              child: ListView.separated(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 4.w,
-                  vertical: 2.h,
+            body: Builder(builder: (context) {
+              if (state.status == LoadStatus.loading) {
+                return const CircularLoader();
+              }
+              if (state.posts.isEmpty) {
+                return RetryAgainView(
+                  type: RetryAgainViewType.empty,
+                  onRetry: () => context.read<SocialBloc>().add(
+                        const GetPosts(),
+                      ),
+                );
+              }
+              return SafeArea(
+                child: ListView.separated(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 4.w,
+                    vertical: 2.h,
+                  ),
+                  itemBuilder: (context, index) => PostTile(
+                    post: state.posts[index],
+                    isLiking: state.likeStatus == LoadStatus.loading,
+                  ),
+                  separatorBuilder: (context, index) => Gap(2.h),
+                  itemCount: state.posts.length,
                 ),
-                itemBuilder: (context, index) => PostTile(
-                  post: state.posts[index],
-                  isLiking: state.likeStatus == LoadStatus.loading,
-                ),
-                separatorBuilder: (context, index) => Gap(2.h),
-                itemCount: state.posts.length,
-              ),
-            ),
+              );
+            }),
           );
         },
       ),

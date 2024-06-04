@@ -24,7 +24,7 @@ class CalendarRepository extends BaseClient implements ICalendarRepository {
     return request.fold(
       (l) => Left(l),
       (r) => Right(
-        (r as List).map((e) => EventModel.fromJson(e)).toList(),
+        (r['items'] as List).map((e) => EventModel.fromJson(e)).toList(),
       ),
     );
   }

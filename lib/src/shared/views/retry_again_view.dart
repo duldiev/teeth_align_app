@@ -4,39 +4,58 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:teeth_align_app/src/core/extensions/context_extension.dart';
 import 'package:teeth_align_app/src/shared/colors/app_colors.dart';
 
+enum RetryAgainViewType { empty, failed }
+
 class RetryAgainView extends StatelessWidget {
   const RetryAgainView({
     super.key,
     this.title,
     required this.onRetry,
     this.hideIcon = false,
+    this.type = RetryAgainViewType.failed,
   });
 
   final String? title;
   final VoidCallback onRetry;
   final bool hideIcon;
+  final RetryAgainViewType type;
 
   @override
   Widget build(BuildContext context) {
+    final defaultText = switch (type) {
+      RetryAgainViewType.empty =>
+        'Похоже, страница пуста.\nОбновите чтобы проверить еще раз',
+      RetryAgainViewType.failed => 'Не удалось загрузить страницу',
+    };
+    const double iconSize = 90;
+    final icon = switch (type) {
+      RetryAgainViewType.empty => Icon(
+          Icons.view_list_sharp,
+          size: iconSize,
+          color: AppColors.grey.withOpacity(0.6),
+        ),
+      RetryAgainViewType.failed => const Icon(
+          Icons.error_outline,
+          size: iconSize,
+          color: AppColors.danger,
+        ),
+    };
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
           if (!hideIcon) ...[
-            const Icon(
-              Icons.error_outline,
-              size: 90,
-              color: AppColors.danger,
-            ),
+            icon,
             Gap(1.h),
           ],
           Text(
-            title ?? 'Не удалось загрузить страницу',
+            title ?? defaultText,
             style: context.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.bold,
               color: AppColors.white,
             ),
+            textAlign: TextAlign.center,
           ),
           Gap(2.h),
           InkWell(

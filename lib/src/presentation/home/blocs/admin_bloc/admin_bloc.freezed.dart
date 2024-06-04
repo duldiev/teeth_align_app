@@ -1346,6 +1346,7 @@ mixin _$AdminStateViewModel {
   List<DoctorEntity> get doctors => throw _privateConstructorUsedError;
   List<MentorEntity> get mentors => throw _privateConstructorUsedError;
   List<PatientEntity> get patients => throw _privateConstructorUsedError;
+  bool get isNoData => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AdminStateViewModelCopyWith<AdminStateViewModel> get copyWith =>
@@ -1361,7 +1362,8 @@ abstract class $AdminStateViewModelCopyWith<$Res> {
   $Res call(
       {List<DoctorEntity> doctors,
       List<MentorEntity> mentors,
-      List<PatientEntity> patients});
+      List<PatientEntity> patients,
+      bool isNoData});
 }
 
 /// @nodoc
@@ -1380,6 +1382,7 @@ class _$AdminStateViewModelCopyWithImpl<$Res, $Val extends AdminStateViewModel>
     Object? doctors = null,
     Object? mentors = null,
     Object? patients = null,
+    Object? isNoData = null,
   }) {
     return _then(_value.copyWith(
       doctors: null == doctors
@@ -1394,6 +1397,10 @@ class _$AdminStateViewModelCopyWithImpl<$Res, $Val extends AdminStateViewModel>
           ? _value.patients
           : patients // ignore: cast_nullable_to_non_nullable
               as List<PatientEntity>,
+      isNoData: null == isNoData
+          ? _value.isNoData
+          : isNoData // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -1409,7 +1416,8 @@ abstract class _$$AdminStateViewModelImplCopyWith<$Res>
   $Res call(
       {List<DoctorEntity> doctors,
       List<MentorEntity> mentors,
-      List<PatientEntity> patients});
+      List<PatientEntity> patients,
+      bool isNoData});
 }
 
 /// @nodoc
@@ -1426,6 +1434,7 @@ class __$$AdminStateViewModelImplCopyWithImpl<$Res>
     Object? doctors = null,
     Object? mentors = null,
     Object? patients = null,
+    Object? isNoData = null,
   }) {
     return _then(_$AdminStateViewModelImpl(
       doctors: null == doctors
@@ -1440,6 +1449,10 @@ class __$$AdminStateViewModelImplCopyWithImpl<$Res>
           ? _value._patients
           : patients // ignore: cast_nullable_to_non_nullable
               as List<PatientEntity>,
+      isNoData: null == isNoData
+          ? _value.isNoData
+          : isNoData // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1450,7 +1463,8 @@ class _$AdminStateViewModelImpl implements _AdminStateViewModel {
   _$AdminStateViewModelImpl(
       {final List<DoctorEntity> doctors = const [],
       final List<MentorEntity> mentors = const [],
-      final List<PatientEntity> patients = const []})
+      final List<PatientEntity> patients = const [],
+      this.isNoData = false})
       : _doctors = doctors,
         _mentors = mentors,
         _patients = patients;
@@ -1483,8 +1497,12 @@ class _$AdminStateViewModelImpl implements _AdminStateViewModel {
   }
 
   @override
+  @JsonKey()
+  final bool isNoData;
+
+  @override
   String toString() {
-    return 'AdminStateViewModel(doctors: $doctors, mentors: $mentors, patients: $patients)';
+    return 'AdminStateViewModel(doctors: $doctors, mentors: $mentors, patients: $patients, isNoData: $isNoData)';
   }
 
   @override
@@ -1494,7 +1512,9 @@ class _$AdminStateViewModelImpl implements _AdminStateViewModel {
             other is _$AdminStateViewModelImpl &&
             const DeepCollectionEquality().equals(other._doctors, _doctors) &&
             const DeepCollectionEquality().equals(other._mentors, _mentors) &&
-            const DeepCollectionEquality().equals(other._patients, _patients));
+            const DeepCollectionEquality().equals(other._patients, _patients) &&
+            (identical(other.isNoData, isNoData) ||
+                other.isNoData == isNoData));
   }
 
   @override
@@ -1502,7 +1522,8 @@ class _$AdminStateViewModelImpl implements _AdminStateViewModel {
       runtimeType,
       const DeepCollectionEquality().hash(_doctors),
       const DeepCollectionEquality().hash(_mentors),
-      const DeepCollectionEquality().hash(_patients));
+      const DeepCollectionEquality().hash(_patients),
+      isNoData);
 
   @JsonKey(ignore: true)
   @override
@@ -1516,7 +1537,8 @@ abstract class _AdminStateViewModel implements AdminStateViewModel {
   factory _AdminStateViewModel(
       {final List<DoctorEntity> doctors,
       final List<MentorEntity> mentors,
-      final List<PatientEntity> patients}) = _$AdminStateViewModelImpl;
+      final List<PatientEntity> patients,
+      final bool isNoData}) = _$AdminStateViewModelImpl;
 
   @override
   List<DoctorEntity> get doctors;
@@ -1524,6 +1546,8 @@ abstract class _AdminStateViewModel implements AdminStateViewModel {
   List<MentorEntity> get mentors;
   @override
   List<PatientEntity> get patients;
+  @override
+  bool get isNoData;
   @override
   @JsonKey(ignore: true)
   _$$AdminStateViewModelImplCopyWith<_$AdminStateViewModelImpl> get copyWith =>

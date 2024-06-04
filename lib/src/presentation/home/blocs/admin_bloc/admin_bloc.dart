@@ -34,7 +34,10 @@ class AdminBloc extends Bloc<AdminEvent, AdminState> {
     (await repository.getAllMentors()).fold(
       (l) => emit(const AdminState.failed()),
       (r) {
-        viewModel = viewModel.copyWith(mentors: r);
+        viewModel = viewModel.copyWith(
+          mentors: r,
+          isNoData: _isNoData(r),
+        );
         emit(AdminState.loaded(viewModel: viewModel));
       },
     );
@@ -49,7 +52,10 @@ class AdminBloc extends Bloc<AdminEvent, AdminState> {
     (await repository.getAllPatients()).fold(
       (l) => emit(const AdminState.failed()),
       (r) {
-        viewModel = viewModel.copyWith(patients: r);
+        viewModel = viewModel.copyWith(
+          patients: r,
+          isNoData: _isNoData(r),
+        );
         emit(AdminState.loaded(viewModel: viewModel));
       },
     );
@@ -64,10 +70,23 @@ class AdminBloc extends Bloc<AdminEvent, AdminState> {
     (await repository.getAllDoctors()).fold(
       (l) => emit(const AdminState.failed()),
       (r) {
-        viewModel = viewModel.copyWith(doctors: r);
+        viewModel = viewModel.copyWith(
+          doctors: r,
+          isNoData: _isNoData(r),
+        );
         emit(AdminState.loaded(viewModel: viewModel));
       },
     );
+  }
+
+  bool _isNoData([List<dynamic>? list]) {
+    if (viewModel.doctors.isEmpty &&
+        viewModel.mentors.isEmpty &&
+        viewModel.patients.isEmpty &&
+        list?.isEmpty != false) {
+      return true;
+    }
+    return false;
   }
 
   Future<void> onGetAll(
@@ -78,15 +97,15 @@ class AdminBloc extends Bloc<AdminEvent, AdminState> {
 
     List<DoctorEntity> doctors = (await repository.getAllDoctors()).fold(
       (l) => [],
-      (r) => r,
+      (r) => [],
     );
     List<MentorEntity> mentors = (await repository.getAllMentors()).fold(
       (l) => [],
-      (r) => r,
+      (r) => [],
     );
     List<PatientEntity> patients = (await repository.getAllPatients()).fold(
       (l) => [],
-      (r) => r,
+      (r) => [],
     );
 
     viewModel = viewModel.copyWith(
@@ -94,6 +113,8 @@ class AdminBloc extends Bloc<AdminEvent, AdminState> {
       mentors: mentors,
       patients: patients,
     );
+
+    viewModel = viewModel.copyWith(isNoData: _isNoData());
 
     emit(AdminState.loaded(viewModel: viewModel));
   }

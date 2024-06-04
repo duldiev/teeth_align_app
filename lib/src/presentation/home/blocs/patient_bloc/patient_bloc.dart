@@ -7,6 +7,7 @@ import 'package:teeth_align_app/src/data/body/initial_settings_body.dart';
 import 'package:teeth_align_app/src/data/body/patient_case_body.dart';
 import 'package:teeth_align_app/src/domain/entity/case_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/patient_entity.dart';
+import 'package:teeth_align_app/src/domain/repository/i_auth_repository.dart';
 import 'package:teeth_align_app/src/domain/repository/i_patient_repository.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
 
@@ -17,10 +18,12 @@ part 'patient_bloc.freezed.dart';
 @injectable
 class PatientBloc extends Bloc<PatientEvent, PatientState> {
   final IPatientRepository repository;
+  final IAuthRepository authRepository;
   final ImagePicker imagePicker;
 
   PatientBloc({
     required this.repository,
+    required this.authRepository,
     required this.imagePicker,
   }) : super(const PatientState.initial()) {
     on<GetPatient>(onGetPatient);
@@ -29,6 +32,9 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
     on<UpdateAlignerSettings>(onUpdateAlignerSettings);
     on<ChangeSettings>(onChangeSettings);
     on<ApplyRefCode>(onApplyRefCode);
+    on<GetPatientMe>(onGetPatientMe);
+    on<ChangeField>(onChangeField);
+    on<SaveFields>(onSaveFields);
   }
 
   InitialSettingsBody alignerSettingsBody = InitialSettingsBody.empty();
@@ -151,5 +157,65 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
       (l) => emit(const PatientState.failed()),
       (r) => emit(PatientState.loaded(viewModel: viewModel)),
     );
+  }
+
+  Future<void> onGetPatientMe(
+    GetPatientMe event,
+    Emitter<PatientState> emit,
+  ) async {
+    emit(const PatientState.loading());
+
+    final userId = (await authRepository.getAccount()).fold(
+      (l) => null,
+      (r) => r.id,
+    );
+
+    if (userId == null) {
+      emit(const PatientState.failed());
+      return;
+    }
+
+    (await repository.getPatient(userId)).fold(
+      (l) => emit(const PatientState.failed()),
+      (r) {
+        viewModel = viewModel.copyWith(patient: r);
+        emit(PatientState.loaded(viewModel: viewModel));
+      },
+    );
+  }
+
+  void onChangeField(
+    ChangeField event,
+    Emitter<PatientState> emit,
+  ) {
+    viewModel = viewModel.copyWith(
+      patient: switch (event.field) {
+        PProfileField.firstName => viewModel.patient?.copyWith(
+            firstName: event.value,
+          ),
+        PProfileField.lastName => viewModel.patient?.copyWith(
+            lastName: event.value,
+          ),
+        PProfileField.email => viewModel.patient?.copyWith(
+            email: event.value,
+          ),
+      },
+    );
+  }
+
+  Future<void> onSaveFields(
+    SaveFields event,
+    Emitter<PatientState> emit,
+  ) async {
+    if (viewModel.patient == null) return;
+
+    emit(const PatientState.loading());
+
+    (await repository.updateProfile(viewModel.patient!)).fold(
+      (l) => emit(const PatientState.failed()),
+      (r) => emit(PatientState.loaded(viewModel: viewModel)),
+    );
+
+    add(const GetPatientMe());
   }
 }

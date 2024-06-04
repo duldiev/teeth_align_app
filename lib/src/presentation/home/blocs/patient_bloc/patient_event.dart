@@ -18,4 +18,13 @@ class PatientEvent with _$PatientEvent {
   ) = ChangeSettings;
 
   const factory PatientEvent.applyRefCode(String code) = ApplyRefCode;
+
+  const factory PatientEvent.getPatientMe() = GetPatientMe;
+
+  const factory PatientEvent.changeField({
+    required PProfileField field,
+    required dynamic value,
+  }) = ChangeField;
+
+  const factory PatientEvent.saveFields() = SaveFields;
 }

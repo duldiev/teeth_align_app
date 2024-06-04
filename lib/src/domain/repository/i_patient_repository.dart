@@ -22,4 +22,6 @@ abstract class IPatientRepository {
   );
 
   Future<Either<Failure, Unit>> applyRefCode(String code);
+
+  Future<Either<Failure, Unit>> updateProfile(PatientEntity body);
 }

@@ -59,6 +59,12 @@ class PatientEntity extends AccountEntity {
         reminderTime: null,
       );
 
+  Map<String, dynamic> toMap() => {
+        'firstName': firstName,
+        'lastName': lastName,
+        'email': email,
+      };
+
   @override
   List<Object?> get props => [
         currentSet,
@@ -72,4 +78,42 @@ class PatientEntity extends AccountEntity {
         treatmentPeriod,
         ...super.props,
       ];
+
+  @override
+  PatientEntity copyWith({
+    int? id,
+    String? username,
+    String? firstName,
+    String? lastName,
+    String? email,
+    String? langKey,
+    String? avatarUrl,
+    Role? role,
+    DateTime? birthDate,
+    String? chatUserId,
+    String? chatToken,
+    String? bio,
+    bool? chatEnabled,
+  }) {
+    return PatientEntity(
+      id: id ?? this.id,
+      username: username ?? this.username,
+      firstName: firstName ?? this.firstName,
+      lastName: lastName ?? this.lastName,
+      email: email ?? this.email,
+      langKey: langKey ?? this.langKey,
+      avatarUrl: avatarUrl ?? this.avatarUrl,
+      role: role ?? this.role,
+      birthDate: birthDate ?? this.birthDate,
+      chatUserId: chatUserId ?? this.chatUserId,
+      chatToken: chatToken ?? this.chatToken,
+      bio: bio ?? this.bio,
+      chatEnabled: chatEnabled ?? this.chatEnabled,
+      currentSet: currentSet,
+      maxSet: maxSet,
+      nextAlignerDate: nextAlignerDate,
+      reminderTime: reminderTime,
+      wearDuration: wearDuration,
+    );
+  }
 }

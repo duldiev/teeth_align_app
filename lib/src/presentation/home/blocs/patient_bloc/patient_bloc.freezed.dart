@@ -25,6 +25,9 @@ mixin _$PatientEvent {
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
     required TResult Function(String code) applyRefCode,
+    required TResult Function() getPatientMe,
+    required TResult Function(PProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +38,9 @@ mixin _$PatientEvent {
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
     TResult? Function(String code)? applyRefCode,
+    TResult? Function()? getPatientMe,
+    TResult? Function(PProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,6 +51,9 @@ mixin _$PatientEvent {
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
     TResult Function(String code)? applyRefCode,
+    TResult Function()? getPatientMe,
+    TResult Function(PProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -57,6 +66,9 @@ mixin _$PatientEvent {
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
     required TResult Function(ApplyRefCode value) applyRefCode,
+    required TResult Function(GetPatientMe value) getPatientMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,6 +79,9 @@ mixin _$PatientEvent {
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
     TResult? Function(ApplyRefCode value)? applyRefCode,
+    TResult? Function(GetPatientMe value)? getPatientMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,6 +92,9 @@ mixin _$PatientEvent {
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
     TResult Function(ApplyRefCode value)? applyRefCode,
+    TResult Function(GetPatientMe value)? getPatientMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -171,6 +189,9 @@ class _$GetPatientImpl implements GetPatient {
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
     required TResult Function(String code) applyRefCode,
+    required TResult Function() getPatientMe,
+    required TResult Function(PProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return getPatient(id);
   }
@@ -184,6 +205,9 @@ class _$GetPatientImpl implements GetPatient {
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
     TResult? Function(String code)? applyRefCode,
+    TResult? Function()? getPatientMe,
+    TResult? Function(PProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return getPatient?.call(id);
   }
@@ -197,6 +221,9 @@ class _$GetPatientImpl implements GetPatient {
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
     TResult Function(String code)? applyRefCode,
+    TResult Function()? getPatientMe,
+    TResult Function(PProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (getPatient != null) {
@@ -215,6 +242,9 @@ class _$GetPatientImpl implements GetPatient {
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
     required TResult Function(ApplyRefCode value) applyRefCode,
+    required TResult Function(GetPatientMe value) getPatientMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return getPatient(this);
   }
@@ -228,6 +258,9 @@ class _$GetPatientImpl implements GetPatient {
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
     TResult? Function(ApplyRefCode value)? applyRefCode,
+    TResult? Function(GetPatientMe value)? getPatientMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return getPatient?.call(this);
   }
@@ -241,6 +274,9 @@ class _$GetPatientImpl implements GetPatient {
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
     TResult Function(ApplyRefCode value)? applyRefCode,
+    TResult Function(GetPatientMe value)? getPatientMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (getPatient != null) {
@@ -331,6 +367,9 @@ class _$GetCasesImpl implements GetCases {
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
     required TResult Function(String code) applyRefCode,
+    required TResult Function() getPatientMe,
+    required TResult Function(PProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return getCases(patientId);
   }
@@ -344,6 +383,9 @@ class _$GetCasesImpl implements GetCases {
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
     TResult? Function(String code)? applyRefCode,
+    TResult? Function()? getPatientMe,
+    TResult? Function(PProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return getCases?.call(patientId);
   }
@@ -357,6 +399,9 @@ class _$GetCasesImpl implements GetCases {
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
     TResult Function(String code)? applyRefCode,
+    TResult Function()? getPatientMe,
+    TResult Function(PProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (getCases != null) {
@@ -375,6 +420,9 @@ class _$GetCasesImpl implements GetCases {
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
     required TResult Function(ApplyRefCode value) applyRefCode,
+    required TResult Function(GetPatientMe value) getPatientMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return getCases(this);
   }
@@ -388,6 +436,9 @@ class _$GetCasesImpl implements GetCases {
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
     TResult? Function(ApplyRefCode value)? applyRefCode,
+    TResult? Function(GetPatientMe value)? getPatientMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return getCases?.call(this);
   }
@@ -401,6 +452,9 @@ class _$GetCasesImpl implements GetCases {
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
     TResult Function(ApplyRefCode value)? applyRefCode,
+    TResult Function(GetPatientMe value)? getPatientMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (getCases != null) {
@@ -490,6 +544,9 @@ class _$PostCaseImpl implements PostCase {
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
     required TResult Function(String code) applyRefCode,
+    required TResult Function() getPatientMe,
+    required TResult Function(PProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return postCase(body);
   }
@@ -503,6 +560,9 @@ class _$PostCaseImpl implements PostCase {
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
     TResult? Function(String code)? applyRefCode,
+    TResult? Function()? getPatientMe,
+    TResult? Function(PProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return postCase?.call(body);
   }
@@ -516,6 +576,9 @@ class _$PostCaseImpl implements PostCase {
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
     TResult Function(String code)? applyRefCode,
+    TResult Function()? getPatientMe,
+    TResult Function(PProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (postCase != null) {
@@ -534,6 +597,9 @@ class _$PostCaseImpl implements PostCase {
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
     required TResult Function(ApplyRefCode value) applyRefCode,
+    required TResult Function(GetPatientMe value) getPatientMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return postCase(this);
   }
@@ -547,6 +613,9 @@ class _$PostCaseImpl implements PostCase {
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
     TResult? Function(ApplyRefCode value)? applyRefCode,
+    TResult? Function(GetPatientMe value)? getPatientMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return postCase?.call(this);
   }
@@ -560,6 +629,9 @@ class _$PostCaseImpl implements PostCase {
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
     TResult Function(ApplyRefCode value)? applyRefCode,
+    TResult Function(GetPatientMe value)? getPatientMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (postCase != null) {
@@ -625,6 +697,9 @@ class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
     required TResult Function(String code) applyRefCode,
+    required TResult Function() getPatientMe,
+    required TResult Function(PProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return updateAlignerSettings();
   }
@@ -638,6 +713,9 @@ class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
     TResult? Function(String code)? applyRefCode,
+    TResult? Function()? getPatientMe,
+    TResult? Function(PProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return updateAlignerSettings?.call();
   }
@@ -651,6 +729,9 @@ class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
     TResult Function(String code)? applyRefCode,
+    TResult Function()? getPatientMe,
+    TResult Function(PProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (updateAlignerSettings != null) {
@@ -669,6 +750,9 @@ class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
     required TResult Function(ApplyRefCode value) applyRefCode,
+    required TResult Function(GetPatientMe value) getPatientMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return updateAlignerSettings(this);
   }
@@ -682,6 +766,9 @@ class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
     TResult? Function(ApplyRefCode value)? applyRefCode,
+    TResult? Function(GetPatientMe value)? getPatientMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return updateAlignerSettings?.call(this);
   }
@@ -695,6 +782,9 @@ class _$UpdateAlignerSettingsImpl implements UpdateAlignerSettings {
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
     TResult Function(ApplyRefCode value)? applyRefCode,
+    TResult Function(GetPatientMe value)? getPatientMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (updateAlignerSettings != null) {
@@ -788,6 +878,9 @@ class _$ChangeSettingsImpl implements ChangeSettings {
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
     required TResult Function(String code) applyRefCode,
+    required TResult Function() getPatientMe,
+    required TResult Function(PProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return changeSettings(field, value);
   }
@@ -801,6 +894,9 @@ class _$ChangeSettingsImpl implements ChangeSettings {
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
     TResult? Function(String code)? applyRefCode,
+    TResult? Function()? getPatientMe,
+    TResult? Function(PProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return changeSettings?.call(field, value);
   }
@@ -814,6 +910,9 @@ class _$ChangeSettingsImpl implements ChangeSettings {
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
     TResult Function(String code)? applyRefCode,
+    TResult Function()? getPatientMe,
+    TResult Function(PProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (changeSettings != null) {
@@ -832,6 +931,9 @@ class _$ChangeSettingsImpl implements ChangeSettings {
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
     required TResult Function(ApplyRefCode value) applyRefCode,
+    required TResult Function(GetPatientMe value) getPatientMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return changeSettings(this);
   }
@@ -845,6 +947,9 @@ class _$ChangeSettingsImpl implements ChangeSettings {
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
     TResult? Function(ApplyRefCode value)? applyRefCode,
+    TResult? Function(GetPatientMe value)? getPatientMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return changeSettings?.call(this);
   }
@@ -858,6 +963,9 @@ class _$ChangeSettingsImpl implements ChangeSettings {
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
     TResult Function(ApplyRefCode value)? applyRefCode,
+    TResult Function(GetPatientMe value)? getPatientMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (changeSettings != null) {
@@ -950,6 +1058,9 @@ class _$ApplyRefCodeImpl implements ApplyRefCode {
     required TResult Function(AlignerSettingsField field, String value)
         changeSettings,
     required TResult Function(String code) applyRefCode,
+    required TResult Function() getPatientMe,
+    required TResult Function(PProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
   }) {
     return applyRefCode(code);
   }
@@ -963,6 +1074,9 @@ class _$ApplyRefCodeImpl implements ApplyRefCode {
     TResult? Function()? updateAlignerSettings,
     TResult? Function(AlignerSettingsField field, String value)? changeSettings,
     TResult? Function(String code)? applyRefCode,
+    TResult? Function()? getPatientMe,
+    TResult? Function(PProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
   }) {
     return applyRefCode?.call(code);
   }
@@ -976,6 +1090,9 @@ class _$ApplyRefCodeImpl implements ApplyRefCode {
     TResult Function()? updateAlignerSettings,
     TResult Function(AlignerSettingsField field, String value)? changeSettings,
     TResult Function(String code)? applyRefCode,
+    TResult Function()? getPatientMe,
+    TResult Function(PProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
     required TResult orElse(),
   }) {
     if (applyRefCode != null) {
@@ -994,6 +1111,9 @@ class _$ApplyRefCodeImpl implements ApplyRefCode {
         updateAlignerSettings,
     required TResult Function(ChangeSettings value) changeSettings,
     required TResult Function(ApplyRefCode value) applyRefCode,
+    required TResult Function(GetPatientMe value) getPatientMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
   }) {
     return applyRefCode(this);
   }
@@ -1007,6 +1127,9 @@ class _$ApplyRefCodeImpl implements ApplyRefCode {
     TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult? Function(ChangeSettings value)? changeSettings,
     TResult? Function(ApplyRefCode value)? applyRefCode,
+    TResult? Function(GetPatientMe value)? getPatientMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
   }) {
     return applyRefCode?.call(this);
   }
@@ -1020,6 +1143,9 @@ class _$ApplyRefCodeImpl implements ApplyRefCode {
     TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
     TResult Function(ChangeSettings value)? changeSettings,
     TResult Function(ApplyRefCode value)? applyRefCode,
+    TResult Function(GetPatientMe value)? getPatientMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
     required TResult orElse(),
   }) {
     if (applyRefCode != null) {
@@ -1036,6 +1162,487 @@ abstract class ApplyRefCode implements PatientEvent {
   @JsonKey(ignore: true)
   _$$ApplyRefCodeImplCopyWith<_$ApplyRefCodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetPatientMeImplCopyWith<$Res> {
+  factory _$$GetPatientMeImplCopyWith(
+          _$GetPatientMeImpl value, $Res Function(_$GetPatientMeImpl) then) =
+      __$$GetPatientMeImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetPatientMeImplCopyWithImpl<$Res>
+    extends _$PatientEventCopyWithImpl<$Res, _$GetPatientMeImpl>
+    implements _$$GetPatientMeImplCopyWith<$Res> {
+  __$$GetPatientMeImplCopyWithImpl(
+      _$GetPatientMeImpl _value, $Res Function(_$GetPatientMeImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetPatientMeImpl implements GetPatientMe {
+  const _$GetPatientMeImpl();
+
+  @override
+  String toString() {
+    return 'PatientEvent.getPatientMe()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetPatientMeImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) getPatient,
+    required TResult Function(int? patientId) getCases,
+    required TResult Function(PatientCaseBody body) postCase,
+    required TResult Function() updateAlignerSettings,
+    required TResult Function(AlignerSettingsField field, String value)
+        changeSettings,
+    required TResult Function(String code) applyRefCode,
+    required TResult Function() getPatientMe,
+    required TResult Function(PProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
+  }) {
+    return getPatientMe();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? getPatient,
+    TResult? Function(int? patientId)? getCases,
+    TResult? Function(PatientCaseBody body)? postCase,
+    TResult? Function()? updateAlignerSettings,
+    TResult? Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult? Function(String code)? applyRefCode,
+    TResult? Function()? getPatientMe,
+    TResult? Function(PProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
+  }) {
+    return getPatientMe?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? getPatient,
+    TResult Function(int? patientId)? getCases,
+    TResult Function(PatientCaseBody body)? postCase,
+    TResult Function()? updateAlignerSettings,
+    TResult Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult Function(String code)? applyRefCode,
+    TResult Function()? getPatientMe,
+    TResult Function(PProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
+    required TResult orElse(),
+  }) {
+    if (getPatientMe != null) {
+      return getPatientMe();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPatient value) getPatient,
+    required TResult Function(GetCases value) getCases,
+    required TResult Function(PostCase value) postCase,
+    required TResult Function(UpdateAlignerSettings value)
+        updateAlignerSettings,
+    required TResult Function(ChangeSettings value) changeSettings,
+    required TResult Function(ApplyRefCode value) applyRefCode,
+    required TResult Function(GetPatientMe value) getPatientMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
+  }) {
+    return getPatientMe(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPatient value)? getPatient,
+    TResult? Function(GetCases value)? getCases,
+    TResult? Function(PostCase value)? postCase,
+    TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult? Function(ChangeSettings value)? changeSettings,
+    TResult? Function(ApplyRefCode value)? applyRefCode,
+    TResult? Function(GetPatientMe value)? getPatientMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
+  }) {
+    return getPatientMe?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPatient value)? getPatient,
+    TResult Function(GetCases value)? getCases,
+    TResult Function(PostCase value)? postCase,
+    TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult Function(ChangeSettings value)? changeSettings,
+    TResult Function(ApplyRefCode value)? applyRefCode,
+    TResult Function(GetPatientMe value)? getPatientMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
+    required TResult orElse(),
+  }) {
+    if (getPatientMe != null) {
+      return getPatientMe(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPatientMe implements PatientEvent {
+  const factory GetPatientMe() = _$GetPatientMeImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangeFieldImplCopyWith<$Res> {
+  factory _$$ChangeFieldImplCopyWith(
+          _$ChangeFieldImpl value, $Res Function(_$ChangeFieldImpl) then) =
+      __$$ChangeFieldImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PProfileField field, dynamic value});
+}
+
+/// @nodoc
+class __$$ChangeFieldImplCopyWithImpl<$Res>
+    extends _$PatientEventCopyWithImpl<$Res, _$ChangeFieldImpl>
+    implements _$$ChangeFieldImplCopyWith<$Res> {
+  __$$ChangeFieldImplCopyWithImpl(
+      _$ChangeFieldImpl _value, $Res Function(_$ChangeFieldImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? value = freezed,
+  }) {
+    return _then(_$ChangeFieldImpl(
+      field: null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as PProfileField,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeFieldImpl implements ChangeField {
+  const _$ChangeFieldImpl({required this.field, required this.value});
+
+  @override
+  final PProfileField field;
+  @override
+  final dynamic value;
+
+  @override
+  String toString() {
+    return 'PatientEvent.changeField(field: $field, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeFieldImpl &&
+            (identical(other.field, field) || other.field == field) &&
+            const DeepCollectionEquality().equals(other.value, value));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, field, const DeepCollectionEquality().hash(value));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeFieldImplCopyWith<_$ChangeFieldImpl> get copyWith =>
+      __$$ChangeFieldImplCopyWithImpl<_$ChangeFieldImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) getPatient,
+    required TResult Function(int? patientId) getCases,
+    required TResult Function(PatientCaseBody body) postCase,
+    required TResult Function() updateAlignerSettings,
+    required TResult Function(AlignerSettingsField field, String value)
+        changeSettings,
+    required TResult Function(String code) applyRefCode,
+    required TResult Function() getPatientMe,
+    required TResult Function(PProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
+  }) {
+    return changeField(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? getPatient,
+    TResult? Function(int? patientId)? getCases,
+    TResult? Function(PatientCaseBody body)? postCase,
+    TResult? Function()? updateAlignerSettings,
+    TResult? Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult? Function(String code)? applyRefCode,
+    TResult? Function()? getPatientMe,
+    TResult? Function(PProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
+  }) {
+    return changeField?.call(field, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? getPatient,
+    TResult Function(int? patientId)? getCases,
+    TResult Function(PatientCaseBody body)? postCase,
+    TResult Function()? updateAlignerSettings,
+    TResult Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult Function(String code)? applyRefCode,
+    TResult Function()? getPatientMe,
+    TResult Function(PProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
+    required TResult orElse(),
+  }) {
+    if (changeField != null) {
+      return changeField(field, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPatient value) getPatient,
+    required TResult Function(GetCases value) getCases,
+    required TResult Function(PostCase value) postCase,
+    required TResult Function(UpdateAlignerSettings value)
+        updateAlignerSettings,
+    required TResult Function(ChangeSettings value) changeSettings,
+    required TResult Function(ApplyRefCode value) applyRefCode,
+    required TResult Function(GetPatientMe value) getPatientMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
+  }) {
+    return changeField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPatient value)? getPatient,
+    TResult? Function(GetCases value)? getCases,
+    TResult? Function(PostCase value)? postCase,
+    TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult? Function(ChangeSettings value)? changeSettings,
+    TResult? Function(ApplyRefCode value)? applyRefCode,
+    TResult? Function(GetPatientMe value)? getPatientMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
+  }) {
+    return changeField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPatient value)? getPatient,
+    TResult Function(GetCases value)? getCases,
+    TResult Function(PostCase value)? postCase,
+    TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult Function(ChangeSettings value)? changeSettings,
+    TResult Function(ApplyRefCode value)? applyRefCode,
+    TResult Function(GetPatientMe value)? getPatientMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
+    required TResult orElse(),
+  }) {
+    if (changeField != null) {
+      return changeField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeField implements PatientEvent {
+  const factory ChangeField(
+      {required final PProfileField field,
+      required final dynamic value}) = _$ChangeFieldImpl;
+
+  PProfileField get field;
+  dynamic get value;
+  @JsonKey(ignore: true)
+  _$$ChangeFieldImplCopyWith<_$ChangeFieldImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveFieldsImplCopyWith<$Res> {
+  factory _$$SaveFieldsImplCopyWith(
+          _$SaveFieldsImpl value, $Res Function(_$SaveFieldsImpl) then) =
+      __$$SaveFieldsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SaveFieldsImplCopyWithImpl<$Res>
+    extends _$PatientEventCopyWithImpl<$Res, _$SaveFieldsImpl>
+    implements _$$SaveFieldsImplCopyWith<$Res> {
+  __$$SaveFieldsImplCopyWithImpl(
+      _$SaveFieldsImpl _value, $Res Function(_$SaveFieldsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SaveFieldsImpl implements SaveFields {
+  const _$SaveFieldsImpl();
+
+  @override
+  String toString() {
+    return 'PatientEvent.saveFields()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SaveFieldsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int id) getPatient,
+    required TResult Function(int? patientId) getCases,
+    required TResult Function(PatientCaseBody body) postCase,
+    required TResult Function() updateAlignerSettings,
+    required TResult Function(AlignerSettingsField field, String value)
+        changeSettings,
+    required TResult Function(String code) applyRefCode,
+    required TResult Function() getPatientMe,
+    required TResult Function(PProfileField field, dynamic value) changeField,
+    required TResult Function() saveFields,
+  }) {
+    return saveFields();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int id)? getPatient,
+    TResult? Function(int? patientId)? getCases,
+    TResult? Function(PatientCaseBody body)? postCase,
+    TResult? Function()? updateAlignerSettings,
+    TResult? Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult? Function(String code)? applyRefCode,
+    TResult? Function()? getPatientMe,
+    TResult? Function(PProfileField field, dynamic value)? changeField,
+    TResult? Function()? saveFields,
+  }) {
+    return saveFields?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int id)? getPatient,
+    TResult Function(int? patientId)? getCases,
+    TResult Function(PatientCaseBody body)? postCase,
+    TResult Function()? updateAlignerSettings,
+    TResult Function(AlignerSettingsField field, String value)? changeSettings,
+    TResult Function(String code)? applyRefCode,
+    TResult Function()? getPatientMe,
+    TResult Function(PProfileField field, dynamic value)? changeField,
+    TResult Function()? saveFields,
+    required TResult orElse(),
+  }) {
+    if (saveFields != null) {
+      return saveFields();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetPatient value) getPatient,
+    required TResult Function(GetCases value) getCases,
+    required TResult Function(PostCase value) postCase,
+    required TResult Function(UpdateAlignerSettings value)
+        updateAlignerSettings,
+    required TResult Function(ChangeSettings value) changeSettings,
+    required TResult Function(ApplyRefCode value) applyRefCode,
+    required TResult Function(GetPatientMe value) getPatientMe,
+    required TResult Function(ChangeField value) changeField,
+    required TResult Function(SaveFields value) saveFields,
+  }) {
+    return saveFields(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetPatient value)? getPatient,
+    TResult? Function(GetCases value)? getCases,
+    TResult? Function(PostCase value)? postCase,
+    TResult? Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult? Function(ChangeSettings value)? changeSettings,
+    TResult? Function(ApplyRefCode value)? applyRefCode,
+    TResult? Function(GetPatientMe value)? getPatientMe,
+    TResult? Function(ChangeField value)? changeField,
+    TResult? Function(SaveFields value)? saveFields,
+  }) {
+    return saveFields?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetPatient value)? getPatient,
+    TResult Function(GetCases value)? getCases,
+    TResult Function(PostCase value)? postCase,
+    TResult Function(UpdateAlignerSettings value)? updateAlignerSettings,
+    TResult Function(ChangeSettings value)? changeSettings,
+    TResult Function(ApplyRefCode value)? applyRefCode,
+    TResult Function(GetPatientMe value)? getPatientMe,
+    TResult Function(ChangeField value)? changeField,
+    TResult Function(SaveFields value)? saveFields,
+    required TResult orElse(),
+  }) {
+    if (saveFields != null) {
+      return saveFields(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveFields implements PatientEvent {
+  const factory SaveFields() = _$SaveFieldsImpl;
 }
 
 /// @nodoc

@@ -83,4 +83,17 @@ class PatientRepository extends BaseClient implements IPatientRepository {
       (r) => const Right(unit),
     );
   }
+
+  @override
+  Future<Either<Failure, Unit>> updateProfile(PatientEntity body) async {
+    return (await call(
+      RestMethod.put,
+      '/api/v1/patient/profile',
+      body: body.toMap(),
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => const Right(unit),
+    );
+  }
 }

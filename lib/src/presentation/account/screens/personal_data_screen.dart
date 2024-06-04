@@ -5,6 +5,7 @@ import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/presentation/account/views/admin_personal_data_view.dart';
 import 'package:teeth_align_app/src/presentation/account/views/doctor_personal_data_view.dart';
 import 'package:teeth_align_app/src/presentation/account/views/mentor_personal_data_view.dart';
+import 'package:teeth_align_app/src/presentation/account/views/patient_personal_data_view.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_in_bloc/sign_in_bloc.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
 import 'package:teeth_align_app/src/shared/views/retry_again_view.dart';
@@ -27,7 +28,7 @@ class PersonalDataScreen extends StatelessWidget {
                       const CheckAuthorized(),
                     ),
               ),
-            Role.patient => const SizedBox(),
+            Role.patient => const PatientPersonalDataView(),
             Role.mentor => const MentorPersonalDataView(),
             Role.admin => const AdminPersonalDataView(),
             Role.doctor => const DoctorPersonalDataView(),

@@ -122,6 +122,7 @@ Future<_i1.GetIt> $initGetIt(
       ));
   gh.factory<_i37.PatientBloc>(() => _i37.PatientBloc(
         repository: gh<_i24.IPatientRepository>(),
+        authRepository: gh<_i30.IAuthRepository>(),
         imagePicker: gh<_i11.ImagePicker>(),
       ));
   gh.factory<_i38.SignUpBloc>(() => _i38.SignUpBloc(

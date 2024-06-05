@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -105,10 +103,6 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 
     var result = await authRepository.getAccount();
 
-    if (result.isLeft()) {
-      await getIt<FlutterSecureStorage>().delete(key: StorageKeys.token);
-    }
-
     AccountEntity? account;
 
     result.fold(
@@ -121,9 +115,10 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
       },
     );
 
-    if (result.isLeft() || account == null) return;
-
-    log(client.chatPersistenceClient?.isConnected.toString() ?? 'NULL');
+    if (result.isLeft() || account == null) {
+      await getIt<FlutterSecureStorage>().delete(key: StorageKeys.token);
+      return;
+    }
 
     if (account!.chatUserId != null &&
         account!.chatToken != null &&
@@ -140,7 +135,6 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     }
 
     final isSet = pref.getBool(StorageKeys.isAlignerSettingsSet) ?? false;
-    log(isSet.toString());
 
     emit(state.copyWith(
       status: LoadStatus.success,

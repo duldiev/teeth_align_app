@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:teeth_align_app/src/core/enums/basics.dart';
 import 'package:teeth_align_app/src/core/helpers/validators.dart';
 import 'package:teeth_align_app/src/presentation/auth/blocs/sign_up_bloc/sign_up_bloc.dart';
 import 'package:teeth_align_app/src/presentation/auth/core/enums.dart';
@@ -33,6 +34,7 @@ class EmailPasswordFieldView extends StatelessWidget {
             hintText: 'Введите пароль',
             keyboardType: TextInputType.visiblePassword,
             validator: Validators.password,
+            suffixType: InputSuffixType.obsecure,
             onChanged: (value) => context.read<SUB>().add(
                   ChangeRegisterField(
                     field: SignUpField.password,

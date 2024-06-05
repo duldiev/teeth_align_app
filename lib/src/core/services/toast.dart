@@ -79,7 +79,7 @@ class Toast {
       case ToastType.danger:
         return AppColors.danger;
       case ToastType.message:
-        return AppColors.background;
+        return AppColors.dark;
       case ToastType.warning:
         return AppColors.button;
       case ToastType.success:
@@ -94,7 +94,7 @@ class Toast {
       case ToastType.danger:
         return AppColors.white;
       case ToastType.message:
-        return AppColors.primary;
+        return AppColors.white;
       case ToastType.warning:
         return AppColors.primary;
       case ToastType.success:

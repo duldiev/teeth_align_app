@@ -1,11 +1,11 @@
 import 'package:intl/intl.dart';
 
 class DateConverter {
-  static String? convertDate(
+  static String convertDate(
     DateTime? date,
     String format,
   ) =>
-      date != null ? DateFormat(format).format(date) : null;
+      date != null ? DateFormat(format).format(date) : 'undefined';
 }
 
 class DateTools {

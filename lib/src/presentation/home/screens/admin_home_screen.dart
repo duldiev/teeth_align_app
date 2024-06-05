@@ -13,6 +13,7 @@ import 'package:teeth_align_app/src/presentation/home/widgets/mentor_list_tile.d
 import 'package:teeth_align_app/src/presentation/home/widgets/patient_list_tile.dart';
 import 'package:teeth_align_app/src/router/app_router.gr.dart';
 import 'package:teeth_align_app/src/shared/app_bar/my_app_bar.dart';
+import 'package:teeth_align_app/src/shared/buttons/colored_button.dart';
 import 'package:teeth_align_app/src/shared/loader/circlular_loader.dart';
 import 'package:teeth_align_app/src/shared/views/retry_again_view.dart';
 
@@ -49,12 +50,24 @@ class AdminHomeScreen extends StatelessWidget {
               initial: () => const SizedBox(),
               loading: () => const CircularLoader(),
               loaded: (data) {
+                final createDoctorButton = ColoredButton(
+                  title: 'Добавить доктора',
+                  onTap: () => context.router.push(
+                    const DoctorAccessListRoute(),
+                  ),
+                );
                 if (data.isNoData) {
-                  return RetryAgainView(
-                    type: RetryAgainViewType.empty,
-                    onRetry: () => context.read<AdminBloc>().add(
-                          const GetAll(),
-                        ),
+                  return Column(
+                    children: [
+                      createDoctorButton,
+                      Gap(10.h),
+                      RetryAgainView(
+                        type: RetryAgainViewType.empty,
+                        onRetry: () => context.read<AdminBloc>().add(
+                              const GetAll(),
+                            ),
+                      ),
+                    ],
                   );
                 }
                 return SingleChildScrollView(
@@ -65,6 +78,7 @@ class AdminHomeScreen extends StatelessWidget {
                   clipBehavior: Clip.none,
                   child: Column(
                     children: [
+                      createDoctorButton,
                       if (data.mentors.isNotEmpty) ...[
                         Divider(height: 4.h),
                         ListHeader(

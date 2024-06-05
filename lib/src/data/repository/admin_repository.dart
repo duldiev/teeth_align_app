@@ -2,10 +2,12 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:teeth_align_app/src/core/exceptions/failure.dart';
 import 'package:teeth_align_app/src/core/services/base_client.dart';
+import 'package:teeth_align_app/src/data/models/access_model.dart';
 import 'package:teeth_align_app/src/data/models/admin_model.dart';
 import 'package:teeth_align_app/src/data/models/doctor_model.dart';
 import 'package:teeth_align_app/src/data/models/mentor_model.dart';
 import 'package:teeth_align_app/src/data/models/patient_model.dart';
+import 'package:teeth_align_app/src/domain/entity/access_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/admin_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart';
 import 'package:teeth_align_app/src/domain/entity/mentor_entity.dart';
@@ -90,6 +92,32 @@ class AdminRepository extends BaseClient implements IAdminRepository {
         .fold(
       (l) => Left(l),
       (r) => const Right(unit),
+    );
+  }
+
+  @override
+  Future<Either<Failure, String>> generateCode() async {
+    return (await call(
+      RestMethod.post,
+      '/api/v1/doctor/access',
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => Right(r['access_code'] as String),
+    );
+  }
+
+  @override
+  Future<Either<Failure, List<AccessEntity>>> getAccesses() async {
+    return (await call(
+      RestMethod.get,
+      '/api/v1/doctor/access',
+    ))
+        .fold(
+      (l) => Left(l),
+      (r) => Right(
+        (r['items'] as List).map((e) => AccessModel.fromMap(e)).toList(),
+      ),
     );
   }
 }

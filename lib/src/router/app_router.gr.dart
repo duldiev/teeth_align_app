@@ -8,43 +8,43 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i32;
-import 'package:flutter/material.dart' as _i33;
-import 'package:stream_chat_flutter/stream_chat_flutter.dart' as _i35;
-import 'package:teeth_align_app/src/domain/entity/account_entity.dart' as _i34;
-import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart' as _i37;
+import 'package:auto_route/auto_route.dart' as _i33;
+import 'package:flutter/material.dart' as _i34;
+import 'package:stream_chat_flutter/stream_chat_flutter.dart' as _i36;
+import 'package:teeth_align_app/src/domain/entity/account_entity.dart' as _i35;
+import 'package:teeth_align_app/src/domain/entity/doctor_entity.dart' as _i38;
 import 'package:teeth_align_app/src/presentation/account/screens/account_screen.dart'
     as _i2;
 import 'package:teeth_align_app/src/presentation/account/screens/aligner_settings_screen.dart'
     as _i4;
 import 'package:teeth_align_app/src/presentation/account/screens/doctor_profile_screen.dart'
-    as _i13;
+    as _i14;
 import 'package:teeth_align_app/src/presentation/account/screens/mentor_profile_screen.dart'
-    as _i17;
+    as _i18;
 import 'package:teeth_align_app/src/presentation/account/screens/patient_profile_screen.dart'
-    as _i21;
-import 'package:teeth_align_app/src/presentation/account/screens/personal_data_screen.dart'
     as _i22;
-import 'package:teeth_align_app/src/presentation/account/screens/profile_screen.dart'
+import 'package:teeth_align_app/src/presentation/account/screens/personal_data_screen.dart'
     as _i23;
-import 'package:teeth_align_app/src/presentation/account/screens/rate_doctor_screen.dart'
+import 'package:teeth_align_app/src/presentation/account/screens/profile_screen.dart'
     as _i24;
+import 'package:teeth_align_app/src/presentation/account/screens/rate_doctor_screen.dart'
+    as _i25;
 import 'package:teeth_align_app/src/presentation/auth/screens/doctor_create_profile_screen.dart'
-    as _i11;
+    as _i12;
 import 'package:teeth_align_app/src/presentation/auth/screens/sign_in_screen.dart'
-    as _i26;
-import 'package:teeth_align_app/src/presentation/auth/screens/sign_up_screen.dart'
     as _i27;
+import 'package:teeth_align_app/src/presentation/auth/screens/sign_up_screen.dart'
+    as _i28;
 import 'package:teeth_align_app/src/presentation/auth/screens/welcome_screen.dart'
-    as _i31;
+    as _i32;
 import 'package:teeth_align_app/src/presentation/base/splash_screen.dart'
-    as _i30;
+    as _i31;
 import 'package:teeth_align_app/src/presentation/calendar/helpers/meeting.dart'
-    as _i36;
+    as _i37;
 import 'package:teeth_align_app/src/presentation/calendar/screens/calendar_screen.dart'
     as _i5;
 import 'package:teeth_align_app/src/presentation/calendar/screens/event_screen.dart'
-    as _i14;
+    as _i15;
 import 'package:teeth_align_app/src/presentation/chat/screens/chat_list_screen.dart'
     as _i7;
 import 'package:teeth_align_app/src/presentation/chat/screens/chat_screen.dart'
@@ -53,38 +53,40 @@ import 'package:teeth_align_app/src/presentation/home/screens/account_list_scree
     as _i1;
 import 'package:teeth_align_app/src/presentation/home/screens/admin_home_screen.dart'
     as _i3;
+import 'package:teeth_align_app/src/presentation/home/screens/doctor_access_list_screen.dart'
+    as _i11;
 import 'package:teeth_align_app/src/presentation/home/screens/doctor_home_screen.dart'
-    as _i12;
+    as _i13;
 import 'package:teeth_align_app/src/presentation/home/screens/mentor_home_screen.dart'
-    as _i16;
+    as _i17;
 import 'package:teeth_align_app/src/presentation/home/screens/patient_home_screen.dart'
-    as _i20;
+    as _i21;
 import 'package:teeth_align_app/src/presentation/notifications/screens/notification_screen.dart'
-    as _i19;
+    as _i20;
 import 'package:teeth_align_app/src/presentation/report/screens/camera_screen.dart'
     as _i6;
 import 'package:teeth_align_app/src/presentation/report/screens/create_case_screen.dart'
     as _i9;
 import 'package:teeth_align_app/src/presentation/report/screens/report_screen.dart'
-    as _i25;
+    as _i26;
 import 'package:teeth_align_app/src/presentation/social/screens/leaderboard_screen.dart'
-    as _i15;
+    as _i16;
 import 'package:teeth_align_app/src/presentation/social/screens/single_post_screen.dart'
-    as _i28;
-import 'package:teeth_align_app/src/presentation/social/screens/social_screen.dart'
     as _i29;
-import 'package:teeth_align_app/src/router/nav_router.dart' as _i18;
+import 'package:teeth_align_app/src/presentation/social/screens/social_screen.dart'
+    as _i30;
+import 'package:teeth_align_app/src/router/nav_router.dart' as _i19;
 import 'package:teeth_align_app/src/shared/web_view/default_web_view.dart'
     as _i10;
 
-abstract class $AppRouter extends _i32.RootStackRouter {
+abstract class $AppRouter extends _i33.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i32.PageFactory> pagesMap = {
+  final Map<String, _i33.PageFactory> pagesMap = {
     AccountListRoute.name: (routeData) {
       final args = routeData.argsAs<AccountListRouteArgs>();
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i1.AccountListScreen(
           key: args.key,
@@ -93,31 +95,31 @@ abstract class $AppRouter extends _i32.RootStackRouter {
       );
     },
     AccountRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i2.AccountScreen(),
       );
     },
     AdminHomeRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i3.AdminHomeScreen(),
       );
     },
     AlignerSettingsRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i4.AlignerSettingsScreen(),
       );
     },
     CalendarRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i5.CalendarScreen(),
       );
     },
     CameraRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i6.CameraScreen(),
       );
@@ -125,7 +127,7 @@ abstract class $AppRouter extends _i32.RootStackRouter {
     ChatListRoute.name: (routeData) {
       final args = routeData.argsAs<ChatListRouteArgs>(
           orElse: () => const ChatListRouteArgs());
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i7.ChatListScreen(
           key: args.key,
@@ -135,7 +137,7 @@ abstract class $AppRouter extends _i32.RootStackRouter {
     },
     ChatRoute.name: (routeData) {
       final args = routeData.argsAs<ChatRouteArgs>();
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i8.ChatScreen(
           key: args.key,
@@ -145,7 +147,7 @@ abstract class $AppRouter extends _i32.RootStackRouter {
     },
     CreateCaseRoute.name: (routeData) {
       final args = routeData.argsAs<CreateCaseRouteArgs>();
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i9.CreateCaseScreen(
           key: args.key,
@@ -155,7 +157,7 @@ abstract class $AppRouter extends _i32.RootStackRouter {
     },
     DefaultWebView.name: (routeData) {
       final args = routeData.argsAs<DefaultWebViewArgs>();
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i10.DefaultWebView(
           key: args.key,
@@ -163,23 +165,29 @@ abstract class $AppRouter extends _i32.RootStackRouter {
         ),
       );
     },
-    DoctorCreateProfileRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+    DoctorAccessListRoute.name: (routeData) {
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i11.DoctorCreateProfileScreen(),
+        child: const _i11.DoctorAccessListScreen(),
+      );
+    },
+    DoctorCreateProfileRoute.name: (routeData) {
+      return _i33.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i12.DoctorCreateProfileScreen(),
       );
     },
     DoctorHomeRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i12.DoctorHomeScreen(),
+        child: const _i13.DoctorHomeScreen(),
       );
     },
     DoctorProfileRoute.name: (routeData) {
       final args = routeData.argsAs<DoctorProfileRouteArgs>();
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i13.DoctorProfileScreen(
+        child: _i14.DoctorProfileScreen(
           key: args.key,
           doctorId: args.doctorId,
         ),
@@ -187,9 +195,9 @@ abstract class $AppRouter extends _i32.RootStackRouter {
     },
     EventRoute.name: (routeData) {
       final args = routeData.argsAs<EventRouteArgs>();
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i14.EventScreen(
+        child: _i15.EventScreen(
           key: args.key,
           event: args.event,
           callback: args.callback,
@@ -197,121 +205,121 @@ abstract class $AppRouter extends _i32.RootStackRouter {
       );
     },
     LeaderboardRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i15.LeaderboardScreen(),
+        child: const _i16.LeaderboardScreen(),
       );
     },
     MentorHomeRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i16.MentorHomeScreen(),
+        child: const _i17.MentorHomeScreen(),
       );
     },
     MentorProfileRoute.name: (routeData) {
       final args = routeData.argsAs<MentorProfileRouteArgs>();
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i17.MentorProfileScreen(
+        child: _i18.MentorProfileScreen(
           key: args.key,
           mentorId: args.mentorId,
         ),
       );
     },
     NavRouter.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i18.NavRouter(),
+        child: const _i19.NavRouter(),
       );
     },
     NotificationRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i19.NotificationScreen(),
+        child: const _i20.NotificationScreen(),
       );
     },
     PatientHomeRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i20.PatientHomeScreen(),
+        child: const _i21.PatientHomeScreen(),
       );
     },
     PatientProfileRoute.name: (routeData) {
       final args = routeData.argsAs<PatientProfileRouteArgs>();
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i21.PatientProfileScreen(
+        child: _i22.PatientProfileScreen(
           key: args.key,
           patientId: args.patientId,
         ),
       );
     },
     PersonalDataRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i22.PersonalDataScreen(),
+        child: const _i23.PersonalDataScreen(),
       );
     },
     ProfileRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i23.ProfileScreen(),
+        child: const _i24.ProfileScreen(),
       );
     },
     RateDoctorRoute.name: (routeData) {
       final args = routeData.argsAs<RateDoctorRouteArgs>();
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i24.RateDoctorScreen(
+        child: _i25.RateDoctorScreen(
           key: args.key,
           doctor: args.doctor,
         ),
       );
     },
     ReportRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i25.ReportScreen(),
+        child: const _i26.ReportScreen(),
       );
     },
     SignInRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i26.SignInScreen(),
+        child: const _i27.SignInScreen(),
       );
     },
     SignUpRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i27.SignUpScreen(),
+        child: const _i28.SignUpScreen(),
       );
     },
     SinglePostRoute.name: (routeData) {
       final args = routeData.argsAs<SinglePostRouteArgs>();
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i28.SinglePostScreen(
+        child: _i29.SinglePostScreen(
           key: args.key,
           postId: args.postId,
         ),
       );
     },
     SocialRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i29.SocialScreen(),
+        child: const _i30.SocialScreen(),
       );
     },
     SplashRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i30.SplashScreen(),
+        child: const _i31.SplashScreen(),
       );
     },
     WelcomeRoute.name: (routeData) {
-      return _i32.AutoRoutePage<dynamic>(
+      return _i33.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i31.WelcomeScreen(),
+        child: const _i32.WelcomeScreen(),
       );
     },
   };
@@ -319,11 +327,11 @@ abstract class $AppRouter extends _i32.RootStackRouter {
 
 /// generated route for
 /// [_i1.AccountListScreen]
-class AccountListRoute extends _i32.PageRouteInfo<AccountListRouteArgs> {
+class AccountListRoute extends _i33.PageRouteInfo<AccountListRouteArgs> {
   AccountListRoute({
-    _i33.Key? key,
-    required List<_i34.AccountEntity> accounts,
-    List<_i32.PageRouteInfo>? children,
+    _i34.Key? key,
+    required List<_i35.AccountEntity> accounts,
+    List<_i33.PageRouteInfo>? children,
   }) : super(
           AccountListRoute.name,
           args: AccountListRouteArgs(
@@ -335,8 +343,8 @@ class AccountListRoute extends _i32.PageRouteInfo<AccountListRouteArgs> {
 
   static const String name = 'AccountListRoute';
 
-  static const _i32.PageInfo<AccountListRouteArgs> page =
-      _i32.PageInfo<AccountListRouteArgs>(name);
+  static const _i33.PageInfo<AccountListRouteArgs> page =
+      _i33.PageInfo<AccountListRouteArgs>(name);
 }
 
 class AccountListRouteArgs {
@@ -345,9 +353,9 @@ class AccountListRouteArgs {
     required this.accounts,
   });
 
-  final _i33.Key? key;
+  final _i34.Key? key;
 
-  final List<_i34.AccountEntity> accounts;
+  final List<_i35.AccountEntity> accounts;
 
   @override
   String toString() {
@@ -357,8 +365,8 @@ class AccountListRouteArgs {
 
 /// generated route for
 /// [_i2.AccountScreen]
-class AccountRoute extends _i32.PageRouteInfo<void> {
-  const AccountRoute({List<_i32.PageRouteInfo>? children})
+class AccountRoute extends _i33.PageRouteInfo<void> {
+  const AccountRoute({List<_i33.PageRouteInfo>? children})
       : super(
           AccountRoute.name,
           initialChildren: children,
@@ -366,13 +374,13 @@ class AccountRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'AccountRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i3.AdminHomeScreen]
-class AdminHomeRoute extends _i32.PageRouteInfo<void> {
-  const AdminHomeRoute({List<_i32.PageRouteInfo>? children})
+class AdminHomeRoute extends _i33.PageRouteInfo<void> {
+  const AdminHomeRoute({List<_i33.PageRouteInfo>? children})
       : super(
           AdminHomeRoute.name,
           initialChildren: children,
@@ -380,13 +388,13 @@ class AdminHomeRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'AdminHomeRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i4.AlignerSettingsScreen]
-class AlignerSettingsRoute extends _i32.PageRouteInfo<void> {
-  const AlignerSettingsRoute({List<_i32.PageRouteInfo>? children})
+class AlignerSettingsRoute extends _i33.PageRouteInfo<void> {
+  const AlignerSettingsRoute({List<_i33.PageRouteInfo>? children})
       : super(
           AlignerSettingsRoute.name,
           initialChildren: children,
@@ -394,13 +402,13 @@ class AlignerSettingsRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'AlignerSettingsRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i5.CalendarScreen]
-class CalendarRoute extends _i32.PageRouteInfo<void> {
-  const CalendarRoute({List<_i32.PageRouteInfo>? children})
+class CalendarRoute extends _i33.PageRouteInfo<void> {
+  const CalendarRoute({List<_i33.PageRouteInfo>? children})
       : super(
           CalendarRoute.name,
           initialChildren: children,
@@ -408,13 +416,13 @@ class CalendarRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'CalendarRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i6.CameraScreen]
-class CameraRoute extends _i32.PageRouteInfo<void> {
-  const CameraRoute({List<_i32.PageRouteInfo>? children})
+class CameraRoute extends _i33.PageRouteInfo<void> {
+  const CameraRoute({List<_i33.PageRouteInfo>? children})
       : super(
           CameraRoute.name,
           initialChildren: children,
@@ -422,16 +430,16 @@ class CameraRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'CameraRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i7.ChatListScreen]
-class ChatListRoute extends _i32.PageRouteInfo<ChatListRouteArgs> {
+class ChatListRoute extends _i33.PageRouteInfo<ChatListRouteArgs> {
   ChatListRoute({
-    _i33.Key? key,
-    _i35.Channel? channel,
-    List<_i32.PageRouteInfo>? children,
+    _i34.Key? key,
+    _i36.Channel? channel,
+    List<_i33.PageRouteInfo>? children,
   }) : super(
           ChatListRoute.name,
           args: ChatListRouteArgs(
@@ -443,8 +451,8 @@ class ChatListRoute extends _i32.PageRouteInfo<ChatListRouteArgs> {
 
   static const String name = 'ChatListRoute';
 
-  static const _i32.PageInfo<ChatListRouteArgs> page =
-      _i32.PageInfo<ChatListRouteArgs>(name);
+  static const _i33.PageInfo<ChatListRouteArgs> page =
+      _i33.PageInfo<ChatListRouteArgs>(name);
 }
 
 class ChatListRouteArgs {
@@ -453,9 +461,9 @@ class ChatListRouteArgs {
     this.channel,
   });
 
-  final _i33.Key? key;
+  final _i34.Key? key;
 
-  final _i35.Channel? channel;
+  final _i36.Channel? channel;
 
   @override
   String toString() {
@@ -465,11 +473,11 @@ class ChatListRouteArgs {
 
 /// generated route for
 /// [_i8.ChatScreen]
-class ChatRoute extends _i32.PageRouteInfo<ChatRouteArgs> {
+class ChatRoute extends _i33.PageRouteInfo<ChatRouteArgs> {
   ChatRoute({
-    _i33.Key? key,
-    required _i35.Channel channel,
-    List<_i32.PageRouteInfo>? children,
+    _i34.Key? key,
+    required _i36.Channel channel,
+    List<_i33.PageRouteInfo>? children,
   }) : super(
           ChatRoute.name,
           args: ChatRouteArgs(
@@ -481,8 +489,8 @@ class ChatRoute extends _i32.PageRouteInfo<ChatRouteArgs> {
 
   static const String name = 'ChatRoute';
 
-  static const _i32.PageInfo<ChatRouteArgs> page =
-      _i32.PageInfo<ChatRouteArgs>(name);
+  static const _i33.PageInfo<ChatRouteArgs> page =
+      _i33.PageInfo<ChatRouteArgs>(name);
 }
 
 class ChatRouteArgs {
@@ -491,9 +499,9 @@ class ChatRouteArgs {
     required this.channel,
   });
 
-  final _i33.Key? key;
+  final _i34.Key? key;
 
-  final _i35.Channel channel;
+  final _i36.Channel channel;
 
   @override
   String toString() {
@@ -503,11 +511,11 @@ class ChatRouteArgs {
 
 /// generated route for
 /// [_i9.CreateCaseScreen]
-class CreateCaseRoute extends _i32.PageRouteInfo<CreateCaseRouteArgs> {
+class CreateCaseRoute extends _i33.PageRouteInfo<CreateCaseRouteArgs> {
   CreateCaseRoute({
-    _i33.Key? key,
+    _i34.Key? key,
     required int patientId,
-    List<_i32.PageRouteInfo>? children,
+    List<_i33.PageRouteInfo>? children,
   }) : super(
           CreateCaseRoute.name,
           args: CreateCaseRouteArgs(
@@ -519,8 +527,8 @@ class CreateCaseRoute extends _i32.PageRouteInfo<CreateCaseRouteArgs> {
 
   static const String name = 'CreateCaseRoute';
 
-  static const _i32.PageInfo<CreateCaseRouteArgs> page =
-      _i32.PageInfo<CreateCaseRouteArgs>(name);
+  static const _i33.PageInfo<CreateCaseRouteArgs> page =
+      _i33.PageInfo<CreateCaseRouteArgs>(name);
 }
 
 class CreateCaseRouteArgs {
@@ -529,7 +537,7 @@ class CreateCaseRouteArgs {
     required this.patientId,
   });
 
-  final _i33.Key? key;
+  final _i34.Key? key;
 
   final int patientId;
 
@@ -541,11 +549,11 @@ class CreateCaseRouteArgs {
 
 /// generated route for
 /// [_i10.DefaultWebView]
-class DefaultWebView extends _i32.PageRouteInfo<DefaultWebViewArgs> {
+class DefaultWebView extends _i33.PageRouteInfo<DefaultWebViewArgs> {
   DefaultWebView({
-    _i33.Key? key,
+    _i34.Key? key,
     required String url,
-    List<_i32.PageRouteInfo>? children,
+    List<_i33.PageRouteInfo>? children,
   }) : super(
           DefaultWebView.name,
           args: DefaultWebViewArgs(
@@ -557,8 +565,8 @@ class DefaultWebView extends _i32.PageRouteInfo<DefaultWebViewArgs> {
 
   static const String name = 'DefaultWebView';
 
-  static const _i32.PageInfo<DefaultWebViewArgs> page =
-      _i32.PageInfo<DefaultWebViewArgs>(name);
+  static const _i33.PageInfo<DefaultWebViewArgs> page =
+      _i33.PageInfo<DefaultWebViewArgs>(name);
 }
 
 class DefaultWebViewArgs {
@@ -567,7 +575,7 @@ class DefaultWebViewArgs {
     required this.url,
   });
 
-  final _i33.Key? key;
+  final _i34.Key? key;
 
   final String url;
 
@@ -578,9 +586,23 @@ class DefaultWebViewArgs {
 }
 
 /// generated route for
-/// [_i11.DoctorCreateProfileScreen]
-class DoctorCreateProfileRoute extends _i32.PageRouteInfo<void> {
-  const DoctorCreateProfileRoute({List<_i32.PageRouteInfo>? children})
+/// [_i11.DoctorAccessListScreen]
+class DoctorAccessListRoute extends _i33.PageRouteInfo<void> {
+  const DoctorAccessListRoute({List<_i33.PageRouteInfo>? children})
+      : super(
+          DoctorAccessListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DoctorAccessListRoute';
+
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i12.DoctorCreateProfileScreen]
+class DoctorCreateProfileRoute extends _i33.PageRouteInfo<void> {
+  const DoctorCreateProfileRoute({List<_i33.PageRouteInfo>? children})
       : super(
           DoctorCreateProfileRoute.name,
           initialChildren: children,
@@ -588,13 +610,13 @@ class DoctorCreateProfileRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'DoctorCreateProfileRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i12.DoctorHomeScreen]
-class DoctorHomeRoute extends _i32.PageRouteInfo<void> {
-  const DoctorHomeRoute({List<_i32.PageRouteInfo>? children})
+/// [_i13.DoctorHomeScreen]
+class DoctorHomeRoute extends _i33.PageRouteInfo<void> {
+  const DoctorHomeRoute({List<_i33.PageRouteInfo>? children})
       : super(
           DoctorHomeRoute.name,
           initialChildren: children,
@@ -602,16 +624,16 @@ class DoctorHomeRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'DoctorHomeRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i13.DoctorProfileScreen]
-class DoctorProfileRoute extends _i32.PageRouteInfo<DoctorProfileRouteArgs> {
+/// [_i14.DoctorProfileScreen]
+class DoctorProfileRoute extends _i33.PageRouteInfo<DoctorProfileRouteArgs> {
   DoctorProfileRoute({
-    _i33.Key? key,
+    _i34.Key? key,
     required int doctorId,
-    List<_i32.PageRouteInfo>? children,
+    List<_i33.PageRouteInfo>? children,
   }) : super(
           DoctorProfileRoute.name,
           args: DoctorProfileRouteArgs(
@@ -623,8 +645,8 @@ class DoctorProfileRoute extends _i32.PageRouteInfo<DoctorProfileRouteArgs> {
 
   static const String name = 'DoctorProfileRoute';
 
-  static const _i32.PageInfo<DoctorProfileRouteArgs> page =
-      _i32.PageInfo<DoctorProfileRouteArgs>(name);
+  static const _i33.PageInfo<DoctorProfileRouteArgs> page =
+      _i33.PageInfo<DoctorProfileRouteArgs>(name);
 }
 
 class DoctorProfileRouteArgs {
@@ -633,7 +655,7 @@ class DoctorProfileRouteArgs {
     required this.doctorId,
   });
 
-  final _i33.Key? key;
+  final _i34.Key? key;
 
   final int doctorId;
 
@@ -644,13 +666,13 @@ class DoctorProfileRouteArgs {
 }
 
 /// generated route for
-/// [_i14.EventScreen]
-class EventRoute extends _i32.PageRouteInfo<EventRouteArgs> {
+/// [_i15.EventScreen]
+class EventRoute extends _i33.PageRouteInfo<EventRouteArgs> {
   EventRoute({
-    _i33.Key? key,
-    required _i36.Meeting event,
+    _i34.Key? key,
+    required _i37.Meeting event,
     required void Function() callback,
-    List<_i32.PageRouteInfo>? children,
+    List<_i33.PageRouteInfo>? children,
   }) : super(
           EventRoute.name,
           args: EventRouteArgs(
@@ -663,8 +685,8 @@ class EventRoute extends _i32.PageRouteInfo<EventRouteArgs> {
 
   static const String name = 'EventRoute';
 
-  static const _i32.PageInfo<EventRouteArgs> page =
-      _i32.PageInfo<EventRouteArgs>(name);
+  static const _i33.PageInfo<EventRouteArgs> page =
+      _i33.PageInfo<EventRouteArgs>(name);
 }
 
 class EventRouteArgs {
@@ -674,9 +696,9 @@ class EventRouteArgs {
     required this.callback,
   });
 
-  final _i33.Key? key;
+  final _i34.Key? key;
 
-  final _i36.Meeting event;
+  final _i37.Meeting event;
 
   final void Function() callback;
 
@@ -687,9 +709,9 @@ class EventRouteArgs {
 }
 
 /// generated route for
-/// [_i15.LeaderboardScreen]
-class LeaderboardRoute extends _i32.PageRouteInfo<void> {
-  const LeaderboardRoute({List<_i32.PageRouteInfo>? children})
+/// [_i16.LeaderboardScreen]
+class LeaderboardRoute extends _i33.PageRouteInfo<void> {
+  const LeaderboardRoute({List<_i33.PageRouteInfo>? children})
       : super(
           LeaderboardRoute.name,
           initialChildren: children,
@@ -697,13 +719,13 @@ class LeaderboardRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'LeaderboardRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i16.MentorHomeScreen]
-class MentorHomeRoute extends _i32.PageRouteInfo<void> {
-  const MentorHomeRoute({List<_i32.PageRouteInfo>? children})
+/// [_i17.MentorHomeScreen]
+class MentorHomeRoute extends _i33.PageRouteInfo<void> {
+  const MentorHomeRoute({List<_i33.PageRouteInfo>? children})
       : super(
           MentorHomeRoute.name,
           initialChildren: children,
@@ -711,16 +733,16 @@ class MentorHomeRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'MentorHomeRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i17.MentorProfileScreen]
-class MentorProfileRoute extends _i32.PageRouteInfo<MentorProfileRouteArgs> {
+/// [_i18.MentorProfileScreen]
+class MentorProfileRoute extends _i33.PageRouteInfo<MentorProfileRouteArgs> {
   MentorProfileRoute({
-    _i33.Key? key,
+    _i34.Key? key,
     required int mentorId,
-    List<_i32.PageRouteInfo>? children,
+    List<_i33.PageRouteInfo>? children,
   }) : super(
           MentorProfileRoute.name,
           args: MentorProfileRouteArgs(
@@ -732,8 +754,8 @@ class MentorProfileRoute extends _i32.PageRouteInfo<MentorProfileRouteArgs> {
 
   static const String name = 'MentorProfileRoute';
 
-  static const _i32.PageInfo<MentorProfileRouteArgs> page =
-      _i32.PageInfo<MentorProfileRouteArgs>(name);
+  static const _i33.PageInfo<MentorProfileRouteArgs> page =
+      _i33.PageInfo<MentorProfileRouteArgs>(name);
 }
 
 class MentorProfileRouteArgs {
@@ -742,7 +764,7 @@ class MentorProfileRouteArgs {
     required this.mentorId,
   });
 
-  final _i33.Key? key;
+  final _i34.Key? key;
 
   final int mentorId;
 
@@ -753,9 +775,9 @@ class MentorProfileRouteArgs {
 }
 
 /// generated route for
-/// [_i18.NavRouter]
-class NavRouter extends _i32.PageRouteInfo<void> {
-  const NavRouter({List<_i32.PageRouteInfo>? children})
+/// [_i19.NavRouter]
+class NavRouter extends _i33.PageRouteInfo<void> {
+  const NavRouter({List<_i33.PageRouteInfo>? children})
       : super(
           NavRouter.name,
           initialChildren: children,
@@ -763,13 +785,13 @@ class NavRouter extends _i32.PageRouteInfo<void> {
 
   static const String name = 'NavRouter';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i19.NotificationScreen]
-class NotificationRoute extends _i32.PageRouteInfo<void> {
-  const NotificationRoute({List<_i32.PageRouteInfo>? children})
+/// [_i20.NotificationScreen]
+class NotificationRoute extends _i33.PageRouteInfo<void> {
+  const NotificationRoute({List<_i33.PageRouteInfo>? children})
       : super(
           NotificationRoute.name,
           initialChildren: children,
@@ -777,13 +799,13 @@ class NotificationRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'NotificationRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i20.PatientHomeScreen]
-class PatientHomeRoute extends _i32.PageRouteInfo<void> {
-  const PatientHomeRoute({List<_i32.PageRouteInfo>? children})
+/// [_i21.PatientHomeScreen]
+class PatientHomeRoute extends _i33.PageRouteInfo<void> {
+  const PatientHomeRoute({List<_i33.PageRouteInfo>? children})
       : super(
           PatientHomeRoute.name,
           initialChildren: children,
@@ -791,16 +813,16 @@ class PatientHomeRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'PatientHomeRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i21.PatientProfileScreen]
-class PatientProfileRoute extends _i32.PageRouteInfo<PatientProfileRouteArgs> {
+/// [_i22.PatientProfileScreen]
+class PatientProfileRoute extends _i33.PageRouteInfo<PatientProfileRouteArgs> {
   PatientProfileRoute({
-    _i33.Key? key,
+    _i34.Key? key,
     required int patientId,
-    List<_i32.PageRouteInfo>? children,
+    List<_i33.PageRouteInfo>? children,
   }) : super(
           PatientProfileRoute.name,
           args: PatientProfileRouteArgs(
@@ -812,8 +834,8 @@ class PatientProfileRoute extends _i32.PageRouteInfo<PatientProfileRouteArgs> {
 
   static const String name = 'PatientProfileRoute';
 
-  static const _i32.PageInfo<PatientProfileRouteArgs> page =
-      _i32.PageInfo<PatientProfileRouteArgs>(name);
+  static const _i33.PageInfo<PatientProfileRouteArgs> page =
+      _i33.PageInfo<PatientProfileRouteArgs>(name);
 }
 
 class PatientProfileRouteArgs {
@@ -822,7 +844,7 @@ class PatientProfileRouteArgs {
     required this.patientId,
   });
 
-  final _i33.Key? key;
+  final _i34.Key? key;
 
   final int patientId;
 
@@ -833,9 +855,9 @@ class PatientProfileRouteArgs {
 }
 
 /// generated route for
-/// [_i22.PersonalDataScreen]
-class PersonalDataRoute extends _i32.PageRouteInfo<void> {
-  const PersonalDataRoute({List<_i32.PageRouteInfo>? children})
+/// [_i23.PersonalDataScreen]
+class PersonalDataRoute extends _i33.PageRouteInfo<void> {
+  const PersonalDataRoute({List<_i33.PageRouteInfo>? children})
       : super(
           PersonalDataRoute.name,
           initialChildren: children,
@@ -843,13 +865,13 @@ class PersonalDataRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'PersonalDataRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i23.ProfileScreen]
-class ProfileRoute extends _i32.PageRouteInfo<void> {
-  const ProfileRoute({List<_i32.PageRouteInfo>? children})
+/// [_i24.ProfileScreen]
+class ProfileRoute extends _i33.PageRouteInfo<void> {
+  const ProfileRoute({List<_i33.PageRouteInfo>? children})
       : super(
           ProfileRoute.name,
           initialChildren: children,
@@ -857,16 +879,16 @@ class ProfileRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'ProfileRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i24.RateDoctorScreen]
-class RateDoctorRoute extends _i32.PageRouteInfo<RateDoctorRouteArgs> {
+/// [_i25.RateDoctorScreen]
+class RateDoctorRoute extends _i33.PageRouteInfo<RateDoctorRouteArgs> {
   RateDoctorRoute({
-    _i33.Key? key,
-    required _i37.DoctorEntity doctor,
-    List<_i32.PageRouteInfo>? children,
+    _i34.Key? key,
+    required _i38.DoctorEntity doctor,
+    List<_i33.PageRouteInfo>? children,
   }) : super(
           RateDoctorRoute.name,
           args: RateDoctorRouteArgs(
@@ -878,8 +900,8 @@ class RateDoctorRoute extends _i32.PageRouteInfo<RateDoctorRouteArgs> {
 
   static const String name = 'RateDoctorRoute';
 
-  static const _i32.PageInfo<RateDoctorRouteArgs> page =
-      _i32.PageInfo<RateDoctorRouteArgs>(name);
+  static const _i33.PageInfo<RateDoctorRouteArgs> page =
+      _i33.PageInfo<RateDoctorRouteArgs>(name);
 }
 
 class RateDoctorRouteArgs {
@@ -888,9 +910,9 @@ class RateDoctorRouteArgs {
     required this.doctor,
   });
 
-  final _i33.Key? key;
+  final _i34.Key? key;
 
-  final _i37.DoctorEntity doctor;
+  final _i38.DoctorEntity doctor;
 
   @override
   String toString() {
@@ -899,9 +921,9 @@ class RateDoctorRouteArgs {
 }
 
 /// generated route for
-/// [_i25.ReportScreen]
-class ReportRoute extends _i32.PageRouteInfo<void> {
-  const ReportRoute({List<_i32.PageRouteInfo>? children})
+/// [_i26.ReportScreen]
+class ReportRoute extends _i33.PageRouteInfo<void> {
+  const ReportRoute({List<_i33.PageRouteInfo>? children})
       : super(
           ReportRoute.name,
           initialChildren: children,
@@ -909,13 +931,13 @@ class ReportRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'ReportRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i26.SignInScreen]
-class SignInRoute extends _i32.PageRouteInfo<void> {
-  const SignInRoute({List<_i32.PageRouteInfo>? children})
+/// [_i27.SignInScreen]
+class SignInRoute extends _i33.PageRouteInfo<void> {
+  const SignInRoute({List<_i33.PageRouteInfo>? children})
       : super(
           SignInRoute.name,
           initialChildren: children,
@@ -923,13 +945,13 @@ class SignInRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'SignInRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i27.SignUpScreen]
-class SignUpRoute extends _i32.PageRouteInfo<void> {
-  const SignUpRoute({List<_i32.PageRouteInfo>? children})
+/// [_i28.SignUpScreen]
+class SignUpRoute extends _i33.PageRouteInfo<void> {
+  const SignUpRoute({List<_i33.PageRouteInfo>? children})
       : super(
           SignUpRoute.name,
           initialChildren: children,
@@ -937,16 +959,16 @@ class SignUpRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'SignUpRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i28.SinglePostScreen]
-class SinglePostRoute extends _i32.PageRouteInfo<SinglePostRouteArgs> {
+/// [_i29.SinglePostScreen]
+class SinglePostRoute extends _i33.PageRouteInfo<SinglePostRouteArgs> {
   SinglePostRoute({
-    _i33.Key? key,
+    _i34.Key? key,
     required int postId,
-    List<_i32.PageRouteInfo>? children,
+    List<_i33.PageRouteInfo>? children,
   }) : super(
           SinglePostRoute.name,
           args: SinglePostRouteArgs(
@@ -958,8 +980,8 @@ class SinglePostRoute extends _i32.PageRouteInfo<SinglePostRouteArgs> {
 
   static const String name = 'SinglePostRoute';
 
-  static const _i32.PageInfo<SinglePostRouteArgs> page =
-      _i32.PageInfo<SinglePostRouteArgs>(name);
+  static const _i33.PageInfo<SinglePostRouteArgs> page =
+      _i33.PageInfo<SinglePostRouteArgs>(name);
 }
 
 class SinglePostRouteArgs {
@@ -968,7 +990,7 @@ class SinglePostRouteArgs {
     required this.postId,
   });
 
-  final _i33.Key? key;
+  final _i34.Key? key;
 
   final int postId;
 
@@ -979,9 +1001,9 @@ class SinglePostRouteArgs {
 }
 
 /// generated route for
-/// [_i29.SocialScreen]
-class SocialRoute extends _i32.PageRouteInfo<void> {
-  const SocialRoute({List<_i32.PageRouteInfo>? children})
+/// [_i30.SocialScreen]
+class SocialRoute extends _i33.PageRouteInfo<void> {
+  const SocialRoute({List<_i33.PageRouteInfo>? children})
       : super(
           SocialRoute.name,
           initialChildren: children,
@@ -989,13 +1011,13 @@ class SocialRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'SocialRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i30.SplashScreen]
-class SplashRoute extends _i32.PageRouteInfo<void> {
-  const SplashRoute({List<_i32.PageRouteInfo>? children})
+/// [_i31.SplashScreen]
+class SplashRoute extends _i33.PageRouteInfo<void> {
+  const SplashRoute({List<_i33.PageRouteInfo>? children})
       : super(
           SplashRoute.name,
           initialChildren: children,
@@ -1003,13 +1025,13 @@ class SplashRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'SplashRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i31.WelcomeScreen]
-class WelcomeRoute extends _i32.PageRouteInfo<void> {
-  const WelcomeRoute({List<_i32.PageRouteInfo>? children})
+/// [_i32.WelcomeScreen]
+class WelcomeRoute extends _i33.PageRouteInfo<void> {
+  const WelcomeRoute({List<_i33.PageRouteInfo>? children})
       : super(
           WelcomeRoute.name,
           initialChildren: children,
@@ -1017,5 +1039,5 @@ class WelcomeRoute extends _i32.PageRouteInfo<void> {
 
   static const String name = 'WelcomeRoute';
 
-  static const _i32.PageInfo<void> page = _i32.PageInfo<void>(name);
+  static const _i33.PageInfo<void> page = _i33.PageInfo<void>(name);
 }

@@ -14,7 +14,7 @@ enum Role {
 
   static Role fromString(String? name) => values.byName(
         name == null
-            ? 'patient'
+            ? 'doctor'
             : name == 'USER'
                 ? 'patient'
                 : name.toLowerCase(),

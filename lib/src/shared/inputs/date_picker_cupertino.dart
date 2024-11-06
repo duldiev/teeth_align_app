@@ -82,10 +82,9 @@ class _DatePickerCupertinoState extends State<DatePickerCupertino> {
                   widget.onDateTimeChanged(date);
                   setState(
                     () => _dateController.text = DateConverter.convertDate(
-                          date,
-                          dateFormat,
-                        ) ??
-                        '',
+                      date,
+                      dateFormat,
+                    ),
                   );
                 },
               ),

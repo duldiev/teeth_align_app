@@ -11,7 +11,6 @@ dependencies:
   bloc: ^8.1.2
   bloc_concurrency: ^0.2.5
   camera: ^0.10.5+9
-  carousel_slider: ^4.2.1
   change_app_package_name: ^1.1.0
   chucker_flutter: ^1.6.1
   circular_countdown_timer: ^0.2.3

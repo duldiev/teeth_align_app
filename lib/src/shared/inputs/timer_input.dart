@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:gap/gap.dart';
@@ -84,16 +83,10 @@ class _TimerNumberInput extends StatefulWidget {
 }
 
 class __TimerNumberInputState extends State<_TimerNumberInput> {
-  late CarouselController _hhController;
-  late CarouselController _mmController;
-  late CarouselController _ssController;
   Duration duration = const Duration(seconds: 0);
 
   @override
   void initState() {
-    _hhController = CarouselController();
-    _mmController = CarouselController();
-    _ssController = CarouselController();
     super.initState();
   }
 
@@ -114,11 +107,6 @@ class __TimerNumberInputState extends State<_TimerNumberInput> {
           TimerProperty.values.length,
           (index) => Expanded(
             child: _NumberPicker(
-              controller: switch (TimerProperty.values[index]) {
-                TimerProperty.hh => _hhController,
-                TimerProperty.mm => _mmController,
-                TimerProperty.ss => _ssController,
-              },
               duration: duration,
               finalDuration: widget.duration,
               property: TimerProperty.values[index],
@@ -169,14 +157,12 @@ class __TimerNumberInputState extends State<_TimerNumberInput> {
 
 class _NumberPicker extends StatefulWidget {
   const _NumberPicker({
-    required this.controller,
     required this.duration,
     required this.finalDuration,
     required this.property,
     required this.onPageChanged,
   });
 
-  final CarouselController controller;
   final Duration duration;
   final Duration finalDuration;
   final TimerProperty property;
@@ -220,65 +206,55 @@ class __NumberPickerState extends State<_NumberPicker> {
 
     final list = List.generate(value, (index) => index);
 
-    return CarouselSlider(
-      carouselController: widget.controller,
-      items: List.generate(value, (index) {
-        final value = index;
-        TextStyle? textStyle;
-        TextStyle? identifierTextStyle;
-
-        if (value == selectedValue) {
-          textStyle = context.textTheme.titleLarge?.copyWith(
-            color: AppColors.primary,
-            fontWeight: FontWeight.w500,
-          );
-          identifierTextStyle = context.textTheme.labelMedium?.copyWith(
-            color: AppColors.primary,
-            fontWeight: FontWeight.w600,
-          );
-        } else {
-          textStyle = context.textTheme.titleLarge?.copyWith(
-            color: AppColors.grey,
-            fontWeight: FontWeight.w500,
-          );
-          identifierTextStyle = context.textTheme.labelMedium?.copyWith(
-            color: AppColors.grey,
-            fontWeight: FontWeight.w500,
-          );
-        }
-        return Align(
-          alignment: Alignment.center,
-          child: Text.rich(
-            TextSpan(
-              text: '$value',
-              children: [
-                TextSpan(
-                  text: identifier.toUpperCase(),
-                  style: identifierTextStyle,
-                ),
-              ],
-            ),
-            style: textStyle,
-          ).animate().fade().scaleXY(),
-        );
+    return ListWheelScrollView.useDelegate(
+      itemExtent: 30,
+      perspective: 0.01,
+      diameterRatio: 1.5,
+      onSelectedItemChanged: (index) => setState(() {
+        selectedValue = list[index];
+        widget.onPageChanged(list[index], widget.property);
       }),
-      options: CarouselOptions(
-        initialPage: switch (widget.property) {
-          TimerProperty.hh => list.indexOf(widget.duration.inHours),
-          TimerProperty.mm => list.indexOf(widget.duration.inMinutes),
-          TimerProperty.ss => list.indexOf(widget.duration.inSeconds),
+      childDelegate: ListWheelChildBuilderDelegate(
+        builder: (context, index) {
+          final value = index;
+          TextStyle? textStyle;
+          TextStyle? identifierTextStyle;
+
+          if (value == selectedValue) {
+            textStyle = context.textTheme.titleLarge?.copyWith(
+              color: AppColors.primary,
+              fontWeight: FontWeight.w500,
+            );
+            identifierTextStyle = context.textTheme.labelMedium?.copyWith(
+              color: AppColors.primary,
+              fontWeight: FontWeight.w600,
+            );
+          } else {
+            textStyle = context.textTheme.titleLarge?.copyWith(
+              color: AppColors.grey,
+              fontWeight: FontWeight.w500,
+            );
+            identifierTextStyle = context.textTheme.labelMedium?.copyWith(
+              color: AppColors.grey,
+              fontWeight: FontWeight.w500,
+            );
+          }
+          return Align(
+            alignment: Alignment.center,
+            child: Text.rich(
+              TextSpan(
+                text: '$value',
+                children: [
+                  TextSpan(
+                    text: identifier.toUpperCase(),
+                    style: identifierTextStyle,
+                  ),
+                ],
+              ),
+              style: textStyle,
+            ).animate().fade().scaleXY(),
+          );
         },
-        scrollDirection: Axis.vertical,
-        height: 150,
-        reverse: true,
-        viewportFraction: 0.32,
-        enableInfiniteScroll: false,
-        enlargeCenterPage: true,
-        enlargeFactor: 0.5,
-        onPageChanged: (index, reason) => setState(() {
-          selectedValue = list[index];
-          widget.onPageChanged(list[index], widget.property);
-        }),
       ),
     );
   }

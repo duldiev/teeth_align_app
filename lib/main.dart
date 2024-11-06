@@ -1,10 +1,11 @@
-import 'package:chucker_flutter/chucker_flutter.dart';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 import 'package:teeth_align_app/src/core/constants/api_keys.dart';
 import 'package:teeth_align_app/src/core/dependencies/injection.dart';
 import 'package:teeth_align_app/src/core/utils/bloc_observer.dart';
+import 'package:teeth_align_app/src/core/utils/custom_http_overrides.dart';
 import 'package:teeth_align_app/src/presentation/base/app.dart';
 import 'package:camera/camera.dart';
 import 'package:teeth_align_app/src/presentation/base/globals.dart';
@@ -67,9 +68,9 @@ Future<void> main() async {
 
   Bloc.observer = GlobalBlocObserver();
 
-  ChuckerFlutter.showOnRelease = false;
-
-  cameras = await availableCameras();
+  try {
+    cameras = await availableCameras();
+  } catch (_) {}
 
   // await getIt<SharedPreferences>().clear();
 

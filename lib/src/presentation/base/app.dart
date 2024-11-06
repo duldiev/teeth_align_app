@@ -29,9 +29,7 @@ class App extends StatelessWidget {
       builder: (_, __, ___) => MaterialApp.router(
         debugShowCheckedModeBanner: false,
         routerConfig: router.config(
-          navigatorObservers: () => [
-            ChuckerFlutter.navigatorObserver,
-          ],
+          navigatorObservers: () => [],
         ),
         theme: AppThemeData.themeData,
         scaffoldMessengerKey: snackbarKey,
